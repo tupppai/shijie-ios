@@ -1,0 +1,12 @@
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Alamofire', '~> 3.2.1'
+
+pod 'SnapKit', '~> 0.19.1'
+
+
+pod 'VideoCore/Swift', :git => 'https://github.com/maxcampolo/VideoCore.git', :branch => 'update_headers'
+pod 'glm', :git => 'https://github.com/maxcampolo/glm.git'

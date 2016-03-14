@@ -17,7 +17,6 @@
 		F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4A91C898E9B0009AAFF /* MonkeyKing.swift */; };
 		F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4AA1C898E9B0009AAFF /* Networking.swift */; };
 		F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */; };
-		F417C4B81C8992B80009AAFF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4B71C8992B80009AAFF /* Config.swift */; };
 		F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4BB1C899A750009AAFF /* SimpleNetworking.swift */; };
 		F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */; };
 		F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1A1C8FE43700756F00 /* libbz2.tbd */; };
@@ -25,6 +24,7 @@
 		F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */; };
 		F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C261C8FE62D00756F00 /* libiconv.tbd */; };
 		F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */; };
+		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,16 +43,16 @@
 		F417C4A91C898E9B0009AAFF /* MonkeyKing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonkeyKing.swift; sourceTree = "<group>"; };
 		F417C4AA1C898E9B0009AAFF /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLoginViewController.swift; sourceTree = "<group>"; };
-		F417C4B71C8992B80009AAFF /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = ../Config.swift; sourceTree = "<group>"; };
 		F417C4BB1C899A750009AAFF /* SimpleNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworking.swift; sourceTree = "<group>"; };
 		F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = MonkeyKing/PPTabBarController.swift; sourceTree = "<group>"; };
 		F4F19C1A1C8FE43700756F00 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F4F19C1C1C8FE44A00756F00 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		F4F19C1E1C8FE4ED00756F00 /* live-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "live-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4F19C221C8FE5D900756F00 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		F4F19C261C8FE62D00756F00 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLiveViewController.swift; sourceTree = "<group>"; };
+		F4F486701C96751800498CD3 /* live-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "live-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4F486711C96753600498CD3 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F4FDA2F21C8ED01400EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		F4FDA2F41C8ED09900EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,11 +100,11 @@
 		F417C4801C895D720009AAFF = {
 			isa = PBXGroup;
 			children = (
+				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
 				F417C48B1C895D720009AAFF /* live */,
 				F417C48A1C895D720009AAFF /* Products */,
 				BF74913A2A68A19155C3D813 /* Pods */,
 				031DAD5C2A474689C914A35E /* Frameworks */,
-				F4F19C1E1C8FE4ED00756F00 /* live-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,11 +120,11 @@
 			isa = PBXGroup;
 			children = (
 				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
-				F417C4B71C8992B80009AAFF /* Config.swift */,
 				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
 				F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */,
+				F4F486711C96753600498CD3 /* Config.swift */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
 				F417C49B1C895D720009AAFF /* Info.plist */,
@@ -279,11 +279,11 @@
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
+				F4F486721C96753600498CD3 /* Config.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
 				F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */,
-				F417C4B81C8992B80009AAFF /* Config.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
 				F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */,
 			);

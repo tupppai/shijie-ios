@@ -1,0 +1,65 @@
+//
+//  PPTabBarController.swift
+//  live
+//
+//  Created by chenpeiwei on 3/8/16.
+//  Copyright © 2016 Pires.Inc. All rights reserved.
+//
+
+import UIKit
+class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
+
+    private var temporaryCenterViewController:UIViewController!
+    private var vc1:UIViewController = UIViewController()
+    private var vc3:UIViewController = UIViewController()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+//        let rect = CGRectMake(0, ScreenSize.SCREEN_HEIGHT-48, ScreenSize.SCREEN_WIDTH, 48)
+//        let view = UIView(frame: rect)
+//        view.backgroundColor = UIColor.whiteColor()
+//        
+//        self.view .insertSubview(view, atIndex: 1)
+        self.tabBar.barTintColor = UIColor.whiteColor()
+        self.tabBar.setValue(true, forKey: "_hidesShadow")
+
+        delegate = self;
+        vc1.view.backgroundColor = UIColor.greenColor()
+        temporaryCenterViewController = UIViewController()
+        temporaryCenterViewController.view.backgroundColor = UIColor.redColor()
+        vc3.view.backgroundColor = UIColor.grayColor()
+        
+        let navigationController1 = UINavigationController(rootViewController: vc1)
+        let navigationController3 = UINavigationController(rootViewController: vc3)
+        
+        
+        vc1.tabBarItem.image = UIImage(named: "tab1")?.imageWithRenderingMode(.AlwaysOriginal)
+        vc1.tabBarItem.selectedImage = UIImage(named: "tab1-selected")?.imageWithRenderingMode(.AlwaysOriginal)
+        temporaryCenterViewController.tabBarItem.image = UIImage(named: "tab2")?.imageWithRenderingMode(.AlwaysOriginal)
+        vc3.tabBarItem.image = UIImage(named: "tab3")?.imageWithRenderingMode(.AlwaysOriginal)
+
+        vc3.tabBarItem.selectedImage = UIImage(named: "tab3-selected")?.imageWithRenderingMode(.AlwaysOriginal)
+
+        vc1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        temporaryCenterViewController.tabBarItem.imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        vc3.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+
+//        _navigationPlaceholder_center.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+
+
+        self.viewControllers = [navigationController1,temporaryCenterViewController,navigationController3]
+        
+    }
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        if viewController === temporaryCenterViewController {
+            let vc = PPMyLiveViewController()
+            self .presentViewController(vc, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
+    
+}

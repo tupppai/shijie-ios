@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: "wx4868b35061f87885", appKey: "64020361b8ec4c99936c0e3999a9f249"))
         
+       
+//        let unsafePointerOfN = ("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]" as NSString).UTF8String
+//        let unsafeMutablePointerOfN: UnsafeMutablePointer<Int8> = UnsafeMutablePointer(unsafePointerOfN)
+//        RegisterFFEngine("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]")
         
         return true
     }

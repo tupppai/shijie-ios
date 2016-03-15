@@ -25,6 +25,8 @@
 		F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C261C8FE62D00756F00 /* libiconv.tbd */; };
 		F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */; };
 		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
+		F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */; };
+		F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +53,10 @@
 		F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		F4F19C261C8FE62D00756F00 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLiveViewController.swift; sourceTree = "<group>"; };
-		F4F486701C96751800498CD3 /* live-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "live-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4F486701C96751800498CD3 /* live-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "live-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F4F486711C96753600498CD3 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveWatchViewController.swift; sourceTree = "<group>"; };
+		F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F4FDA2F21C8ED01400EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		F4FDA2F41C8ED09900EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */,
 				F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */,
 				F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */,
 				F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */,
@@ -76,6 +81,7 @@
 		031DAD5C2A474689C914A35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */,
 				F4F19C261C8FE62D00756F00 /* libiconv.tbd */,
 				F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */,
 				F4F19C221C8FE5D900756F00 /* AudioToolbox.framework */,
@@ -100,7 +106,6 @@
 		F417C4801C895D720009AAFF = {
 			isa = PBXGroup;
 			children = (
-				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
 				F417C48B1C895D720009AAFF /* live */,
 				F417C48A1C895D720009AAFF /* Products */,
 				BF74913A2A68A19155C3D813 /* Pods */,
@@ -119,12 +124,14 @@
 		F417C48B1C895D720009AAFF /* live */ = {
 			isa = PBXGroup;
 			children = (
-				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
-				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
+				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
+				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
 				F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */,
 				F4F486711C96753600498CD3 /* Config.swift */,
+				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
+				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
 				F417C49B1C895D720009AAFF /* Info.plist */,
@@ -279,6 +286,7 @@
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
+				F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */,
 				F4F486721C96753600498CD3 /* Config.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
@@ -379,7 +387,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/live",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/**",
@@ -389,7 +400,20 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/live/FFmpeg-iOS/lib",
+					"$(PROJECT_DIR)/live/RTMPPlayer",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"UriParser\"",
+					"-framework",
+					"\"VideoCore\"",
+					"-Objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,7 +428,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/live",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/**",
@@ -414,7 +441,20 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/live/FFmpeg-iOS/lib",
+					"$(PROJECT_DIR)/live/RTMPPlayer",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"UriParser\"",
+					"-framework",
+					"\"VideoCore\"",
+					"-Objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,23 +10,16 @@ import UIKit
 class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
 
     private var temporaryCenterViewController:UIViewController!
-    private var vc1:UIViewController = UIViewController()
+    private var vc1:PPLiveWatchViewController = PPLiveWatchViewController()
     private var vc3:UIViewController = UIViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        
-//        let rect = CGRectMake(0, ScreenSize.SCREEN_HEIGHT-48, ScreenSize.SCREEN_WIDTH, 48)
-//        let view = UIView(frame: rect)
-//        view.backgroundColor = UIColor.whiteColor()
-//        
-//        self.view .insertSubview(view, atIndex: 1)
         self.tabBar.barTintColor = UIColor.whiteColor()
         self.tabBar.setValue(true, forKey: "_hidesShadow")
 
         delegate = self;
-        vc1.view.backgroundColor = UIColor.greenColor()
         temporaryCenterViewController = UIViewController()
         temporaryCenterViewController.view.backgroundColor = UIColor.redColor()
         vc3.view.backgroundColor = UIColor.grayColor()

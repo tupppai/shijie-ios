@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD845D08C1AD89402DAB1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6079134BFC8D209F4B9E3C /* Pods.framework */; };
+		F40853C01C97F1FD00F343C7 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = F40853BF1C97F1FD00F343C7 /* demo.png */; };
+		F40853C21C97FD2300F343C7 /* PPLiveWatchControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40853C11C97FD2300F343C7 /* PPLiveWatchControlView.swift */; };
 		F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48C1C895D720009AAFF /* AppDelegate.swift */; };
 		F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */; };
 		F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F417C4931C895D720009AAFF /* live.xcdatamodeld */; };
@@ -27,12 +29,17 @@
 		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
 		F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */; };
 		F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */; };
+		F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */; };
+		F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */; };
+		F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486961C97C77100498CD3 /* PPExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE6079134BFC8D209F4B9E3C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3811039017F1377A13010B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2287D4FC06CE9CED7C1987C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F40853BF1C97F1FD00F343C7 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
+		F40853C11C97FD2300F343C7 /* PPLiveWatchControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveWatchControlView.swift; sourceTree = "<group>"; };
 		F417C4891C895D720009AAFF /* live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F417C48C1C895D720009AAFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVideoCaptureViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +64,9 @@
 		F4F486711C96753600498CD3 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveWatchViewController.swift; sourceTree = "<group>"; };
 		F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveListViewController.swift; sourceTree = "<group>"; };
+		F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveTableViewCell.swift; sourceTree = "<group>"; };
+		F4F486961C97C77100498CD3 /* PPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPExtension.swift; sourceTree = "<group>"; };
 		F4FDA2F21C8ED01400EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		F4FDA2F41C8ED09900EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,13 +135,18 @@
 			isa = PBXGroup;
 			children = (
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
-				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
+				F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
+				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
+				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
 				F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */,
 				F4F486711C96753600498CD3 /* Config.swift */,
 				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
+				F40853C11C97FD2300F343C7 /* PPLiveWatchControlView.swift */,
 				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
+				F4F486961C97C77100498CD3 /* PPExtension.swift */,
+				F40853BF1C97F1FD00F343C7 /* demo.png */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
 				F417C49B1C895D720009AAFF /* Info.plist */,
@@ -224,6 +239,7 @@
 			files = (
 				F417C4AC1C898E9B0009AAFF /* Info.plist in Resources */,
 				F417C4971C895D720009AAFF /* Assets.xcassets in Resources */,
+				F40853C01C97F1FD00F343C7 /* demo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */,
+				F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
@@ -291,9 +308,12 @@
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
+				F40853C21C97FD2300F343C7 /* PPLiveWatchControlView.swift in Sources */,
 				F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */,
+				F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
 				F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */,
+				F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

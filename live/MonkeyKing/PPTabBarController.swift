@@ -10,7 +10,7 @@ import UIKit
 class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
 
     private var temporaryCenterViewController:UIViewController!
-    private var vc1:PPLiveWatchViewController = PPLiveWatchViewController()
+    private var vc1:PPLiveListViewController = PPLiveListViewController()
     private var vc3:UIViewController = UIViewController()
 
     override func viewDidLoad() {

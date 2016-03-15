@@ -12,3 +12,5 @@ pod 'VideoCore/Swift', :git => 'https://github.com/peiweichen/VideoCore.git', :b
 pod 'glm', :git => 'https://github.com/peiweichen/glm'
 
 pod 'PLPlayerKit'
+pod 'SteviaLayout'
+

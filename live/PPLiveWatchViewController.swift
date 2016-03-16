@@ -109,13 +109,16 @@ extension PPLiveWatchViewController {
     func tapButton_close() {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    private func tapButton_sendGift() {
+    func tapButton_sendGift() {
+        let heartView = PPHeartView()
+        heartView.backgroundColor = UIColor.clearColor()
+        heartView.frame = CGRectMake(100, 100, 20, 19)
+        view .addSubview(heartView)
+    }
+    func tapButton_comment() {
         
     }
-    private func tapButton_comment() {
-        
-    }
-    private func tapButton_share() {
+    func tapButton_share() {
         
     }
 }

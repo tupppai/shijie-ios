@@ -21,6 +21,7 @@
 		F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */; };
 		F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C4BB1C899A750009AAFF /* SimpleNetworking.swift */; };
 		F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */; };
+		F45B01361C99142B00E4C64A /* PPHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B01351C99142B00E4C64A /* PPHeartView.swift */; };
 		F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1A1C8FE43700756F00 /* libbz2.tbd */; };
 		F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1C1C8FE44A00756F00 /* libz.tbd */; };
 		F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */; };
@@ -54,6 +55,7 @@
 		F417C4B31C898F4A0009AAFF /* PPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLoginViewController.swift; sourceTree = "<group>"; };
 		F417C4BB1C899A750009AAFF /* SimpleNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworking.swift; sourceTree = "<group>"; };
 		F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTabBarController.swift; path = MonkeyKing/PPTabBarController.swift; sourceTree = "<group>"; };
+		F45B01351C99142B00E4C64A /* PPHeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPHeartView.swift; sourceTree = "<group>"; };
 		F4F19C1A1C8FE43700756F00 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F4F19C1C1C8FE44A00756F00 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F4F19C221C8FE5D900756F00 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -137,6 +139,7 @@
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
 				F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
+				F45B01351C99142B00E4C64A /* PPHeartView.swift */,
 				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
 				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
@@ -310,6 +313,7 @@
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
 				F40853C21C97FD2300F343C7 /* PPLiveWatchControlView.swift in Sources */,
 				F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */,
+				F45B01361C99142B00E4C64A /* PPHeartView.swift in Sources */,
 				F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
 				F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */,

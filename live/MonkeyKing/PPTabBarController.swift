@@ -36,7 +36,7 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
         vc3.tabBarItem.selectedImage = UIImage(named: "tab3-selected")?.imageWithRenderingMode(.AlwaysOriginal)
 
         vc1.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-        temporaryCenterViewController.tabBarItem.imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        temporaryCenterViewController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         vc3.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
 
 //        _navigationPlaceholder_center.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);

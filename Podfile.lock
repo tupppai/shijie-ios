@@ -20,8 +20,6 @@ PODS:
     - PLPlayerKit/precompiled (= 2.1.0)
   - PLPlayerKit/precompiled (2.1.0)
   - SnapKit (0.19.1)
-  - SteviaLayout (2.0.0)
-  - UIColor_Hex_Swift (1.9)
   - UriParser-cpp (0.1.3)
   - VideoCore/Swift (0.3.2):
     - boost (~> 1.51.0)
@@ -33,8 +31,6 @@ DEPENDENCIES:
   - glm (from `https://github.com/peiweichen/glm`)
   - PLPlayerKit
   - SnapKit (~> 0.19.1)
-  - SteviaLayout
-  - UIColor_Hex_Swift (~> 1.9)
   - VideoCore/Swift (from `https://github.com/peiweichen/VideoCore.git`, branch `update_headers`)
 
 EXTERNAL SOURCES:
@@ -58,8 +54,6 @@ SPEC CHECKSUMS:
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
   PLPlayerKit: 6c89abc19818ba434a8a8ac4c0cdde1169fd3ef6
   SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
-  SteviaLayout: 1aee5d513216fc2979de7238b6a64b408cf60cd2
-  UIColor_Hex_Swift: 2ee747c0fed8b72b2135ef474b80a6921e489daa
   UriParser-cpp: cbbe00080ee432ec4833dca863a7fc83adc9b01a
   VideoCore: 5d8ea99d900089ee016bb87485912b0286e07650
 

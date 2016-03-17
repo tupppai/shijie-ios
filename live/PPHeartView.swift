@@ -9,8 +9,18 @@
 import UIKit
 
 
-class PPHeartView: UIView {
+class PPHeartView: SpringView {
     
+    
+    override init(frame:CGRect) {
+        super.init(frame:frame)
+        self.backgroundColor = UIColor.clearColor()
+        
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     struct HeartColor {
         static let lightPurple = UIColor(hex: 0xe2d2f6)
@@ -19,32 +29,55 @@ class PPHeartView: UIView {
         static let lightPink = UIColor(hex: 0xe2d2f6)
         static let jollyPink = UIColor(hex: 0xffcacb)
         static let goodPink = UIColor(hex: 0xd82e84)
-
-
     }
 
     
     override func drawRect(rect: CGRect) {
         //// Color Declarations
-        
-        // framesize (20,19)
+                 // framesize (20,19)
         let fillColor = generateRandomColor()
+        
+        let fillColor2 = UIColor.whiteColor()
+        
+        //// Bezier Drawing
         let bezierPath = UIBezierPath()
-        bezierPath.moveToPoint(CGPointMake(17.17, 0.77))
-        bezierPath.addCurveToPoint(CGPointMake(14.42, 0), controlPoint1: CGPointMake(16.35, 0.28), controlPoint2: CGPointMake(15.42, 0))
-        bezierPath.addCurveToPoint(CGPointMake(10.05, 2.24), controlPoint1: CGPointMake(12.67, 0), controlPoint2: CGPointMake(11.09, 0.87))
-        bezierPath.addCurveToPoint(CGPointMake(5.68, 0), controlPoint1: CGPointMake(9.01, 0.87), controlPoint2: CGPointMake(7.44, 0))
-        bezierPath.addCurveToPoint(CGPointMake(2.94, 0.77), controlPoint1: CGPointMake(4.68, 0), controlPoint2: CGPointMake(3.75, 0.28))
-        bezierPath.addCurveToPoint(CGPointMake(0, 6.18), controlPoint1: CGPointMake(1.19, 1.82), controlPoint2: CGPointMake(0, 3.85))
-        bezierPath.addCurveToPoint(CGPointMake(0.28, 8.09), controlPoint1: CGPointMake(0, 6.85), controlPoint2: CGPointMake(0.1, 7.49))
-        bezierPath.addCurveToPoint(CGPointMake(10.05, 18.88), controlPoint1: CGPointMake(1.26, 12.86), controlPoint2: CGPointMake(10.05, 18.88))
-        bezierPath.addCurveToPoint(CGPointMake(19.82, 8.09), controlPoint1: CGPointMake(10.05, 18.88), controlPoint2: CGPointMake(18.85, 12.86))
-        bezierPath.addCurveToPoint(CGPointMake(20.1, 6.18), controlPoint1: CGPointMake(20, 7.49), controlPoint2: CGPointMake(20.1, 6.85))
-        bezierPath.addCurveToPoint(CGPointMake(17.17, 0.77), controlPoint1: CGPointMake(20.1, 3.85), controlPoint2: CGPointMake(18.92, 1.83))
+        bezierPath.moveToPoint(CGPointMake(4.76, 0.34))
+        bezierPath.addCurveToPoint(CGPointMake(0.17, 6.48), controlPoint1: CGPointMake(2.18, 1.16), controlPoint2: CGPointMake(0.17, 3.85))
+        bezierPath.addCurveToPoint(CGPointMake(1.76, 10.72), controlPoint1: CGPointMake(0.19, 7.61), controlPoint2: CGPointMake(0.81, 9.29))
+        bezierPath.addCurveToPoint(CGPointMake(5.78, 15.14), controlPoint1: CGPointMake(2.12, 11.3), controlPoint2: CGPointMake(3.94, 13.27))
+        bezierPath.addCurveToPoint(CGPointMake(9.65, 19.51), controlPoint1: CGPointMake(7.65, 17.04), controlPoint2: CGPointMake(9.35, 18.95))
+        bezierPath.addLineToPoint(CGPointMake(10.19, 20.49))
+        bezierPath.addLineToPoint(CGPointMake(10.59, 19.61))
+        bezierPath.addCurveToPoint(CGPointMake(14.34, 15.34), controlPoint1: CGPointMake(10.85, 19.03), controlPoint2: CGPointMake(12.19, 17.52))
+        bezierPath.addCurveToPoint(CGPointMake(19.56, 8.88), controlPoint1: CGPointMake(18.12, 11.5), controlPoint2: CGPointMake(18.7, 10.81))
+        bezierPath.addCurveToPoint(CGPointMake(20.1, 6.13), controlPoint1: CGPointMake(20.12, 7.67), controlPoint2: CGPointMake(20.18, 7.36))
+        bezierPath.addCurveToPoint(CGPointMake(12.45, 0.55), controlPoint1: CGPointMake(19.82, 2.09), controlPoint2: CGPointMake(15.64, -0.95))
+        bezierPath.addCurveToPoint(CGPointMake(10.91, 1.76), controlPoint1: CGPointMake(12.01, 0.75), controlPoint2: CGPointMake(11.31, 1.31))
+        bezierPath.addLineToPoint(CGPointMake(10.15, 2.62))
+        bezierPath.addLineToPoint(CGPointMake(9.41, 1.76))
+        bezierPath.addCurveToPoint(CGPointMake(4.76, 0.34), controlPoint1: CGPointMake(8.17, 0.38), controlPoint2: CGPointMake(6.4, -0.17))
+        bezierPath.closePath()
+        fillColor.setFill()
+        bezierPath.fill()
+        
+        bezierPath.moveToPoint(CGPointMake(8.01, 1.26))
+        bezierPath.addCurveToPoint(CGPointMake(9.81, 2.84), controlPoint1: CGPointMake(8.69, 1.55), controlPoint2: CGPointMake(9.33, 2.11))
+        bezierPath.addCurveToPoint(CGPointMake(10.89, 2.39), controlPoint1: CGPointMake(10.11, 3.28), controlPoint2: CGPointMake(10.13, 3.28))
+        bezierPath.addCurveToPoint(CGPointMake(14.01, 0.98), controlPoint1: CGPointMake(11.83, 1.33), controlPoint2: CGPointMake(12.61, 0.98))
+        bezierPath.addCurveToPoint(CGPointMake(18.12, 3.13), controlPoint1: CGPointMake(15.5, 0.98), controlPoint2: CGPointMake(17.24, 1.88))
+        bezierPath.addCurveToPoint(CGPointMake(19.34, 6.78), controlPoint1: CGPointMake(19.06, 4.47), controlPoint2: CGPointMake(19.34, 5.33))
+        bezierPath.addCurveToPoint(CGPointMake(14.44, 14.52), controlPoint1: CGPointMake(19.34, 9.04), controlPoint2: CGPointMake(18.68, 10.09))
+        bezierPath.addCurveToPoint(CGPointMake(10.57, 18.99), controlPoint1: CGPointMake(12.45, 16.61), controlPoint2: CGPointMake(10.71, 18.62))
+        bezierPath.addCurveToPoint(CGPointMake(10.17, 19.65), controlPoint1: CGPointMake(10.43, 19.34), controlPoint2: CGPointMake(10.25, 19.65))
+        bezierPath.addCurveToPoint(CGPointMake(9.77, 18.97), controlPoint1: CGPointMake(10.11, 19.65), controlPoint2: CGPointMake(9.91, 19.34))
+        bezierPath.addCurveToPoint(CGPointMake(5.86, 14.52), controlPoint1: CGPointMake(9.61, 18.62), controlPoint2: CGPointMake(7.85, 16.61))
+        bezierPath.addCurveToPoint(CGPointMake(0.97, 6.74), controlPoint1: CGPointMake(1.6, 10.07), controlPoint2: CGPointMake(0.97, 9.04))
+        bezierPath.addCurveToPoint(CGPointMake(2.5, 2.82), controlPoint1: CGPointMake(0.97, 5.14), controlPoint2: CGPointMake(1.38, 4.08))
+        bezierPath.addCurveToPoint(CGPointMake(8.01, 1.26), controlPoint1: CGPointMake(3.9, 1.2), controlPoint2: CGPointMake(6.34, 0.53))
         bezierPath.closePath()
         bezierPath.miterLimit = 4;
         
-        fillColor.setFill()
+        fillColor2.setFill()
         bezierPath.fill()
 
     }

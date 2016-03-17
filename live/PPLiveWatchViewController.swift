@@ -8,117 +8,139 @@
 
 import UIKit
 
-class PPLiveWatchViewController: UIViewController {
+class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionViewDelegate {
     
     var player:PLPlayer!
+    lazy var shareView:PPSocialShareView = PPSocialShareView()
     
-    var button_comment:UIButton!
-    var button_share:UIButton!
-    var button_sendGift:UIButton!
-    var button_close:UIButton!
-
+    var controlBottomView:PPLiveWatchControlCollectionView!
     
-     init() {
+    init() {
         super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
+        self.edgesForExtendedLayout = .All
     }
-
+    func injected() {
+        showSocialShareView()
+    }
+    
      required init?(coder aDecoder: NSCoder) {
          fatalError("init(coder:) has not been implemented")
      }
     
     override func viewDidLoad() {
-        self.edgesForExtendedLayout = .All
 
-        self.hidesBottomBarWhenPushed = true
         view.backgroundColor = UIColor.whiteColor()
+        setupPlayer()
+        setupControlBottomView()
+        setupHeartBalloonGenerator()
+    }
+    
+    func setupHeartBalloonGenerator() {
+        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
+    }
+    
+    func fireBallon() {
+        let delaySec = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySec * CGFloat(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let heart = PPHeartView()
+            let sendGiftFrameInView = self.controlBottomView.button_sendGift.superview?.convertRect(self.controlBottomView.button_sendGift.frame, toView: self.view)
+            heart.frame = CGRectMake((sendGiftFrameInView?.origin.x)!, (sendGiftFrameInView?.origin.y)!-20, 20, 20)
+            self.view .addSubview(heart)
+            
+            var frame = heart.frame
+            let xAnimateNumber = CGFloat(self.randInRange(-50...30))
+            if abs(xAnimateNumber)>25 {
+                heart.animation = "swing"
+                heart.curve = "spring"
+                heart.force =  1.0
+                heart.duration =  8
+                heart.animate()
+            }
+            else if abs(xAnimateNumber)>10 {
+                heart.animation = "shake"
+                heart.curve = "linear"
+                heart.force =  1.0
+                heart.duration =  8
+                heart.animate()
+            } else {
+                
+            }
+            frame.origin.x += xAnimateNumber
+            
+            
+            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
+                heart.frame = frame
+                }, completion: { (finished) -> Void in
+            })
+            
+            UIView.animateWithDuration(8.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+                heart.frame = CGRectMake((sendGiftFrameInView?.origin.x)!, ScreenSize.SCREEN_HEIGHT*0.6, 20, 20)
+                heart.alpha = 0.0
+                }, completion: { (finished) -> Void in
+                    heart .removeFromSuperview()
+            })
+        }
+    }
+    
+    func randInRange(range: Range<Int>) -> Int {
+        // arc4random_uniform(_: UInt32) returns UInt32, so it needs explicit type conversion to Int
+        // note that the random number is unsigned so we don't have to worry that the modulo
+        // operation can have a negative output
+        return  Int(arc4random_uniform(UInt32(range.endIndex - range.startIndex))) + range.startIndex
+    }
+    
+    func showSocialShareView() {
+        shareView.show(inView: view, relativeView: self.controlBottomView.button_share)
+    }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            if (touch.view !== shareView  ) {
+                shareView .dismiss()
+            }
+        }
+    }
+    func setupPlayer() {
         
         let option = PLPlayerOption.defaultOption()
         option .setOptionValue(NSNumber(integer: 3), forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
         player = PLPlayer(URL: NSURL(string: "rtmp://119.29.142.208/live/peiwei"), option: option)
         view .addSubview(player.playerView!)
         view .sendSubviewToBack(player.playerView!)
+        player.playerView?.hidden = true
         player .play()
-        
-        setupBottomControlButtonPanel()
-
-
     }
-    override func viewWillAppear(animated: Bool) {
-        
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
-//
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBarHidden = true
+    
+    func setupControlBottomView() {
+        controlBottomView = PPLiveWatchControlCollectionView()
+        controlBottomView.delegate = self
+        view .addSubview(controlBottomView)
+        controlBottomView.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.bottom.equalTo(view)
+            make.height.equalTo(34)
+        }
     }
-//
-//    override func viewWillDisappear(animated: Bool) {
-//        self.navigationController?.navigationBarHidden = false
-//    }
-  
 }
 
 
 extension PPLiveWatchViewController {
-    
-    func setupBottomControlButtonPanel() {
-        button_comment = UIButton(type: .Custom)
-        button_share = UIButton(type: .Custom)
-        button_sendGift = UIButton(type: .Custom)
-        button_close = UIButton(type: .Custom)
-        button_comment .setImage(UIImage(named: "live-comment"), forState: .Normal)
-        button_share .setImage(UIImage(named: "live-share"), forState: .Normal)
-        button_sendGift .setImage(UIImage(named: "live-sendgift"), forState: .Normal)
-        button_close .setImage(UIImage(named: "live-close"), forState: .Normal)
-        
-        
-        button_close .addTarget(self, action: "tapButton_close", forControlEvents: .TouchUpInside)
-        button_sendGift .addTarget(self, action: "tapButton_sendGift", forControlEvents: .TouchUpInside)
-        button_comment .addTarget(self, action: "tapButton_comment", forControlEvents: .TouchUpInside)
-        button_share .addTarget(self, action: "tapButton_share", forControlEvents: .TouchUpInside)
-
-        view .addSubview(button_comment)
-        view .addSubview(button_share)
-        view .addSubview(button_sendGift)
-        view .addSubview(button_close)
-
-        button_comment.snp_makeConstraints { (make) -> Void in
-            make.width.height.equalTo(34)
-            make.leading.equalTo(view).offset(12)
-            make.bottom.equalTo(view).offset(-12)
+    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int) {
+        switch(index) {
+        case 0 :
+            debugPrint("tap comment")
+        case 1 :
+            debugPrint("tap share")
+            showSocialShareView()
+        case 2 :
+            debugPrint("tap sendGift")            
+            
+        case 3 :
+            debugPrint("tap close")
+            self.navigationController?.popViewControllerAnimated(true)
+        default:
+            debugPrint("tap error")
         }
-        button_close.snp_makeConstraints { (make) -> Void in
-            make.width.height.equalTo(34)
-            make.trailing.equalTo(view).offset(-12)
-            make.bottom.equalTo(view).offset(-12)
-        }
-        button_sendGift.snp_makeConstraints { (make) -> Void in
-            make.width.height.equalTo(34)
-            make.trailing.equalTo(button_close.snp_leading).offset(-15)
-            make.bottom.equalTo(view).offset(-12)
-        }
-        button_share.snp_makeConstraints { (make) -> Void in
-            make.width.height.equalTo(34)
-            make.trailing.equalTo(button_sendGift.snp_leading).offset(-15)
-            make.bottom.equalTo(view).offset(-12)
-        }
-    }
-    
-    func tapButton_close() {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    func tapButton_sendGift() {
-        let heartView = PPHeartView()
-        heartView.backgroundColor = UIColor.clearColor()
-        heartView.frame = CGRectMake(100, 100, 20, 19)
-        view .addSubview(heartView)
-    }
-    func tapButton_comment() {
-        
-    }
-    func tapButton_share() {
-        
     }
 }

@@ -39,11 +39,17 @@ class PPNewsCommentTableViewCell: UITableViewCell {
             contentLabel?.font = UIFont.systemFontOfSize(13)
         }
         
-        
-    }
+        }
     
     func render() {
         usernameLabel?.snp_makeConstraints(closure: { (make) -> Void in
+            make.leading.equalTo(self)
+            make.top.bottom.equalTo(self)
+        })
+        
+        contentLabel?.snp_makeConstraints(closure: { (make) -> Void in
+            make.leading.equalTo((usernameLabel?.snp_leading)!)
+            make.top.bottom.equalTo(self)
             
         })
     }

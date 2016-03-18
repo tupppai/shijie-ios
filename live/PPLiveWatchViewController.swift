@@ -11,17 +11,17 @@ import UIKit
 class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionViewDelegate {
     
     var player:PLPlayer!
-    lazy var shareView:PPSocialShareView = PPSocialShareView()
-    
+    lazy var shareView:PPShareView = PPShareView()
+    lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
     var controlBottomView:PPLiveWatchControlCollectionView!
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     init() {
         super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
         self.edgesForExtendedLayout = .All
-    }
-    func injected() {
-        showSocialShareView()
     }
     
      required init?(coder aDecoder: NSCoder) {
@@ -31,11 +31,20 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     override func viewDidLoad() {
 
         view.backgroundColor = UIColor.whiteColor()
-        setupPlayer()
+//        setupPlayer()
         setupControlBottomView()
         setupHeartBalloonGenerator()
+        setupAvatarCollectionView()
     }
-    
+    func setupAvatarCollectionView() {
+        view .addSubview(avatarCollectionView)
+        avatarCollectionView.snp_makeConstraints { (make) -> Void in
+            make.trailing.equalTo(3)
+            make.top.equalTo(15)
+            make.width.equalTo(ScreenSize.SCREEN_WIDTH*0.6)
+            make.height.equalTo(35)
+        }
+    }
     func setupHeartBalloonGenerator() {
         NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
     }
@@ -44,7 +53,7 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
         let delaySec = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySec * CGFloat(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let heart = PPHeartView()
+            let heart = PPLovingHeartView()
             let sendGiftFrameInView = self.controlBottomView.button_sendGift.superview?.convertRect(self.controlBottomView.button_sendGift.frame, toView: self.view)
             heart.frame = CGRectMake((sendGiftFrameInView?.origin.x)!, (sendGiftFrameInView?.origin.y)!-20, 20, 20)
             self.view .addSubview(heart)
@@ -91,17 +100,25 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
         return  Int(arc4random_uniform(UInt32(range.endIndex - range.startIndex))) + range.startIndex
     }
     
-    func showSocialShareView() {
-        shareView.show(inView: view, relativeView: self.controlBottomView.button_share)
+    func toggleShareView() {
+        if shareView.isShowing == true {
+            shareView.dismiss()
+        } else {
+            shareView.show(inView: view, relativeView: self.controlBottomView.button_share)
+        }
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
-            if (touch.view !== shareView  ) {
+        guard let touch = touches.first else {
+            return
+        }
+        if (touch.view !== shareView  ) {
+            if shareView.isShowing == true {
                 shareView .dismiss()
             }
         }
     }
+    
     func setupPlayer() {
         
         let option = PLPlayerOption.defaultOption()
@@ -109,7 +126,6 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
         player = PLPlayer(URL: NSURL(string: "rtmp://119.29.142.208/live/peiwei"), option: option)
         view .addSubview(player.playerView!)
         view .sendSubviewToBack(player.playerView!)
-        player.playerView?.hidden = true
         player .play()
     }
     
@@ -132,7 +148,7 @@ extension PPLiveWatchViewController {
             debugPrint("tap comment")
         case 1 :
             debugPrint("tap share")
-            showSocialShareView()
+            toggleShareView()
         case 2 :
             debugPrint("tap sendGift")            
             
@@ -144,3 +160,40 @@ extension PPLiveWatchViewController {
         }
     }
 }
+
+// MARK:Avatar CollectionView
+extension PPLiveWatchViewController : UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    func initializeAvatarCollectionView() -> UICollectionView {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
+        layout.itemSize = CGSizeMake(35, 35)
+        layout.minimumLineSpacing = 5
+        
+        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        collectionView.registerClass(PPAvatarCollectionCell.self, forCellWithReuseIdentifier: String(PPAvatarCollectionCell))
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.clearColor()
+        
+        return collectionView
+        
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell:PPAvatarCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(PPAvatarCollectionCell), forIndexPath: indexPath) as! PPAvatarCollectionCell
+        return cell
+    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+
+}
+

@@ -11,7 +11,7 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
 
     private var temporaryCenterViewController:UIViewController!
     private var vc1:PPLiveListViewController = PPLiveListViewController()
-    private var vc3:UIViewController = UIViewController()
+    private var vc3:PPMeTableViewController = PPMeTableViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()

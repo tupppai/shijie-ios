@@ -56,6 +56,9 @@
 		F492EE451C99D54D007DD791 /* PPShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE441C99D54D007DD791 /* PPShareSheetView.swift */; };
 		F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE461C9A4A79007DD791 /* PPTriangleView.swift */; };
 		F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE481C9A550F007DD791 /* PPShareButton.swift */; };
+		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
+		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
+		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -75,6 +78,11 @@
 		F4EC52FF1C9BE42E00C1DA94 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52F01C9BE42E00C1DA94 /* UserHeaderView.xib */; };
 		F4EC53001C9BE42E00C1DA94 /* UserHeaderView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52F11C9BE42E00C1DA94 /* UserHeaderView2.swift */; };
 		F4EC53011C9BE42E00C1DA94 /* UserHeaderView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52F21C9BE42E00C1DA94 /* UserHeaderView2.xib */; };
+		F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */; };
+		F4EC53051C9BF33100C1DA94 /* PPRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */; };
+		F4EC53071C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */; };
+		F4EC530B1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EC530A1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m */; };
+		F4EC530F1C9C097400C1DA94 /* NHAlignmentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EC530E1C9C097400C1DA94 /* NHAlignmentFlowLayout.m */; };
 		F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1A1C8FE43700756F00 /* libbz2.tbd */; };
 		F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1C1C8FE44A00756F00 /* libz.tbd */; };
 		F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */; };
@@ -148,6 +156,9 @@
 		F492EE441C99D54D007DD791 /* PPShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareSheetView.swift; sourceTree = "<group>"; };
 		F492EE461C9A4A79007DD791 /* PPTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTriangleView.swift; sourceTree = "<group>"; };
 		F492EE481C9A550F007DD791 /* PPShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareButton.swift; sourceTree = "<group>"; };
+		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
+		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
+		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -167,6 +178,13 @@
 		F4EC52F01C9BE42E00C1DA94 /* UserHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		F4EC52F11C9BE42E00C1DA94 /* UserHeaderView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView2.swift; sourceTree = "<group>"; };
 		F4EC52F21C9BE42E00C1DA94 /* UserHeaderView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderView2.xib; sourceTree = "<group>"; };
+		F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundButton.swift; sourceTree = "<group>"; };
+		F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundImageView.swift; sourceTree = "<group>"; };
+		F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPHostReceivedCoinView.swift; sourceTree = "<group>"; };
+		F4EC53091C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewRightAlignedLayout.h; sourceTree = "<group>"; };
+		F4EC530A1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewRightAlignedLayout.m; sourceTree = "<group>"; };
+		F4EC530D1C9C097400C1DA94 /* NHAlignmentFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAlignmentFlowLayout.h; sourceTree = "<group>"; };
+		F4EC530E1C9C097400C1DA94 /* NHAlignmentFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAlignmentFlowLayout.m; sourceTree = "<group>"; };
 		F4F19C1A1C8FE43700756F00 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		F4F19C1C1C8FE44A00756F00 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F4F19C221C8FE5D900756F00 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -251,7 +269,9 @@
 		F417C48B1C895D720009AAFF /* live */ = {
 			isa = PBXGroup;
 			children = (
-				F4EC52E01C9BE42E00C1DA94 /* Tab_Me */,
+				F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */,
+				F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */,
+				F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */,
 				F4241AB21C9AAB4900AD4343 /* LiveWatch */,
 				F4241AAB1C9AA1A400AD4343 /* NewsTableView */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
@@ -265,6 +285,7 @@
 				F40853C11C97FD2300F343C7 /* PPLiveWatchControlView.swift */,
 				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
 				F4F486961C97C77100498CD3 /* PPExtension.swift */,
+				F4EC52E01C9BE42E00C1DA94 /* ME */,
 				F4EC52D91C9BBFEA00C1DA94 /* image */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
@@ -336,6 +357,8 @@
 		F4241AB21C9AAB4900AD4343 /* LiveWatch */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC530C1C9C097400C1DA94 /* NHAlignmentFlowLayout */,
+				F4EC53081C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
 				F4F429FE1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift */,
 				F45B01351C99142B00E4C64A /* PPLovingHeartView.swift */,
@@ -345,6 +368,8 @@
 				F492EE441C99D54D007DD791 /* PPShareSheetView.swift */,
 				F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */,
 				F4EC52DE1C9BDE1300C1DA94 /* PPHostView.swift */,
+				F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */,
+				F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */,
 			);
 			name = LiveWatch;
 			sourceTree = "<group>";
@@ -359,13 +384,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		F4EC52E01C9BE42E00C1DA94 /* Tab_Me */ = {
+		F4EC52E01C9BE42E00C1DA94 /* ME */ = {
 			isa = PBXGroup;
 			children = (
 				F4EC52E21C9BE42E00C1DA94 /* PPMeTableViewController.swift */,
 				F4EC52E31C9BE42E00C1DA94 /* PPMeTableViewController.xib */,
 				F4EC52E51C9BE42E00C1DA94 /* Views */,
 			);
+			name = ME;
 			path = Tab_Me;
 			sourceTree = "<group>";
 		};
@@ -387,6 +413,25 @@
 				F4EC52F21C9BE42E00C1DA94 /* UserHeaderView2.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F4EC53081C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC53091C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.h */,
+				F4EC530A1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m */,
+				F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */,
+			);
+			path = UICollectionViewRightAlignedLayout;
+			sourceTree = "<group>";
+		};
+		F4EC530C1C9C097400C1DA94 /* NHAlignmentFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC530D1C9C097400C1DA94 /* NHAlignmentFlowLayout.h */,
+				F4EC530E1C9C097400C1DA94 /* NHAlignmentFlowLayout.m */,
+			);
+			path = NHAlignmentFlowLayout;
 			sourceTree = "<group>";
 		};
 		F4FDA2F61C8ED12F00EFBEF9 /* vendor */ = {
@@ -530,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EC53071C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift in Sources */,
 				F4241A721C9A5ED300AD4343 /* AsyncImageView.swift in Sources */,
 				F4241A711C9A5ED300AD4343 /* AsyncButton.swift in Sources */,
 				F4F429FF1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift in Sources */,
@@ -540,6 +586,7 @@
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
+				F4EC530F1C9C097400C1DA94 /* NHAlignmentFlowLayout.m in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
 				F4241A791C9A5ED300AD4343 /* DesignableTextField.swift in Sources */,
@@ -583,14 +630,20 @@
 				F45B01361C99142B00E4C64A /* PPLovingHeartView.swift in Sources */,
 				F4241A7B1C9A5ED300AD4343 /* DesignableView.swift in Sources */,
 				F4241A781C9A5ED300AD4343 /* DesignableTabBarController.swift in Sources */,
+				F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */,
 				F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
 				F4241A8D1C9A5ED300AD4343 /* UnwindSegue.swift in Sources */,
+				F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */,
+				F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */,
 				F4241A751C9A5ED300AD4343 /* DesignableButton.swift in Sources */,
+				F4EC530B1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m in Sources */,
 				F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */,
+				F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */,
 				F4241A771C9A5ED300AD4343 /* DesignableLabel.swift in Sources */,
 				F4241A7F1C9A5ED300AD4343 /* LoadingView.swift in Sources */,
 				F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */,
+				F4EC53051C9BF33100C1DA94 /* PPRoundImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,11 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     lazy var shareView:PPShareView = PPShareView()
     lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
     var controlBottomView:PPLiveWatchControlCollectionView!
+    var hostView:PPHostView!
+    var receivedCoinView:PPHostReceivedCoinView!
+    
+    var giftShowsAnimateView:PPGiftShowsAnimateView!
+
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -32,19 +37,63 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
 
         view.backgroundColor = UIColor.whiteColor()
 //        setupPlayer()
-        setupControlBottomView()
         setupHeartBalloonGenerator()
-        setupAvatarCollectionView()
+        setupViews()
+
     }
-    func setupAvatarCollectionView() {
+    func setupViews() {
+        
+        giftShowsAnimateView = PPGiftShowsAnimateView()
+//        giftShowsAnimateView.backgroundColor = UIColor.greenColor()
+        view.addSubview(giftShowsAnimateView)
+        giftShowsAnimateView.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.equalTo(view)
+            make.centerY.equalTo(view)
+            make.height.equalTo(110)
+        }
+        giftShowsAnimateView.show()
+        
+        hostView = PPHostView()
+        controlBottomView = PPLiveWatchControlCollectionView()
+        controlBottomView.delegate = self
+        receivedCoinView = PPHostReceivedCoinView()
+        view.addSubview(hostView)
         view .addSubview(avatarCollectionView)
+        view.addSubview(hostView)
+        view .addSubview(receivedCoinView)
+        view .addSubview(controlBottomView)
+
+
+        hostView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(117)
+            make.height.equalTo(45)
+            make.leading.equalTo(view).offset(12)
+            make.top.equalTo(view).offset(22)
+        }
+        receivedCoinView.snp_makeConstraints { (make) -> Void in
+            make.leading.equalTo(hostView)
+            make.top.equalTo(hostView.snp_bottom).offset(14)
+            make.height.equalTo(22)
+            make.width.greaterThanOrEqualTo(80)
+        }
+        
         avatarCollectionView.snp_makeConstraints { (make) -> Void in
             make.trailing.equalTo(3)
-            make.top.equalTo(15)
-            make.width.equalTo(ScreenSize.SCREEN_WIDTH*0.6)
+            make.leading.equalTo(hostView.snp_trailing).offset(5)
+            make.centerY.equalTo(hostView)
             make.height.equalTo(35)
         }
+        
+        controlBottomView.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.bottom.equalTo(view)
+            make.height.equalTo(34)
+        }
+        
+        setupControlBottomView()
+
+        
     }
+ 
     func setupHeartBalloonGenerator() {
         NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
     }
@@ -130,13 +179,7 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     }
     
     func setupControlBottomView() {
-        controlBottomView = PPLiveWatchControlCollectionView()
-        controlBottomView.delegate = self
-        view .addSubview(controlBottomView)
-        controlBottomView.snp_makeConstraints { (make) -> Void in
-            make.leading.trailing.bottom.equalTo(view)
-            make.height.equalTo(34)
-        }
+
     }
 }
 

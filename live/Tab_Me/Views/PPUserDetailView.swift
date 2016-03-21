@@ -1,5 +1,5 @@
 //
-//  UserDetailView.swift
+//  PPUserDetailView.swift
 //  vision_demo
 //
 //  Created by TUPAI-Huangwei on 3/16/16.
@@ -9,12 +9,10 @@
 import UIKit
 import SnapKit
 
-class UserDetailView: UIView {
+class PPUserDetailView: UIView {
 
-    private var backgroundView: UIView?
-    
-    private var panelView: UserDetailPanelView?
-    
+    private var panelView: PPUserPanelView?
+
     private var dismissButton: UIButton?
     
     override init(frame: CGRect){
@@ -37,15 +35,15 @@ class UserDetailView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: Selector("tapOnSelf:"))
         self.addGestureRecognizer(tap)
         
-        panelView = UserDetailPanelView()
+        panelView = PPUserPanelView()
         panelView?.alpha = 0.0
         self.addSubview(panelView!)
-        panelView?.snp_makeConstraints(closure: {[weak self] (make) -> Void in
-            make.height.equalTo(300.0)
-            make.left.equalTo((self?.snp_left)!).offset(24)
-            make.right.equalTo((self?.snp_right)!).offset(-24)
-            make.centerY.equalTo((self?.snp_centerY)!)
+        panelView?.snp_makeConstraints(closure: { (make) -> Void in
+            make.height.equalTo(325)
+            make.width.equalTo(280)
+            make.center.equalTo(self)
         })
+        
         
         dismissButton = UIButton()
         self.dismissButton?.setImage(UIImage(named: "btn_close"),
@@ -53,10 +51,11 @@ class UserDetailView: UIView {
         self.dismissButton?.addTarget(self, action: "dismiss", forControlEvents: .TouchUpInside)
         self.dismissButton?.alpha = 0.0
         self.addSubview(self.dismissButton!)
-        dismissButton?.snp_makeConstraints(closure: { [weak self] (make) -> Void in
+        dismissButton?.snp_makeConstraints(closure: {(make) -> Void in
             make.size.equalTo(CGSizeMake(34, 34))
-            make.centerX.equalTo((self?.snp_centerX)!)
-            make.top.equalTo((self!.panelView?.snp_bottom)!).offset(25)
+//            make.top.trailing.equalTo(panelView!).offset(34)
+            make.top.equalTo(panelView!).offset(34)
+            make.trailing.equalTo(panelView!).offset(-2)
         })
     }
     
@@ -77,6 +76,18 @@ class UserDetailView: UIView {
             self.dismissButton?.alpha  = 1.0
         }
     }
+    
+    func showInView(view:UIView!) {
+        view.addSubview(self)
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.backgroundColor       = UIColor(hex: 0x000000, alpha: 0.1)
+            self.panelView?.alpha      = 1.0
+            self.dismissButton?.alpha  = 0.4
+        }
+        self.panelView?.slideUpAnimate()
+    }
+    
+    
     
     func dismiss(){
         UIView.animateWithDuration(0.3, animations: { () -> Void in

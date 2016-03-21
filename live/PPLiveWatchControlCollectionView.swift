@@ -34,6 +34,9 @@ class PPLiveWatchControlCollectionView: UIView {
         button_comment = UIButton(type: .Custom)
         button_share = UIButton(type: .Custom)
         button_sendGift = UIButton(type: .Custom)
+        
+        
+        
         button_close = UIButton(type: .Custom)
         button_comment .setImage(UIImage(named: "live-comment"), forState: .Normal)
         button_share .setImage(UIImage(named: "live-share"), forState: .Normal)
@@ -41,9 +44,9 @@ class PPLiveWatchControlCollectionView: UIView {
         button_close .setImage(UIImage(named: "live-close"), forState: .Normal)
         
         
-        button_close .addTarget(self, action: "tapButton_close", forControlEvents: .TouchUpInside)
-        button_sendGift .addTarget(self, action: "tapButton_sendGift", forControlEvents: .TouchUpInside)
-        button_comment .addTarget(self, action: "tapButton_comment", forControlEvents: .TouchUpInside)
+        button_close .addTarget(self, action: "tapButton_close", forControlEvents: UIControlEvents.TouchDown)
+        button_sendGift .addTarget(self, action: "tapButton_sendGift", forControlEvents: .TouchDown)
+        button_comment .addTarget(self, action: "tapButton_comment", forControlEvents: .TouchDown)
         button_share .addTarget(self, action: "tapButton_share", forControlEvents: .TouchUpInside)
         
         self .addSubview(button_comment)
@@ -54,24 +57,24 @@ class PPLiveWatchControlCollectionView: UIView {
         button_comment.snp_makeConstraints { (make) -> Void in
             make.width.height.equalTo(34)
             make.leading.equalTo(self).offset(12)
-            make.bottom.equalTo(self).offset(-12)
+            make.centerY.equalTo(self)
         }
         
         button_close.snp_makeConstraints { (make) -> Void in
             make.width.height.equalTo(34)
             make.trailing.equalTo(self).offset(-12)
-            make.bottom.equalTo(self).offset(-12)
+            make.centerY.equalTo(self)
         }
         button_sendGift.snp_makeConstraints { (make) -> Void in
             make.width.height.equalTo(34)
             make.trailing.equalTo(button_close.snp_leading).offset(-15)
-            make.bottom.equalTo(self).offset(-12)
+            make.centerY.equalTo(self)
         }
         
         button_share.snp_makeConstraints { (make) -> Void in
             make.width.height.equalTo(34)
             make.trailing.equalTo(button_sendGift.snp_leading).offset(-15)
-            make.bottom.equalTo(self).offset(-12)
+            make.centerY.equalTo(self)
         }
     }
     

@@ -60,6 +60,10 @@
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
 		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
 		F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273731C9F146400A70F18 /* PPAlgorithm.swift */; };
+		F4D2738C1C9FD82A00A70F18 /* PPTextInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2738B1C9FD82A00A70F18 /* PPTextInputBar.swift */; };
+		F4D273901C9FEF6D00A70F18 /* PPAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */; };
+		F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273911C9FF3D800A70F18 /* PPUtility.swift */; };
+		F4D273941C9FF69A00A70F18 /* PPUserPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -72,9 +76,9 @@
 		F4EC52F81C9BE42E00C1DA94 /* RollContributionListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52E91C9BE42E00C1DA94 /* RollContributionListView.xib */; };
 		F4EC52F91C9BE42E00C1DA94 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EA1C9BE42E00C1DA94 /* SettingTableViewCell.swift */; };
 		F4EC52FA1C9BE42E00C1DA94 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52EB1C9BE42E00C1DA94 /* SettingTableViewCell.xib */; };
-		F4EC52FB1C9BE42E00C1DA94 /* UserDetailPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EC1C9BE42E00C1DA94 /* UserDetailPanelView.swift */; };
-		F4EC52FC1C9BE42E00C1DA94 /* UserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52ED1C9BE42E00C1DA94 /* UserDetailPanelView.xib */; };
-		F4EC52FD1C9BE42E00C1DA94 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EE1C9BE42E00C1DA94 /* UserDetailView.swift */; };
+		F4EC52FB1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EC1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift */; };
+		F4EC52FC1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52ED1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib */; };
+		F4EC52FD1C9BE42E00C1DA94 /* PPUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EE1C9BE42E00C1DA94 /* PPUserDetailView.swift */; };
 		F4EC52FE1C9BE42E00C1DA94 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52EF1C9BE42E00C1DA94 /* UserHeaderView.swift */; };
 		F4EC52FF1C9BE42E00C1DA94 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52F01C9BE42E00C1DA94 /* UserHeaderView.xib */; };
 		F4EC53001C9BE42E00C1DA94 /* UserHeaderView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52F11C9BE42E00C1DA94 /* UserHeaderView2.swift */; };
@@ -161,6 +165,10 @@
 		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
 		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPGiftShowsAnimateView.swift; path = UICollectionViewRightAlignedLayout/PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
 		F4D273731C9F146400A70F18 /* PPAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAlgorithm.swift; sourceTree = "<group>"; };
+		F4D2738B1C9FD82A00A70F18 /* PPTextInputBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTextInputBar.swift; sourceTree = "<group>"; };
+		F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnimations.swift; sourceTree = "<group>"; };
+		F4D273911C9FF3D800A70F18 /* PPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUtility.swift; sourceTree = "<group>"; };
+		F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserPanelView.swift; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -173,9 +181,9 @@
 		F4EC52E91C9BE42E00C1DA94 /* RollContributionListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollContributionListView.xib; sourceTree = "<group>"; };
 		F4EC52EA1C9BE42E00C1DA94 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		F4EC52EB1C9BE42E00C1DA94 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
-		F4EC52EC1C9BE42E00C1DA94 /* UserDetailPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPanelView.swift; sourceTree = "<group>"; };
-		F4EC52ED1C9BE42E00C1DA94 /* UserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailPanelView.xib; sourceTree = "<group>"; };
-		F4EC52EE1C9BE42E00C1DA94 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		F4EC52EC1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailPanelView.swift; sourceTree = "<group>"; };
+		F4EC52ED1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
+		F4EC52EE1C9BE42E00C1DA94 /* PPUserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailView.swift; sourceTree = "<group>"; };
 		F4EC52EF1C9BE42E00C1DA94 /* UserHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
 		F4EC52F01C9BE42E00C1DA94 /* UserHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
 		F4EC52F11C9BE42E00C1DA94 /* UserHeaderView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderView2.swift; sourceTree = "<group>"; };
@@ -275,6 +283,9 @@
 				F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */,
 				F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */,
 				F4D273731C9F146400A70F18 /* PPAlgorithm.swift */,
+				F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */,
+				F4F486961C97C77100498CD3 /* PPExtension.swift */,
+				F4D273911C9FF3D800A70F18 /* PPUtility.swift */,
 				F4241AB21C9AAB4900AD4343 /* LiveWatch */,
 				F4241AAB1C9AA1A400AD4343 /* NewsTableView */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
@@ -287,7 +298,6 @@
 				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
 				F40853C11C97FD2300F343C7 /* PPLiveWatchControlView.swift */,
 				F4F486701C96751800498CD3 /* live-Bridging-Header.h */,
-				F4F486961C97C77100498CD3 /* PPExtension.swift */,
 				F4EC52E01C9BE42E00C1DA94 /* ME */,
 				F4EC52D91C9BBFEA00C1DA94 /* image */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
@@ -352,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				F4241AAC1C9AA22200AD4343 /* PPNewsTableView.swift */,
-				F4241AAE1C9AA30700AD4343 /* PPNewsCommentTableViewCell.swift */,
 			);
 			name = NewsTableView;
 			sourceTree = "<group>";
@@ -363,6 +372,7 @@
 				F4EC530C1C9C097400C1DA94 /* NHAlignmentFlowLayout */,
 				F4EC53081C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
+				F4241AAE1C9AA30700AD4343 /* PPNewsCommentTableViewCell.swift */,
 				F4F429FE1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift */,
 				F45B01351C99142B00E4C64A /* PPLovingHeartView.swift */,
 				F492EE461C9A4A79007DD791 /* PPTriangleView.swift */,
@@ -374,6 +384,7 @@
 				F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */,
 				F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */,
 				F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */,
+				F4D2738B1C9FD82A00A70F18 /* PPTextInputBar.swift */,
 			);
 			name = LiveWatch;
 			sourceTree = "<group>";
@@ -408,9 +419,10 @@
 				F4EC52E91C9BE42E00C1DA94 /* RollContributionListView.xib */,
 				F4EC52EA1C9BE42E00C1DA94 /* SettingTableViewCell.swift */,
 				F4EC52EB1C9BE42E00C1DA94 /* SettingTableViewCell.xib */,
-				F4EC52EC1C9BE42E00C1DA94 /* UserDetailPanelView.swift */,
-				F4EC52ED1C9BE42E00C1DA94 /* UserDetailPanelView.xib */,
-				F4EC52EE1C9BE42E00C1DA94 /* UserDetailView.swift */,
+				F4EC52EC1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift */,
+				F4EC52ED1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib */,
+				F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */,
+				F4EC52EE1C9BE42E00C1DA94 /* PPUserDetailView.swift */,
 				F4EC52EF1C9BE42E00C1DA94 /* UserHeaderView.swift */,
 				F4EC52F01C9BE42E00C1DA94 /* UserHeaderView.xib */,
 				F4EC52F11C9BE42E00C1DA94 /* UserHeaderView2.swift */,
@@ -509,7 +521,7 @@
 			files = (
 				F4241A7D1C9A5ED300AD4343 /* Info.plist in Resources */,
 				F417C4AC1C898E9B0009AAFF /* Info.plist in Resources */,
-				F4EC52FC1C9BE42E00C1DA94 /* UserDetailPanelView.xib in Resources */,
+				F4EC52FC1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib in Resources */,
 				F417C4971C895D720009AAFF /* Assets.xcassets in Resources */,
 				F4EC52F41C9BE42E00C1DA94 /* PPMeTableViewController.xib in Resources */,
 				F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */,
@@ -584,16 +596,18 @@
 				F4F429FF1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift in Sources */,
 				F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */,
 				F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */,
-				F4EC52FB1C9BE42E00C1DA94 /* UserDetailPanelView.swift in Sources */,
-				F4EC52FD1C9BE42E00C1DA94 /* UserDetailView.swift in Sources */,
+				F4EC52FB1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift in Sources */,
+				F4EC52FD1C9BE42E00C1DA94 /* PPUserDetailView.swift in Sources */,
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
 				F4EC530F1C9C097400C1DA94 /* NHAlignmentFlowLayout.m in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
+				F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
 				F4241A791C9A5ED300AD4343 /* DesignableTextField.swift in Sources */,
 				F4241A871C9A5ED300AD4343 /* SpringLabel.swift in Sources */,
+				F4D2738C1C9FD82A00A70F18 /* PPTextInputBar.swift in Sources */,
 				F4EC52F91C9BE42E00C1DA94 /* SettingTableViewCell.swift in Sources */,
 				F4241A761C9A5ED300AD4343 /* DesignableImageView.swift in Sources */,
 				F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */,
@@ -601,6 +615,7 @@
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
 				F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
+				F4D273901C9FEF6D00A70F18 /* PPAnimations.swift in Sources */,
 				F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */,
 				F4241A821C9A5ED300AD4343 /* SoundPlayer.swift in Sources */,
 				F4241A881C9A5ED300AD4343 /* SpringTextField.swift in Sources */,
@@ -637,6 +652,7 @@
 				F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */,
 				F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
+				F4D273941C9FF69A00A70F18 /* PPUserPanelView.swift in Sources */,
 				F4241A8D1C9A5ED300AD4343 /* UnwindSegue.swift in Sources */,
 				F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */,
 				F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */,

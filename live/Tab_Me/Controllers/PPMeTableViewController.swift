@@ -98,7 +98,7 @@ class PPMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let detailView = UserDetailView()
+        let detailView = PPUserDetailView()
         detailView.show()
     }
     

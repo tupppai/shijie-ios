@@ -1,5 +1,5 @@
 //
-//  userDetailPanelView.swift
+//  PPUserDetailPanelView.swift
 //  vision_demo
 //
 //  Created by TUPAI-Huangwei on 3/15/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class UserDetailPanelView: UIView {
+class PPUserDetailPanelView: SpringView {
     
-    @IBOutlet weak var avatarImageView: UIImageView!
+//    @IBOutlet weak var avatarImageView: PPRoundImageView!
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -49,11 +49,15 @@ class UserDetailPanelView: UIView {
     }
     
     func setupSubviews(){
-        let nib = UINib(nibName: "UserDetailPanelView",
+        let nib = UINib(nibName: "PPUserDetailPanelView",
             bundle: nil)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = self.bounds
         self.addSubview(view)
+        
+//        avatarImageView.layer.borderWidth = 2
+//        avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
     }
+    
     
 }

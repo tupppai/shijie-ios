@@ -19,6 +19,8 @@ class PPGiftShowView: SpringView {
         self.layer.cornerRadius = 22
         self.clipsToBounds = true
         setupViews()
+        
+        
     }
     
     func setupViews() {

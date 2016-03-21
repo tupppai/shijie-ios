@@ -59,6 +59,7 @@
 		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
 		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
+		F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273731C9F146400A70F18 /* PPAlgorithm.swift */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -158,7 +159,8 @@
 		F492EE481C9A550F007DD791 /* PPShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareButton.swift; sourceTree = "<group>"; };
 		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
 		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
-		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
+		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPGiftShowsAnimateView.swift; path = UICollectionViewRightAlignedLayout/PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
+		F4D273731C9F146400A70F18 /* PPAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAlgorithm.swift; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */,
 				F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */,
 				F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */,
+				F4D273731C9F146400A70F18 /* PPAlgorithm.swift */,
 				F4241AB21C9AAB4900AD4343 /* LiveWatch */,
 				F4241AAB1C9AA1A400AD4343 /* NewsTableView */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
@@ -370,6 +373,7 @@
 				F4EC52DE1C9BDE1300C1DA94 /* PPHostView.swift */,
 				F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */,
 				F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */,
+				F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */,
 			);
 			name = LiveWatch;
 			sourceTree = "<group>";
@@ -420,7 +424,6 @@
 			children = (
 				F4EC53091C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.h */,
 				F4EC530A1C9C08A400C1DA94 /* UICollectionViewRightAlignedLayout.m */,
-				F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */,
 			);
 			path = UICollectionViewRightAlignedLayout;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */,
 				F4241A861C9A5ED300AD4343 /* SpringImageView.swift in Sources */,
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
+				F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
 				F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */,
 				F4241A821C9A5ED300AD4343 /* SoundPlayer.swift in Sources */,

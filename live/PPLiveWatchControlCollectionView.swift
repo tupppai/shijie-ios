@@ -9,7 +9,16 @@
 import UIKit
 
 protocol PPLiveWatchControlCollectionViewDelegate: class {
-    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int)
+
+    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView,
+        didTapButtyType: LiveWatchControlCollectionViewButtonType)
+}
+
+enum LiveWatchControlCollectionViewButtonType{
+    case Comment
+    case Share
+    case Close
+    case SendGift
 }
 
 class PPLiveWatchControlCollectionView: UIView {
@@ -79,16 +88,16 @@ class PPLiveWatchControlCollectionView: UIView {
     }
     
     func tapButton_close() {
-        delegate?.controlCollectionView(self, didTapIndex: 3)
+        delegate?.controlCollectionView(self, didTapButtyType: .Close)
     }
     func tapButton_sendGift() {
-        delegate?.controlCollectionView(self, didTapIndex: 2)
+        delegate?.controlCollectionView(self, didTapButtyType: .SendGift)
     }
     func tapButton_comment() {
-        delegate?.controlCollectionView(self, didTapIndex: 0)
+        delegate?.controlCollectionView(self, didTapButtyType: .Comment)
     }
     func tapButton_share() {
-        delegate?.controlCollectionView(self, didTapIndex: 1)
+        delegate?.controlCollectionView(self, didTapButtyType: .Share)
     }
     
 }

@@ -76,8 +76,6 @@ class PPLiveWatchViewController: UIViewController {
 //        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
     
-    
-    
     func toggleShareView() {
         if shareView.isShowing == true {
             shareView.dismiss()
@@ -115,23 +113,25 @@ class PPLiveWatchViewController: UIViewController {
 
 
 extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
-    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int) {
-        switch(index) {
-        case 0 :
+
+    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapButtyType: LiveWatchControlCollectionViewButtonType) {
+        switch (didTapButtyType){
+        case .Comment:
             self.textInputBar.textField.becomeFirstResponder()
-        case 1 :
+        case .Share:
             debugPrint("tap share")
             toggleShareView()
-        case 2 :
-            debugPrint("tap sendGift")            
-            
-        case 3 :
+        case .SendGift:
+            debugPrint("tap sendGift")
+            let giftView = PPGiftView()
+            giftView.delegate = self
+            giftView.showGiftView(view)
+        case .Close:
             debugPrint("tap close")
             self.navigationController?.popViewControllerAnimated(true)
-        default:
-            debugPrint("tap error")
         }
     }
+    
 }
 
 // MARK:UICollectionViewDataSource,UICollectionViewDelegate
@@ -306,6 +306,15 @@ extension PPLiveWatchViewController {
     
 }
 
+extension PPLiveWatchViewController: PPGiftViewDelegate{
+    func giftViewWillChargeMoney(giftView: PPGiftView) {
+        debugPrint("准备跳往充值页面")
+    }
+    
+    func giftViewWillSendDiamond(giftView: PPGiftView, model: PPGiftModel) {
+        debugPrint("送出\(model.diamondCount)颗钻石")
+    }
+}
 
 extension PPLiveWatchViewController {
     

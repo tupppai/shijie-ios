@@ -18,8 +18,8 @@ private struct Constants{
 }
 
 protocol PPGiftViewDelegate: class{
-    func giftViewWillChargeMoney(giftView: PPGiftView)
-    func giftViewWillSendDiamond(giftView: PPGiftView, model: PPGiftModel)
+    func giftViewDidChargeMoney(giftView: PPGiftView)
+    func giftViewDidSendDiamond(giftView: PPGiftView, model: PPGiftModel)
 }
 
 class PPGiftView: UIView {
@@ -53,7 +53,7 @@ class PPGiftView: UIView {
     }
     
     // MARK: public methods
-    func showGiftView(){
+    func show(){
         UIApplication.sharedApplication().keyWindow?.addSubview(self)
         self.layoutIfNeeded()
         
@@ -63,12 +63,11 @@ class PPGiftView: UIView {
         
         UIView.animateWithDuration(0.2) { () -> Void in
             self.layoutIfNeeded()
-//            self.backgroundColor = UIColor(hexString: "000000", alpha: 0.8)
             self.backgroundColor = UIColor(hex: 0x000000, alpha: 0.8)
         }
     }
     
-    func showGiftView(inView: UIView){
+    func show(inView: UIView){
         inView.addSubview(self)
         self.layoutIfNeeded()
         
@@ -78,23 +77,30 @@ class PPGiftView: UIView {
 
         UIView.animateWithDuration(0.2) { () -> Void in
             self.layoutIfNeeded()
-//            self.backgroundColor = UIColor(hexString: "000000", alpha: 0.8)
             self.backgroundColor = UIColor(hex: 0x000000, alpha: 0.8)
         }
     }
     
     func dismiss(){
+        
         giftViewTopConstraint?.updateOffset(0)
 
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.layoutIfNeeded()
-//            self.backgroundColor = UIColor(hexString: "000000", alpha: 0.0)
+
             self.backgroundColor = UIColor(hex: 0x000000, alpha: 0.0)
             }) { (finished) -> Void in
                 if finished{
                     self.removeFromSuperview()
                 }
         }
+        
+        guard selectedIndexPath != nil else{
+            return
+        }
+        
+        giftCollectionView?.deselectItemAtIndexPath(selectedIndexPath!, animated: false)
+        selectedIndexPath = nil
     }
     
     // MARK: private helpers
@@ -148,8 +154,6 @@ class PPGiftView: UIView {
         }
     }
     
-    
-
 }
 
 extension PPGiftView: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -181,8 +185,7 @@ extension PPGiftView: UICollectionViewDelegate, UICollectionViewDataSource{
 
 extension PPGiftView: PPGiftViewToolBarDelegate{
     func toolBarDidCharge(toolBar: PPGiftViewToolBar) {
-
-        delegate?.giftViewWillChargeMoney(self)
+        delegate?.giftViewDidChargeMoney(self)
     }
     
     func toolBarDidSendDiamond(toolBar: PPGiftViewToolBar) {
@@ -190,7 +193,7 @@ extension PPGiftView: PPGiftViewToolBarDelegate{
             print("还没有选给多少钻石")
             return
         }
-        delegate?.giftViewWillSendDiamond(self, model: giftModels[selectedIndexPath!.row])
+        delegate?.giftViewDidSendDiamond(self, model: giftModels[selectedIndexPath!.row])
     }
 }
 

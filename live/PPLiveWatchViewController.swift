@@ -24,6 +24,11 @@ class PPLiveWatchViewController: UIViewController {
     var textInputBarBottomContraint:Constraint!
     let detailView = PPUserDetailView()
     var numberOfNews = 5
+    lazy var giftView: PPGiftView = {
+        var giftView      = PPGiftView()
+        giftView.delegate = self
+        return giftView
+    }()
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -114,21 +119,23 @@ class PPLiveWatchViewController: UIViewController {
 
 extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
 
-    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapButtyType: LiveWatchControlCollectionViewButtonType) {
-        switch (didTapButtyType){
-        case .Comment:
+
+    
+    func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int) {
+        switch(index){
+        case 0:
             self.textInputBar.textField.becomeFirstResponder()
-        case .Share:
+        case 1:
             debugPrint("tap share")
             toggleShareView()
-        case .SendGift:
+        case 2:
             debugPrint("tap sendGift")
-            let giftView = PPGiftView()
-            giftView.delegate = self
-            giftView.showGiftView(view)
-        case .Close:
+            giftView.show(view)
+        case 3:
             debugPrint("tap close")
             self.navigationController?.popViewControllerAnimated(true)
+        default:
+            debugPrint("tap error")
         }
     }
     
@@ -307,11 +314,11 @@ extension PPLiveWatchViewController {
 }
 
 extension PPLiveWatchViewController: PPGiftViewDelegate{
-    func giftViewWillChargeMoney(giftView: PPGiftView) {
+    func giftViewDidChargeMoney(giftView: PPGiftView) {
         debugPrint("准备跳往充值页面")
     }
     
-    func giftViewWillSendDiamond(giftView: PPGiftView, model: PPGiftModel) {
+    func giftViewDidSendDiamond(giftView: PPGiftView, model: PPGiftModel) {
         debugPrint("送出\(model.diamondCount)颗钻石")
     }
 }

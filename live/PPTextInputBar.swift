@@ -12,7 +12,7 @@ class PPTextInputBar: UIView {
     var sendButton:UIButton!
     var textField:UITextField!
     
-    let height = 38
+    let height = 34
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -48,7 +48,7 @@ class PPTextInputBar: UIView {
         textField.snp_makeConstraints { (make) -> Void in
             make.leading.equalTo(self).offset(0)
             make.height.equalTo(sendButton)
-            make.trailing.equalTo(sendButton.snp_leading).offset(0)
+            make.trailing.equalTo(sendButton.snp_leading).offset(-3)
             make.centerY.equalTo(self)
         }
     }

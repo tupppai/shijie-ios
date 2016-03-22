@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
-class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionViewDelegate {
+class PPLiveWatchViewController: UIViewController {
     
     var player:PLPlayer!
     lazy var shareView:PPShareView = PPShareView()
+    
     lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
     var controlBottomView:PPLiveWatchControlCollectionView!
     var hostView:PPHostView!
@@ -19,11 +20,11 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     var giftShowsAnimateView:PPGiftShowsAnimateView!
     var newsTableView:UITableView!
     var textInputBar:PPTextInputBar!
+    var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
-    
     let detailView = PPUserDetailView()
-
     var numberOfNews = 5
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -41,7 +42,6 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
 
         view.backgroundColor = UIColor.blackColor()
         setupPlayer()
-        setupHeartBalloonGenerator()
         setupViews()
         setupCommentGenerator()
         setupNotifications()
@@ -60,82 +60,7 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
         NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "fireComment", userInfo: nil, repeats: true)
     }
     
-    func setupNewsTableView () {
-        newsTableView = UITableView()
-        newsTableView.backgroundColor = UIColor.clearColor()
-        newsTableView.delegate = self
-        newsTableView.showsHorizontalScrollIndicator = false
-        newsTableView.showsVerticalScrollIndicator = false
-        newsTableView.dataSource = self
-        newsTableView.separatorStyle  = .None
-        newsTableView.tableFooterView = UIView()
-        newsTableView.rowHeight = UITableViewAutomaticDimension
-        newsTableView.estimatedRowHeight = 40
-        
-        newsTableView .registerClass(PPNewsCommentTableViewCell.self, forCellReuseIdentifier: String(PPNewsCommentTableViewCell))
-        view .addSubview(newsTableView)
-       
-        newsTableView.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(0.6*ScreenSize.SCREEN_WIDTH)
-            make.height.equalTo(160)
-            make.leading.equalTo(view).offset(8)
-            make.bottom.equalTo(textInputBar.snp_top).offset(-15)
-        }
-    }
-    func setupViews() {
-        
-        giftShowsAnimateView = PPGiftShowsAnimateView()
-        view.addSubview(giftShowsAnimateView)
-        giftShowsAnimateView.snp_makeConstraints { (make) -> Void in
-            make.leading.trailing.equalTo(view)
-            make.centerY.equalTo(view)
-            make.height.equalTo(110)
-        }
-        giftShowsAnimateView.show()
-        
-        hostView = PPHostView()
-        controlBottomView = PPLiveWatchControlCollectionView()
-        controlBottomView.delegate = self
-        receivedCoinView = PPHostReceivedCoinView()
-        view.addSubview(hostView)
-        view .addSubview(avatarCollectionView)
-        view.addSubview(hostView)
-        view .addSubview(receivedCoinView)
-        view .addSubview(controlBottomView)
-
-
-        hostView.snp_makeConstraints { (make) -> Void in
-            make.width.equalTo(117)
-            make.height.equalTo(45)
-            make.leading.equalTo(view).offset(12)
-            make.top.equalTo(view).offset(22)
-        }
-        receivedCoinView.snp_makeConstraints { (make) -> Void in
-            make.leading.equalTo(hostView)
-            make.top.equalTo(hostView.snp_bottom).offset(14)
-            make.height.equalTo(22)
-            make.width.greaterThanOrEqualTo(80)
-        }
-        
-        avatarCollectionView.snp_makeConstraints { (make) -> Void in
-            make.trailing.equalTo(3)
-            make.leading.equalTo(hostView.snp_trailing).offset(5)
-            make.centerY.equalTo(hostView)
-            make.height.equalTo(35)
-        }
-        controlBottomView.snp_makeConstraints { (make) -> Void in
-            make.leading.trailing.bottom.equalTo(view)
-            make.height.equalTo(35)
-        }
-        
-        setupControlBottomView()
-        setupTextInputBar()
-        setupNewsTableView()
-
-    }
-    
-
-    
+ 
     func fireComment() {
         numberOfNews++
         let lastIndexPath = NSIndexPath(forRow: numberOfNews - 1, inSection: 0)
@@ -152,55 +77,6 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     }
     
     
-    func setupHeartBalloonGenerator() {
-        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
-    }
-    
-    func fireBallon() {
-        let delaySec = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySec * CGFloat(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let heart = PPLovingHeartView()
-            let sendGiftFrameInView = self.controlBottomView.button_sendGift.superview?.convertRect(self.controlBottomView.button_sendGift.frame, toView: self.view)
-            heart.frame = CGRectMake((sendGiftFrameInView?.origin.x)!, (sendGiftFrameInView?.origin.y)!-20, 20, 20)
-            self.view .addSubview(heart)
-            
-            var frame = heart.frame
-            let xAnimateNumber = CGFloat(randInRange(-50...30))
-            if abs(xAnimateNumber)>25 {
-                heart.animation = "swing"
-                heart.curve = "spring"
-                heart.force =  1.0
-                heart.duration =  8
-                heart.animate()
-            }
-            else if abs(xAnimateNumber)>10 {
-                heart.animation = "shake"
-                heart.curve = "linear"
-                heart.force =  1.0
-                heart.duration =  8
-                heart.animate()
-            } else {
-                
-            }
-            frame.origin.x += xAnimateNumber
-            
-            
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
-                heart.frame = frame
-                }, completion: { (finished) -> Void in
-            })
-            
-            UIView.animateWithDuration(8.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
-                heart.frame = CGRectMake((sendGiftFrameInView?.origin.x)!, ScreenSize.SCREEN_HEIGHT*0.6, 20, 20)
-                heart.alpha = 0.0
-                }, completion: { (finished) -> Void in
-                    heart .removeFromSuperview()
-            })
-        }
-    }
-    
-
     
     func toggleShareView() {
         if shareView.isShowing == true {
@@ -226,7 +102,6 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
     }
     
     func setupPlayer() {
-        
         let option = PLPlayerOption.defaultOption()
         option .setOptionValue(NSNumber(integer: 3), forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
         player = PLPlayer(URL: NSURL(string: "rtmp://119.29.142.208/live/peiwei"), option: option)
@@ -235,13 +110,11 @@ class PPLiveWatchViewController: UIViewController,PPLiveWatchControlCollectionVi
         player .play()
     }
     
-    func setupControlBottomView() {
 
-    }
 }
 
 
-extension PPLiveWatchViewController {
+extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
     func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int) {
         switch(index) {
         case 0 :
@@ -261,8 +134,155 @@ extension PPLiveWatchViewController {
     }
 }
 
-// MARK:Avatar CollectionView
+// MARK:UICollectionViewDataSource,UICollectionViewDelegate
 extension PPLiveWatchViewController : UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell:PPAvatarCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(PPAvatarCollectionCell), forIndexPath: indexPath) as! PPAvatarCollectionCell
+        return cell
+    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        detailView.showInView(view)
+    }
+}
+
+
+// MARK:UITableViewDataSource,UITableViewDelegate
+
+extension PPLiveWatchViewController : UITableViewDataSource,UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell))
+        return (cell)!
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfNews
+    }
+    
+}
+
+// MARK:SetupViews
+
+extension PPLiveWatchViewController {
+    
+    func setupViews() {
+        setupBottomControlPanelView()
+        setupGiftShowsAnimateView()
+        setupHostCollectionViews()
+        setupTextInputBar()
+        setupNewsTableView()
+        setupHeartFloatingView()
+    }
+    
+    
+    func setupTextInputBar() {
+        textInputBar = PPTextInputBar()
+        textInputBar.hidden = true
+        view.addSubview(textInputBar)
+        
+        textInputBar.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.equalTo(view)
+            textInputBarBottomContraint = make.bottom.equalTo(view).constraint
+            make.height.equalTo(textInputBar.height)
+        }
+    }
+    
+    func setupNewsTableView () {
+        newsTableView = UITableView()
+        newsTableView.backgroundColor = UIColor.clearColor()
+        newsTableView.delegate = self
+        newsTableView.showsHorizontalScrollIndicator = false
+        newsTableView.showsVerticalScrollIndicator = false
+        newsTableView.dataSource = self
+        newsTableView.separatorStyle  = .None
+        newsTableView.tableFooterView = UIView()
+        newsTableView.rowHeight = UITableViewAutomaticDimension
+        newsTableView.estimatedRowHeight = 40
+        
+        newsTableView .registerClass(PPNewsCommentTableViewCell.self, forCellReuseIdentifier: String(PPNewsCommentTableViewCell))
+        view .addSubview(newsTableView)
+        
+        newsTableView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(0.6*ScreenSize.SCREEN_WIDTH)
+            make.height.equalTo(160)
+            make.leading.equalTo(view).offset(8)
+            make.bottom.equalTo(textInputBar.snp_top).offset(-15)
+        }
+    }
+
+    
+    func setupGiftShowsAnimateView() {
+        giftShowsAnimateView = PPGiftShowsAnimateView()
+        view.addSubview(giftShowsAnimateView)
+        giftShowsAnimateView.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.equalTo(view)
+            make.centerY.equalTo(view)
+            make.height.equalTo(110)
+        }
+        giftShowsAnimateView.show()
+    }
+    func setupHostCollectionViews() {
+        hostView = PPHostView()
+        receivedCoinView = PPHostReceivedCoinView()
+        view.addSubview(hostView)
+        view .addSubview(avatarCollectionView)
+        view .addSubview(receivedCoinView)
+        hostView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(117)
+            make.height.equalTo(45)
+            make.leading.equalTo(view).offset(12)
+            make.top.equalTo(view).offset(22)
+        }
+        receivedCoinView.snp_makeConstraints { (make) -> Void in
+            make.leading.equalTo(hostView)
+            make.top.equalTo(hostView.snp_bottom).offset(14)
+            make.height.equalTo(22)
+            make.width.greaterThanOrEqualTo(80)
+        }
+        
+        avatarCollectionView.snp_makeConstraints { (make) -> Void in
+            make.trailing.equalTo(3)
+            make.leading.equalTo(hostView.snp_trailing).offset(5)
+            make.centerY.equalTo(hostView)
+            make.height.equalTo(35)
+        }
+    }
+    func setupBottomControlPanelView() {
+        controlBottomView = PPLiveWatchControlCollectionView()
+        controlBottomView.delegate = self
+        view .addSubview(controlBottomView)
+        controlBottomView.snp_makeConstraints { (make) -> Void in
+            make.leading.trailing.bottom.equalTo(view)
+            make.height.equalTo(35)
+        }
+    }
+    
+    func setupHeartFloatingView() {
+        heartFloatingView = PPHeartFloatingView()
+        heartFloatingView.backgroundColor = UIColor.clearColor()
+        
+        view.addSubview(heartFloatingView)
+        heartFloatingView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(100)
+            make.height.equalTo(ScreenSize.SCREEN_HEIGHT*0.5)
+            make.bottom.equalTo(controlBottomView.snp_top)
+            make.centerX.equalTo(controlBottomView.button_sendGift.snp_centerX)
+        }
+        
+        heartFloatingView.setupHeartBalloonGenerator()
+        
+    }
     
     func initializeAvatarCollectionView() -> UICollectionView {
         
@@ -282,55 +302,17 @@ extension PPLiveWatchViewController : UICollectionViewDataSource,UICollectionVie
         return collectionView
         
     }
+
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell:PPAvatarCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(PPAvatarCollectionCell), forIndexPath: indexPath) as! PPAvatarCollectionCell
-        return cell
-    }
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        detailView.showInView(view)
-    }
 }
 
-extension PPLiveWatchViewController : UITableViewDataSource,UITableViewDelegate {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell))
-        return (cell)!
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfNews
-    }
-    
-}
 
 extension PPLiveWatchViewController {
     
-    func setupTextInputBar() {
-        textInputBar = PPTextInputBar()
-        textInputBar.hidden = true
-        view.addSubview(textInputBar)
-        
-        textInputBar.snp_makeConstraints { (make) -> Void in
-            make.leading.trailing.equalTo(view)
-            textInputBarBottomContraint = make.bottom.equalTo(view).constraint
-            make.height.equalTo(textInputBar.height)
-        }
-    }
     
     func pp_keyboardWillShow(sender:NSNotification?) {
         let keyboardHeight = properKeyboardHeightFromNotification(sender)
-        textInputBarBottomContraint.updateOffset(-keyboardHeight)
+        textInputBarBottomContraint.updateOffset(-keyboardHeight-2)
         self.textInputBar.hidden = false
         UIView.animateWithDuration(0.5) { () -> Void in
             self.giftShowsAnimateView.hidden = true

@@ -24,6 +24,11 @@ class PPLiveWatchViewController: UIViewController {
     var textInputBarBottomContraint:Constraint!
     let detailView = PPUserDetailView()
     var numberOfNews = 5
+    lazy var giftView: PPGiftView = {
+        var giftView      = PPGiftView()
+        giftView.delegate = self
+        return giftView
+    }()
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -76,8 +81,6 @@ class PPLiveWatchViewController: UIViewController {
 //        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
     
-    
-    
     func toggleShareView() {
         if shareView.isShowing == true {
             shareView.dismiss()
@@ -115,23 +118,27 @@ class PPLiveWatchViewController: UIViewController {
 
 
 extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
+
+
+    
     func controlCollectionView(controlCollectionView: PPLiveWatchControlCollectionView, didTapIndex index: Int) {
-        switch(index) {
-        case 0 :
+        switch(index){
+        case 0:
             self.textInputBar.textField.becomeFirstResponder()
-        case 1 :
+        case 1:
             debugPrint("tap share")
             toggleShareView()
-        case 2 :
-            debugPrint("tap sendGift")            
-            
-        case 3 :
+        case 2:
+            debugPrint("tap sendGift")
+            giftView.show(view)
+        case 3:
             debugPrint("tap close")
             self.navigationController?.popViewControllerAnimated(true)
         default:
             debugPrint("tap error")
         }
     }
+    
 }
 
 // MARK:UICollectionViewDataSource,UICollectionViewDelegate
@@ -306,6 +313,15 @@ extension PPLiveWatchViewController {
     
 }
 
+extension PPLiveWatchViewController: PPGiftViewDelegate{
+    func giftViewDidChargeMoney(giftView: PPGiftView) {
+        debugPrint("准备跳往充值页面")
+    }
+    
+    func giftViewDidSendDiamond(giftView: PPGiftView, model: PPGiftModel) {
+        debugPrint("送出\(model.diamondCount)颗钻石")
+    }
+}
 
 extension PPLiveWatchViewController {
     

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD845D08C1AD89402DAB1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6079134BFC8D209F4B9E3C /* Pods.framework */; };
+		9086EE851CA1315300F0BECD /* HorizontalCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE7E1CA1315300F0BECD /* HorizontalCollectionViewLayout.swift */; };
+		9086EE861CA1315300F0BECD /* PPGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE7F1CA1315300F0BECD /* PPGiftCell.swift */; };
+		9086EE871CA1315300F0BECD /* PPGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9086EE801CA1315300F0BECD /* PPGiftCell.xib */; };
+		9086EE881CA1315300F0BECD /* PPGiftCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE811CA1315300F0BECD /* PPGiftCollectionView.swift */; };
+		9086EE891CA1315300F0BECD /* PPGiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE821CA1315300F0BECD /* PPGiftView.swift */; };
+		9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE831CA1315300F0BECD /* PPGiftViewToolBar.swift */; };
+		9086EE8B1CA1315300F0BECD /* PPGiftViewToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9086EE841CA1315300F0BECD /* PPGiftViewToolBar.xib */; };
+		9086EE8D1CA1316F00F0BECD /* PPGiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE8C1CA1316F00F0BECD /* PPGiftModel.swift */; };
 		F40853C01C97F1FD00F343C7 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = F40853BF1C97F1FD00F343C7 /* demo.png */; };
 		F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48C1C895D720009AAFF /* AppDelegate.swift */; };
 		F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */; };
@@ -101,6 +109,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9086EE7E1CA1315300F0BECD /* HorizontalCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewLayout.swift; sourceTree = "<group>"; };
+		9086EE7F1CA1315300F0BECD /* PPGiftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftCell.swift; sourceTree = "<group>"; };
+		9086EE801CA1315300F0BECD /* PPGiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPGiftCell.xib; sourceTree = "<group>"; };
+		9086EE811CA1315300F0BECD /* PPGiftCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftCollectionView.swift; sourceTree = "<group>"; };
+		9086EE821CA1315300F0BECD /* PPGiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftView.swift; sourceTree = "<group>"; };
+		9086EE831CA1315300F0BECD /* PPGiftViewToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftViewToolBar.swift; sourceTree = "<group>"; };
+		9086EE841CA1315300F0BECD /* PPGiftViewToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPGiftViewToolBar.xib; sourceTree = "<group>"; };
+		9086EE8C1CA1316F00F0BECD /* PPGiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftModel.swift; sourceTree = "<group>"; };
+		9086EE8E1CA1381D00F0BECD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		BE6079134BFC8D209F4B9E3C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3811039017F1377A13010B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2287D4FC06CE9CED7C1987C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +244,7 @@
 		031DAD5C2A474689C914A35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9086EE8E1CA1381D00F0BECD /* Reveal.framework */,
 				F4241AB01C9AA3E300AD4343 /* SnapKit.framework */,
 				F4241A8E1C9A70D000AD4343 /* SnapKit.framework */,
 				F4241A141C9A5C9600AD4343 /* Spring.framework */,
@@ -241,6 +259,21 @@
 				BE6079134BFC8D209F4B9E3C /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9086EE7D1CA1314100F0BECD /* giftView */ = {
+			isa = PBXGroup;
+			children = (
+				9086EE8C1CA1316F00F0BECD /* PPGiftModel.swift */,
+				9086EE7E1CA1315300F0BECD /* HorizontalCollectionViewLayout.swift */,
+				9086EE7F1CA1315300F0BECD /* PPGiftCell.swift */,
+				9086EE801CA1315300F0BECD /* PPGiftCell.xib */,
+				9086EE811CA1315300F0BECD /* PPGiftCollectionView.swift */,
+				9086EE821CA1315300F0BECD /* PPGiftView.swift */,
+				9086EE831CA1315300F0BECD /* PPGiftViewToolBar.swift */,
+				9086EE841CA1315300F0BECD /* PPGiftViewToolBar.xib */,
+			);
+			name = giftView;
 			sourceTree = "<group>";
 		};
 		BF74913A2A68A19155C3D813 /* Pods */ = {
@@ -346,6 +379,7 @@
 		F4241AB21C9AAB4900AD4343 /* LiveWatch */ = {
 			isa = PBXGroup;
 			children = (
+				9086EE7D1CA1314100F0BECD /* giftView */,
 				F4FF22BC1CA0F84900D71B5B /* shareView */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
 				F4F429FE1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift */,
@@ -550,6 +584,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4241A7D1C9A5ED300AD4343 /* Info.plist in Resources */,
+				9086EE871CA1315300F0BECD /* PPGiftCell.xib in Resources */,
+				9086EE8B1CA1315300F0BECD /* PPGiftViewToolBar.xib in Resources */,
 				F417C4AC1C898E9B0009AAFF /* Info.plist in Resources */,
 				F4EC52FC1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib in Resources */,
 				F417C4971C895D720009AAFF /* Assets.xcassets in Resources */,
@@ -628,12 +664,16 @@
 				F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */,
 				F4EC52FB1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift in Sources */,
 				F4EC52FD1C9BE42E00C1DA94 /* PPUserDetailView.swift in Sources */,
+				9086EE891CA1315300F0BECD /* PPGiftView.swift in Sources */,
+				9086EE881CA1315300F0BECD /* PPGiftCollectionView.swift in Sources */,
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */,
 				F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */,
+				9086EE851CA1315300F0BECD /* HorizontalCollectionViewLayout.swift in Sources */,
+				9086EE8D1CA1316F00F0BECD /* PPGiftModel.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
 				F4241A791C9A5ED300AD4343 /* DesignableTextField.swift in Sources */,
 				F4241A871C9A5ED300AD4343 /* SpringLabel.swift in Sources */,
@@ -652,6 +692,7 @@
 				F4EC52DF1C9BDE1300C1DA94 /* PPHostView.swift in Sources */,
 				F4241A841C9A5ED300AD4343 /* SpringAnimation.swift in Sources */,
 				F4EC52F31C9BE42E00C1DA94 /* PPMeTableViewController.swift in Sources */,
+				9086EE861CA1315300F0BECD /* PPGiftCell.swift in Sources */,
 				F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */,
 				F4EC52F51C9BE42E00C1DA94 /* CountButton.swift in Sources */,
 				F4241A8A1C9A5ED300AD4343 /* SpringView.swift in Sources */,
@@ -664,6 +705,7 @@
 				F4241A741C9A5ED300AD4343 /* BlurView.swift in Sources */,
 				F4241A8B1C9A5ED300AD4343 /* TransitionManager.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
+				9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
 				F4241A7E1C9A5ED300AD4343 /* KeyboardLayoutConstraint.swift in Sources */,
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
@@ -789,6 +831,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -812,6 +855,10 @@
 					"\"UriParser\"",
 					"-framework",
 					"\"VideoCore\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
 					"-Objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
@@ -831,6 +878,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

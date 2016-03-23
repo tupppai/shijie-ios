@@ -44,7 +44,6 @@ class PPUserDetailView: UIView {
             make.center.equalTo(self)
         })
         
-        
         dismissButton = UIButton()
         self.dismissButton?.setImage(UIImage(named: "btn_close"),
             forState:.Normal)

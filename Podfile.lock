@@ -19,6 +19,11 @@ PODS:
   - PLPlayerKit (2.1.0):
     - PLPlayerKit/precompiled (= 2.1.0)
   - PLPlayerKit/precompiled (2.1.0)
+  - Realm (0.98.5):
+    - Realm/Headers (= 0.98.5)
+  - Realm/Headers (0.98.5)
+  - RealmSwift (0.98.5):
+    - Realm (= 0.98.5)
   - SnapKit (0.19.1)
   - UriParser-cpp (0.1.3)
   - VideoCore/Swift (0.3.2):
@@ -30,6 +35,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.2.1)
   - glm (from `https://github.com/peiweichen/glm`)
   - PLPlayerKit
+  - RealmSwift (~> 0.98.5)
   - SnapKit (~> 0.19.1)
   - VideoCore/Swift (from `https://github.com/peiweichen/VideoCore.git`, branch `update_headers`)
 
@@ -53,6 +59,8 @@ SPEC CHECKSUMS:
   boost: 6c5c8d8daef26ac83c1e1c00ad14de62b80161d7
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
   PLPlayerKit: 6c89abc19818ba434a8a8ac4c0cdde1169fd3ef6
+  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
+  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
   SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
   UriParser-cpp: cbbe00080ee432ec4833dca863a7fc83adc9b01a
   VideoCore: 5d8ea99d900089ee016bb87485912b0286e07650

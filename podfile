@@ -6,7 +6,7 @@ use_frameworks!
 pod 'SnapKit', '~> 0.19.1'
 pod 'Alamofire', '~> 3.2.1'
 
-
+pod 'RealmSwift', '~> 0.98.5'
 
 pod 'VideoCore/Swift', :git => 'https://github.com/peiweichen/VideoCore.git', :branch => 'update_headers'
 pod 'glm', :git => 'https://github.com/peiweichen/glm'

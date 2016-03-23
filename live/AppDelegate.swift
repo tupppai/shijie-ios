@@ -33,10 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func presentCenterViewController() {
-        let vc = PPLoginViewController()
-        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
-    }
+
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         if MonkeyKing.handleOpenURL(url) {

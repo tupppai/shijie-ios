@@ -54,6 +54,7 @@
 		F492EE451C99D54D007DD791 /* PPShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE441C99D54D007DD791 /* PPShareSheetView.swift */; };
 		F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE461C9A4A79007DD791 /* PPTriangleView.swift */; };
 		F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE481C9A550F007DD791 /* PPShareButton.swift */; };
+		F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */; };
 		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
 		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
@@ -157,6 +158,8 @@
 		F492EE441C99D54D007DD791 /* PPShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareSheetView.swift; sourceTree = "<group>"; };
 		F492EE461C9A4A79007DD791 /* PPTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTriangleView.swift; sourceTree = "<group>"; };
 		F492EE481C9A550F007DD791 /* PPShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareButton.swift; sourceTree = "<group>"; };
+		F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewAlignRightLayout.h; sourceTree = "<group>"; };
+		F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewAlignRightLayout.m; sourceTree = "<group>"; };
 		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
 		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
 		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPGiftShowsAnimateView.swift; path = UICollectionViewRightAlignedLayout/PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
@@ -273,17 +276,16 @@
 		F417C48B1C895D720009AAFF /* live */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF22BF1CA0F8E300D71B5B /* tools */,
-				F4FF22C01CA0F92B00D71B5B /* livelist */,
-				F4FF22BB1CA0F80300D71B5B /* viewForLive */,
-				F4FF22BA1CA0F7F400D71B5B /* MyLive */,
+				F4FF22C01CA0F92B00D71B5B /* LiveList */,
 				F4241AB21C9AAB4900AD4343 /* LiveWatch */,
-				F4FF22BD1CA0F8BD00D71B5B /* views */,
+				F4FF22BA1CA0F7F400D71B5B /* MyLive */,
+				F4EC52E01C9BE42E00C1DA94 /* Me */,
 				F4FF22C11CA0F94900D71B5B /* login */,
+				F4FF22BD1CA0F8BD00D71B5B /* views */,
+				F4FF22BF1CA0F8E300D71B5B /* tools */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
 				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
-				F4EC52E01C9BE42E00C1DA94 /* ME */,
 				F4EC52D91C9BBFEA00C1DA94 /* image */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
@@ -363,14 +365,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		F4EC52E01C9BE42E00C1DA94 /* ME */ = {
+		F4EC52E01C9BE42E00C1DA94 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				F4EC52E21C9BE42E00C1DA94 /* PPMeTableViewController.swift */,
 				F4EC52E31C9BE42E00C1DA94 /* PPMeTableViewController.xib */,
 				F4EC52E51C9BE42E00C1DA94 /* Views */,
 			);
-			name = ME;
+			name = Me;
 			path = Tab_Me;
 			sourceTree = "<group>";
 		};
@@ -443,6 +445,7 @@
 		F4FF22BD1CA0F8BD00D71B5B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF22BB1CA0F80300D71B5B /* viewForLive */,
 				F4FF22BE1CA0F8C700D71B5B /* round */,
 			);
 			name = views;
@@ -467,17 +470,19 @@
 				F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */,
 				F4F486961C97C77100498CD3 /* PPExtension.swift */,
 				F4D273911C9FF3D800A70F18 /* PPUtility.swift */,
+				F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */,
+				F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */,
 			);
 			name = tools;
 			sourceTree = "<group>";
 		};
-		F4FF22C01CA0F92B00D71B5B /* livelist */ = {
+		F4FF22C01CA0F92B00D71B5B /* LiveList */ = {
 			isa = PBXGroup;
 			children = (
 				F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */,
 				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */,
 			);
-			name = livelist;
+			name = LiveList;
 			sourceTree = "<group>";
 		};
 		F4FF22C11CA0F94900D71B5B /* login */ = {
@@ -658,6 +663,7 @@
 				F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */,
 				F4241AAF1C9AA30700AD4343 /* PPNewsCommentTableViewCell.swift in Sources */,
 				F4F486721C96753600498CD3 /* Config.swift in Sources */,
+				F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */,
 				F4241A7A1C9A5ED300AD4343 /* DesignableTextView.swift in Sources */,
 				F4EC52FE1C9BE42E00C1DA94 /* UserHeaderView.swift in Sources */,
 				F4FF22B71CA0E8BD00D71B5B /* PPHeartFloatingView.swift in Sources */,

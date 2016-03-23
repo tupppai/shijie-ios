@@ -147,7 +147,7 @@ extension PPLiveWatchViewController : UICollectionViewDataSource,UICollectionVie
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 4
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         detailView.showInView(view)

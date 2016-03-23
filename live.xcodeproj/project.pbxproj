@@ -62,6 +62,7 @@
 		F492EE451C99D54D007DD791 /* PPShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE441C99D54D007DD791 /* PPShareSheetView.swift */; };
 		F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE461C9A4A79007DD791 /* PPTriangleView.swift */; };
 		F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE481C9A550F007DD791 /* PPShareButton.swift */; };
+		F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */; };
 		F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */; };
 		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
@@ -175,6 +176,7 @@
 		F492EE441C99D54D007DD791 /* PPShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareSheetView.swift; sourceTree = "<group>"; };
 		F492EE461C9A4A79007DD791 /* PPTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTriangleView.swift; sourceTree = "<group>"; };
 		F492EE481C9A550F007DD791 /* PPShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareButton.swift; sourceTree = "<group>"; };
+		F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareManager.swift; sourceTree = "<group>"; };
 		F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewAlignRightLayout.h; sourceTree = "<group>"; };
 		F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewAlignRightLayout.m; sourceTree = "<group>"; };
 		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				F492EE481C9A550F007DD791 /* PPShareButton.swift */,
 				F492EE441C99D54D007DD791 /* PPShareSheetView.swift */,
 				F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */,
+				F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */,
 			);
 			name = shareView;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
+				F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */,
 				F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */,
@@ -833,6 +837,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",
@@ -865,7 +870,6 @@
 					"-lz",
 					"-framework",
 					Reveal,
-					"-Objc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -880,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",

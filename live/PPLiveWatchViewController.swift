@@ -11,24 +11,30 @@ import SnapKit
 class PPLiveWatchViewController: UIViewController {
     
     var player:PLPlayer!
-    lazy var shareView:PPShareView = PPShareView()
     
-    lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
+    lazy var shareView:PPShareView = {
+        let temp = PPShareView()
+        temp.delegate = self
+        return temp
+    }()
+    lazy var avatarCollectionView:UICollectionView = self.generateAvatarCollectionView()
+    lazy var textInputBar:PPTextInputBar! = self.generateTextInputBar()
+    lazy var giftView: PPGiftView = {
+        let giftView      = PPGiftView()
+        giftView.delegate = self
+        return giftView
+    }()
+    
     var controlBottomView:PPLiveWatchControlCollectionView!
     var hostView:PPHostView!
     var receivedCoinView:PPHostReceivedCoinView!
     var giftShowsAnimateView:PPGiftShowsAnimateView!
     var newsTableView:UITableView!
-    var textInputBar:PPTextInputBar!
     var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
     let detailView = PPUserDetailView()
     var numberOfNews = 5
-    lazy var giftView: PPGiftView = {
-        var giftView      = PPGiftView()
-        giftView.delegate = self
-        return giftView
-    }()
+
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -50,6 +56,12 @@ class PPLiveWatchViewController: UIViewController {
         setupViews()
         setupCommentGenerator()
         setupNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if (self.player.playing) {
+            self.player.stop()
+        }
     }
     
     func setupNotifications() {
@@ -108,12 +120,13 @@ class PPLiveWatchViewController: UIViewController {
         let option = PLPlayerOption.defaultOption()
         option .setOptionValue(NSNumber(integer: 3), forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
         player = PLPlayer(URL: NSURL(string: "rtmp://119.29.142.208/live/peiwei"), option: option)
+        player.playerView?.frame = view.bounds
+        player.playerView?.backgroundColor = UIColor.whiteColor()
+        player.delegate = self
         view .addSubview(player.playerView!)
         view .sendSubviewToBack(player.playerView!)
         player .play()
     }
-    
-
 }
 
 
@@ -126,13 +139,12 @@ extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
         case 0:
             self.textInputBar.textField.becomeFirstResponder()
         case 1:
-            debugPrint("tap share")
             toggleShareView()
         case 2:
-            debugPrint("tap sendGift")
-            giftView.show(view)
+            giftView.showInView(view)
         case 3:
             debugPrint("tap close")
+            player .stop()
             self.navigationController?.popViewControllerAnimated(true)
         default:
             debugPrint("tap error")
@@ -187,14 +199,14 @@ extension PPLiveWatchViewController {
         setupBottomControlPanelView()
         setupGiftShowsAnimateView()
         setupHostCollectionViews()
-        setupTextInputBar()
         setupNewsTableView()
         setupHeartFloatingView()
     }
     
     
-    func setupTextInputBar() {
-        textInputBar = PPTextInputBar()
+    func generateTextInputBar() -> PPTextInputBar {
+        
+        let textInputBar = PPTextInputBar()
         textInputBar.hidden = true
         view.addSubview(textInputBar)
         
@@ -203,6 +215,8 @@ extension PPLiveWatchViewController {
             textInputBarBottomContraint = make.bottom.equalTo(view).constraint
             make.height.equalTo(textInputBar.height)
         }
+        return textInputBar
+        
     }
     
     func setupNewsTableView () {
@@ -291,7 +305,7 @@ extension PPLiveWatchViewController {
         
     }
     
-    func initializeAvatarCollectionView() -> UICollectionView {
+    func generateAvatarCollectionView() -> UICollectionView {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .Horizontal
@@ -313,7 +327,24 @@ extension PPLiveWatchViewController {
     
 }
 
-extension PPLiveWatchViewController: PPGiftViewDelegate{
+// MARK:Custom Delegate
+
+extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPlayerDelegate{
+    
+    func player(player: PLPlayer, statusDidChange state: PLPlayerStatus) {
+        print("player statusDidChange \(state)")
+    }
+    func player(player: PLPlayer, stoppedWithError error: NSError?) {
+        print("player stoppedWithError \(error)")
+    }
+    func player(player: PLPlayer, willEndBackgroundTask isExpirationOccured: Bool) {
+        print("player isExpirationOccured")
+    }
+    func playerWillBeginBackgroundTask(player: PLPlayer) {
+        print("player playerWillBeginBackgroundTask")
+    }
+    
+    
     func giftViewDidChargeMoney(giftView: PPGiftView) {
         debugPrint("准备跳往充值页面")
     }
@@ -321,7 +352,105 @@ extension PPLiveWatchViewController: PPGiftViewDelegate{
     func giftViewDidSendDiamond(giftView: PPGiftView, model: PPGiftModel) {
         debugPrint("送出\(model.diamondCount)颗钻石")
     }
+    
+    func shareView(shareView: PPShareView, didTap index: Int) {
+        switch(index) {
+        case 1:
+            //sina
+            if !MonkeyKing.isAppInstalled(.Weibo) {
+                print("没有安装微博")
+                return
+            }
+            let message = MonkeyKing.Message.Weibo(.Default(info: (
+                title: "News",
+                description: "Hello Yep",
+                thumbnail: UIImage(named: "rabbit"),
+                media: .URL(NSURL(string: "http://soyep.com")!)
+                ), accessToken: nil))
+            MonkeyKing.shareMessage(message) { result in
+                print("result: \(result)")
+            }
+          
+        case 2:
+            //wechat moments
+            if !MonkeyKing.isAppInstalled(.WeChat) {
+                print("没有安装微信")
+                return
+            }
+
+            let message = MonkeyKing.Message.WeChat(.Timeline(info: (
+                title: "Session",
+                description: "Hello Session",
+                thumbnail: UIImage(named: "rabbit"),
+                media: .URL(NSURL(string: "http://www.apple.com/cn")!)
+            )))
+            
+            MonkeyKing.shareMessage(message) { success in
+                print("shareURLToWeChatSession success: \(success)")
+            }
+        case 3:
+            //wechat session
+            if !MonkeyKing.isAppInstalled(.WeChat) {
+                print("没有安装微信")
+                return
+            }
+            let message = MonkeyKing.Message.WeChat(.Session(info: (
+                title: "Session",
+                description: "Hello Session",
+                thumbnail: UIImage(named: "demo"),
+                media: .URL(NSURL(string: "http://www.apple.com/cn")!)
+            )))
+            
+            MonkeyKing.shareMessage(message) { success in
+                print("shareURLToWeChatSession success: \(success)")
+            }
+
+        case 4:
+            //QQ
+            if !MonkeyKing.isAppInstalled(.QQ) {
+                print("没有安装QQ")
+                return
+            }
+            let info = MonkeyKing.Info(
+                title: "QQ URL, \(NSUUID().UUIDString)",
+                description: "apple.com/cn, \(NSUUID().UUIDString)",
+                thumbnail: UIImage(named: "demo"),
+                media: .URL(NSURL(string: "http://www.apple.com/cn")!)
+            )
+            let message :MonkeyKing.Message? = MonkeyKing.Message.QQ(.Friends(info: info))
+            
+            if let message = message{
+                MonkeyKing.shareMessage(message) { result in
+                    print("result: \(result)")
+                }
+            }
+            
+        case 5:
+            //QZone
+            if !MonkeyKing.isAppInstalled(.QQ) {
+                print("没有安装QQ")
+                return
+            }
+            let info = MonkeyKing.Info(
+                title: "QQ URL, \(NSUUID().UUIDString)",
+                description: "apple.com/cn, \(NSUUID().UUIDString)",
+                thumbnail: UIImage(named: "demo"),
+                media: .URL(NSURL(string: "http://www.apple.com/cn")!)
+            )
+            let message :MonkeyKing.Message? = MonkeyKing.Message.QQ(.Zone(info: info))
+            
+            if let message = message{
+                MonkeyKing.shareMessage(message) { result in
+                    print("result: \(result)")
+                }
+            }
+
+        default: break
+        }
+    }
 }
+
+
 
 extension PPLiveWatchViewController {
     

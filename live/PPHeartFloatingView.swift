@@ -10,10 +10,10 @@ import UIKit
 
 class PPHeartFloatingView: UIView {
 
-    
+    var queue:Queue<PPLovingHeartView> = Queue<PPLovingHeartView>()
     
     func setupHeartBalloonGenerator() {
-        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "fireBallon", userInfo: nil, repeats: true)
     }
 
 
@@ -21,8 +21,14 @@ class PPHeartFloatingView: UIView {
         let delaySec = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySec * CGFloat(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let heart = PPLovingHeartView()
+            var heart:PPLovingHeartView!
             
+
+            if self.queue.count>2{
+                heart = self.queue.dequeue()
+            }else {
+                heart = PPLovingHeartView()
+            }
             let viewHeight = CGRectGetHeight(self.frame)
             let viewWidth = CGRectGetWidth(self.frame)
             heart.frame = CGRectMake(viewWidth*0.5-10, viewHeight - 20, 20, 20)
@@ -60,6 +66,7 @@ class PPHeartFloatingView: UIView {
                 heart.alpha = 0.0
                 }, completion: { (finished) -> Void in
                     heart .removeFromSuperview()
+                    self.queue.enqueue(heart)
             })
         }
     }

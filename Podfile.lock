@@ -34,7 +34,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.2.1)
   - glm (from `https://github.com/peiweichen/glm`)
-  - PLPlayerKit
+  - PLPlayerKit (~> 2.1.0)
   - RealmSwift (~> 0.98.5)
   - SnapKit (~> 0.19.1)
   - VideoCore/Swift (from `https://github.com/peiweichen/VideoCore.git`, branch `update_headers`)

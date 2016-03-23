@@ -12,11 +12,22 @@ class PPPodiumUserView: UIView {
     
     @IBOutlet weak var avatarImageView: PPRoundImageView!
     
+    @IBOutlet weak var crownImageView: UIImageView!
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     var user: PPUserModel
     
-    var rank: Int
+    var rank: Int{
+        didSet{
+            avatarImageView.layer.borderColor = rankColorDict[rank]
+            avatarImageView.layer.borderWidth = 3.0
+//            self.setNeedsDisplay()
+            
+//            
+            crownImageView.image = rankCrownDict[rank]
+        }
+    }
     
     override init(frame: CGRect){
         user = PPUserModel(avatarImageUrl: "nil", username: "nil", coinsContributed: 0, ranking: 0)
@@ -43,13 +54,27 @@ class PPPodiumUserView: UIView {
     }
     
     func setupSubviews(){
-        let nib = UINib(nibName: "PPPodiumUserView",
+        let nib    = UINib(nibName: "PPPodiumUserView",
             bundle: nil)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view   = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         view.frame = self.bounds
         self.addSubview(view)
         
-        avatarImageView.layer.borderColor = UIColor(hex: 0xFFA403).CGColor
-        avatarImageView.layer.borderWidth = 3.0
+        
+    }
+    
+    private var rankColorDict:Dictionary<Int,CGColor>{
+        return [
+            1: UIColor(hex: 0xF8E200).CGColor,
+            2: UIColor(hex: 0xFFA403).CGColor,
+            3: UIColor(hex: 0xD0D0D0).CGColor]
+    }
+    
+    private var rankCrownDict:Dictionary<Int, UIImage>{
+        return [
+            1: UIImage(named: "ic_no1")!,
+            2: UIImage(named: "ic_no2")!,
+            3: UIImage(named: "ic_no3")!
+        ]
     }
 }

@@ -72,6 +72,7 @@ class PPPodiumView: UIView {
         
         // containerView的顺序是从左到右的，但是第一名的用户是放在正中间 
         let podiumUserView1 = PPPodiumUserView()
+        podiumUserView1.rank = 1
         containerView2.addSubview(podiumUserView1)
         podiumUserView1.snp_makeConstraints {  (make) -> Void in
             make.size.equalTo(CGSize(width: 86, height: 135))
@@ -80,6 +81,7 @@ class PPPodiumView: UIView {
         }
         
         let podiumUserView2 = PPPodiumUserView()
+        podiumUserView2.rank = 2
         containerView1.addSubview(podiumUserView2)
         podiumUserView2.snp_makeConstraints { (make) -> Void in
             make.size.equalTo(CGSize(width: 86, height: 135))
@@ -88,6 +90,7 @@ class PPPodiumView: UIView {
         }
         
         let podiumUserView3 = PPPodiumUserView()
+        podiumUserView3.rank = 3
         containerView3.addSubview(podiumUserView3)
         podiumUserView3.snp_makeConstraints { (make) -> Void in
             make.size.equalTo(CGSize(width: 86, height: 135))

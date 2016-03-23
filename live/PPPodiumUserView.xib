@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPPodiumUserView" customModule="live" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImageView" destination="iBS-5V-VCA" id="oHD-a9-kyW"/>
+                <outlet property="crownImageView" destination="3mB-i8-gZJ" id="ptv-Ui-4fa"/>
                 <outlet property="usernameLabel" destination="Wky-hs-enC" id="kN9-KF-Q4x"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
                         <constraint firstAttribute="height" constant="60" id="qFg-f1-yzb"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no2" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-i8-gZJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no2" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-i8-gZJ" userLabel="crownImageView">
                     <rect key="frame" x="58" y="8" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="FeR-jD-0CS"/>
@@ -75,7 +76,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-223" y="98.5"/>
+            <point key="canvasLocation" x="-434" y="-12.5"/>
         </view>
     </objects>
     <resources>

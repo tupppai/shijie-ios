@@ -16,8 +16,11 @@ class PPPodiumUserView: UIView {
     
     var user: PPUserModel
     
+    var rank: Int
+    
     override init(frame: CGRect){
         user = PPUserModel(avatarImageUrl: "nil", username: "nil", coinsContributed: 0, ranking: 0)
+        rank = 0
         super.init(frame: frame)
         setupSubviews()
     }
@@ -26,13 +29,15 @@ class PPPodiumUserView: UIView {
         self.init(frame: CGRect.zero)
     }
     
-    convenience init(user: PPUserModel){
+    convenience init(user: PPUserModel, rank: Int){
         self.init(frame: CGRect.zero)
         self.user = user
+        self.rank = rank
     }
     
     required init?(coder aDecoder: NSCoder) {
         user = PPUserModel(avatarImageUrl: "nil", username: "nil", coinsContributed: 0, ranking: 0)
+        rank = 0
         super.init(coder: aDecoder)
         setupSubviews()
     }

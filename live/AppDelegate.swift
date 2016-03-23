@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = tabBarController
+//        self.window?.rootViewController = tabBarController
+        
+        let navigationController = UINavigationController(rootViewController: PPCoinsContributionViewController())
+        navigationController.navigationBar.barStyle = .Black
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         
         

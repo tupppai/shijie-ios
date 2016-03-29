@@ -26,11 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: Configs.Wechat.appID, appKey: Configs.Wechat.appKey))
         MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: Configs.Weibo.appID, appKey: Configs.Weibo.appKey, redirectURL: Configs.Weibo.redirectURL))
         MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: Configs.QQ.appID))
-
-       
-//        let unsafePointerOfN = ("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]" as NSString).UTF8String
-//        let unsafeMutablePointerOfN: UnsafeMutablePointer<Int8> = UnsafeMutablePointer(unsafePointerOfN)
-//        RegisterFFEngine("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]")
+        
+        TLSLoginHelper.init(1400007955, andAccountType: 3997, andAppVer: "1.0")
+        TLSAccountHelper.init(1400007955, andAccountType: 3997, andAppVer: "1.0")
+        
         
         return true
     }

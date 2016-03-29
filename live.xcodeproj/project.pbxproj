@@ -81,20 +81,18 @@
 		F4D273901C9FEF6D00A70F18 /* PPAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */; };
 		F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273911C9FF3D800A70F18 /* PPUtility.swift */; };
 		F4D273941C9FF69A00A70F18 /* PPUserPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */; };
-		F4E32C361CAA54EA00F7A70E /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C2E1CAA54EA00F7A70E /* Analytics.framework */; };
-		F4E32C371CAA54EA00F7A70E /* AVFoundationEx.FrameWork in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C2F1CAA54EA00F7A70E /* AVFoundationEx.FrameWork */; };
-		F4E32C381CAA54EA00F7A70E /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C301CAA54EA00F7A70E /* IMCore.framework */; };
-		F4E32C391CAA54EA00F7A70E /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C311CAA54EA00F7A70E /* ImSDK.framework */; };
-		F4E32C3A1CAA54EA00F7A70E /* IMSDKBugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C321CAA54EA00F7A70E /* IMSDKBugly.framework */; };
-		F4E32C3B1CAA54EA00F7A70E /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C331CAA54EA00F7A70E /* QALSDK.framework */; };
-		F4E32C3C1CAA54EA00F7A70E /* QAVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C341CAA54EA00F7A70E /* QAVSDK.framework */; };
-		F4E32C3D1CAA54EA00F7A70E /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C351CAA54EA00F7A70E /* TLSSDK.framework */; };
-		F4E32C3F1CAA551D00F7A70E /* libprotobuf.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C3E1CAA551D00F7A70E /* libprotobuf.tbd */; };
 		F4E32C411CAA552500F7A70E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C401CAA552500F7A70E /* AdSupport.framework */; };
 		F4E32C431CAA553700F7A70E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C421CAA553700F7A70E /* CoreTelephony.framework */; };
 		F4E32C451CAA554200F7A70E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C441CAA554200F7A70E /* SystemConfiguration.framework */; };
 		F4E32C471CAA554A00F7A70E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C461CAA554A00F7A70E /* libc++.tbd */; };
 		F4E32C4B1CAA555E00F7A70E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */; };
+		F4E32C501CAA645D00F7A70E /* PPQCloudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */; };
+		F4E32C521CAA670500F7A70E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C511CAA670500F7A70E /* ImageIO.framework */; };
+		F4E32C701CAA6ABB00F7A70E /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C671CAA6ABB00F7A70E /* Analytics.framework */; };
+		F4E32C711CAA6ABB00F7A70E /* AVFoundationEx.FrameWork in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */; };
+		F4E32C721CAA6ABB00F7A70E /* frameworkÀµ√˜.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */; };
+		F4E32C761CAA6ABB00F7A70E /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */; };
+		F4E32C781CAA6ABB00F7A70E /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -117,15 +115,11 @@
 		F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */; };
 		F4EC53051C9BF33100C1DA94 /* PPRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */; };
 		F4EC53071C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */; };
-		F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1A1C8FE43700756F00 /* libbz2.tbd */; };
 		F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1C1C8FE44A00756F00 /* libz.tbd */; };
-		F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */; };
-		F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C261C8FE62D00756F00 /* libiconv.tbd */; };
 		F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */; };
 		F4F429FF1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F429FE1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift */; };
 		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
 		F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */; };
-		F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */; };
 		F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */; };
 		F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */; };
 		F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486961C97C77100498CD3 /* PPExtension.swift */; };
@@ -220,14 +214,6 @@
 		F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnimations.swift; sourceTree = "<group>"; };
 		F4D273911C9FF3D800A70F18 /* PPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUtility.swift; sourceTree = "<group>"; };
 		F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserPanelView.swift; sourceTree = "<group>"; };
-		F4E32C2E1CAA54EA00F7A70E /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
-		F4E32C2F1CAA54EA00F7A70E /* AVFoundationEx.FrameWork */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundationEx.FrameWork; sourceTree = "<group>"; };
-		F4E32C301CAA54EA00F7A70E /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
-		F4E32C311CAA54EA00F7A70E /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
-		F4E32C321CAA54EA00F7A70E /* IMSDKBugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMSDKBugly.framework; sourceTree = "<group>"; };
-		F4E32C331CAA54EA00F7A70E /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
-		F4E32C341CAA54EA00F7A70E /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
-		F4E32C351CAA54EA00F7A70E /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
 		F4E32C3E1CAA551D00F7A70E /* libprotobuf.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprotobuf.tbd; path = usr/lib/libprotobuf.tbd; sourceTree = SDKROOT; };
 		F4E32C401CAA552500F7A70E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F4E32C421CAA553700F7A70E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -235,6 +221,18 @@
 		F4E32C461CAA554A00F7A70E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		F4E32C481CAA555200F7A70E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F4E32C4E1CAA645D00F7A70E /* PPQCloudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPQCloudHelper.h; sourceTree = "<group>"; };
+		F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPQCloudHelper.m; sourceTree = "<group>"; };
+		F4E32C511CAA670500F7A70E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F4E32C671CAA6ABB00F7A70E /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
+		F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundationEx.FrameWork; sourceTree = "<group>"; };
+		F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frameworkÀµ√˜.txt"; sourceTree = "<group>"; };
+		F4E32C6A1CAA6ABB00F7A70E /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
+		F4E32C6B1CAA6ABB00F7A70E /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
+		F4E32C6C1CAA6ABB00F7A70E /* IMSDKBugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMSDKBugly.framework; sourceTree = "<group>"; };
+		F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
+		F4E32C6E1CAA6ABB00F7A70E /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
+		F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -282,26 +280,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E32C4B1CAA555E00F7A70E /* libsqlite3.tbd in Frameworks */,
 				F4E32C471CAA554A00F7A70E /* libc++.tbd in Frameworks */,
-				F4E32C451CAA554200F7A70E /* SystemConfiguration.framework in Frameworks */,
-				F4E32C431CAA553700F7A70E /* CoreTelephony.framework in Frameworks */,
+				F4E32C781CAA6ABB00F7A70E /* TLSSDK.framework in Frameworks */,
 				F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */,
+				F4E32C4B1CAA555E00F7A70E /* libsqlite3.tbd in Frameworks */,
 				F4E32C411CAA552500F7A70E /* AdSupport.framework in Frameworks */,
-				F4E32C3F1CAA551D00F7A70E /* libprotobuf.tbd in Frameworks */,
-				F4E32C3D1CAA54EA00F7A70E /* TLSSDK.framework in Frameworks */,
-				F4E32C3B1CAA54EA00F7A70E /* QALSDK.framework in Frameworks */,
-				F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */,
-				F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */,
-				F4E32C3C1CAA54EA00F7A70E /* QAVSDK.framework in Frameworks */,
-				F4E32C3A1CAA54EA00F7A70E /* IMSDKBugly.framework in Frameworks */,
-				F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */,
-				F4E32C361CAA54EA00F7A70E /* Analytics.framework in Frameworks */,
-				F4E32C381CAA54EA00F7A70E /* IMCore.framework in Frameworks */,
-				F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */,
+				F4E32C431CAA553700F7A70E /* CoreTelephony.framework in Frameworks */,
+				F4E32C701CAA6ABB00F7A70E /* Analytics.framework in Frameworks */,
+				F4E32C761CAA6ABB00F7A70E /* QALSDK.framework in Frameworks */,
+				F4E32C521CAA670500F7A70E /* ImageIO.framework in Frameworks */,
+				F4E32C711CAA6ABB00F7A70E /* AVFoundationEx.FrameWork in Frameworks */,
+				F4E32C451CAA554200F7A70E /* SystemConfiguration.framework in Frameworks */,
 				2E2CD845D08C1AD89402DAB1 /* Pods.framework in Frameworks */,
-				F4E32C371CAA54EA00F7A70E /* AVFoundationEx.FrameWork in Frameworks */,
-				F4E32C391CAA54EA00F7A70E /* ImSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +301,7 @@
 		031DAD5C2A474689C914A35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4E32C511CAA670500F7A70E /* ImageIO.framework */,
 				F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */,
 				F4E32C481CAA555200F7A70E /* libsqlite3.0.tbd */,
 				F4E32C461CAA554A00F7A70E /* libc++.tbd */,
@@ -333,14 +324,6 @@
 				BE6079134BFC8D209F4B9E3C /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9009D9A71CA24EC700292317 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				9009D9A81CA2517B00292317 /* LTNavigationBar */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		9009D9A81CA2517B00292317 /* LTNavigationBar */ = {
@@ -493,17 +476,18 @@
 			name = LiveWatch;
 			sourceTree = "<group>";
 		};
-		F4E32C2D1CAA54E900F7A70E /* qcloud */ = {
+		F4E32C661CAA6ABB00F7A70E /* qcloud */ = {
 			isa = PBXGroup;
 			children = (
-				F4E32C2E1CAA54EA00F7A70E /* Analytics.framework */,
-				F4E32C2F1CAA54EA00F7A70E /* AVFoundationEx.FrameWork */,
-				F4E32C301CAA54EA00F7A70E /* IMCore.framework */,
-				F4E32C311CAA54EA00F7A70E /* ImSDK.framework */,
-				F4E32C321CAA54EA00F7A70E /* IMSDKBugly.framework */,
-				F4E32C331CAA54EA00F7A70E /* QALSDK.framework */,
-				F4E32C341CAA54EA00F7A70E /* QAVSDK.framework */,
-				F4E32C351CAA54EA00F7A70E /* TLSSDK.framework */,
+				F4E32C671CAA6ABB00F7A70E /* Analytics.framework */,
+				F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */,
+				F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */,
+				F4E32C6A1CAA6ABB00F7A70E /* IMCore.framework */,
+				F4E32C6B1CAA6ABB00F7A70E /* ImSDK.framework */,
+				F4E32C6C1CAA6ABB00F7A70E /* IMSDKBugly.framework */,
+				F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */,
+				F4E32C6E1CAA6ABB00F7A70E /* QAVSDK.framework */,
+				F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */,
 			);
 			path = qcloud;
 			sourceTree = "<group>";
@@ -553,8 +537,8 @@
 		F4FDA2F61C8ED12F00EFBEF9 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				F4E32C2D1CAA54E900F7A70E /* qcloud */,
-				9009D9A71CA24EC700292317 /* Categories */,
+				F4E32C661CAA6ABB00F7A70E /* qcloud */,
+				9009D9A81CA2517B00292317 /* LTNavigationBar */,
 				F4241A521C9A5ED300AD4343 /* Spring */,
 				F417C4A51C898E9B0009AAFF /* MonkeyKing */,
 			);
@@ -628,6 +612,8 @@
 				F4D273911C9FF3D800A70F18 /* PPUtility.swift */,
 				F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */,
 				F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */,
+				F4E32C4E1CAA645D00F7A70E /* PPQCloudHelper.h */,
+				F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */,
 			);
 			name = tools;
 			sourceTree = "<group>";
@@ -722,6 +708,7 @@
 				F4EC52FF1C9BE42E00C1DA94 /* UserHeaderView.xib in Resources */,
 				F4EC52F61C9BE42E00C1DA94 /* CountButton.xib in Resources */,
 				F40853C01C97F1FD00F343C7 /* demo.png in Resources */,
+				F4E32C721CAA6ABB00F7A70E /* frameworkÀµ√˜.txt in Resources */,
 				F4EC53011C9BE42E00C1DA94 /* UserHeaderView2.xib in Resources */,
 				F4EC52F81C9BE42E00C1DA94 /* RollContributionListView.xib in Resources */,
 				9009D9B61CA26C3400292317 /* PPPodiumUserView.xib in Resources */,
@@ -844,6 +831,7 @@
 				F4241A8B1C9A5ED300AD4343 /* TransitionManager.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */,
+				F4E32C501CAA645D00F7A70E /* PPQCloudHelper.m in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
 				F4241A7E1C9A5ED300AD4343 /* KeyboardLayoutConstraint.swift in Sources */,
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
@@ -972,6 +960,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/live/qcloud",
+					"$(PROJECT_DIR)/live/libs",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1020,6 +1009,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/live/qcloud",
+					"$(PROJECT_DIR)/live/libs",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

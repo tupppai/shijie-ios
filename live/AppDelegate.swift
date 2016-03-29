@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,TLSSmsRegListener{
 
     var window: UIWindow?
     lazy var tabBarController:PPTabBarController = PPTabBarController()
@@ -19,11 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        self.window?.rootViewController = tabBarController
         
-        let navigationController = UINavigationController(rootViewController: PPCoinsContributionViewController())
-        navigationController.navigationBar.barStyle = .Black
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
         
@@ -31,14 +28,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: Configs.Weibo.appID, appKey: Configs.Weibo.appKey, redirectURL: Configs.Weibo.redirectURL))
         MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: Configs.QQ.appID))
         
-        TLSLoginHelper.init(1400007955, andAccountType: 3997, andAppVer: "1.0")
-        TLSAccountHelper.init(1400007955, andAccountType: 3997, andAppVer: "1.0")
-        
+        PPQCloudHelper.setupTLS()
         
         return true
     }
     
+    func OnSmsRegVerifyCodeSuccess() {
+        print("OnSmsRegVerifyCodeSuccess")
+    }
+    
+    func OnSmsRegFail(errInfo: TLSErrInfo!) {
+        print("OnSmsRegFail\(errInfo)")
 
+    }
+    func OnSmsRegTimeout(errInfo: TLSErrInfo!) {
+        print("OnSmsRegTimeout\(errInfo)")
+
+    }
+    func OnSmsRegCommitSuccess(userInfo: TLSUserInfo!) {
+        print("OnSmsRegCommitSuccess\(userInfo)")
+
+    }
+    func OnSmsRegAskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
+        print("OnSmsRegAskCodeSuccess\(reaskDuration)")
+
+    }
+    func OnSmsRegReaskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
+        print("OnSmsRegReaskCodeSuccess\(reaskDuration)")
+    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         

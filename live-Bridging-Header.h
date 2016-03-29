@@ -19,3 +19,4 @@
 #import "TLSSDK/TLSAccountHelper.h"
 #import "TLSSDK/TLSLoginHelper.h"
 #import "QALSDK/QalSDKProxy.h"
+#import "UINavigationBar+Awesome.h"

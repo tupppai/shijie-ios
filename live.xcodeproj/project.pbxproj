@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2E2CD845D08C1AD89402DAB1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6079134BFC8D209F4B9E3C /* Pods.framework */; };
+		9009D9A61CA2419300292317 /* PPCoinsContributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9A51CA2419300292317 /* PPCoinsContributionViewController.swift */; };
+		9009D9AB1CA2517B00292317 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9AA1CA2517B00292317 /* UINavigationBar+Awesome.m */; };
+		9009D9AE1CA2654100292317 /* PPUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9AD1CA2654100292317 /* PPUserModel.swift */; };
+		9009D9B21CA2688800292317 /* PPPodiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9B11CA2688800292317 /* PPPodiumView.swift */; };
+		9009D9B41CA26C0C00292317 /* PPPodiumUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9B31CA26C0C00292317 /* PPPodiumUserView.swift */; };
+		9009D9B61CA26C3400292317 /* PPPodiumUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9009D9B51CA26C3400292317 /* PPPodiumUserView.xib */; };
+		9009D9B91CA26F6500292317 /* PPPodiumUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9B71CA26F6500292317 /* PPPodiumUserTableViewCell.swift */; };
+		9009D9BA1CA26F6500292317 /* PPPodiumUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9009D9B81CA26F6500292317 /* PPPodiumUserTableViewCell.xib */; };
+		9009D9C21CA279DF00292317 /* PPUserRankCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D9C11CA279DF00292317 /* PPUserRankCountView.swift */; };
 		9086EE851CA1315300F0BECD /* HorizontalCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE7E1CA1315300F0BECD /* HorizontalCollectionViewLayout.swift */; };
 		9086EE861CA1315300F0BECD /* PPGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE7F1CA1315300F0BECD /* PPGiftCell.swift */; };
 		9086EE871CA1315300F0BECD /* PPGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9086EE801CA1315300F0BECD /* PPGiftCell.xib */; };
@@ -125,6 +134,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9009D9A51CA2419300292317 /* PPCoinsContributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCoinsContributionViewController.swift; sourceTree = "<group>"; };
+		9009D9A91CA2517B00292317 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		9009D9AA1CA2517B00292317 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		9009D9AD1CA2654100292317 /* PPUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserModel.swift; sourceTree = "<group>"; };
+		9009D9B11CA2688800292317 /* PPPodiumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPodiumView.swift; sourceTree = "<group>"; };
+		9009D9B31CA26C0C00292317 /* PPPodiumUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPodiumUserView.swift; sourceTree = "<group>"; };
+		9009D9B51CA26C3400292317 /* PPPodiumUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPPodiumUserView.xib; sourceTree = "<group>"; };
+		9009D9B71CA26F6500292317 /* PPPodiumUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPodiumUserTableViewCell.swift; sourceTree = "<group>"; };
+		9009D9B81CA26F6500292317 /* PPPodiumUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPPodiumUserTableViewCell.xib; sourceTree = "<group>"; };
+		9009D9C11CA279DF00292317 /* PPUserRankCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserRankCountView.swift; sourceTree = "<group>"; };
 		9086EE7E1CA1315300F0BECD /* HorizontalCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9086EE7F1CA1315300F0BECD /* PPGiftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftCell.swift; sourceTree = "<group>"; };
 		9086EE801CA1315300F0BECD /* PPGiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPGiftCell.xib; sourceTree = "<group>"; };
@@ -316,6 +335,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9009D9A71CA24EC700292317 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9009D9A81CA2517B00292317 /* LTNavigationBar */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		9009D9A81CA2517B00292317 /* LTNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				9009D9A91CA2517B00292317 /* UINavigationBar+Awesome.h */,
+				9009D9AA1CA2517B00292317 /* UINavigationBar+Awesome.m */,
+			);
+			path = LTNavigationBar;
+			sourceTree = "<group>";
+		};
+		9009D9AC1CA2650100292317 /* coinsContribution */ = {
+			isa = PBXGroup;
+			children = (
+				9009D9A51CA2419300292317 /* PPCoinsContributionViewController.swift */,
+				9009D9AD1CA2654100292317 /* PPUserModel.swift */,
+				9009D9B11CA2688800292317 /* PPPodiumView.swift */,
+				9009D9B31CA26C0C00292317 /* PPPodiumUserView.swift */,
+				9009D9B51CA26C3400292317 /* PPPodiumUserView.xib */,
+				9009D9B71CA26F6500292317 /* PPPodiumUserTableViewCell.swift */,
+				9009D9B81CA26F6500292317 /* PPPodiumUserTableViewCell.xib */,
+				9009D9C11CA279DF00292317 /* PPUserRankCountView.swift */,
+			);
+			name = coinsContribution;
+			sourceTree = "<group>";
+		};
 		9086EE7D1CA1314100F0BECD /* giftView */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +484,7 @@
 		F4241AB21C9AAB4900AD4343 /* LiveWatch */ = {
 			isa = PBXGroup;
 			children = (
+				9009D9AC1CA2650100292317 /* coinsContribution */,
 				9086EE7D1CA1314100F0BECD /* giftView */,
 				F4FF22BC1CA0F84900D71B5B /* shareView */,
 				F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */,
@@ -502,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E32C2D1CAA54E900F7A70E /* qcloud */,
+				9009D9A71CA24EC700292317 /* Categories */,
 				F4241A521C9A5ED300AD4343 /* Spring */,
 				F417C4A51C898E9B0009AAFF /* MonkeyKing */,
 			);
@@ -659,6 +712,7 @@
 			files = (
 				F4241A7D1C9A5ED300AD4343 /* Info.plist in Resources */,
 				9086EE871CA1315300F0BECD /* PPGiftCell.xib in Resources */,
+				9009D9BA1CA26F6500292317 /* PPPodiumUserTableViewCell.xib in Resources */,
 				9086EE8B1CA1315300F0BECD /* PPGiftViewToolBar.xib in Resources */,
 				F417C4AC1C898E9B0009AAFF /* Info.plist in Resources */,
 				F4EC52FC1C9BE42E00C1DA94 /* PPUserDetailPanelView.xib in Resources */,
@@ -670,6 +724,7 @@
 				F40853C01C97F1FD00F343C7 /* demo.png in Resources */,
 				F4EC53011C9BE42E00C1DA94 /* UserHeaderView2.xib in Resources */,
 				F4EC52F81C9BE42E00C1DA94 /* RollContributionListView.xib in Resources */,
+				9009D9B61CA26C3400292317 /* PPPodiumUserView.xib in Resources */,
 				F4EC52FA1C9BE42E00C1DA94 /* SettingTableViewCell.xib in Resources */,
 				F4241A801C9A5ED300AD4343 /* LoadingView.xib in Resources */,
 			);
@@ -747,9 +802,13 @@
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */,
 				F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */,
+				9009D9B21CA2688800292317 /* PPPodiumView.swift in Sources */,
 				9086EE851CA1315300F0BECD /* HorizontalCollectionViewLayout.swift in Sources */,
 				9086EE8D1CA1316F00F0BECD /* PPGiftModel.swift in Sources */,
+				9009D9AE1CA2654100292317 /* PPUserModel.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
+				9009D9C21CA279DF00292317 /* PPUserRankCountView.swift in Sources */,
+				9009D9AB1CA2517B00292317 /* UINavigationBar+Awesome.m in Sources */,
 				F4241A791C9A5ED300AD4343 /* DesignableTextField.swift in Sources */,
 				F4241A871C9A5ED300AD4343 /* SpringLabel.swift in Sources */,
 				F4D2738C1C9FD82A00A70F18 /* PPTextInputBar.swift in Sources */,
@@ -761,12 +820,14 @@
 				F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
 				F4D273901C9FEF6D00A70F18 /* PPAnimations.swift in Sources */,
+				9009D9B41CA26C0C00292317 /* PPPodiumUserView.swift in Sources */,
 				F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */,
 				F4241A821C9A5ED300AD4343 /* SoundPlayer.swift in Sources */,
 				F4241A881C9A5ED300AD4343 /* SpringTextField.swift in Sources */,
 				F4EC52DF1C9BDE1300C1DA94 /* PPHostView.swift in Sources */,
 				F4241A841C9A5ED300AD4343 /* SpringAnimation.swift in Sources */,
 				F4EC52F31C9BE42E00C1DA94 /* PPMeTableViewController.swift in Sources */,
+				9009D9A61CA2419300292317 /* PPCoinsContributionViewController.swift in Sources */,
 				9086EE861CA1315300F0BECD /* PPGiftCell.swift in Sources */,
 				F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */,
 				F4EC52F51C9BE42E00C1DA94 /* CountButton.swift in Sources */,
@@ -777,6 +838,7 @@
 				F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */,
 				F4241A7A1C9A5ED300AD4343 /* DesignableTextView.swift in Sources */,
 				F4EC52FE1C9BE42E00C1DA94 /* UserHeaderView.swift in Sources */,
+				9009D9B91CA26F6500292317 /* PPPodiumUserTableViewCell.swift in Sources */,
 				F4FF22B71CA0E8BD00D71B5B /* PPHeartFloatingView.swift in Sources */,
 				F4241A741C9A5ED300AD4343 /* BlurView.swift in Sources */,
 				F4241A8B1C9A5ED300AD4343 /* TransitionManager.swift in Sources */,

@@ -13,3 +13,4 @@
 #endif /* bridge_h */
 
 #import <PLPlayerKit/PLPlayer.h>
+#import "UINavigationBar+Awesome.h"

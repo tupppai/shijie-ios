@@ -13,3 +13,4 @@ pod 'glm', :git => 'https://github.com/peiweichen/glm'
 
 pod 'PLPlayerKit', '~> 2.1.0'
 
+pod 'PKHUD'

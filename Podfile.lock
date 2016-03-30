@@ -16,6 +16,7 @@ PODS:
   - boost/shared_ptr-includes (1.51.0)
   - boost/string_algorithms-includes (1.51.0)
   - glm (0.9.7.1)
+  - PKHUD (3.1.0)
   - PLPlayerKit (2.1.0):
     - PLPlayerKit/precompiled (= 2.1.0)
   - PLPlayerKit/precompiled (2.1.0)
@@ -34,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.2.1)
   - glm (from `https://github.com/peiweichen/glm`)
+  - PKHUD
   - PLPlayerKit (~> 2.1.0)
   - RealmSwift (~> 0.98.5)
   - SnapKit (~> 0.19.1)
@@ -58,6 +60,7 @@ SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   boost: 6c5c8d8daef26ac83c1e1c00ad14de62b80161d7
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
+  PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
   PLPlayerKit: 6c89abc19818ba434a8a8ac4c0cdde1169fd3ef6
   Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
   RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358

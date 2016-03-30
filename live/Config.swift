@@ -37,7 +37,7 @@ struct Configs {
     struct Weibo {
         static let appID = "1772193724"
         static let appKey = "453283216b8c885dad2cdb430c74f62a"
-        static let redirectURL = "http://www.tupppai.com"
+        static let redirectURL = "http://www.limon.top"
     }
     
     struct Wechat {

@@ -93,6 +93,7 @@
 		F4E32C721CAA6ABB00F7A70E /* frameworkÀµ√˜.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */; };
 		F4E32C761CAA6ABB00F7A70E /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */; };
 		F4E32C781CAA6ABB00F7A70E /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */; };
+		F4E32C7B1CAB776F00F7A70E /* PPShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -233,6 +234,7 @@
 		F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
 		F4E32C6E1CAA6ABB00F7A70E /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
 		F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
+		F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareInfo.swift; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				F492EE441C99D54D007DD791 /* PPShareSheetView.swift */,
 				F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */,
 				F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */,
+				F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */,
 			);
 			name = shareView;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
+				F4E32C7B1CAB776F00F7A70E /* PPShareInfo.swift in Sources */,
 				F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */,
@@ -989,7 +993,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nixWork.China;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "live-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1035,7 +1039,7 @@
 					"\"VideoCore\"",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nixWork.China;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "live-Bridging-Header.h";
 			};

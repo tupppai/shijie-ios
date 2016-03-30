@@ -9,11 +9,12 @@
 
 class PPShareInfo: NSObject {
     static let sharedInstance = PPShareInfo()
-
+    
     var openID:String!
+    var appid:String!
     var accessToken:String!
     var username:String!
     var userAvatarURL:String!
-    var platformType:PPOpenPlatformType!
+    var platformType:PPOpenPlatformType.RawValue!
 
 }

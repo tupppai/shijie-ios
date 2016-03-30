@@ -15,7 +15,7 @@
 +(void)setupTLS {
     
     (void)[[QalSDKProxy sharedInstance]initQal:1400007955];
-    (void)[[TLSHelper getInstance]init:1400007955 andAppVer: @"1.0"];
+    (void)[[TLSHelper getInstance]init:1400007955 andAppVer: @"1.0.0"];
 
 }
 @end

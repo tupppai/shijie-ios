@@ -101,18 +101,19 @@ class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQu
     }
     
     private func query() {
-        
-        TLSHelper.getInstance().TLSOpenQuery(PPShareInfo.sharedInstance.platformType.rawValue, andOpenAppid: Configs.Wechat.appID, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andListener: self)
+        let ret = TLSHelper.getInstance().TLSOpenQuery(PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andListener: self)
+        print("query ret \(ret) \(PPShareInfo.sharedInstance.platformType)  \(PPShareInfo.sharedInstance.appid)")
+
     }
     
     func login() {
-      
-         TLSHelper.getInstance().TLSOpenLogin(PPShareInfo.sharedInstance.platformType.rawValue, andOpenId: PPShareInfo.sharedInstance.openID, andAppid: Configs.Wechat.appID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSOpenLoginListener: self)
+         TLSHelper.getInstance().TLSOpenLogin(PPShareInfo.sharedInstance.platformType, andOpenId: PPShareInfo.sharedInstance.openID, andAppid: PPShareInfo.sharedInstance.appid, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSOpenLoginListener: self)
     }
     func register() {
-        
-            TLSHelper.getInstance().TLSStrAccountReg(PPShareInfo.sharedInstance.username, andPassword: "sHiJie666", andAccType: PPShareInfo.sharedInstance.platformType.rawValue, andOpenAppid: Configs.Wechat.appID, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSStrAccountRegListener: self)
+        print("register")
 
+        let ret = TLSHelper.getInstance().TLSStrAccountReg(PPShareInfo.sharedInstance.username, andPassword: "sHiJie666", andAccType: PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSStrAccountRegListener: self)
+        print("register ret \(ret)")
     }
     
     
@@ -133,11 +134,13 @@ class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQu
     //MARK:查询 回调
     func OnOpenQueryFail(errInfo: TLSErrInfo!) {
         HUD.flash(.Label(" OnOpenQueryFail \(errInfo)  "),delay:2.0)
-        
+        print("OnOpenQueryFail \(errInfo)")
     }
     
     func OnOpenQuerySuccess(state: TLSOpenState) {
-        HUD.flash(.Label(" OnOpenQuerySuccess \(state)  ") ,delay:2.0)
+        print("OnOpenQuerySuccess \(state.rawValue)")
+        HUD.flash(.Label(" OnOpenQuerySuccess \(state.rawValue)  ") ,delay:3.0)
+        
         if  state.rawValue == 3 {
             register()
         } else {
@@ -154,6 +157,7 @@ class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQu
     //MARK:登录 回调
 
     func OnOpenLoginFail(errInfo: TLSErrInfo!) {
+        
         HUD.flash(.Label(" OnOpenLoginFail\(errInfo)  "),delay:2.0)
         
     }
@@ -163,6 +167,7 @@ class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQu
     }
     
     func OnOpenLoginSuccess(userInfo: TLSUserInfo!) {
+        print("OnOpenLoginSuccess\(userInfo)")
         HUD.flash(.Label(" OnOpenLoginSuccess\(userInfo)  "),delay:2.0)
     }
     

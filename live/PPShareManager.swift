@@ -8,6 +8,33 @@
 
 import Foundation
 
+struct Configs {
+    
+    struct Weibo {
+        static let appID = "882276088"
+        static let appKey = "454f67c8e6d29b770d701e9272bc5ee7"
+        static let redirectURL = "https://api.weibo.com/oauth2/default.html"
+    }
+    
+    struct Wechat {
+        static let appID = "wx4868b35061f87885"
+        static let appKey = "64020361b8ec4c99936c0e3999a9f249"
+    }
+    
+    struct QQ {
+        static let appID = "1104881792"
+    }
+    
+    struct Pocket {
+        static let appID = "48363-344532f670a052acff492a25"
+        static let redirectURL = "pocketapp48363:authorizationFinished" // pocketapp + $prefix + :authorizationFinished
+    }
+    
+    struct Alipay {
+        static let appID = "2016012101112529"
+    }
+}
+
 enum PPOpenPlatformType:UInt32 {
     case Unknown = 0
     case QQ = 1
@@ -113,8 +140,21 @@ class PPShareManager:NSObject {
             
             PPShareInfo.sharedInstance.openID = openID
             PPShareInfo.sharedInstance.accessToken = accessToken
-            PPShareInfo.sharedInstance.platformType = platformType
+            PPShareInfo.sharedInstance.platformType = platformType.rawValue
 
+            var appid:String! = ""
+            switch PPShareInfo.sharedInstance.platformType {
+            case PPOpenPlatformType.QQ.rawValue:
+                appid = Configs.QQ.appID
+            case PPOpenPlatformType.WeChat.rawValue:
+                appid = Configs.Wechat.appID
+            case PPOpenPlatformType.Weibo.rawValue:
+                appid = Configs.Weibo.appID
+            default:break
+            }
+            PPShareInfo.sharedInstance.appid = appid
+
+            
             SimpleNetworking.sharedInstance.request(URL, method: .GET, parameters: parameters, completionHandler: { (userInfoDictionary, _, error) -> Void in
                 switch platformType {
                     case .QQ:

@@ -1,2 +1,0 @@
-/Users/peiwei/Library/Developer/Xcode/DerivedData/live-acnqvaxmgiokvcbwgdbqkrgxkbio/Build/Products/Debug-iphonesimulator/live.app
-

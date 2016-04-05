@@ -18,7 +18,7 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
         self.view.backgroundColor = UIColor.whiteColor()
         self.tabBar.barTintColor = UIColor.whiteColor()
         self.tabBar.setValue(true, forKey: "_hidesShadow")
-
+        
         delegate = self;
         temporaryCenterViewController = UIViewController()
         temporaryCenterViewController.view.backgroundColor = UIColor.redColor()
@@ -48,7 +48,7 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         if viewController === temporaryCenterViewController {
-            let vc = PPMyLiveViewController()
+            let vc = PPLoginViewController()
             self .presentViewController(vc, animated: true, completion: nil)
             return false
         }

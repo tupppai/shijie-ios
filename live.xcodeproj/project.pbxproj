@@ -71,6 +71,8 @@
 		F492EE451C99D54D007DD791 /* PPShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE441C99D54D007DD791 /* PPShareSheetView.swift */; };
 		F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE461C9A4A79007DD791 /* PPTriangleView.swift */; };
 		F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE481C9A550F007DD791 /* PPShareButton.swift */; };
+		F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */; };
+		F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */; };
 		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
 		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
@@ -79,6 +81,19 @@
 		F4D273901C9FEF6D00A70F18 /* PPAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */; };
 		F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273911C9FF3D800A70F18 /* PPUtility.swift */; };
 		F4D273941C9FF69A00A70F18 /* PPUserPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */; };
+		F4E32C411CAA552500F7A70E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C401CAA552500F7A70E /* AdSupport.framework */; };
+		F4E32C431CAA553700F7A70E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C421CAA553700F7A70E /* CoreTelephony.framework */; };
+		F4E32C451CAA554200F7A70E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C441CAA554200F7A70E /* SystemConfiguration.framework */; };
+		F4E32C471CAA554A00F7A70E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C461CAA554A00F7A70E /* libc++.tbd */; };
+		F4E32C4B1CAA555E00F7A70E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */; };
+		F4E32C501CAA645D00F7A70E /* PPQCloudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */; };
+		F4E32C521CAA670500F7A70E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C511CAA670500F7A70E /* ImageIO.framework */; };
+		F4E32C701CAA6ABB00F7A70E /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C671CAA6ABB00F7A70E /* Analytics.framework */; };
+		F4E32C711CAA6ABB00F7A70E /* AVFoundationEx.FrameWork in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */; };
+		F4E32C721CAA6ABB00F7A70E /* frameworkÀµ√˜.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */; };
+		F4E32C761CAA6ABB00F7A70E /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */; };
+		F4E32C781CAA6ABB00F7A70E /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */; };
+		F4E32C7B1CAB776F00F7A70E /* PPShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */; };
 		F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */; };
 		F4EC52DB1C9BBFFA00C1DA94 /* demoavatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */; };
 		F4EC52DD1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */; };
@@ -101,15 +116,11 @@
 		F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53021C9BF21F00C1DA94 /* PPRoundButton.swift */; };
 		F4EC53051C9BF33100C1DA94 /* PPRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53041C9BF33100C1DA94 /* PPRoundImageView.swift */; };
 		F4EC53071C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC53061C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift */; };
-		F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1A1C8FE43700756F00 /* libbz2.tbd */; };
 		F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C1C1C8FE44A00756F00 /* libz.tbd */; };
-		F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C241C8FE5F900756F00 /* VideoToolbox.framework */; };
-		F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F19C261C8FE62D00756F00 /* libiconv.tbd */; };
 		F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */; };
 		F4F429FF1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F429FE1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift */; };
 		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
 		F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */; };
-		F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */; };
 		F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */; };
 		F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */; };
 		F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486961C97C77100498CD3 /* PPExtension.swift */; };
@@ -193,6 +204,9 @@
 		F492EE441C99D54D007DD791 /* PPShareSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareSheetView.swift; sourceTree = "<group>"; };
 		F492EE461C9A4A79007DD791 /* PPTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTriangleView.swift; sourceTree = "<group>"; };
 		F492EE481C9A550F007DD791 /* PPShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareButton.swift; sourceTree = "<group>"; };
+		F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareManager.swift; sourceTree = "<group>"; };
+		F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewAlignRightLayout.h; sourceTree = "<group>"; };
+		F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewAlignRightLayout.m; sourceTree = "<group>"; };
 		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
 		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
 		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPGiftShowsAnimateView.swift; path = UICollectionViewRightAlignedLayout/PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
@@ -201,6 +215,26 @@
 		F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnimations.swift; sourceTree = "<group>"; };
 		F4D273911C9FF3D800A70F18 /* PPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUtility.swift; sourceTree = "<group>"; };
 		F4D273931C9FF69A00A70F18 /* PPUserPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserPanelView.swift; sourceTree = "<group>"; };
+		F4E32C3E1CAA551D00F7A70E /* libprotobuf.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprotobuf.tbd; path = usr/lib/libprotobuf.tbd; sourceTree = SDKROOT; };
+		F4E32C401CAA552500F7A70E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F4E32C421CAA553700F7A70E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F4E32C441CAA554200F7A70E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F4E32C461CAA554A00F7A70E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F4E32C481CAA555200F7A70E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F4E32C4E1CAA645D00F7A70E /* PPQCloudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPQCloudHelper.h; sourceTree = "<group>"; };
+		F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPQCloudHelper.m; sourceTree = "<group>"; };
+		F4E32C511CAA670500F7A70E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F4E32C671CAA6ABB00F7A70E /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Analytics.framework; sourceTree = "<group>"; };
+		F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundationEx.FrameWork; sourceTree = "<group>"; };
+		F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frameworkÀµ√˜.txt"; sourceTree = "<group>"; };
+		F4E32C6A1CAA6ABB00F7A70E /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
+		F4E32C6B1CAA6ABB00F7A70E /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
+		F4E32C6C1CAA6ABB00F7A70E /* IMSDKBugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMSDKBugly.framework; sourceTree = "<group>"; };
+		F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
+		F4E32C6E1CAA6ABB00F7A70E /* QAVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QAVSDK.framework; sourceTree = "<group>"; };
+		F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
+		F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareInfo.swift; sourceTree = "<group>"; };
 		F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareView.swift; sourceTree = "<group>"; };
 		F4EC52DA1C9BBFFA00C1DA94 /* demoavatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demoavatar.jpg; sourceTree = "<group>"; };
 		F4EC52DC1C9BC0DC00C1DA94 /* PPAvatarCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAvatarCollectionCell.swift; sourceTree = "<group>"; };
@@ -248,11 +282,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F4867D1C96A3B700498CD3 /* MediaPlayer.framework in Frameworks */,
-				F4F19C271C8FE62D00756F00 /* libiconv.tbd in Frameworks */,
-				F4F19C251C8FE5F900756F00 /* VideoToolbox.framework in Frameworks */,
+				F4E32C471CAA554A00F7A70E /* libc++.tbd in Frameworks */,
+				F4E32C781CAA6ABB00F7A70E /* TLSSDK.framework in Frameworks */,
 				F4F19C1D1C8FE44A00756F00 /* libz.tbd in Frameworks */,
-				F4F19C1B1C8FE43700756F00 /* libbz2.tbd in Frameworks */,
+				F4E32C4B1CAA555E00F7A70E /* libsqlite3.tbd in Frameworks */,
+				F4E32C411CAA552500F7A70E /* AdSupport.framework in Frameworks */,
+				F4E32C431CAA553700F7A70E /* CoreTelephony.framework in Frameworks */,
+				F4E32C701CAA6ABB00F7A70E /* Analytics.framework in Frameworks */,
+				F4E32C761CAA6ABB00F7A70E /* QALSDK.framework in Frameworks */,
+				F4E32C521CAA670500F7A70E /* ImageIO.framework in Frameworks */,
+				F4E32C711CAA6ABB00F7A70E /* AVFoundationEx.FrameWork in Frameworks */,
+				F4E32C451CAA554200F7A70E /* SystemConfiguration.framework in Frameworks */,
 				2E2CD845D08C1AD89402DAB1 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +303,14 @@
 		031DAD5C2A474689C914A35E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4E32C511CAA670500F7A70E /* ImageIO.framework */,
+				F4E32C4A1CAA555E00F7A70E /* libsqlite3.tbd */,
+				F4E32C481CAA555200F7A70E /* libsqlite3.0.tbd */,
+				F4E32C461CAA554A00F7A70E /* libc++.tbd */,
+				F4E32C441CAA554200F7A70E /* SystemConfiguration.framework */,
+				F4E32C421CAA553700F7A70E /* CoreTelephony.framework */,
+				F4E32C401CAA552500F7A70E /* AdSupport.framework */,
+				F4E32C3E1CAA551D00F7A70E /* libprotobuf.tbd */,
 				9086EE8E1CA1381D00F0BECD /* Reveal.framework */,
 				F4241AB01C9AA3E300AD4343 /* SnapKit.framework */,
 				F4241A8E1C9A70D000AD4343 /* SnapKit.framework */,
@@ -278,14 +326,6 @@
 				BE6079134BFC8D209F4B9E3C /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9009D9A71CA24EC700292317 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				9009D9A81CA2517B00292317 /* LTNavigationBar */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		9009D9A81CA2517B00292317 /* LTNavigationBar */ = {
@@ -357,17 +397,16 @@
 		F417C48B1C895D720009AAFF /* live */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF22BF1CA0F8E300D71B5B /* tools */,
-				F4FF22C01CA0F92B00D71B5B /* livelist */,
-				F4FF22BB1CA0F80300D71B5B /* viewForLive */,
-				F4FF22BA1CA0F7F400D71B5B /* MyLive */,
+				F4FF22C01CA0F92B00D71B5B /* LiveList */,
 				F4241AB21C9AAB4900AD4343 /* LiveWatch */,
-				F4FF22BD1CA0F8BD00D71B5B /* views */,
+				F4FF22BA1CA0F7F400D71B5B /* MyLive */,
+				F4EC52E01C9BE42E00C1DA94 /* Me */,
 				F4FF22C11CA0F94900D71B5B /* login */,
+				F4FF22BD1CA0F8BD00D71B5B /* views */,
+				F4FF22BF1CA0F8E300D71B5B /* tools */,
 				F445C0B61C8E6E940020C0ED /* PPTabBarController.swift */,
 				F417C48C1C895D720009AAFF /* AppDelegate.swift */,
 				F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */,
-				F4EC52E01C9BE42E00C1DA94 /* ME */,
 				F4EC52D91C9BBFEA00C1DA94 /* image */,
 				F4FDA2F61C8ED12F00EFBEF9 /* vendor */,
 				F417C4961C895D720009AAFF /* Assets.xcassets */,
@@ -439,6 +478,22 @@
 			name = LiveWatch;
 			sourceTree = "<group>";
 		};
+		F4E32C661CAA6ABB00F7A70E /* qcloud */ = {
+			isa = PBXGroup;
+			children = (
+				F4E32C671CAA6ABB00F7A70E /* Analytics.framework */,
+				F4E32C681CAA6ABB00F7A70E /* AVFoundationEx.FrameWork */,
+				F4E32C691CAA6ABB00F7A70E /* frameworkÀµ√˜.txt */,
+				F4E32C6A1CAA6ABB00F7A70E /* IMCore.framework */,
+				F4E32C6B1CAA6ABB00F7A70E /* ImSDK.framework */,
+				F4E32C6C1CAA6ABB00F7A70E /* IMSDKBugly.framework */,
+				F4E32C6D1CAA6ABB00F7A70E /* QALSDK.framework */,
+				F4E32C6E1CAA6ABB00F7A70E /* QAVSDK.framework */,
+				F4E32C6F1CAA6ABB00F7A70E /* TLSSDK.framework */,
+			);
+			path = qcloud;
+			sourceTree = "<group>";
+		};
 		F4EC52D91C9BBFEA00C1DA94 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,14 +504,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		F4EC52E01C9BE42E00C1DA94 /* ME */ = {
+		F4EC52E01C9BE42E00C1DA94 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				F4EC52E21C9BE42E00C1DA94 /* PPMeTableViewController.swift */,
 				F4EC52E31C9BE42E00C1DA94 /* PPMeTableViewController.xib */,
 				F4EC52E51C9BE42E00C1DA94 /* Views */,
 			);
-			name = ME;
+			name = Me;
 			path = Tab_Me;
 			sourceTree = "<group>";
 		};
@@ -484,7 +539,8 @@
 		F4FDA2F61C8ED12F00EFBEF9 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				9009D9A71CA24EC700292317 /* Categories */,
+				F4E32C661CAA6ABB00F7A70E /* qcloud */,
+				9009D9A81CA2517B00292317 /* LTNavigationBar */,
 				F4241A521C9A5ED300AD4343 /* Spring */,
 				F417C4A51C898E9B0009AAFF /* MonkeyKing */,
 			);
@@ -523,6 +579,8 @@
 				F492EE481C9A550F007DD791 /* PPShareButton.swift */,
 				F492EE441C99D54D007DD791 /* PPShareSheetView.swift */,
 				F4EC52951C9ADE5600C1DA94 /* PPShareView.swift */,
+				F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */,
+				F4E32C7A1CAB776F00F7A70E /* PPShareInfo.swift */,
 			);
 			name = shareView;
 			sourceTree = "<group>";
@@ -530,6 +588,7 @@
 		F4FF22BD1CA0F8BD00D71B5B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF22BB1CA0F80300D71B5B /* viewForLive */,
 				F4FF22BE1CA0F8C700D71B5B /* round */,
 			);
 			name = views;
@@ -554,17 +613,21 @@
 				F4D2738F1C9FEF6D00A70F18 /* PPAnimations.swift */,
 				F4F486961C97C77100498CD3 /* PPExtension.swift */,
 				F4D273911C9FF3D800A70F18 /* PPUtility.swift */,
+				F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */,
+				F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */,
+				F4E32C4E1CAA645D00F7A70E /* PPQCloudHelper.h */,
+				F4E32C4F1CAA645D00F7A70E /* PPQCloudHelper.m */,
 			);
 			name = tools;
 			sourceTree = "<group>";
 		};
-		F4FF22C01CA0F92B00D71B5B /* livelist */ = {
+		F4FF22C01CA0F92B00D71B5B /* LiveList */ = {
 			isa = PBXGroup;
 			children = (
 				F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */,
 				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */,
 			);
-			name = livelist;
+			name = LiveList;
 			sourceTree = "<group>";
 		};
 		F4FF22C11CA0F94900D71B5B /* login */ = {
@@ -648,6 +711,7 @@
 				F4EC52FF1C9BE42E00C1DA94 /* UserHeaderView.xib in Resources */,
 				F4EC52F61C9BE42E00C1DA94 /* CountButton.xib in Resources */,
 				F40853C01C97F1FD00F343C7 /* demo.png in Resources */,
+				F4E32C721CAA6ABB00F7A70E /* frameworkÀµ√˜.txt in Resources */,
 				F4EC53011C9BE42E00C1DA94 /* UserHeaderView2.xib in Resources */,
 				F4EC52F81C9BE42E00C1DA94 /* RollContributionListView.xib in Resources */,
 				9009D9B61CA26C3400292317 /* PPPodiumUserView.xib in Resources */,
@@ -724,6 +788,8 @@
 				F4241A8C1C9A5ED300AD4343 /* TransitionZoom.swift in Sources */,
 				F4241A7C1C9A5ED300AD4343 /* ImageLoader.swift in Sources */,
 				F4241A891C9A5ED300AD4343 /* SpringTextView.swift in Sources */,
+				F4E32C7B1CAB776F00F7A70E /* PPShareInfo.swift in Sources */,
+				F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */,
 				F417C4AB1C898E9B0009AAFF /* AnyActivity.swift in Sources */,
 				F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */,
 				F4D273921C9FF3D800A70F18 /* PPUtility.swift in Sources */,
@@ -760,6 +826,7 @@
 				F4EC52961C9ADE5600C1DA94 /* PPShareView.swift in Sources */,
 				F4241AAF1C9AA30700AD4343 /* PPNewsCommentTableViewCell.swift in Sources */,
 				F4F486721C96753600498CD3 /* Config.swift in Sources */,
+				F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */,
 				F4241A7A1C9A5ED300AD4343 /* DesignableTextView.swift in Sources */,
 				F4EC52FE1C9BE42E00C1DA94 /* UserHeaderView.swift in Sources */,
 				9009D9B91CA26F6500292317 /* PPPodiumUserTableViewCell.swift in Sources */,
@@ -768,6 +835,7 @@
 				F4241A8B1C9A5ED300AD4343 /* TransitionManager.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */,
+				F4E32C501CAA645D00F7A70E /* PPQCloudHelper.m in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
 				F4241A7E1C9A5ED300AD4343 /* KeyboardLayoutConstraint.swift in Sources */,
 				F4F19C771C9113F900756F00 /* PPMyLiveViewController.swift in Sources */,
@@ -889,11 +957,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/live/qcloud",
+					"$(PROJECT_DIR)/live/libs",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,9 +992,8 @@
 					"-lz",
 					"-framework",
 					Reveal,
-					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tupppai.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "live-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -936,11 +1006,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/live/qcloud",
+					"$(PROJECT_DIR)/live/libs",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -966,7 +1039,7 @@
 					"\"VideoCore\"",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = peiwei.live;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tupppai.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "live-Bridging-Header.h";
 			};

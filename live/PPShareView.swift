@@ -8,20 +8,38 @@
 
 import UIKit
 import SnapKit
+
+protocol PPShareViewDelegate: class {
+    func shareView(shareView: PPShareView, didTap index: Int)
+}
+
+
 class PPShareView: UIView {
     
     
+    weak var delegate: PPShareViewDelegate? = nil
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         isShowing = false
         self.backgroundColor = UIColor.clearColor()
         setupViews()
+        setupEvents()
         
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func setupEvents() {
+        shareSheetView.button1.addTarget(self, action: "tapSheetButton:", forControlEvents: .TouchUpInside)
+        shareSheetView.button2.addTarget(self, action: "tapSheetButton:", forControlEvents: .TouchUpInside)
+        shareSheetView.button3.addTarget(self, action: "tapSheetButton:", forControlEvents: .TouchUpInside)
+        shareSheetView.button4.addTarget(self, action: "tapSheetButton:", forControlEvents: .TouchUpInside)
+        shareSheetView.button5.addTarget(self, action: "tapSheetButton:", forControlEvents: .TouchUpInside)
+    }
+    
+    
     var shareSheetView:PPShareSheetView!
 
     var triangleView:PPTriangleView!
@@ -96,7 +114,11 @@ class PPShareView: UIView {
             )
         }
     }
-
+    
+    func tapSheetButton(button:UIButton!){
+        let index = button.tag
+        delegate?.shareView(self, didTap: index)
+    }
     
     
 }

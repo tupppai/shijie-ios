@@ -18,13 +18,11 @@ class PPShareSheetView: UIView {
     var button5:PPShareButton!
     
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(hex: 0x000000, alpha: 0.7)
         self.clipsToBounds = true
         self.layer.cornerRadius = 10
-        
         setupViews()
     }
     
@@ -41,7 +39,12 @@ class PPShareSheetView: UIView {
         button4 = styleButton("QQ",imageName:"live-share-qq")
         button5 = styleButton("QQ空间",imageName:"live-share-qzone")
         
-        
+        button1.tag = 1
+        button2.tag = 2
+        button3.tag = 3
+        button4.tag = 4
+        button5.tag = 5
+
        
         self.addSubview(button1)
         self.addSubview(button2)

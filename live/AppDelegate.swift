@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,TLSSmsRegListener{
 
     var window: UIWindow?
     lazy var tabBarController:PPTabBarController = PPTabBarController()
@@ -19,28 +19,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        self.window?.rootViewController = tabBarController
         
-        let navigationController = UINavigationController(rootViewController: PPCoinsContributionViewController())
-        navigationController.navigationBar.barStyle = .Black
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
         
-        MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: "wx4868b35061f87885", appKey: "64020361b8ec4c99936c0e3999a9f249"))
+        MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: Configs.Wechat.appID, appKey: Configs.Wechat.appKey))
+        MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: Configs.Weibo.appID, appKey: Configs.Weibo.appKey, redirectURL: Configs.Weibo.redirectURL))
+        MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: Configs.QQ.appID))
         
-       
-//        let unsafePointerOfN = ("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]" as NSString).UTF8String
-//        let unsafeMutablePointerOfN: UnsafeMutablePointer<Int8> = UnsafeMutablePointer(unsafePointerOfN)
-//        RegisterFFEngine("yQ2oiBQRbXoo35veDico9lNUP9V/jbmLAso2PSgcLxyg7LfjrCSv+VrRNBQ3t5RrPvxcVussCXAX8gLxlVkYyXVfLcNVilpP0MvBkARKP8Y=]")
+        PPQCloudHelper.setupTLS()
         
         return true
     }
     
-    func presentCenterViewController() {
-        let vc = PPLoginViewController()
-        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
+    func OnSmsRegVerifyCodeSuccess() {
+        print("OnSmsRegVerifyCodeSuccess")
     }
+    
+    func OnSmsRegFail(errInfo: TLSErrInfo!) {
+        print("OnSmsRegFail\(errInfo)")
+
+    }
+    func OnSmsRegTimeout(errInfo: TLSErrInfo!) {
+        print("OnSmsRegTimeout\(errInfo)")
+
+    }
+    func OnSmsRegCommitSuccess(userInfo: TLSUserInfo!) {
+        print("OnSmsRegCommitSuccess\(userInfo)")
+
+    }
+    func OnSmsRegAskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
+        print("OnSmsRegAskCodeSuccess\(reaskDuration)")
+
+    }
+    func OnSmsRegReaskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
+        print("OnSmsRegReaskCodeSuccess\(reaskDuration)")
+    }
+    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         if MonkeyKing.handleOpenURL(url) {

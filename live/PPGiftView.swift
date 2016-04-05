@@ -67,7 +67,7 @@ class PPGiftView: UIView {
         }
     }
     
-    func show(inView: UIView){
+    func showInView(inView: UIView){
         inView.addSubview(self)
         self.layoutIfNeeded()
         

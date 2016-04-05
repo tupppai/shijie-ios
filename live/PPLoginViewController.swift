@@ -7,22 +7,58 @@
 //
 
 import UIKit
+import PKHUD
+class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQueryListener,TLSOpenLoginListener {
 
-class PPLoginViewController: UIViewController {
-
+    
+    enum AuthType:UInt32 {
+        case WeChat = 2
+        case QQ = 1
+        case Weibo = 3
+    }
+    
     lazy var wechatButton: UIButton = {
        var button = UIButton(type: .Custom)
         button.setTitle("微信登陆", forState: .Normal)
+        button.tag = 1
         button.frame = CGRect(origin: CGPointMake(100, 100), size: CGSizeMake(100, 100))
         button.backgroundColor = UIColor.grayColor()
         return button
     }()
     
+    lazy var qqButton: UIButton = {
+        var button = UIButton(type: .Custom)
+        button.tag = 2
+        button.setTitle("QQ登陆", forState: .Normal)
+        button.frame = CGRect(origin: CGPointMake(100, 210), size: CGSizeMake(100, 100))
+        button.backgroundColor = UIColor.grayColor()
+        return button
+    }()
+    
+    lazy var weiboButton: UIButton = {
+        var button = UIButton(type: .Custom)
+        button.setTitle("微博登陆", forState: .Normal)
+        button.frame = CGRect(origin: CGPointMake(100, 320), size: CGSizeMake(100, 100))
+        button.backgroundColor = UIColor.grayColor()
+        button.tag = 3
+        return button
+    }()
+
+
+
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        view .addSubview(wechatButton)
         view.backgroundColor = UIColor.whiteColor()
-        wechatButton .addTarget(self, action: "OAuthWechat", forControlEvents: .TouchUpInside);
+        view .addSubview(wechatButton)
+        view .addSubview(qqButton)
+        view .addSubview(weiboButton)
+
+        wechatButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+        weiboButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+        qqButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+
     }
     
     func shareURL(sender: UIButton) {
@@ -45,46 +81,94 @@ class PPLoginViewController: UIViewController {
         }
     }
     
-    func OAuthWechat() {
-        MonkeyKing.OAuth(MonkeyKing.SupportedPlatform.WeChat) {[weak self] (OAuthInfo, response, error) -> Void in
-            self!.fetchUserInfo(OAuthInfo)
+    func getAuthInfo(sender:AnyObject) {
+        
+        let tag = sender.tag
+        var platformType:PPOpenPlatformType = .Unknown
+        
+        switch tag {
+        case 1: platformType = .WeChat
+        case 2: platformType = .QQ
+        case 3: platformType = .Weibo
+        default : platformType = .Unknown
+        }
+        
+        PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
+            if finished {
+                self.query()
+            }
+        })
+    }
+    
+    private func query() {
+        let ret = TLSHelper.getInstance().TLSOpenQuery(PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andListener: self)
+        print("query ret \(ret) \(PPShareInfo.sharedInstance.platformType)  \(PPShareInfo.sharedInstance.appid)")
+
+    }
+    
+    func login() {
+         TLSHelper.getInstance().TLSOpenLogin(PPShareInfo.sharedInstance.platformType, andOpenId: PPShareInfo.sharedInstance.openID, andAppid: PPShareInfo.sharedInstance.appid, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSOpenLoginListener: self)
+    }
+    func register() {
+        print("register")
+
+        let ret = TLSHelper.getInstance().TLSStrAccountReg(PPShareInfo.sharedInstance.username, andPassword: "sHiJie666", andAccType: PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSStrAccountRegListener: self)
+        print("register ret \(ret)")
+    }
+    
+    
+    
+    //MARK:注册 回调
+    func OnStrAccountRegFail(errInfo: TLSErrInfo!) {
+        HUD.flash(.Label("OnStrAccountRegFail \(errInfo)  "),delay:2.0)
+    }
+    func OnStrAccountRegSuccess(userInfo: TLSUserInfo!) {
+        HUD.flash(.Label("OnStrAccountRegSuccess \(userInfo)  "),delay:2.0)
+        
+    }
+    func OnStrAccountRegTimeout(errInfo: TLSErrInfo!) {
+        HUD.flash(.Label("OnStrAccountRegTimeout \(errInfo)  "),delay:2.0)
+    }
+    
+    
+    //MARK:查询 回调
+    func OnOpenQueryFail(errInfo: TLSErrInfo!) {
+        HUD.flash(.Label(" OnOpenQueryFail \(errInfo)  "),delay:2.0)
+        print("OnOpenQueryFail \(errInfo)")
+    }
+    
+    func OnOpenQuerySuccess(state: TLSOpenState) {
+        print("OnOpenQuerySuccess \(state.rawValue)")
+        HUD.flash(.Label(" OnOpenQuerySuccess \(state.rawValue)  ") ,delay:3.0)
+        
+        if  state.rawValue == 3 {
+            register()
+        } else {
+            login()
         }
     }
     
-    private func fetchUserInfo(OAuthInfo: NSDictionary?) {
-        
-        guard let token = OAuthInfo?["access_token"] as? String,
-            let openID = OAuthInfo?["openid"] as? String,
-            let refreshToken = OAuthInfo?["refresh_token"] as? String,
-            let expiresIn = OAuthInfo?["expires_in"] as? Int else {
-                return
-        }
-        
-        let userInfoAPI = "https://api.weixin.qq.com/sns/userinfo"
-        
-        let parameters = [
-            "openid": openID,
-            "access_token": token
-        ]
-        
-        // fetch UserInfo by userInfoAPI
-        SimpleNetworking.sharedInstance.request(userInfoAPI, method: .GET, parameters: parameters, completionHandler: { (userInfoDictionary, _, _) -> Void in
-            
-            guard let mutableDictionary = userInfoDictionary?.mutableCopy() as? NSMutableDictionary else {
-                return
-            }
-            
-            mutableDictionary["access_token"] = token
-            mutableDictionary["openid"] = openID
-            mutableDictionary["refresh_token"] = refreshToken
-            mutableDictionary["expires_in"] = expiresIn
-            
-            print("userInfoDictionary \(mutableDictionary)")
-        })
-        
-        // More API
-        // http://mp.weixin.qq.com/wiki/home/index.html
+    func OnOpenQueryTimeout(errInfo: TLSErrInfo!) {
+        HUD.flash(.Label("OnOpenQueryTimeout \(errInfo)  "),delay:2.0)
     }
+    
+    
+    
+    //MARK:登录 回调
 
-
+    func OnOpenLoginFail(errInfo: TLSErrInfo!) {
+        
+        HUD.flash(.Label(" OnOpenLoginFail\(errInfo)  "),delay:2.0)
+        
+    }
+    
+    func OnOpenLoginTimeout(errInfo: TLSErrInfo!) {
+        HUD.flash(.Label(" OnOpenLoginTimeout\(errInfo)  "),delay:2.0)
+    }
+    
+    func OnOpenLoginSuccess(userInfo: TLSUserInfo!) {
+        print("OnOpenLoginSuccess\(userInfo)")
+        HUD.flash(.Label(" OnOpenLoginSuccess\(userInfo)  "),delay:2.0)
+    }
+    
 }

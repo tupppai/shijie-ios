@@ -19,11 +19,23 @@ class PPMeTableViewController: UITableViewController {
     // MARK: - UI life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = UIColor(hex: 0xF7F7F7)
         setupSubViews()
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.Plain, target: self, action: "privateChat")
+
     }
 
+    
+    func privateChat() {
+        //打开会话界面
+        let chatWithSelf = RCConversationViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "me")
+        chatWithSelf.hidesBottomBarWhenPushed = true
+        chatWithSelf.title = "想显示的会话标题"
+        self.navigationController?.pushViewController(chatWithSelf, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

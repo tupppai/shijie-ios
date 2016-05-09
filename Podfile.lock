@@ -16,10 +16,18 @@ PODS:
   - boost/shared_ptr-includes (1.51.0)
   - boost/string_algorithms-includes (1.51.0)
   - glm (0.9.7.1)
+  - HappyDNS (0.2.3)
   - PKHUD (3.1.0)
+  - PLCameraStreamingKit (1.6.2):
+    - HappyDNS
   - PLPlayerKit (2.1.0):
     - PLPlayerKit/precompiled (= 2.1.0)
   - PLPlayerKit/precompiled (2.1.0)
+  - PLStreamingKit (1.1.5):
+    - HappyDNS
+    - PLStreamingKit/precompiled (= 1.1.5)
+  - PLStreamingKit/precompiled (1.1.5):
+    - HappyDNS
   - Realm (0.98.6):
     - Realm/Headers (= 0.98.6)
   - Realm/Headers (0.98.6)
@@ -37,7 +45,9 @@ DEPENDENCIES:
   - Alamofire (~> 3.2.1)
   - glm (from `https://github.com/peiweichen/glm`)
   - PKHUD
+  - PLCameraStreamingKit (from `https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec`)
   - PLPlayerKit (~> 2.1.0)
+  - PLStreamingKit
   - RealmSwift (~> 0.98.6)
   - RongCloudIMKit (~> 2.4.11)
   - SnapKit (~> 0.19.1)
@@ -46,6 +56,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   glm:
     :git: https://github.com/peiweichen/glm
+  PLCameraStreamingKit:
+    :podspec: https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec
   VideoCore:
     :branch: update_headers
     :git: https://github.com/peiweichen/VideoCore.git
@@ -54,6 +66,9 @@ CHECKOUT OPTIONS:
   glm:
     :commit: 2cfe1129de430e4b23e811c5e0800989283af224
     :git: https://github.com/peiweichen/glm
+  PLCameraStreamingKit:
+    :commit: 98eed54a2af67042a76b4062859094f80d1c9a35
+    :git: https://github.com/pili-engineering/PLCameraStreamingKit.git
   VideoCore:
     :commit: 44d54cc477fc1aee3c9b498363d1b2937e97d69b
     :git: https://github.com/peiweichen/VideoCore.git
@@ -62,8 +77,11 @@ SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   boost: 6c5c8d8daef26ac83c1e1c00ad14de62b80161d7
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
+  HappyDNS: 6d85942e64c28b4fa61f8c76580398f52d6d1d11
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
+  PLCameraStreamingKit: 19abccfcfb748103c1806fe73a6dc8f5e8408679
   PLPlayerKit: 6c89abc19818ba434a8a8ac4c0cdde1169fd3ef6
+  PLStreamingKit: 3792348c354af2271629eeb154e0e83774f34c07
   Realm: 44803f35418c5d89b27825a564247fcd190de37e
   RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
   RongCloudIMKit: 40fefc63541927aad728e06c731d12d34de1c5fa

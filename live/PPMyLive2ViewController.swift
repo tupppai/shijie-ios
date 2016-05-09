@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import VideoCore
 import SnapKit
 import Alamofire
 import PKHUD
+import PLCameraStreamingKit
 
-class PPMyLiveViewController: UIViewController,VCSessionDelegate {
+class PPMyLive2ViewController: UIViewController,PLCameraStreamingSessionDelegate {
     
     lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
     var controlBottomView:PPMyLiveControlCollectionView!
@@ -27,34 +27,30 @@ class PPMyLiveViewController: UIViewController,VCSessionDelegate {
     var numberOfNews = 5
     
     var previewView:UIView!
-    var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width: ScreenSize.SCREEN_WIDTH, height: ScreenSize.SCREEN_HEIGHT), frameRate: 15, bitrate: 1000000, useInterfaceOrientation: true, cameraState: .Front, aspectMode: VCAspectMode.AspectModeFit)
-
+    var session:PLCameraStreamingSession!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupViews()
-
+        
         previewView = UIView(frame: view.bounds)
         view .addSubview(previewView)
         view.sendSubviewToBack(previewView)
         self.previewView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
-        previewView.addSubview(session.previewView)
+//        previewView.addSubview(session.previewView)
         
-        session.previewView.frame = previewView.bounds
-        session.cameraState = VCCameraState.Front
-        session.delegate = self
-
+        
         connect()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     deinit {
-        session.delegate = nil;
     }
     
     func dismissSelf() {
@@ -63,151 +59,130 @@ class PPMyLiveViewController: UIViewController,VCSessionDelegate {
     }
     
     func switchCamera() {
-        switch session.cameraState {
-        case .Front:
-            session.cameraState = .Back
-            self.previewView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-
-        case .Back:
-            session.cameraState = .Front
-            self.previewView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
-        }
+//        switch session.cameraState {
+//        case .Front:
+//            session.cameraState = .Back
+//            self.previewView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+//            
+//        case .Back:
+//            session.cameraState = .Front
+//            self.previewView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+//        }
     }
     
     func disconnect() {
         
-            switch session.rtmpSessionState {
-            case .None:
-                break
-            case .Ended:
-                break
-            case .Error:
-                break
-            case .PreviewStarted:
-                session.endRtmpSession()
-            case .Started:
-                session.endRtmpSession()
-            case .Starting:
-                session.endRtmpSession()
-            default:
-                session.endRtmpSession()
-            }
         
     }
-     func connect() {
-        switch session.rtmpSessionState {
-        case .None:
-            
-            Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").response(completionHandler: { (response) in
+    
+    
+    func connect() {
+        PLCameraStreamingSession.requestCameraAccessWithCompletionHandler { (granted) in
+            if granted {
                 
-                print("response!!!\(response)")
-
-//                switch response.result {
-//                    case .Success(let JSON):
-//                        let data = JSON as! NSDictionary
-//
-//                        guard let hosts = data.objectForKey("hosts") as? NSDictionary else{
-//                            return
-//                        }
-//                        
-//                        guard let publish = hosts.objectForKey("publish") as? NSDictionary else{
-//                            return
-//                        }
-//                        
-//                        guard let rtmpString = publish.objectForKey("rtmp") as? String else {
-//                            return
-//                        }
-//                        
-//                        guard let publishKey = data.objectForKey("publishKey") as? String else {
-//                            return
-//                        }
-//                        
-//                        guard let hub = data.objectForKey("hub") as? String else {
-//                            return
-//                        }
-//                        guard let title = data.objectForKey("title") as? String else {
-//                            return
-//                        }
-//                        let urlString = "rtmp://" + rtmpString+"/"+hub+"/"+title + "?key=" + publishKey
-//                        
-//                        print("urlString:     \(urlString)  ,publishKey:   \(publishKey)")
-//                        self.session.startRtmpSessionWithURL(urlString, andStreamKey: nil)
-//
-//                    
-//                    case .Failure(let error):
-//                        print(error)
-//                        
-//                    }
-
+                let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
+                let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
                 
+                Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
+                    print("response!!!\(response)")
+
+                    switch response.result {
+                    case .Success(let JSON):
+                        let json = JSON as! [NSObject:AnyObject]
+                        let stream = PLStream(JSON: json)
+                        self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
+                        self.session.delegate = self
+                        self.session.previewView = self.previewView
+                        
+                        
+                        self.session.startWithCompleted({ (started) in
+                            
+                        })
+                        
+                    case .Failure(let error):
+                        print(error)
+                        
+                    }
                     
+                    
+                })
 
-            })
-            
-            
-        default:
-            session.endRtmpSession()
-            break
-        }
-    }
-    
-    
-    
-    func switchFilter() {
-        switch self.session.filter {
-            
-        case .Normal:
-            self.session.filter = .Gray
-            
-        case .Gray:
-            self.session.filter = .InvertColors
-            
-        case .InvertColors:
-            self.session.filter = .Sepia
-            
-        case .Sepia:
-            self.session.filter = .Fisheye
-            
-        case .Fisheye:
-            self.session.filter = .Glow
-            
-        case .Glow:
-            self.session.filter = .Normal
-        }
-    }
-    
-    func connectionStatusChanged(sessionState: VCSessionState) {
-        debugPrint("connectionStatusChanged sessionState\(sessionState)")
-        switch sessionState {
-        case .None:
-            print("connectionStatusChanged None")
-            break
-        case .PreviewStarted:
-            print("connectionStatusChanged PreviewStarted")
-            break
-        case .Started:
-            print("connectionStatusChanged Started")
-            break
-        case .Starting:
-            print("connectionStatusChanged Starting")
-            break
-        case .Ended:
-            print("connectionStatusChanged Ended")
-            session .endRtmpSession()
-            connect()
-            break
-        case .Error:
-            print("connectionStatusChanged Error reconnect")
-            session .endRtmpSession()
-            break
+//                self.session = [[PLCameraStreamingSession alloc] initWithVideoConfiguration:videoConfiguration
+//                    audioConfiguration:audioConfiguration
+//                    stream:stream
+//                    videoOrientation:AVCaptureVideoOrientationPortrait];
+//                self.session.delegate = self;
+//                self.session.previewView = self.view;
 
+             }
+            
+            
         }
+        
+//        switch session.rtmpSessionState {
+//        case .None:
+//
+//            Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
+//                
+//                print("response!!!\(response)")
+//                
+//                                switch response.result {
+//                                    case .Success(let JSON):
+////                                        let data = JSON as! NSDictionary
+//                
+////                                        guard let hosts = data.objectForKey("hosts") as? NSDictionary else{
+////                                            return
+////                                        }
+////                
+////                                        guard let publish = hosts.objectForKey("publish") as? NSDictionary else{
+////                                            return
+////                                        }
+////                
+////                                        guard let rtmpString = publish.objectForKey("rtmp") as? String else {
+////                                            return
+////                                        }
+////                
+////                                        guard let publishKey = data.objectForKey("publishKey") as? String else {
+////                                            return
+////                                        }
+////                
+////                                        guard let hub = data.objectForKey("hub") as? String else {
+////                                            return
+////                                        }
+////                                        guard let title = data.objectForKey("title") as? String else {
+////                                            return
+////                                        }
+////                                        let urlString = "rtmp://" + rtmpString+"/"+hub+"/"+title + "?key=" + publishKey
+////                
+////                                        print("urlString:     \(urlString)  ,publishKey:   \(publishKey)")
+////                                        self.session.startRtmpSessionWithURL(urlString, andStreamKey: nil)
+//                
+//                
+//                                    case .Failure(let error):
+//                                        print(error)
+//                
+//                                    }
+//                
+//                
+//                
+//                
+//            })
+//
+//            
+//        default:
+////            session.endRtmpSession()
+//            break
+//        }
     }
+    
+    
+    
+    
 }
 
 // MARK:SetupViews
 
-extension PPMyLiveViewController {
+extension PPMyLive2ViewController {
     
     func setupViews() {
         setupBottomControlPanelView()
@@ -343,7 +318,7 @@ extension PPMyLiveViewController {
 
 
 // MARK:UICollectionViewDataSource,UICollectionViewDelegate
-extension PPMyLiveViewController : UICollectionViewDataSource,UICollectionViewDelegate {
+extension PPMyLive2ViewController : UICollectionViewDataSource,UICollectionViewDelegate {
     
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -364,7 +339,7 @@ extension PPMyLiveViewController : UICollectionViewDataSource,UICollectionViewDe
 
 // MARK:UITableViewDataSource,UITableViewDelegate
 
-extension PPMyLiveViewController : UITableViewDataSource,UITableViewDelegate {
+extension PPMyLive2ViewController : UITableViewDataSource,UITableViewDelegate {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -378,8 +353,8 @@ extension PPMyLiveViewController : UITableViewDataSource,UITableViewDelegate {
     }
 }
 
-extension PPMyLiveViewController:PPMyLiveControlCollectionViewDelegate {
-
+extension PPMyLive2ViewController:PPMyLiveControlCollectionViewDelegate {
+    
     
     func myLiveControlCollectionView(myliveControlCollectionView: PPMyLiveControlCollectionView, didTapIndex index: Int) {
         switch(index) {

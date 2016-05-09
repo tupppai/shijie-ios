@@ -21,3 +21,4 @@
 
 
 #import <RongIMKit/RongIMKit.h>
+#import <PLStreamingKit/PLStreamingKit.h>

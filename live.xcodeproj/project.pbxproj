@@ -73,6 +73,7 @@
 		F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492EE481C9A550F007DD791 /* PPShareButton.swift */; };
 		F49E17FB1CA244CE008E6F02 /* PPShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */; };
 		F4B2C8C31CA1432600929B1A /* PPCollectionViewAlignRightLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */; };
+		F4B4E0581CE097280040FC2B /* PPMyLive2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4E0571CE097280040FC2B /* PPMyLive2ViewController.swift */; };
 		F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */; };
 		F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */; };
 		F4D273721C9F06D600A70F18 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */; };
@@ -201,6 +202,7 @@
 		F49E17FA1CA244CE008E6F02 /* PPShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPShareManager.swift; sourceTree = "<group>"; };
 		F4B2C8C11CA1432600929B1A /* PPCollectionViewAlignRightLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewAlignRightLayout.h; sourceTree = "<group>"; };
 		F4B2C8C21CA1432600929B1A /* PPCollectionViewAlignRightLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewAlignRightLayout.m; sourceTree = "<group>"; };
+		F4B4E0571CE097280040FC2B /* PPMyLive2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLive2ViewController.swift; sourceTree = "<group>"; };
 		F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftShowView.swift; sourceTree = "<group>"; };
 		F4D2736F1C9F05AF00A70F18 /* PPRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRoundView.swift; sourceTree = "<group>"; };
 		F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPGiftShowsAnimateView.swift; path = UICollectionViewRightAlignedLayout/PPGiftShowsAnimateView.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			children = (
 				F4F19C761C9113F900756F00 /* PPMyLiveViewController.swift */,
 				F4FF22B81CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift */,
+				F4B4E0571CE097280040FC2B /* PPMyLive2ViewController.swift */,
 			);
 			name = MyLive;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				9086EE851CA1315300F0BECD /* HorizontalCollectionViewLayout.swift in Sources */,
 				9086EE8D1CA1316F00F0BECD /* PPGiftModel.swift in Sources */,
 				9009D9AE1CA2654100292317 /* PPUserModel.swift in Sources */,
+				F4B4E0581CE097280040FC2B /* PPMyLive2ViewController.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
 				9009D9C21CA279DF00292317 /* PPUserRankCountView.swift in Sources */,
 				9009D9AB1CA2517B00292317 /* UINavigationBar+Awesome.m in Sources */,

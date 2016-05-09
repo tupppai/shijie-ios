@@ -29,6 +29,7 @@ class PPLiveListViewController: UIViewController {
     }
     
     func initNavigationBar() {
+
         navigationBar = UIView()
         view .addSubview(navigationBar)
         let navBarHeight = (self.navigationController?.navigationBar.frame.size.height)!
@@ -62,6 +63,10 @@ class PPLiveListViewController: UIViewController {
         navigationBar.layer.addSublayer(bottomBorder)
 
     }
+    
+    
+
+    
 }
 
 // MARK:TableView Functions

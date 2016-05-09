@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate ,TLSSmsRegListener{
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var tabBarController:PPTabBarController = PPTabBarController()
@@ -28,34 +28,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,TLSSmsRegListener{
         MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: Configs.Weibo.appID, appKey: Configs.Weibo.appKey, redirectURL: Configs.Weibo.redirectURL))
         MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: Configs.QQ.appID))
         
-        PPQCloudHelper.setupTLS()
+        
+        
+        let token = "OHvNZQPCl8d9xFBV6hYuyn3KWcePBCPg0uDKhMccdAOuTDtWZugh9AtgyVimggIZaZtCVyTc8sWNAeH0EzC2oA=="
+
+        //连接融云服务器
+        RCIM.sharedRCIM().connectWithToken(token,
+                                           success: { (userId) -> Void in
+                                            print("登陆成功。当前登录的用户ID：\(userId)")
+                                            
+                                            //设置当前登陆用户的信息
+                                            RCIM.sharedRCIM().currentUserInfo = RCUserInfo.init(userId: userId, name: "我的名字", portrait: "http://www.rongcloud.cn/images/newVersion/logo/baixing.png")
+                                            
+                                            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                                                //打开会话列表
+//                                                let chatListView = DemoChatListViewController()
+//                                                self.navigationController?.pushViewController(chatListView, animated: true)
+                                            })
+            }, error: { (status) -> Void in
+                print("登陆的错误码为:\(status.rawValue)")
+            }, tokenIncorrect: {
+                //token过期或者不正确。
+                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                print("token错误")
+        })
+
         
         return true
     }
-    
-    func OnSmsRegVerifyCodeSuccess() {
-        print("OnSmsRegVerifyCodeSuccess")
-    }
-    
-    func OnSmsRegFail(errInfo: TLSErrInfo!) {
-        print("OnSmsRegFail\(errInfo)")
 
-    }
-    func OnSmsRegTimeout(errInfo: TLSErrInfo!) {
-        print("OnSmsRegTimeout\(errInfo)")
-
-    }
-    func OnSmsRegCommitSuccess(userInfo: TLSUserInfo!) {
-        print("OnSmsRegCommitSuccess\(userInfo)")
-
-    }
-    func OnSmsRegAskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
-        print("OnSmsRegAskCodeSuccess\(reaskDuration)")
-
-    }
-    func OnSmsRegReaskCodeSuccess(reaskDuration: Int32, andExpireDuration expireDuration: Int32) {
-        print("OnSmsRegReaskCodeSuccess\(reaskDuration)")
-    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         

@@ -19,7 +19,5 @@
 #import "UINavigationBar+Awesome.h"
 
 
-#import <TLSSDK/TLSHelper.h>
-#import <QALSDK/QalSDKProxy.h>
 
-#import "PPQCloudHelper.h"
+#import <RongIMKit/RongIMKit.h>

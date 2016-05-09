@@ -8,7 +8,7 @@
 
 import UIKit
 import PKHUD
-class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQueryListener,TLSOpenLoginListener {
+class PPLoginViewController: UIViewController {
 
     
     enum AuthType:UInt32 {
@@ -95,80 +95,10 @@ class PPLoginViewController: UIViewController,TLSStrAccountRegListener,TLSOpenQu
         
         PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
             if finished {
-                self.query()
             }
         })
     }
     
-    private func query() {
-        let ret = TLSHelper.getInstance().TLSOpenQuery(PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andListener: self)
-        print("query ret \(ret) \(PPShareInfo.sharedInstance.platformType)  \(PPShareInfo.sharedInstance.appid)")
 
-    }
-    
-    func login() {
-         TLSHelper.getInstance().TLSOpenLogin(PPShareInfo.sharedInstance.platformType, andOpenId: PPShareInfo.sharedInstance.openID, andAppid: PPShareInfo.sharedInstance.appid, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSOpenLoginListener: self)
-    }
-    func register() {
-        print("register")
-
-        let ret = TLSHelper.getInstance().TLSStrAccountReg(PPShareInfo.sharedInstance.username, andPassword: "sHiJie666", andAccType: PPShareInfo.sharedInstance.platformType, andOpenAppid: PPShareInfo.sharedInstance.appid, andOpenId: PPShareInfo.sharedInstance.openID, andAccessToken: PPShareInfo.sharedInstance.accessToken, andTLSStrAccountRegListener: self)
-        print("register ret \(ret)")
-    }
-    
-    
-    
-    //MARK:注册 回调
-    func OnStrAccountRegFail(errInfo: TLSErrInfo!) {
-        HUD.flash(.Label("OnStrAccountRegFail \(errInfo)  "),delay:2.0)
-    }
-    func OnStrAccountRegSuccess(userInfo: TLSUserInfo!) {
-        HUD.flash(.Label("OnStrAccountRegSuccess \(userInfo)  "),delay:2.0)
-        
-    }
-    func OnStrAccountRegTimeout(errInfo: TLSErrInfo!) {
-        HUD.flash(.Label("OnStrAccountRegTimeout \(errInfo)  "),delay:2.0)
-    }
-    
-    
-    //MARK:查询 回调
-    func OnOpenQueryFail(errInfo: TLSErrInfo!) {
-        HUD.flash(.Label(" OnOpenQueryFail \(errInfo)  "),delay:2.0)
-        print("OnOpenQueryFail \(errInfo)")
-    }
-    
-    func OnOpenQuerySuccess(state: TLSOpenState) {
-        print("OnOpenQuerySuccess \(state.rawValue)")
-        HUD.flash(.Label(" OnOpenQuerySuccess \(state.rawValue)  ") ,delay:3.0)
-        
-        if  state.rawValue == 3 {
-            register()
-        } else {
-            login()
-        }
-    }
-    
-    func OnOpenQueryTimeout(errInfo: TLSErrInfo!) {
-        HUD.flash(.Label("OnOpenQueryTimeout \(errInfo)  "),delay:2.0)
-    }
-    
-    
-    
-    //MARK:登录 回调
-
-    func OnOpenLoginFail(errInfo: TLSErrInfo!) {
-        
-        HUD.flash(.Label(" OnOpenLoginFail\(errInfo)  "),delay:2.0)
-        
-    }
-    
-    func OnOpenLoginTimeout(errInfo: TLSErrInfo!) {
-        HUD.flash(.Label(" OnOpenLoginTimeout\(errInfo)  "),delay:2.0)
-    }
-    
-    func OnOpenLoginSuccess(userInfo: TLSUserInfo!) {
-        print("OnOpenLoginSuccess\(userInfo)")
-        HUD.flash(.Label(" OnOpenLoginSuccess\(userInfo)  "),delay:2.0)
-    }
     
 }

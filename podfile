@@ -14,5 +14,18 @@ pod 'glm', :git => 'https://github.com/peiweichen/glm'
 pod 'PLPlayerKit', '~> 2.1.0'
 
 pod 'PKHUD'
-
 pod 'RongCloudIMKit', '~> 2.4.11'
+#pod 'PLCameraStreamingKit', '~> 1.6.2'
+
+#
+#source 'https://github.com/CocoaPods/Specs.git'
+#platform :ios, '8.0'
+#use_frameworks!
+#
+#pod 'SnapKit', '~> 0.19.1'
+#pod 'Alamofire', '~> 3.2.1'
+#pod 'RealmSwift', '~> 0.98.6'
+#pod 'PKHUD'
+#pod 'RongCloudIMKit', '~> 2.4.11'
+#pod 'PLCameraStreamingKit'
+#pod 'PLPlayerKit', '~> 2.1.0'

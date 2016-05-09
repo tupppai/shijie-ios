@@ -9,6 +9,7 @@
 import UIKit
 import VideoCore
 import SnapKit
+import Alamofire
 
 class PPMyLiveViewController: UIViewController,VCSessionDelegate {
     
@@ -73,9 +74,23 @@ class PPMyLiveViewController: UIViewController,VCSessionDelegate {
     }
      func connect() {
         switch session.rtmpSessionState {
-        case .None, .PreviewStarted, .Ended, .Error:
-            session.startRtmpSessionWithURL("rtmp://w.gslb.lecloud.com/live", andStreamKey: "201604183000000s199?sign=5d802f26e21c3737828ca3c9c53910bd&tm=20160418113125")
-            //            /119.29.142.208/live/cam2
+        case .None:
+            
+            
+            Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .Success(let JSON):
+                    print(JSON)
+//                    let data = response.objectForKey("JSON") as? NSDictionary
+
+//                    session.startRtmpSessionWithURL("rtmp://pili-publish.ps.qiniucdn.com/NIU7PS/yunshang-test", andStreamKey: "efdbc36f-8759-44c2-bdd8-873521b6724a")
+
+                case .Failure(let error):
+                    print(error)
+                }
+            })
+            
+            
         default:
             session.endRtmpSession()
             break

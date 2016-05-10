@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Alamofire
+
 class PPLiveWatchViewController: UIViewController {
     
     var player:PLPlayer!
@@ -117,9 +119,62 @@ class PPLiveWatchViewController: UIViewController {
     }
     
     func setupPlayer() {
+        
+        Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
+            
+            print("response!!!\(response)")
+            
+            switch response.result {
+            case .Success(let JSON):
+                let data = JSON as! NSDictionary
+
+                guard let hosts = data.objectForKey("hosts") as? NSDictionary else{
+                    return
+                }
+
+                guard let play = hosts.objectForKey("play") as? NSDictionary else{
+                    return
+                }
+
+                guard let rtmpString = play.objectForKey("rtmp") as? String else {
+                    return
+                }
+
+                guard let publishKey = data.objectForKey("publishKey") as? String else {
+                    return
+                }
+
+                guard let hub = data.objectForKey("hub") as? String else {
+                    return
+                }
+                guard let title = data.objectForKey("title") as? String else {
+                    return
+                }
+                let urlString = "rtmp://" + rtmpString+"/"+hub+"/"+title + "?key=" + publishKey
+                
+                self.playerWithRTMPUrl(urlString)
+                
+            case .Failure(let error):
+                print(error)
+                
+            }
+            
+            
+            
+            
+        })
+
+        
+        
+        
+    }
+    
+    func playerWithRTMPUrl(urlString:String!) {
+        
+        print("urlString \(urlString)")
         let option = PLPlayerOption.defaultOption()
         option .setOptionValue(NSNumber(integer: 3), forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
-        player = PLPlayer(URL: NSURL(string: "rtmp://119.29.142.208/live/peiwei"), option: option)
+        player = PLPlayer(URL: NSURL(string: urlString), option: option)
         player.playerView?.frame = view.bounds
         player.playerView?.backgroundColor = UIColor.whiteColor()
         player.delegate = self

@@ -12,7 +12,7 @@ import Alamofire
 import PKHUD
 import PLCameraStreamingKit
 
-class PPMyLive2ViewController: UIViewController,PLCameraStreamingSessionDelegate {
+class PPMyLive2ViewController: UIViewController {
     
     lazy var avatarCollectionView:UICollectionView = self.initializeAvatarCollectionView()
     var controlBottomView:PPMyLiveControlCollectionView!
@@ -32,14 +32,16 @@ class PPMyLive2ViewController: UIViewController,PLCameraStreamingSessionDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setupViews()
-        
+        view.backgroundColor = UIColor.blackColor()
         previewView = UIView(frame: view.bounds)
         view .addSubview(previewView)
         view.sendSubviewToBack(previewView)
-        self.previewView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
-//        previewView.addSubview(session.previewView)
+//        self.previewView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
         
+        setupViews()
+
+//        previewView.addSubview(session.previewView)
+        setupNotifications()
         
         connect()
         
@@ -50,9 +52,27 @@ class PPMyLive2ViewController: UIViewController,PLCameraStreamingSessionDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    deinit {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+       
+        
+        if (touch.view !== textInputBar && textInputBar.textField.isFirstResponder()  ) {
+            view.endEditing(true)
+        }
     }
     
+    func setupNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pp_keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pp_keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+   
     func dismissSelf() {
         disconnect()
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -91,9 +111,9 @@ class PPMyLive2ViewController: UIViewController,PLCameraStreamingSessionDelegate
                         let json = JSON as! [NSObject:AnyObject]
                         let stream = PLStream(JSON: json)
                         self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
+                        self.session.captureDevicePosition = PLCaptureDevicePosition.Front
                         self.session.delegate = self
                         self.session.previewView = self.previewView
-                        
                         
                         self.session.startWithCompleted({ (started) in
                             
@@ -369,5 +389,81 @@ extension PPMyLive2ViewController:PPMyLiveControlCollectionViewDelegate {
         }
     }
     
+    
+}
+
+
+extension PPMyLive2ViewController {
+    
+    func pp_keyboardWillShow(sender:NSNotification?) {
+        let keyboardHeight = properKeyboardHeightFromNotification(sender)
+        textInputBarBottomContraint.updateOffset(-keyboardHeight-2)
+        self.textInputBar.hidden = false
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.giftShowsAnimateView.hidden = true
+            self.textInputBar?.layoutIfNeeded()
+            self.newsTableView.layoutIfNeeded()
+        }
+    }
+    
+    func pp_keyboardWillHide(sender:NSNotification?) {
+        textInputBarBottomContraint.updateOffset(0)
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.giftShowsAnimateView.hidden = false
+            self.textInputBar.hidden = true
+            self.newsTableView.layoutIfNeeded()
+        }
+    }
+    
+    func properKeyboardHeightFromNotification(notification:NSNotification?)->CGFloat {
+        if let notification = notification {
+            let keyboardRect = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue
+            let relativeKeyboardRect = view.convertRect(keyboardRect!, fromView: nil)
+            let viewHeight = CGRectGetHeight(view.bounds)
+            let keyboardMinY = CGRectGetMinY(relativeKeyboardRect)
+            let keyboardHeight = max(0.0 , viewHeight - keyboardMinY)
+            return keyboardHeight
+        }
+        return 0
+    }
+    
+}
+
+extension PPMyLive2ViewController:PLCameraStreamingSessionDelegate {
+    
+//    - (void)cameraStreamingSession:(PLCameraStreamingSession *)session streamStateDidChange:(PLStreamState)state;
+//    
+//    /// @abstract 因产生了某个 error 而断开时的回调
+//    - (void)cameraStreamingSession:(PLCameraStreamingSession *)session didDisconnectWithError:(NSError *)error;
+//    
+//    /// @abstract 当开始推流时，会每间隔 3s 调用该回调方法来反馈该 3s 内的流状态，包括视频帧率、音频帧率、音视频总码率
+//    - (void)cameraStreamingSession:(PLCameraStreamingSession *)session streamStatusDidUpdate:(PLStreamStatus *)status;
+//    
+//    /// @abstract 摄像头授权状态发生变化的回调
+//    - (void)cameraStreamingSession:(PLCameraStreamingSession *)session didGetCameraAuthorizationStatus:(PLAuthorizationStatus)status;
+//    
+//    /// @abstract 麦克风授权状态发生变化的回调
+//    - (void)cameraStreamingSession:(PLCameraStreamingSession *)session didGetMicrophoneAuthorizationStatus:(PLAuthorizationStatus)status;
+//    
+//    /// @abstract 获取到摄像头原数据时的回调, 便于开发者做滤镜等处理
+//    - (CMSampleBufferRef)cameraStreamingSession:(PLCameraStreamingSession *)session cameraSourceDidGetSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+    func cameraStreamingSession(session: PLCameraStreamingSession!, didDisconnectWithError error: NSError!) {
+        print("PLCameraStreamingSessionDelegate didDisconnectWithError -> \(error)")
+    }
+    func cameraStreamingSession(session: PLCameraStreamingSession!, streamStateDidChange state: PLStreamState) {
+        print("PLCameraStreamingSessionDelegate streamStateDidChange state \(state)")
+
+    }
+    func cameraStreamingSession(session: PLCameraStreamingSession!, streamStatusDidUpdate status: PLStreamStatus!) {
+        print("PLCameraStreamingSessionDelegate streamStatusDidUpdate status \(status)")
+
+    }
+    func cameraStreamingSession(session: PLCameraStreamingSession!, didGetCameraAuthorizationStatus status: PLAuthorizationStatus) {
+        print("PLCameraStreamingSessionDelegate didGetCameraAuthorizationStatus status \(status)")
+    }
+    func cameraStreamingSession(session: PLCameraStreamingSession!, didGetMicrophoneAuthorizationStatus status: PLAuthorizationStatus) {
+        print("PLCameraStreamingSessionDelegate didGetMicrophoneAuthorizationStatus status\(status)")
+
+    }
     
 }

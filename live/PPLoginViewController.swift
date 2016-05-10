@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import Alamofire
 class PPLoginViewController: UIViewController {
 
     
@@ -87,7 +88,7 @@ class PPLoginViewController: UIViewController {
         var platformType:PPOpenPlatformType = .Unknown
         
         switch tag {
-        case 1: platformType = .WeChat
+        case 1: platformType = .Wechat
         case 2: platformType = .QQ
         case 3: platformType = .Weibo
         default : platformType = .Unknown
@@ -95,8 +96,17 @@ class PPLoginViewController: UIViewController {
         
         PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
             if finished {
+                
+                print(PPShareInfo.sharedInstance.rawData)
+                let param = PPShareInfo.sharedInstance.rawData as? [String:AnyObject]
+                Manager.sharedInstance.request(.POST, "http://api.chupinlm.com/user/wechat-login", parameters: param, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) in
+                    print("response  \(response)")
+                })
+
             }
         })
+        
+        
     }
     
 

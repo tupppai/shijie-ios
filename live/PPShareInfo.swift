@@ -7,14 +7,22 @@
 //
 
 
+enum PPGenderType:UInt {
+    case Male = 1
+    case Female = 2
+    case Unknown = 666
+}
+
 class PPShareInfo: NSObject {
     static let sharedInstance = PPShareInfo()
     
     var openID:String!
     var appid:String!
+    var gender:PPGenderType!
     var accessToken:String!
     var username:String!
     var userAvatarURL:String!
     var platformType:PPOpenPlatformType.RawValue!
-
+    
+    var rawData:NSDictionary?
 }

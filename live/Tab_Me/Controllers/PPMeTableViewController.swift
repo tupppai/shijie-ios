@@ -110,8 +110,8 @@ class PPMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let detailView = PPUserDetailView()
-        detailView.show()
+        let vc = PPLoginViewController()
+        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

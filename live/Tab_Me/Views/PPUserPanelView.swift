@@ -12,7 +12,7 @@ import UIKit
 class PPUserPanelView:SpringView {
     
     var avatarImageView:PPRoundImageView!
-    var userDatailPanelView:PPUserDetailPanelView!
+    var userDetailPanelView:PPUserDetailPanelView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         avatarImageView = PPRoundImageView()
@@ -21,14 +21,14 @@ class PPUserPanelView:SpringView {
         avatarImageView.layer.borderWidth = 2.0
         avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
-        userDatailPanelView = PPUserDetailPanelView()
-        userDatailPanelView.layer.cornerRadius = 4
-        userDatailPanelView.clipsToBounds = true
+        userDetailPanelView = PPUserDetailPanelView()
+        userDetailPanelView.layer.cornerRadius = 4
+        userDetailPanelView.clipsToBounds = true
         
-        self.addSubview(userDatailPanelView!)
+        self.addSubview(userDetailPanelView!)
         self.addSubview(avatarImageView!)
 
-        userDatailPanelView.snp_makeConstraints { (make) -> Void in
+        userDetailPanelView.snp_makeConstraints { (make) -> Void in
             make.edges.equalTo(self).inset(UIEdgeInsetsMake(34, 0, 0, 0))
         }
       

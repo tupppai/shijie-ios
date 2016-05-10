@@ -15,6 +15,10 @@ pod 'PLPlayerKit', '~> 2.1.0'
 
 pod 'PKHUD'
 pod 'RongCloudIMKit', '~> 2.4.11'
+
+pod 'AlamofireObjectMapper', '~> 3.0'
+
+
 #pod 'PLCameraStreamingKit', '~> 1.6.2'
 
 #

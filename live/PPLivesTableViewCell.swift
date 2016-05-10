@@ -12,6 +12,8 @@ import SnapKit
 
 
 class PPLivesTableViewCell: UITableViewCell {
+    
+    var cellSeparatorView: UIImageView!
 
     var avatarImageView: PPRoundImageView!
     
@@ -57,6 +59,10 @@ class PPLivesTableViewCell: UITableViewCell {
     
     // MARK: UI setup
     private func setupSubviews(){
+        // cell 分隔view
+        cellSeparatorView = UIImageView(image: UIImage(named: "cell_separator"))
+        self.addSubview(cellSeparatorView)
+        
         // 头像
         avatarImageView = PPRoundImageView(image: UIImage(named: "avatar_example_2"))
         self.addSubview(avatarImageView)
@@ -117,9 +123,14 @@ class PPLivesTableViewCell: UITableViewCell {
     }
     
     private func setupConstraints(){
+        cellSeparatorView.snp_makeConstraints { (make) in
+            make.height.equalTo(10)
+            make.left.top.right.equalTo(self)
+        }
+        
         avatarImageView.snp_makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 33, height: 33))
-            make.top.equalTo(self).offset(10)
+            make.top.equalTo(cellSeparatorView.snp_bottom).offset(10)
             make.left.equalTo(self).offset(11)
         }
         

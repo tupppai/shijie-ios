@@ -38,7 +38,7 @@ class PPLoginViewController: UIViewController {
     
     lazy var weiboButton: UIButton = {
         var button = UIButton(type: .Custom)
-        button.setTitle("微博登陆", forState: .Normal)
+        button.setTitle("测试cookie", forState: .Normal)
         button.frame = CGRect(origin: CGPointMake(100, 320), size: CGSizeMake(100, 100))
         button.backgroundColor = UIColor.grayColor()
         button.tag = 3
@@ -57,8 +57,8 @@ class PPLoginViewController: UIViewController {
         view .addSubview(weiboButton)
 
         wechatButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
-        weiboButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
         qqButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+        weiboButton.addTarget(self, action: #selector(PPLoginViewController.testCookies), forControlEvents: .TouchUpInside)
 
     }
     
@@ -72,6 +72,12 @@ class PPLoginViewController: UIViewController {
         self.shareInfo(info)
     }
     
+    func testCookies() {
+        Manager.sharedInstance.request(.POST, "http://api.chupinlm.com/user/my-info", parameters: nil, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) in
+            print("response  \(response)")
+        })
+
+    }
     private func shareInfo(info: MonkeyKing.Info) {
         var message :MonkeyKing.Message?
         message = MonkeyKing.Message.WeChat(.Session(info: info))
@@ -97,7 +103,6 @@ class PPLoginViewController: UIViewController {
         PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
             if finished {
                 
-                print(PPShareInfo.sharedInstance.rawData)
                 let param = PPShareInfo.sharedInstance.rawData as? [String:AnyObject]
                 Manager.sharedInstance.request(.POST, "http://api.chupinlm.com/user/wechat-login", parameters: param, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) in
                     print("response  \(response)")
@@ -105,8 +110,6 @@ class PPLoginViewController: UIViewController {
 
             }
         })
-        
-        
     }
     
 

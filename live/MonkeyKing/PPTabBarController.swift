@@ -48,7 +48,7 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         if viewController === temporaryCenterViewController {
-            let vc = PPMyLive2ViewController()
+            let vc = PPMyLiveViewController()
             self .presentViewController(vc, animated: true, completion: nil)
             return false
         }

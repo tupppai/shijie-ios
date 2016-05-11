@@ -12,7 +12,7 @@ import Alamofire
 
 class PPLiveWatchViewController: UIViewController {
     
-    var player:PLPlayer!
+    var player:PLPlayer?
     
     lazy var shareView:PPShareView = {
         let temp = PPShareView()
@@ -61,9 +61,7 @@ class PPLiveWatchViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        if (self.player.playing) {
-            self.player.stop()
-        }
+        
     }
     
     func setupNotifications() {
@@ -175,12 +173,12 @@ class PPLiveWatchViewController: UIViewController {
         let option = PLPlayerOption.defaultOption()
         option .setOptionValue(NSNumber(integer: 3), forKey:PLPlayerOptionKeyTimeoutIntervalForMediaPackets)
         player = PLPlayer(URL: NSURL(string: urlString), option: option)
-        player.playerView?.frame = view.bounds
-        player.playerView?.backgroundColor = UIColor.whiteColor()
-        player.delegate = self
-        view .addSubview(player.playerView!)
-        view .sendSubviewToBack(player.playerView!)
-        player .play()
+        player?.playerView?.frame = view.bounds
+        player?.playerView?.backgroundColor = UIColor.whiteColor()
+        player?.delegate = self
+        view .addSubview((player?.playerView)!)
+        view .sendSubviewToBack((player?.playerView)!)
+        player? .play()
     }
 }
 
@@ -199,7 +197,7 @@ extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
             giftView.showInView(view)
         case 3:
             debugPrint("tap close")
-            player .stop()
+            player?.stop()
             self.navigationController?.popViewControllerAnimated(true)
         default:
             debugPrint("tap error")

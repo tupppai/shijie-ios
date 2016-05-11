@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import Alamofire
 class PPLoginViewController: UIViewController {
 
     
@@ -37,14 +38,21 @@ class PPLoginViewController: UIViewController {
     
     lazy var weiboButton: UIButton = {
         var button = UIButton(type: .Custom)
-        button.setTitle("微博登陆", forState: .Normal)
+        button.setTitle("微博登录", forState: .Normal)
         button.frame = CGRect(origin: CGPointMake(100, 320), size: CGSizeMake(100, 100))
         button.backgroundColor = UIColor.grayColor()
         button.tag = 3
         return button
     }()
 
-
+    lazy var closeButton: UIButton = {
+        var button = UIButton(type: .Custom)
+        button.setTitle("X", forState: .Normal)
+        button.frame = CGRect(origin: CGPointMake(220, 200), size: CGSizeMake(50, 50))
+        button.backgroundColor = UIColor.grayColor()
+        button.tag = 4
+        return button
+    }()
 
     
     override func viewDidLoad() {
@@ -54,11 +62,16 @@ class PPLoginViewController: UIViewController {
         view .addSubview(wechatButton)
         view .addSubview(qqButton)
         view .addSubview(weiboButton)
+        view .addSubview(closeButton)
 
         wechatButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
-        weiboButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
         qqButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+        weiboButton.addTarget(self, action: #selector(PPLoginViewController.getAuthInfo(_:)), forControlEvents: .TouchUpInside)
+        closeButton.addTarget(self, action: #selector(PPLoginViewController.dismiss), forControlEvents: .TouchUpInside)
 
+    }
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func shareURL(sender: UIButton) {
@@ -71,6 +84,12 @@ class PPLoginViewController: UIViewController {
         self.shareInfo(info)
     }
     
+    func testCookies() {
+        Manager.sharedInstance.request(.POST, "http://api.chupinlm.com/user/my-info", parameters: nil, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) in
+            print("response  \(response)")
+        })
+
+    }
     private func shareInfo(info: MonkeyKing.Info) {
         var message :MonkeyKing.Message?
         message = MonkeyKing.Message.WeChat(.Session(info: info))
@@ -87,7 +106,7 @@ class PPLoginViewController: UIViewController {
         var platformType:PPOpenPlatformType = .Unknown
         
         switch tag {
-        case 1: platformType = .WeChat
+        case 1: platformType = .Wechat
         case 2: platformType = .QQ
         case 3: platformType = .Weibo
         default : platformType = .Unknown
@@ -95,6 +114,12 @@ class PPLoginViewController: UIViewController {
         
         PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
             if finished {
+                
+                let param = PPShareInfo.sharedInstance.rawData as? [String:AnyObject]
+                Manager.sharedInstance.request(.POST, "http://api.chupinlm.com/user/wechat-login", parameters: param, encoding: .JSON, headers: nil).responseJSON(completionHandler: { (response) in
+                    print("response  \(response)")
+                })
+
             }
         })
     }

@@ -23,7 +23,6 @@ class PPMeTableViewController: UITableViewController {
         setupSubViews()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.Plain, target: self, action: "privateChat")
-
     }
 
     
@@ -109,15 +108,17 @@ class PPMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//        let detailView = PPUserDetailView()
-//        detailView.show()
-        
-        if indexPath.row % 2 == 0 {
+
+
+        if indexPath.row == 0 {
             let liveFinishedStripperView = PPLiveFinishedStripperView()
             liveFinishedStripperView.show()
-        }else{
+        }else         if indexPath.row == 1{
             let liveFinishedAudienceView = PPLiveFinishedAudienceView()
             liveFinishedAudienceView.show()
+        } else {
+            let vc = PPLoginViewController()
+            self.navigationController?.presentViewController(vc, animated: true, completion: nil)
         }
     }
     

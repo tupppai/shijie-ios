@@ -27,7 +27,6 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
         let navigationController1 = UINavigationController(rootViewController: vc1)
         let navigationController3 = UINavigationController(rootViewController: vc3)
         
-        
         vc1.tabBarItem.image = UIImage(named: "tab1")?.imageWithRenderingMode(.AlwaysOriginal)
         vc1.tabBarItem.selectedImage = UIImage(named: "tab1-selected")?.imageWithRenderingMode(.AlwaysOriginal)
         temporaryCenterViewController.tabBarItem.image = UIImage(named: "tab2")?.imageWithRenderingMode(.AlwaysOriginal)
@@ -48,8 +47,15 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         if viewController === temporaryCenterViewController {
-            let vc = PPMyLiveViewController()
-            self .presentViewController(vc, animated: true, completion: nil)
+            let launchLiveVC = PPLaunchLiveViewController()
+            
+            /*
+             http://stackoverflow.com/questions/18902059/ios-semi-transparent-modal-view-controller
+             */
+            launchLiveVC.modalPresentationStyle = .OverFullScreen
+            
+            
+            self.presentViewController(launchLiveVC, animated: true, completion: nil)
             return false
         }
         return true

@@ -63,10 +63,7 @@ class PPLiveListViewController: UIViewController {
         navigationBar.layer.addSublayer(bottomBorder)
 
     }
-    
-    
 
-    
 }
 
 // MARK:TableView Functions
@@ -76,8 +73,6 @@ extension PPLiveListViewController:UITableViewDataSource,UITableViewDelegate {
         let temporaryTableView = UITableView(frame: CGRectZero, style: .Plain)
         temporaryTableView.delegate = self
         temporaryTableView.dataSource = self
-        temporaryTableView.estimatedRowHeight = 430
-        temporaryTableView.rowHeight = UITableViewAutomaticDimension
         temporaryTableView.registerClass(PPLivesTableViewCell.self, forCellReuseIdentifier: "PPLiveTableViewCellIndentifier")
         temporaryTableView.tableFooterView = UIView()
         temporaryTableView.separatorStyle = .None
@@ -95,9 +90,10 @@ extension PPLiveListViewController:UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("PPLiveTableViewCellIndentifier", forIndexPath: indexPath)
         return cell
     }
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return ScreenSize.SCREEN_WIDTH+11+32+11+5
-//    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return ScreenSize.SCREEN_WIDTH + 64
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let vc = PPLiveWatchViewController()
         navigationController?.pushViewController(vc, animated: true)

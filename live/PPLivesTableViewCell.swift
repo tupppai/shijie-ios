@@ -119,7 +119,6 @@ class PPLivesTableViewCell: UITableViewCell {
         coinsCountLabel.textAlignment = .Left
         coinsCountLabel.font = UIFont.systemFontOfSize(11)
         self.addSubview(coinsCountLabel)
-        
     }
     
     private func setupConstraints(){
@@ -148,7 +147,6 @@ class PPLivesTableViewCell: UITableViewCell {
             make.centerY.equalTo(avatarImageView)
             make.right.equalTo(self).offset(-15)
         }
-        
         
         liveImageView.snp_makeConstraints { (make) in
             make.top.equalTo(avatarImageView.snp_bottom).offset(11)

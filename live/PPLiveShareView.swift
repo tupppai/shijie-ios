@@ -12,15 +12,7 @@ class PPLiveShareView: UIView {
     
     private var shareToLabel: UILabel!
     
-    private var shareButtonsContainerView: UIView!
-    
-    private var weixinButton: UIButton!
-    
-    private var momentButton: UIButton!
-    
-    private var weiboButton: UIButton!
-    
-    private var qqButton: UIButton!
+    private var shareButtonsContainerView: PPLiveShareButtonsView!
     
     private var goBackHomeButton: UIButton!
     
@@ -53,37 +45,16 @@ class PPLiveShareView: UIView {
         self.addSubview(shareToLabel)
         
         // containerView for buttons
-        shareButtonsContainerView = UIView()
-        shareButtonsContainerView.backgroundColor = UIColor.clearColor()
+        shareButtonsContainerView = PPLiveShareButtonsView()
         self.addSubview(shareButtonsContainerView)
-        
-        // 微信button
-        weixinButton = UIButton()
-        weixinButton.setImage(UIImage(named: "live-share-wechat"), forState: .Normal)
-        weixinButton.contentMode = .Center
-        shareButtonsContainerView.addSubview(weixinButton)
-        
-        // 朋友圈button
-        momentButton = UIButton()
-        momentButton.setImage(UIImage(named: "live-share-WechatMoment"), forState: .Normal)
-        momentButton.contentMode = .Center
-        shareButtonsContainerView.addSubview(momentButton)
-        
-        // 微博button
-        weiboButton = UIButton()
-        weiboButton.setImage(UIImage(named: "live-share-sinaweibo"), forState: .Normal)
-        weiboButton.contentMode = .Center
-        shareButtonsContainerView.addSubview(weiboButton)
-        
-        // qq button
-        qqButton = UIButton()
-        qqButton.setImage(UIImage(named: "live-share-QQ"), forState: .Normal)
-        qqButton.contentMode = .Center
-        shareButtonsContainerView.addSubview(qqButton)
         
         // 返回首页 button
         goBackHomeButton = UIButton()
-        goBackHomeButton.setImage(UIImage(named: "btn_backHome"), forState: .Normal)
+        goBackHomeButton.setBackgroundImage(UIImage(named: "btn_big"), forState: .Normal)
+        goBackHomeButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        goBackHomeButton.setTitle("返回首页", forState: .Normal)
+        goBackHomeButton.titleLabel!.font = UIFont.systemFontOfSize(14)
+        goBackHomeButton.contentMode = .Center
         self.addSubview(goBackHomeButton)
         
     }
@@ -103,30 +74,7 @@ class PPLiveShareView: UIView {
         goBackHomeButton.snp_makeConstraints { (make) in
             make.left.right.equalTo(self)
             make.top.equalTo(shareButtonsContainerView.snp_bottom).offset(25)
-            make.height.equalTo(40)
-        }
-        
-        // 4等分containerView
-        weixinButton.snp_makeConstraints { (make) in
-            make.left.top.bottom.equalTo(shareButtonsContainerView)
-        }
-        
-        momentButton.snp_makeConstraints { (make) in
-            make.top.bottom.equalTo(shareButtonsContainerView)
-            make.left.equalTo(weixinButton.snp_right)
-            make.width.equalTo(weixinButton.snp_width)
-        }
-        
-        weiboButton.snp_makeConstraints { (make) in
-            make.top.bottom.equalTo(shareButtonsContainerView)
-            make.left.equalTo(momentButton.snp_right)
-            make.width.equalTo(momentButton.snp_width)
-        }
-        
-        qqButton.snp_makeConstraints { (make) in
-            make.top.bottom.right.equalTo(shareButtonsContainerView)
-            make.left.equalTo(weiboButton.snp_right)
-            make.width.equalTo(weiboButton.snp_width)
+            make.height.equalTo(48)
         }
     }
 }

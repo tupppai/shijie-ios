@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.2.1)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
   - boost (1.51.0):
     - boost/graph-includes (= 1.51.0)
     - boost/math-includes (= 1.51.0)
@@ -16,6 +19,7 @@ PODS:
   - boost/shared_ptr-includes (1.51.0)
   - boost/string_algorithms-includes (1.51.0)
   - glm (0.9.7.1)
+  - ObjectMapper (1.2.0)
   - PKHUD (3.1.0)
   - PLPlayerKit (2.1.0):
     - PLPlayerKit/precompiled (= 2.1.0)
@@ -35,6 +39,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.2.1)
+  - AlamofireObjectMapper (~> 3.0)
   - glm (from `https://github.com/peiweichen/glm`)
   - PKHUD
   - PLPlayerKit (~> 2.1.0)
@@ -60,8 +65,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
   boost: 6c5c8d8daef26ac83c1e1c00ad14de62b80161d7
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
   PLPlayerKit: 6c89abc19818ba434a8a8ac4c0cdde1169fd3ef6
   Realm: 44803f35418c5d89b27825a564247fcd190de37e

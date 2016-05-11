@@ -25,6 +25,13 @@
 		9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE831CA1315300F0BECD /* PPGiftViewToolBar.swift */; };
 		9086EE8B1CA1315300F0BECD /* PPGiftViewToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9086EE841CA1315300F0BECD /* PPGiftViewToolBar.xib */; };
 		9086EE8D1CA1316F00F0BECD /* PPGiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9086EE8C1CA1316F00F0BECD /* PPGiftModel.swift */; };
+		909833301CE180E00031AF07 /* PPLiveFinishedStripperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098332F1CE180DF0031AF07 /* PPLiveFinishedStripperView.swift */; };
+		909833321CE180F30031AF07 /* PPLiveFinishedAudienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833311CE180F30031AF07 /* PPLiveFinishedAudienceView.swift */; };
+		909833341CE186420031AF07 /* PPLiveStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833331CE186420031AF07 /* PPLiveStatisticsView.swift */; };
+		909833361CE186500031AF07 /* PPLiveShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833351CE186500031AF07 /* PPLiveShareView.swift */; };
+		909833381CE186820031AF07 /* PPLiveFollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833371CE186820031AF07 /* PPLiveFollowView.swift */; };
+		9098333A1CE1910C0031AF07 /* PPCoinsRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833391CE1910C0031AF07 /* PPCoinsRankView.swift */; };
+		90FF86E01CE088410041AE51 /* PPLivesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF86DF1CE088410041AE51 /* PPLivesTableViewCell.swift */; };
 		F40853C01C97F1FD00F343C7 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = F40853BF1C97F1FD00F343C7 /* demo.png */; };
 		F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48C1C895D720009AAFF /* AppDelegate.swift */; };
 		F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48E1C895D720009AAFF /* PPVideoCaptureViewController.swift */; };
@@ -116,7 +123,7 @@
 		F4F486721C96753600498CD3 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486711C96753600498CD3 /* Config.swift */; };
 		F4F4867B1C969D6B00498CD3 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */; };
 		F4F4868D1C97ABC300498CD3 /* PPLiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */; };
-		F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */; };
+		F4F486911C97AFB700498CD3 /* PPLiveTableViewCell_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486901C97AFB700498CD3 /* PPLiveTableViewCell_old.swift */; };
 		F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F486961C97C77100498CD3 /* PPExtension.swift */; };
 		F4FF22B71CA0E8BD00D71B5B /* PPHeartFloatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF22B61CA0E8BD00D71B5B /* PPHeartFloatingView.swift */; };
 		F4FF22B91CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF22B81CA0F6C200D71B5B /* PPMyLiveControlCollectionView.swift */; };
@@ -142,6 +149,13 @@
 		9086EE841CA1315300F0BECD /* PPGiftViewToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPGiftViewToolBar.xib; sourceTree = "<group>"; };
 		9086EE8C1CA1316F00F0BECD /* PPGiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPGiftModel.swift; sourceTree = "<group>"; };
 		9086EE8E1CA1381D00F0BECD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		9098332F1CE180DF0031AF07 /* PPLiveFinishedStripperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveFinishedStripperView.swift; sourceTree = "<group>"; };
+		909833311CE180F30031AF07 /* PPLiveFinishedAudienceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveFinishedAudienceView.swift; sourceTree = "<group>"; };
+		909833331CE186420031AF07 /* PPLiveStatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveStatisticsView.swift; sourceTree = "<group>"; };
+		909833351CE186500031AF07 /* PPLiveShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveShareView.swift; sourceTree = "<group>"; };
+		909833371CE186820031AF07 /* PPLiveFollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveFollowView.swift; sourceTree = "<group>"; };
+		909833391CE1910C0031AF07 /* PPCoinsRankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCoinsRankView.swift; sourceTree = "<group>"; };
+		90FF86DF1CE088410041AE51 /* PPLivesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLivesTableViewCell.swift; sourceTree = "<group>"; };
 		BE6079134BFC8D209F4B9E3C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3811039017F1377A13010B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2287D4FC06CE9CED7C1987C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,7 +266,7 @@
 		F4F4867A1C969D6B00498CD3 /* PPLiveWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveWatchViewController.swift; sourceTree = "<group>"; };
 		F4F4867C1C96A3B700498CD3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveListViewController.swift; sourceTree = "<group>"; };
-		F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveTableViewCell.swift; sourceTree = "<group>"; };
+		F4F486901C97AFB700498CD3 /* PPLiveTableViewCell_old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveTableViewCell_old.swift; sourceTree = "<group>"; };
 		F4F486961C97C77100498CD3 /* PPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPExtension.swift; sourceTree = "<group>"; };
 		F4FDA2F21C8ED01400EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		F4FDA2F41C8ED09900EFBEF9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
@@ -530,6 +544,12 @@
 				F4D2736D1C9EF88D00A70F18 /* PPGiftShowView.swift */,
 				F4D273711C9F06D600A70F18 /* PPGiftShowsAnimateView.swift */,
 				F4D2738B1C9FD82A00A70F18 /* PPTextInputBar.swift */,
+				9098332F1CE180DF0031AF07 /* PPLiveFinishedStripperView.swift */,
+				909833311CE180F30031AF07 /* PPLiveFinishedAudienceView.swift */,
+				909833331CE186420031AF07 /* PPLiveStatisticsView.swift */,
+				909833351CE186500031AF07 /* PPLiveShareView.swift */,
+				909833371CE186820031AF07 /* PPLiveFollowView.swift */,
+				909833391CE1910C0031AF07 /* PPCoinsRankView.swift */,
 			);
 			name = viewForLive;
 			sourceTree = "<group>";
@@ -585,7 +605,8 @@
 			isa = PBXGroup;
 			children = (
 				F4F4868C1C97ABC300498CD3 /* PPLiveListViewController.swift */,
-				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell.swift */,
+				F4F486901C97AFB700498CD3 /* PPLiveTableViewCell_old.swift */,
+				90FF86DF1CE088410041AE51 /* PPLivesTableViewCell.swift */,
 			);
 			name = LiveList;
 			sourceTree = "<group>";
@@ -737,9 +758,10 @@
 				F4EC53071C9BFB4F00C1DA94 /* PPHostReceivedCoinView.swift in Sources */,
 				F4241A721C9A5ED300AD4343 /* AsyncImageView.swift in Sources */,
 				F4241A711C9A5ED300AD4343 /* AsyncButton.swift in Sources */,
+				909833381CE186820031AF07 /* PPLiveFollowView.swift in Sources */,
 				F4F429FF1C99337E000CF7CD /* PPLiveWatchControlCollectionView.swift in Sources */,
 				F417C48F1C895D720009AAFF /* PPVideoCaptureViewController.swift in Sources */,
-				F4F486911C97AFB700498CD3 /* PPLiveTableViewCell.swift in Sources */,
+				F4F486911C97AFB700498CD3 /* PPLiveTableViewCell_old.swift in Sources */,
 				F4EC52FB1C9BE42E00C1DA94 /* PPUserDetailPanelView.swift in Sources */,
 				F4EC52FD1C9BE42E00C1DA94 /* PPUserDetailView.swift in Sources */,
 				9086EE891CA1315300F0BECD /* PPGiftView.swift in Sources */,
@@ -758,6 +780,7 @@
 				9009D9AE1CA2654100292317 /* PPUserModel.swift in Sources */,
 				F4241A731C9A5ED300AD4343 /* AutoTextView.swift in Sources */,
 				9009D9C21CA279DF00292317 /* PPUserRankCountView.swift in Sources */,
+				909833361CE186500031AF07 /* PPLiveShareView.swift in Sources */,
 				9009D9AB1CA2517B00292317 /* UINavigationBar+Awesome.m in Sources */,
 				F4241A791C9A5ED300AD4343 /* DesignableTextField.swift in Sources */,
 				F4241A871C9A5ED300AD4343 /* SpringLabel.swift in Sources */,
@@ -766,6 +789,7 @@
 				F4241A761C9A5ED300AD4343 /* DesignableImageView.swift in Sources */,
 				F492EE471C9A4A79007DD791 /* PPTriangleView.swift in Sources */,
 				F4241A861C9A5ED300AD4343 /* SpringImageView.swift in Sources */,
+				909833301CE180E00031AF07 /* PPLiveFinishedStripperView.swift in Sources */,
 				F417C4BC1C899A750009AAFF /* SimpleNetworking.swift in Sources */,
 				F4D273741C9F146500A70F18 /* PPAlgorithm.swift in Sources */,
 				F417C4AD1C898E9B0009AAFF /* MonkeyKing.swift in Sources */,
@@ -800,20 +824,24 @@
 				F4241A811C9A5ED300AD4343 /* Misc.swift in Sources */,
 				F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */,
 				F492EE491C9A550F007DD791 /* PPShareButton.swift in Sources */,
+				9098333A1CE1910C0031AF07 /* PPCoinsRankView.swift in Sources */,
 				F4EC52F71C9BE42E00C1DA94 /* RollContributionListView.swift in Sources */,
 				F4241A831C9A5ED300AD4343 /* Spring.swift in Sources */,
 				F4EC53001C9BE42E00C1DA94 /* UserHeaderView2.swift in Sources */,
 				F4241A851C9A5ED300AD4343 /* SpringButton.swift in Sources */,
 				F492EE451C99D54D007DD791 /* PPShareSheetView.swift in Sources */,
+				90FF86E01CE088410041AE51 /* PPLivesTableViewCell.swift in Sources */,
 				F45B01361C99142B00E4C64A /* PPLovingHeartView.swift in Sources */,
 				F4241A7B1C9A5ED300AD4343 /* DesignableView.swift in Sources */,
 				F4241A781C9A5ED300AD4343 /* DesignableTabBarController.swift in Sources */,
 				F4D273701C9F05AF00A70F18 /* PPRoundView.swift in Sources */,
 				F4F486971C97C77100498CD3 /* PPExtension.swift in Sources */,
+				909833321CE180F30031AF07 /* PPLiveFinishedAudienceView.swift in Sources */,
 				F417C4951C895D720009AAFF /* live.xcdatamodeld in Sources */,
 				F4D273941C9FF69A00A70F18 /* PPUserPanelView.swift in Sources */,
 				F4241A8D1C9A5ED300AD4343 /* UnwindSegue.swift in Sources */,
 				F4D2736E1C9EF88D00A70F18 /* PPGiftShowView.swift in Sources */,
+				909833341CE186420031AF07 /* PPLiveStatisticsView.swift in Sources */,
 				F4EC53031C9BF21F00C1DA94 /* PPRoundButton.swift in Sources */,
 				F4241A751C9A5ED300AD4343 /* DesignableButton.swift in Sources */,
 				F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */,

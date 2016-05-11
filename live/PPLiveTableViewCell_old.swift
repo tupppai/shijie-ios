@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PPLiveTableViewCell: UITableViewCell {
+class PPLiveTableViewCell_old: UITableViewCell {
     
     var avatarButton:UIButton!
     var usernameButton:UIButton!
@@ -33,14 +33,12 @@ class PPLiveTableViewCell: UITableViewCell {
     
     
     private func setupSubviews() {
-        
 
         avatarButton = UIButton(type: .Custom)
 
         usernameButton = UIButton(type: .Custom)
         usernameButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         usernameButton .setTitle("hellowhat'goo'sup", forState: .Normal)
-
         
         timeLabel = UILabel()
         timeLabel.text = "两分钟前"
@@ -69,16 +67,16 @@ class PPLiveTableViewCell: UITableViewCell {
         gapView.backgroundColor = UIColor(hex: 0xf4f4f4)
         
         
-            if #available(iOS 8.2, *) {
-                usernameButton.titleLabel?.font = UIFont.systemFontOfSize(13, weight: UIFontWeightRegular)
-                timeLabel.font =  UIFont.systemFontOfSize(10, weight: UIFontWeightLight)
-                watchingCountLabel.font = UIFont.systemFontOfSize(15, weight: UIFontWeightRegular)
-                watchingCountSuffixLabel.font =  UIFont.systemFontOfSize(12, weight: UIFontWeightLight)
-            } else {
-                usernameButton.titleLabel?.font = UIFont.boldSystemFontOfSize(13)
-                timeLabel.font =  UIFont.systemFontOfSize(10)
-                watchingCountLabel.font = UIFont.boldSystemFontOfSize(15)
-                watchingCountSuffixLabel.font =  UIFont.systemFontOfSize(12)
+        if #available(iOS 8.2, *) {
+            usernameButton.titleLabel?.font = UIFont.systemFontOfSize(13, weight: UIFontWeightRegular)
+            timeLabel.font =  UIFont.systemFontOfSize(10, weight: UIFontWeightLight)
+            watchingCountLabel.font = UIFont.systemFontOfSize(15, weight: UIFontWeightRegular)
+            watchingCountSuffixLabel.font =  UIFont.systemFontOfSize(12, weight: UIFontWeightLight)
+        } else {
+            usernameButton.titleLabel?.font = UIFont.boldSystemFontOfSize(13)
+            timeLabel.font =  UIFont.systemFontOfSize(10)
+            watchingCountLabel.font = UIFont.boldSystemFontOfSize(15)
+            watchingCountSuffixLabel.font =  UIFont.systemFontOfSize(12)
         }
    
 
@@ -93,6 +91,7 @@ class PPLiveTableViewCell: UITableViewCell {
         contentView .addSubview(gapView)
 
     }
+    
     private func render() {
         //cell height = 11+32+11+screenWidth
         avatarButton.snp_makeConstraints { (make) -> Void in

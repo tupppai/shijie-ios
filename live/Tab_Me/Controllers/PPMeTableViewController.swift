@@ -22,9 +22,7 @@ class PPMeTableViewController: UITableViewController {
         self.view.backgroundColor = UIColor(hex: 0xF7F7F7)
         setupSubViews()
         
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.Plain, target: self, action: "privateChat")
-
     }
 
     
@@ -110,8 +108,18 @@ class PPMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let vc = PPLoginViewController()
-        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+
+
+        if indexPath.row == 0 {
+            let liveFinishedStripperView = PPLiveFinishedStripperView()
+            liveFinishedStripperView.show()
+        }else         if indexPath.row == 1{
+            let liveFinishedAudienceView = PPLiveFinishedAudienceView()
+            liveFinishedAudienceView.show()
+        } else {
+            let vc = PPLoginViewController()
+            self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

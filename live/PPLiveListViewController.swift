@@ -76,7 +76,9 @@ extension PPLiveListViewController:UITableViewDataSource,UITableViewDelegate {
         let temporaryTableView = UITableView(frame: CGRectZero, style: .Plain)
         temporaryTableView.delegate = self
         temporaryTableView.dataSource = self
-        temporaryTableView.registerClass(PPLiveTableViewCell.self, forCellReuseIdentifier: "PPLiveTableViewCellIndentifier")
+        temporaryTableView.estimatedRowHeight = 430
+        temporaryTableView.rowHeight = UITableViewAutomaticDimension
+        temporaryTableView.registerClass(PPLivesTableViewCell.self, forCellReuseIdentifier: "PPLiveTableViewCellIndentifier")
         temporaryTableView.tableFooterView = UIView()
         temporaryTableView.separatorStyle = .None
         return temporaryTableView
@@ -87,15 +89,15 @@ extension PPLiveListViewController:UITableViewDataSource,UITableViewDelegate {
     }
   
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 10
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PPLiveTableViewCellIndentifier", forIndexPath: indexPath)
         return cell
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return ScreenSize.SCREEN_WIDTH+11+32+11+5
-    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return ScreenSize.SCREEN_WIDTH+11+32+11+5
+//    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let vc = PPLiveWatchViewController()
         navigationController?.pushViewController(vc, animated: true)

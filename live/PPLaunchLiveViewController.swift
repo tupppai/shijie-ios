@@ -90,6 +90,7 @@ class PPLaunchLiveViewController: UIViewController {
         beginLiveButton.titleLabel!.font = UIFont.systemFontOfSize(16)
         beginLiveButton.contentMode = .Center
         
+        beginLiveButton.addTarget(self, action: #selector(PPLaunchLiveViewController.beginLiving), forControlEvents: .TouchUpInside)
         self.view.addSubview(beginLiveButton)
     }
     
@@ -140,4 +141,11 @@ class PPLaunchLiveViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func beginLiving(){
+        self.view.endEditing(true)
+        self.dismissViewControllerAnimated(false) { 
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController?.presentViewController(PPMyLiveViewController(), animated: true, completion: nil)
+        }
+    }
 }

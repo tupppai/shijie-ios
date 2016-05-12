@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         
-        MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: Configs.Wechat.appID, appKey: Configs.Wechat.appKey))
-        MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: Configs.Weibo.appID, appKey: Configs.Weibo.appKey, redirectURL: Configs.Weibo.redirectURL))
-        MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: Configs.QQ.appID))
+        MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: ShareConfigs.Wechat.appID, appKey: ShareConfigs.Wechat.appKey))
+        MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: ShareConfigs.Weibo.appID, appKey: ShareConfigs.Weibo.appKey, redirectURL: ShareConfigs.Weibo.redirectURL))
+        MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: ShareConfigs.QQ.appID))
         
         
         

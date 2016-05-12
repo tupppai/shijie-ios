@@ -22,8 +22,6 @@ class PPTabBarController: UITabBarController,UITabBarControllerDelegate {
         delegate = self;
         temporaryCenterViewController = UIViewController()
         temporaryCenterViewController.view.backgroundColor = UIColor.redColor()
-        vc3.view.backgroundColor = UIColor.grayColor()
-        
         let navigationController1 = UINavigationController(rootViewController: vc1)
         let navigationController3 = UINavigationController(rootViewController: vc3)
         

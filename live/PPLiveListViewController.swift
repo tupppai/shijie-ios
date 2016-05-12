@@ -16,7 +16,10 @@ class PPLiveListViewController: UIViewController {
         self.edgesForExtendedLayout = .None
         self.initNavigationBar()
         
+        
+        
         view.addSubview(tableView)
+        
         tableView.snp_makeConstraints { (make) -> Void in
             make.bottom.leading.trailing.equalTo(view)
             make.top.equalTo(navigationBar.snp_bottom)
@@ -71,6 +74,7 @@ extension PPLiveListViewController:UITableViewDataSource,UITableViewDelegate {
     
     func initializeTableView()->UITableView {
         let temporaryTableView = UITableView(frame: CGRectZero, style: .Plain)
+        temporaryTableView.backgroundColor = UIColor(hex: 0xF4F4F4)
         temporaryTableView.delegate = self
         temporaryTableView.dataSource = self
         temporaryTableView.registerClass(PPLivesTableViewCell.self, forCellReuseIdentifier: "PPLiveTableViewCellIndentifier")

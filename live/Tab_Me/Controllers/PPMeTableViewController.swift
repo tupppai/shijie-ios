@@ -19,12 +19,15 @@ class PPMeTableViewController: UITableViewController {
     // MARK: - UI life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(hex: 0xF7F7F7)
         setupSubViews()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.Plain, target: self, action: "privateChat")
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.backgroundColor = UIColor(hex: 0xF7F7F7)
+    }
     
     func privateChat() {
         //打开会话界面
@@ -60,7 +63,7 @@ class PPMeTableViewController: UITableViewController {
             return 3
         }
         else if section == 1{
-            return 2
+            return 3
         }
         else{
             return 0
@@ -82,7 +85,7 @@ class PPMeTableViewController: UITableViewController {
                 cell.numberCountLabel.text = "2"
                 cell.settingIndicatorImageView.image = UIImage(named: "ic_star")
             case 2:
-                cell.settingTextLabel.text = "我的钻石"
+                cell.settingTextLabel.text = "我的see币"
                 cell.numberCountLabel.text = "50"
                 cell.settingIndicatorImageView.image = UIImage(named: "ic_diamond")
             default:
@@ -96,6 +99,10 @@ class PPMeTableViewController: UITableViewController {
                 cell.numberCountLabel.text = ""
                 cell.settingIndicatorImageView.image = UIImage(named: "ic_setting")
             case 1:
+                cell.settingTextLabel.text = "大V认证"
+                cell.numberCountLabel.text = "已认证"
+                cell.settingIndicatorImageView.image = UIImage(named: "ic_certificate")
+            case 2:
                 cell.settingTextLabel.text = "退出登录"
                 cell.numberCountLabel.text = ""
                 cell.settingIndicatorImageView.image = UIImage(named: "ic_logout")
@@ -125,7 +132,8 @@ class PPMeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
 //            let header = UserHeaderView()
-            let header = UserHeaderView2()
+//            let header = UserHeaderView2()
+            let header = PPMeUserHeaderView()
             return header
         }
         else{
@@ -136,7 +144,8 @@ class PPMeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0{
 //            return 310
-            return 235
+//            return 235
+            return 298
         }else{
             return 0
         }

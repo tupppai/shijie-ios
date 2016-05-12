@@ -73,9 +73,35 @@ class PPMyLiveViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
    
-    func dismissSelf() {
+    func closeLiveAction() {
         disconnect()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let confirmEndLiveView = PPConfirmEndLiveView()
+        
+        confirmEndLiveView.cancelDismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+        }
+        
+        confirmEndLiveView.dismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+            let stripperEndLiveView = PPLiveFinishedStripperView()
+            
+            stripperEndLiveView.goHomeClosure = {
+                [unowned stripperEndLiveView,
+                 unowned self] in
+                stripperEndLiveView.dismiss()
+                
+                self.dismissViewControllerAnimated(true,
+                                                   completion: { 
+                                                    // toggle to first tab
+                })
+                
+            }
+            stripperEndLiveView.show()
+        }
+        
+        confirmEndLiveView.show()
     }
     
     func switchCamera() {
@@ -383,7 +409,7 @@ extension PPMyLiveViewController:PPMyLiveControlCollectionViewDelegate {
         case 1 :
             switchCamera()
         case 2 :
-            self.dismissSelf()
+            self.closeLiveAction()
         default:
             debugPrint("tap error")
         }

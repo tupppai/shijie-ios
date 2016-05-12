@@ -16,6 +16,8 @@ class PPLiveFinishedAudienceView: UIView {
     
     private var checkOtherLivesButton: UIButton!
     
+    var checkOtherLivesClosure: (() -> Void)?
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -89,14 +91,19 @@ class PPLiveFinishedAudienceView: UIView {
             make.centerX.equalTo(self)
         }
         
-        
+        checkOtherLivesButton.addTarget(self, action: #selector(PPLiveFinishedAudienceView.tapOnCheckOtherLivesButton), forControlEvents: .TouchUpInside)
     }
     
     // MARK: target-actions
     func tapOnSelf(recognizer: UITapGestureRecognizer){
         if self.hitTest(recognizer.locationInView(self), withEvent: nil) === self{
             dismiss()
+            checkOtherLivesClosure?()
         }
+    }
+    
+    func tapOnCheckOtherLivesButton(){
+        checkOtherLivesClosure?()
     }
     
     // MARK: Public methods

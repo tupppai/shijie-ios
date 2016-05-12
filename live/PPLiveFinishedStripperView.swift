@@ -13,6 +13,8 @@ class PPLiveFinishedStripperView: UIView {
     
     private var liveShareView: PPLiveShareView!
     
+    var goHomeClosure: (() -> Void)?
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -50,6 +52,8 @@ class PPLiveFinishedStripperView: UIView {
         
         liveShareView.alpha = 0.0
         
+        liveShareView.goBackHomeButton.addTarget(self, action: #selector(PPLiveFinishedStripperView.tapOnGoHomeButton), forControlEvents: .TouchUpInside)
+        
         self.addSubview(liveShareView)
         
         liveShareView.snp_makeConstraints { (make) in
@@ -65,7 +69,13 @@ class PPLiveFinishedStripperView: UIView {
     func tapOnSelf(recognizer: UITapGestureRecognizer){
         if self.hitTest(recognizer.locationInView(self), withEvent: nil) === self {
             dismiss()
+            // 不知道要不要做到这一步
+            goHomeClosure?()
         }
+    }
+    
+    func tapOnGoHomeButton(){
+        goHomeClosure?()
     }
     
     // MARK: Public methods

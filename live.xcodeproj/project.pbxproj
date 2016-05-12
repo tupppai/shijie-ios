@@ -35,6 +35,8 @@
 		909833381CE186820031AF07 /* PPLiveFollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833371CE186820031AF07 /* PPLiveFollowView.swift */; };
 		9098333A1CE1910C0031AF07 /* PPCoinsRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909833391CE1910C0031AF07 /* PPCoinsRankView.swift */; };
 		909A88A81CE478F500FB198D /* PPRollContributionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A88A71CE478F500FB198D /* PPRollContributionListView.swift */; };
+		909A88AA1CE486CF00FB198D /* PPConfirmEndLivePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A88A91CE486CF00FB198D /* PPConfirmEndLivePanelView.swift */; };
+		909B92A21CE49032007467FD /* PPConfirmEndLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909B92A11CE49032007467FD /* PPConfirmEndLiveView.swift */; };
 		90FF86E01CE088410041AE51 /* PPLivesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF86DF1CE088410041AE51 /* PPLivesTableViewCell.swift */; };
 		F40853C01C97F1FD00F343C7 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = F40853BF1C97F1FD00F343C7 /* demo.png */; };
 		F417C48D1C895D720009AAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417C48C1C895D720009AAFF /* AppDelegate.swift */; };
@@ -164,6 +166,8 @@
 		909833371CE186820031AF07 /* PPLiveFollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveFollowView.swift; sourceTree = "<group>"; };
 		909833391CE1910C0031AF07 /* PPCoinsRankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCoinsRankView.swift; sourceTree = "<group>"; };
 		909A88A71CE478F500FB198D /* PPRollContributionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRollContributionListView.swift; sourceTree = "<group>"; };
+		909A88A91CE486CF00FB198D /* PPConfirmEndLivePanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPConfirmEndLivePanelView.swift; sourceTree = "<group>"; };
+		909B92A11CE49032007467FD /* PPConfirmEndLiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPConfirmEndLiveView.swift; sourceTree = "<group>"; };
 		90FF86DF1CE088410041AE51 /* PPLivesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLivesTableViewCell.swift; sourceTree = "<group>"; };
 		BE6079134BFC8D209F4B9E3C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3811039017F1377A13010B4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -559,6 +563,8 @@
 				F4D2738B1C9FD82A00A70F18 /* PPTextInputBar.swift */,
 				9098332F1CE180DF0031AF07 /* PPLiveFinishedStripperView.swift */,
 				909833311CE180F30031AF07 /* PPLiveFinishedAudienceView.swift */,
+				909A88A91CE486CF00FB198D /* PPConfirmEndLivePanelView.swift */,
+				909B92A11CE49032007467FD /* PPConfirmEndLiveView.swift */,
 				909833331CE186420031AF07 /* PPLiveStatisticsView.swift */,
 				909833351CE186500031AF07 /* PPLiveShareView.swift */,
 				9078622F1CE324EB005EEFC2 /* PPLiveShareButtonsView.swift */,
@@ -834,9 +840,11 @@
 				F4FF22B71CA0E8BD00D71B5B /* PPHeartFloatingView.swift in Sources */,
 				F4241A741C9A5ED300AD4343 /* BlurView.swift in Sources */,
 				F4241A8B1C9A5ED300AD4343 /* TransitionManager.swift in Sources */,
+				909A88AA1CE486CF00FB198D /* PPConfirmEndLivePanelView.swift in Sources */,
 				F417C4B51C898F4A0009AAFF /* PPLoginViewController.swift in Sources */,
 				9086EE8A1CA1315300F0BECD /* PPGiftViewToolBar.swift in Sources */,
 				F445C0B71C8E6E940020C0ED /* PPTabBarController.swift in Sources */,
+				909B92A21CE49032007467FD /* PPConfirmEndLiveView.swift in Sources */,
 				F4241A7E1C9A5ED300AD4343 /* KeyboardLayoutConstraint.swift in Sources */,
 				F4241A811C9A5ED300AD4343 /* Misc.swift in Sources */,
 				F417C4AE1C898E9B0009AAFF /* Networking.swift in Sources */,

@@ -14,7 +14,7 @@ class PPLiveShareView: UIView {
     
     private var shareButtonsContainerView: PPLiveShareButtonsView!
     
-    private var goBackHomeButton: UIButton!
+    var goBackHomeButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

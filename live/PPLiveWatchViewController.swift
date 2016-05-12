@@ -180,6 +180,36 @@ class PPLiveWatchViewController: UIViewController {
         view .sendSubviewToBack((player?.playerView)!)
         player? .play()
     }
+    
+    // MARK: EndLive? (分类名字还没想好)
+    private func endLiveWatching(){
+        player?.stop()
+        let confirmEndLiveView = PPConfirmEndLiveView()
+        
+        confirmEndLiveView.cancelDismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+        }
+        
+        confirmEndLiveView.dismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+            let audienceEndLiveView = PPLiveFinishedAudienceView()
+            
+            audienceEndLiveView.checkOtherLivesClosure = {
+                [unowned audienceEndLiveView,
+                 unowned self] in
+                
+                audienceEndLiveView.dismiss()
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            
+            audienceEndLiveView.show()
+        }
+        
+        confirmEndLiveView.show()
+    }
+    
 }
 
 
@@ -196,9 +226,8 @@ extension PPLiveWatchViewController:PPLiveWatchControlCollectionViewDelegate {
         case 2:
             giftView.showInView(view)
         case 3:
-            debugPrint("tap close")
-            player?.stop()
-            self.navigationController?.popViewControllerAnimated(true)
+            endLiveWatching()
+            
         default:
             debugPrint("tap error")
         }

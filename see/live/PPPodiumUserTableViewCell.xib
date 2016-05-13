@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PPPodiumUserTableViewCell" rowHeight="90" id="KGk-i7-Jjw" customClass="PPPodiumUserTableViewCell" customModule="live" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="474" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-9h-tMP">
+                        <rect key="frame" x="13" y="33" width="39" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q0w-Ut-Lh6" userLabel="avatarImageView">
+                        <rect key="frame" x="64" y="27" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="7GS-fw-8HI"/>
+                            <constraint firstAttribute="height" constant="35" id="mTk-fR-eqa"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-fQ-TGH" userLabel="usernameLabel">
+                        <rect key="frame" x="109" y="27" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gender_female" translatesAutoresizingMaskIntoConstraints="NO" id="V4j-av-UzT">
+                        <rect key="frame" x="172" y="30" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="Iy1-Ta-JTh"/>
+                            <constraint firstAttribute="width" constant="10" id="y00-Cu-o3D"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贡献 16622 视券" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb1-pS-vvk" userLabel="coinsCount">
+                        <rect key="frame" x="370" y="27" width="90.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H96-9t-W1I" customClass="PPUserRankCountView" customModule="live" customModuleProvider="target">
+                        <rect key="frame" x="109" y="46" width="42" height="13"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="HrU-kR-s8O"/>
+                            <constraint firstAttribute="width" constant="42" id="f4b-90-s1b"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="l0K-9h-tMP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8Eb-ux-ASD"/>
+                    <constraint firstItem="5hm-fQ-TGH" firstAttribute="top" secondItem="q0w-Ut-Lh6" secondAttribute="top" id="GiU-1d-Pai"/>
+                    <constraint firstItem="H96-9t-W1I" firstAttribute="top" secondItem="5hm-fQ-TGH" secondAttribute="bottom" constant="3" id="NTF-Dj-xJv"/>
+                    <constraint firstItem="V4j-av-UzT" firstAttribute="centerY" secondItem="5hm-fQ-TGH" secondAttribute="centerY" id="R5a-wJ-mq8"/>
+                    <constraint firstItem="l0K-9h-tMP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="SB5-6K-wi9"/>
+                    <constraint firstItem="q0w-Ut-Lh6" firstAttribute="leading" secondItem="l0K-9h-tMP" secondAttribute="trailing" constant="12" id="USg-Tu-IbK"/>
+                    <constraint firstItem="q0w-Ut-Lh6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YvG-vN-R2J"/>
+                    <constraint firstItem="5hm-fQ-TGH" firstAttribute="leading" secondItem="q0w-Ut-Lh6" secondAttribute="trailing" constant="10" id="g8R-XH-7mt"/>
+                    <constraint firstItem="bb1-pS-vvk" firstAttribute="top" secondItem="5hm-fQ-TGH" secondAttribute="top" id="jXY-ql-Oiw"/>
+                    <constraint firstItem="H96-9t-W1I" firstAttribute="leading" secondItem="5hm-fQ-TGH" secondAttribute="leading" id="mEu-cv-gKA"/>
+                    <constraint firstAttribute="trailing" secondItem="bb1-pS-vvk" secondAttribute="trailing" constant="13" id="pg8-x3-OUY"/>
+                    <constraint firstItem="V4j-av-UzT" firstAttribute="leading" secondItem="5hm-fQ-TGH" secondAttribute="trailing" constant="3" id="ySb-LA-IAT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="q0w-Ut-Lh6" id="xG8-fy-MnW"/>
+                <outlet property="coinsSentLabel" destination="bb1-pS-vvk" id="Z11-Np-Zdi"/>
+                <outlet property="rankCountView" destination="H96-9t-W1I" id="uPp-Ln-Wyz"/>
+                <outlet property="rankNumberLabel" destination="l0K-9h-tMP" id="2Cs-Ha-FhP"/>
+                <outlet property="usernameLabel" destination="5hm-fQ-TGH" id="hIC-fy-Uj7"/>
+            </connections>
+            <point key="canvasLocation" x="-444" y="118"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_gender_female" width="14" height="14"/>
+    </resources>
+</document>

@@ -1,24 +1,72 @@
 //
 //  AppDelegate.swift
-//  see
+//  live
 //
-//  Created by chenpeiwei on 5/13/16.
-//  Copyright © 2016 pires.inc. All rights reserved.
+//  Created by chenpeiwei on 3/4/16.
+//  Copyright © 2016 Pires.Inc. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    lazy var tabBarController:PPTabBarController = PPTabBarController()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        self.window?.rootViewController = tabBarController
+        self.window?.makeKeyAndVisible()
+        
+        
+        MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: ShareConfigs.Wechat.appID, appKey: ShareConfigs.Wechat.appKey))
+        MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: ShareConfigs.Weibo.appID, appKey: ShareConfigs.Weibo.appKey, redirectURL: ShareConfigs.Weibo.redirectURL))
+        MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: ShareConfigs.QQ.appID))
+        
+        
+        
+        let token = "OHvNZQPCl8d9xFBV6hYuyn3KWcePBCPg0uDKhMccdAOuTDtWZugh9AtgyVimggIZaZtCVyTc8sWNAeH0EzC2oA=="
+
+        //连接融云服务器
+        RCIM.sharedRCIM().connectWithToken(token,
+                                           success: { (userId) -> Void in
+                                            print("登陆成功。当前登录的用户ID：\(userId)")
+                                            
+                                            //设置当前登陆用户的信息
+                                            RCIM.sharedRCIM().currentUserInfo = RCUserInfo.init(userId: userId, name: "我的名字", portrait: "http://www.rongcloud.cn/images/newVersion/logo/baixing.png")
+                                            
+                                            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                                                //打开会话列表
+//                                                let chatListView = DemoChatListViewController()
+//                                                self.navigationController?.pushViewController(chatListView, animated: true)
+                                            })
+            }, error: { (status) -> Void in
+                print("登陆的错误码为:\(status.rawValue)")
+            }, tokenIncorrect: {
+                //token过期或者不正确。
+                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                print("token错误")
+        })
+
+        
         return true
     }
 
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        if MonkeyKing.handleOpenURL(url) {
+            return true
+        }
+        
+        return false
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -39,7 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
     }
+
+
+
 
 
 }

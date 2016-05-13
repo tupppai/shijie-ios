@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPPodiumUserView" customModule="live" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="iBS-5V-VCA" id="oHD-a9-kyW"/>
+                <outlet property="crownImageView" destination="3mB-i8-gZJ" id="ptv-Ui-4fa"/>
+                <outlet property="usernameLabel" destination="Wky-hs-enC" id="kN9-KF-Q4x"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="86" height="135"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_example_3" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-5V-VCA" customClass="PPRoundImageView" customModule="live" customModuleProvider="target">
+                    <rect key="frame" x="13" y="10" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="4Tw-0r-pkc"/>
+                        <constraint firstAttribute="height" constant="60" id="qFg-f1-yzb"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no2" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-i8-gZJ" userLabel="crownImageView">
+                    <rect key="frame" x="58" y="8" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="FeR-jD-0CS"/>
+                        <constraint firstAttribute="height" constant="20" id="kXc-19-5mg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咩咩mie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wky-hs-enC">
+                    <rect key="frame" x="14" y="78" width="48" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gender_female" translatesAutoresizingMaskIntoConstraints="NO" id="aD4-Gw-p9O">
+                    <rect key="frame" x="65" y="80" width="11" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="11" id="a7R-bB-qvS"/>
+                        <constraint firstAttribute="width" constant="11" id="peB-qO-NMw"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贡献 19922 视券" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eR-yp-QlS">
+                    <rect key="frame" x="-2" y="116" width="91" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3m-hC-XUe" customClass="PPUserRankCountView" customModule="live" customModuleProvider="target">
+                    <rect key="frame" x="22" y="97" width="42" height="13"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="6lB-Af-FI3"/>
+                        <constraint firstAttribute="height" constant="13" id="a1F-dc-D0A"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2eR-yp-QlS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2ij-wQ-n4z"/>
+                <constraint firstItem="Wky-hs-enC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-5" id="4O6-c3-XiL"/>
+                <constraint firstItem="iBS-5V-VCA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4XU-cj-YD9"/>
+                <constraint firstItem="e3m-hC-XUe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BNI-U8-7hL"/>
+                <constraint firstItem="iBS-5V-VCA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H0s-Pw-UVV"/>
+                <constraint firstItem="aD4-Gw-p9O" firstAttribute="centerY" secondItem="Wky-hs-enC" secondAttribute="centerY" id="HYV-Wj-uIS"/>
+                <constraint firstItem="e3m-hC-XUe" firstAttribute="top" secondItem="Wky-hs-enC" secondAttribute="bottom" constant="3" id="IdP-XB-xyX"/>
+                <constraint firstItem="aD4-Gw-p9O" firstAttribute="leading" secondItem="Wky-hs-enC" secondAttribute="trailing" constant="3" id="MUx-sZ-ZeO"/>
+                <constraint firstItem="2eR-yp-QlS" firstAttribute="top" secondItem="e3m-hC-XUe" secondAttribute="bottom" constant="6" id="iHG-cb-Jyi"/>
+                <constraint firstItem="Wky-hs-enC" firstAttribute="top" secondItem="iBS-5V-VCA" secondAttribute="bottom" constant="8" id="jbF-mK-tx2"/>
+                <constraint firstAttribute="trailing" secondItem="3mB-i8-gZJ" secondAttribute="trailing" constant="8" id="vUM-am-0yo"/>
+                <constraint firstItem="3mB-i8-gZJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="z9z-Yi-xcH"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-434" y="-12.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avatar_example_3" width="63" height="63"/>
+        <image name="ic_gender_female" width="14" height="14"/>
+        <image name="ic_no2" width="21" height="20"/>
+    </resources>
+</document>

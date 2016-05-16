@@ -49,6 +49,8 @@ class PPLiveListViewController: UIViewController {
                     
                     self.tableViewWrapper?.stopLoadingAnimation()
                     
+                    self.liveModelSourceArray.removeAll()
+                    
                     if let dataArray = response.objectForKey("data") as? NSArray {
                         for data in dataArray {
                             let model = PPLiveModel()

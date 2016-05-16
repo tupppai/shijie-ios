@@ -28,6 +28,9 @@ class PPMyLiveViewController: UIViewController {
     let detailView = PPUserDetailView()
     var numberOfNews = 5
     
+    
+    var jsonToTest:AnyObject?
+    var liveModelIDString:String?
     var previewView:UIView!
     var session:PLCameraStreamingSession?
     
@@ -79,6 +82,8 @@ class PPMyLiveViewController: UIViewController {
    
     func closeLiveAction() {
         
+        tellServerToClose()
+        
         session?.destroy()
         
         let confirmEndLiveView = PPConfirmEndLiveView()
@@ -110,6 +115,28 @@ class PPMyLiveViewController: UIViewController {
         confirmEndLiveView.show()
     }
     
+    
+    func tellServerToClose() {
+        
+        guard  let liveModelIDString = liveModelIDString else{
+            return
+        }
+        PPNetworkManager.postRequest("stream/finish", parameters: ["streamId":liveModelIDString]).responseJSON { (response) in
+            switch response.result {
+            case .Success(let json):
+                let JSON = json as? NSDictionary
+                if let errorCode = JSON?.objectForKey("errCode") as? Int  {
+                    if errorCode != 0 {
+                        print("服务器还没接到关闭通知error")
+                    } else {
+                        print("服务器成功接到关闭通知ok")
+                    }
+                }
+            case .Failure:
+                break
+            }
+        }
+    }
     func applicationWillEnterForeground() {
         session?.startWithCompleted { (started) in
             
@@ -137,47 +164,59 @@ class PPMyLiveViewController: UIViewController {
         
         PLCameraStreamingSession.requestCameraAccessWithCompletionHandler { (granted) in
             if granted {
-                
-//                PPNetworkManager.postRequest("stream/create", parameters: ["title": self.titleForLive ]).responseJSON(completionHandler: { (response) in
-//                    switch response.result {
-//                    case .Success(let JSON):
-//                        let json = JSON as! [NSObject:AnyObject]
-//                        let stream = PLStream(JSON: json)
-//                        let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
-//                        let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
-//                        self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
-//                        self.session?.captureDevicePosition = PLCaptureDevicePosition.Front
-//                        self.session?.delegate = self
-//                        self.session?.previewView = self.previewView
-//                        self.session?.startWithCompleted({ (started) in
-//                        })
-//                        
-//                    case .Failure(let error):
-//                        print(error)
-//                    }
-//                })
-
-                Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
-
+            
+                    
+//                ["title": self.titleForLive ]
+                PPNetworkManager.postRequest("stream/create", parameters: ["title": self.titleForLive]).responseJSON(completionHandler: { (response) in
                     switch response.result {
-                        case .Success(let JSON):
-                            let json = JSON as! [NSObject:AnyObject]
-                            let stream = PLStream(JSON: json)
-                            let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
-                            let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
-                            self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
-                            self.session?.captureDevicePosition = PLCaptureDevicePosition.Front
-                            self.session?.delegate = self
-                            self.session?.previewView = self.previewView
-                            self.session?.startWithCompleted({ (started) in
-                            })
-                            
-                        case .Failure(let error):
-                            print(error)
+                    case .Success(let JSON):
+                        
+                        guard let data = JSON.objectForKey("data") else{
+                            return
+                        }
+                        self.liveModelIDString = data.objectForKey("id") as? String
+                        
+                        let json = JSON.objectForKey("data") as! [NSObject:AnyObject]
+                        self.jsonToTest = json
+                        
+                        print("jsonjson \(json)")
+                        let stream = PLStream(JSON: json)
+                        let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
+                        let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
+                        self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
+                        self.session?.captureDevicePosition = PLCaptureDevicePosition.Front
+                        self.session?.delegate = self
+                        self.session?.previewView = self.previewView
+                        self.session?.startWithCompleted({ (started) in
+                        })
+                        break
+                        
+                    case .Failure(let error):
+                        print(error)
                     }
-                    
-                    
                 })
+//
+//                Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
+//
+//                    switch response.result {
+//                        case .Success(let JSON):
+//                            let json = JSON as! [NSObject:AnyObject]
+//                            let stream = PLStream(JSON: json)
+//                            let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
+//                            let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
+//                            self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
+//                            self.session?.captureDevicePosition = PLCaptureDevicePosition.Front
+//                            self.session?.delegate = self
+//                            self.session?.previewView = self.previewView
+//                            self.session?.startWithCompleted({ (started) in
+//                            })
+//                            
+//                        case .Failure(let error):
+//                            print(error)
+//                    }
+//                    
+//                    
+//                })
              }
             else {
                 print("没有授权see使用你的相机和麦克风")
@@ -371,6 +410,21 @@ extension PPMyLiveViewController:PPMyLiveControlCollectionViewDelegate {
         switch(index) {
         case 0 :
             self.textInputBar.textField.becomeFirstResponder()
+            
+            
+            let label = UILabel(frame: previewView.frame)
+            view.addSubview(label)
+            
+            label.text = "\(jsonToTest)"
+            label.textColor = UIColor.blackColor()
+            label.backgroundColor = UIColor.whiteColor()
+            
+            
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                label.removeFromSuperview()
+            }
+            
         case 1 :
             switchCamera()
         case 2 :

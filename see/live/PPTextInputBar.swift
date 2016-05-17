@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+protocol PPTextInputBarDelegate: class {
+    func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?)
+}
 class PPTextInputBar: UIView {
     var sendButton:UIButton!
     var textField:UITextField!
-    
+    weak var delegate:PPTextInputBarDelegate?
     let height = 34
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +29,7 @@ class PPTextInputBar: UIView {
         sendButton.setTitle("发送", forState: .Normal)
         sendButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         sendButton.setTitleColor(UIColor.blackColor(), forState: .Highlighted)
-
+        sendButton.addTarget(self, action: #selector(PPTextInputBar.tapSend), forControlEvents: .TouchUpInside)
         sendButton.backgroundColor = UIColor(hex: 0x564c7f)
         sendButton.titleLabel?.font = UIFont.systemFontOfSize(15)
         
@@ -51,5 +53,9 @@ class PPTextInputBar: UIView {
             make.trailing.equalTo(sendButton.snp_leading).offset(-3)
             make.centerY.equalTo(self)
         }
+    }
+    
+    func tapSend() {
+        delegate?.textInputBar(self, didTapSendButtonWithText: textField.text)
     }
 }

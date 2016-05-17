@@ -127,8 +127,6 @@ class PPLoginViewController: UIViewController {
                                 return
                             }
                         }
-                        
-                        
                     
                     let data = response.objectForKey("data") as? NSDictionary
                     let avatar = data?.objectForKey("avatar") as? String
@@ -143,6 +141,7 @@ class PPLoginViewController: UIViewController {
                         PPUserModel.shareInstance.login = true
                     }
                         
+                    self.operationsAfterLoginSuccessFully()
                     HUD.flash(.LabeledSuccess(title: "微信登录成功", subtitle: ""), delay: 1.0)
                     self.dismiss()
                     
@@ -157,6 +156,10 @@ class PPLoginViewController: UIViewController {
         })
     }
     
+    
+    func operationsAfterLoginSuccessFully() {
+        PPConnectRCIM(10)
+    }
 
     
 }

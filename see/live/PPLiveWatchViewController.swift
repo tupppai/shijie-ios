@@ -64,6 +64,24 @@ class PPLiveWatchViewController: UIViewController {
         setupViews()
         setupCommentGenerator()
         setupNotifications()
+        
+        RCIM.sharedRCIM().receiveMessageDelegate = self
+        
+        guard let roomID = liveModel?.ID else {
+            return
+        }
+        
+        RCIMClient.sharedRCIMClient().joinChatRoom("\(roomID)", messageCount: 10, success: {
+            
+            dispatch_async(dispatch_get_main_queue(),{
+                print("成功加入聊天室 ID \(roomID)")
+            })
+            
+            }) { (errorCode) in
+                print("errorCode \(errorCode)")
+        }
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -317,6 +335,7 @@ extension PPLiveWatchViewController {
         
         let textInputBar = PPTextInputBar()
         textInputBar.hidden = true
+        textInputBar.delegate = self
         view.addSubview(textInputBar)
         
         textInputBar.snp_makeConstraints { (make) -> Void in
@@ -438,7 +457,7 @@ extension PPLiveWatchViewController {
 
 // MARK:Custom Delegate
 
-extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPlayerDelegate{
+extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPlayerDelegate,PPTextInputBarDelegate{
     
     func replay() {
         print("stop player and replay")
@@ -451,7 +470,7 @@ extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPl
     }
     
     func player(player: PLPlayer, statusDidChange state: PLPlayerStatus) {
-        print("player statusDidChange \(state.rawValue)")
+//        print("player statusDidChange \(state.rawValue)")
         if state != PLPlayerStatus.Playing {
             PPSpinner.shareInstance.showInView(player.playerView!)
             if state == PLPlayerStatus.Error {
@@ -577,8 +596,40 @@ extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPl
         default: break
         }
     }
+    
+    func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?) {
+        guard let roomID = liveModel?.ID else {
+            return
+        }
+        let msgContent = RCTextMessage()
+        msgContent.content = "哈哈哈哈哈搞笑吗"
+        
+//        RCIM.sharedRCIM().sendMessage(RCConversationType.ConversationType_CHATROOM, targetId: roomID, content: msgContent, pushContent: "离线时的推送信息", pushData: "离线时的 非显示 data", success: { (done) in
+//                print("sendMessage block done -> \(done)")
+//            }) { (errorCode, done) in
+//                print("sendMessage errorCode \(errorCode) done  \(done)")
+//        }
+        
+        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: "\(roomID)", content: msgContent, pushContent: "离线时的推送信息", pushData: "离线时的 非显示 data", success: { (times) in
+            print("sendMessage block times -> \(times)")
+        }) { (errorCode, times) in
+            print("sendMessage errorCode \(errorCode) times  \(times)")
+        }
+        
+    }
+    
 }
 
+
+// MARK:RCIMReceiveMessageDelegate
+extension PPLiveWatchViewController:RCIMReceiveMessageDelegate {
+    
+    func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
+        print("RCIMClientReceiveMessageDelegate onReceived \(message) left \(left)  ")
+
+    }
+    
+}
 
 
 extension PPLiveWatchViewController {

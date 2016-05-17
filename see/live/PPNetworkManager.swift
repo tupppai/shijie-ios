@@ -68,6 +68,8 @@ public class PPNetworkManager: Manager {
                         if errCode == PPNetworkResponseCode.NotLogin.rawValue {
                             //login
 //                            PPShowLoginAlertViewController()
+                            //1.clear database and other logic 2.Show login
+                            
                         } else {
                             let info =  "\(errCode),\(errMsg)"
                             HUD.flash(.Label(info),delay: 1.5)
@@ -90,5 +92,66 @@ public class PPNetworkManager: Manager {
         }
     }
     
+}
+
+
+
+/**
+ ** 连接融云服务器，如果失败，尝试retryTimes次重连
+**/
+
+public func PPConnectRCIM(retryTimes:Int) {
+    print("PPConnectRCIM left retryTimes \(retryTimes)")
+    PPNetworkManager.postRequest("im/get-token", parameters: nil).responseJSON { (response) in
+        switch response.result {
+        case .Success(let JSON):
+            if let errCode = JSON.objectForKey("errCode") as? Int {
+                if errCode != 0 {
+                    return
+                }
+            }
+            
+            guard let data = JSON.objectForKey("data") as? NSDictionary else{
+                return
+            }
+            
+            guard let token = data.objectForKey("token") as? String else{
+                return
+            }
+            
+            //连接融云服务器
+            RCIM.sharedRCIM().connectWithToken(token,
+                success: { (userId) -> Void in
+                    print("登陆成功。当前登录的用户ID：\(userId)")
+                    //设置当前登陆用户的信息
+                    
+                    dispatch_async(dispatch_get_main_queue(),{
+                        let name = PPUserModel.shareInstance.name
+                        let avatarUrl = PPUserModel.shareInstance.avatarUrl
+                        RCIM.sharedRCIM().currentUserInfo = RCUserInfo.init(userId: userId, name: name, portrait: avatarUrl)
+                    })
+                    
+                }, error: { (status) -> Void in
+                    print("登陆的错误码为:\(status.rawValue)")
+                }, tokenIncorrect: {
+                    //token过期或者不正确。
+                    //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                    //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                    
+                    //recursive!
+                    if retryTimes > 0 {
+                        PPConnectRCIM(retryTimes-1)
+                    }
+                    
+                    print("token错误")
+            })
+            
+            
+        default:
+            break
+            
+        }
+        
+    }
 }
 

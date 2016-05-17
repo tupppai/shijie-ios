@@ -17,58 +17,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var tabBarController:PPTabBarController = PPTabBarController()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
-
         
+        setupRCIM()
+        setupRemoteNotification()
         setupRealmMigration()
+        setupMonkeyKing()
+        setupLoginOrConnectRCIM()
         
-        print("PPUserModel.shareInstance \(PPUserModel.shareInstance)")
-            
+   
+        return true
+    }
+    
+    
+    func setupRemoteNotification() {
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func setupRCIM() {
+        RCIM.sharedRCIM().initWithAppKey("p5tvi9dstujq4")
+        RCIM.sharedRCIM().enableMessageAttachUserInfo = true
+    }
+    
+    func setupLoginOrConnectRCIM() {
         if PPUserModel.shareInstance.login == false {
             self.tabBarController.presentViewController(PPLoginViewController(), animated: false, completion: nil)
+        } else {
+            PPConnectRCIM(10)
         }
-        
-        
+    }
+    
+    func setupMonkeyKing() {
         MonkeyKing.registerAccount(MonkeyKing.Account.WeChat(appID: ShareConfigs.Wechat.appID, appKey: ShareConfigs.Wechat.appKey))
         MonkeyKing.registerAccount(MonkeyKing.Account.Weibo(appID: ShareConfigs.Weibo.appID, appKey: ShareConfigs.Weibo.appKey, redirectURL: ShareConfigs.Weibo.redirectURL))
         MonkeyKing.registerAccount(MonkeyKing.Account.QQ(appID: ShareConfigs.QQ.appID))
         
-        
-        
-        let token = "OHvNZQPCl8d9xFBV6hYuyn3KWcePBCPg0uDKhMccdAOuTDtWZugh9AtgyVimggIZaZtCVyTc8sWNAeH0EzC2oA=="
-
-        //连接融云服务器
-        RCIM.sharedRCIM().connectWithToken(token,
-                                           success: { (userId) -> Void in
-                                            print("登陆成功。当前登录的用户ID：\(userId)")
-                                            
-                                            //设置当前登陆用户的信息
-                                            RCIM.sharedRCIM().currentUserInfo = RCUserInfo.init(userId: userId, name: "我的名字", portrait: "http://www.rongcloud.cn/images/newVersion/logo/baixing.png")
-                                            
-                                            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                                                //打开会话列表
-//                                                let chatListView = DemoChatListViewController()
-//                                                self.navigationController?.pushViewController(chatListView, animated: true)
-                                            })
-            }, error: { (status) -> Void in
-                print("登陆的错误码为:\(status.rawValue)")
-            }, tokenIncorrect: {
-                //token过期或者不正确。
-                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
-                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
-                print("token错误")
-        })
-
-        
-        return true
     }
-    
     func setupRealmMigration() {
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
@@ -91,6 +81,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("didReceiveRemoteNotification userInfo-> \(userInfo)")
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        print("didRegisterUserNotificationSettings \(notificationSettings)")
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let string1 = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString: "")
+        let string2 = string1.stringByReplacingOccurrencesOfString(">", withString: "")
+        let token = string2.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        RCIMClient.sharedRCIMClient().setDeviceToken(token)
+    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         

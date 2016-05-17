@@ -42,10 +42,8 @@ class PPSpinner:UIActivityIndicatorView {
             return
         }
         if self.isDescendantOfView(keywindow) {
-            print("show return")
             return
         }
-        print("show addSubview")
 
         self.center = CGPoint(x: ScreenSize.SCREEN_WIDTH*0.5, y: ScreenSize.SCREEN_HEIGHT*0.5)
         keywindow.addSubview(self)
@@ -54,10 +52,8 @@ class PPSpinner:UIActivityIndicatorView {
     func showInView(view:UIView) {
         self.startAnimating()
         if self.isDescendantOfView(view) {
-            print("showInView return")
             return
         }
-        print("showInView addSubview")
 
         self.center = view.center
         view.insertSubview(self, atIndex: 0)

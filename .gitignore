@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+Reveal.framework
 
 ## Various settings
 *.pbxuser

@@ -118,7 +118,13 @@ class PPMeTableViewController: UITableViewController {
         
         if indexPath.section == 1 && indexPath.row == 0{
             self.navigationController?.pushViewController(PPSettingViewController(), animated: true)
-        }else{
+        }
+        else if (indexPath.section == 1 && indexPath.row == 1){
+            let vipVC = PPVIPVerificationViewController()
+            vipVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vipVC, animated: true)
+        }
+        else{
             self.navigationController?.pushViewController(PPFriendViewController(), animated: true)
         }
     }

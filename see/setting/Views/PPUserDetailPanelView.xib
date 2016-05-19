@@ -6,7 +6,7 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPUserDetailPanelView" customModule="live" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPUserDetailPanelView" customModule="see" customModuleProvider="target">
             <connections>
                 <outlet property="certificateLabel" destination="TwT-CW-nnj" id="awH-ig-vTE"/>
                 <outlet property="descLabel" destination="flH-wC-id4" id="dLy-ej-L4U"/>

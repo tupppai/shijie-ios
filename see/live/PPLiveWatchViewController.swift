@@ -36,7 +36,7 @@ class PPLiveWatchViewController: UIViewController {
     var newsTableView:UITableView!
     var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
-    let detailView = PPUserDetailView()
+    let audienceDetailView = PPUserDetailView()
     var numberOfNews = 5
     
     
@@ -226,33 +226,33 @@ class PPLiveWatchViewController: UIViewController {
     private func endLiveWatching(){
         player?.stop()
         stupidTimer?.invalidate()
-        self.navigationController?.popViewControllerAnimated(true)
+//        self.navigationController?.popViewControllerAnimated(true)
 
-//        
-//        let confirmEndLiveView = PPConfirmEndLiveView()
-//        
-//        confirmEndLiveView.cancelDismissLiveClosure = {
-//            [unowned confirmEndLiveView] in
-//            confirmEndLiveView.dismiss()
-//        }
-//        
-//        confirmEndLiveView.dismissLiveClosure = {
-//            [unowned confirmEndLiveView] in
-//            confirmEndLiveView.dismiss()
-//            let audienceEndLiveView = PPLiveFinishedAudienceView()
-//            
-//            audienceEndLiveView.checkOtherLivesClosure = {
-//                [unowned audienceEndLiveView,
-//                 unowned self] in
-//                
-//                audienceEndLiveView.dismiss()
-//                self.navigationController?.popViewControllerAnimated(true)
-//            }
-//            
-//            audienceEndLiveView.show()
-//        }
-//        
-//        confirmEndLiveView.show()
+        
+        let confirmEndLiveView = PPConfirmEndLiveView()
+        
+        confirmEndLiveView.cancelDismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+        }
+        
+        confirmEndLiveView.dismissLiveClosure = {
+            [unowned confirmEndLiveView] in
+            confirmEndLiveView.dismiss()
+            let audienceEndLiveView = PPLiveFinishedAudienceView()
+            
+            audienceEndLiveView.checkOtherLivesClosure = {
+                [unowned audienceEndLiveView,
+                 unowned self] in
+                
+                audienceEndLiveView.dismiss()
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            
+            audienceEndLiveView.show()
+        }
+        
+        confirmEndLiveView.show()
     }
     
 }
@@ -296,7 +296,24 @@ extension PPLiveWatchViewController : UICollectionViewDataSource,UICollectionVie
         return 4
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        detailView.showInView(view)
+        
+        audienceDetailView.buttonActionClosure = {
+            [unowned self]
+            (buttonType) in
+            switch buttonType {
+            case .Follow:
+                HUD.flash(.Label("Follow"))
+            case .PrivateMessage:
+                HUD.flash(.Label("PrivateMessage"))
+            case .Reply:
+                HUD.flash(.Label("Reply"))
+            case .HomePage:
+                self.presentViewController(PPFriendViewController(), animated: true, completion: nil)
+            }
+        }
+        
+        
+        audienceDetailView.showInView(view)
     }
 }
 

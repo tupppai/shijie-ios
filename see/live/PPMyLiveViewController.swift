@@ -26,14 +26,14 @@ class PPMyLiveViewController: UIViewController {
     var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
     let detailView = PPUserDetailView()
-    var numberOfNews = 5
+    var commentSourceArray = [PPLiveCommentModel]()
+    var commentSourceQueue:Queue<PPLiveCommentModel> = Queue<PPLiveCommentModel>()
     
-    
-    var jsonToTest:AnyObject?
     var liveModelIDString:String?
     var previewView:UIView!
     var session:PLCameraStreamingSession?
-    
+    var stupidTimer:NSTimer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +45,10 @@ class PPMyLiveViewController: UIViewController {
         setupViews()
         setupNotifications()
         setupRTMPPushSession()
+        setupCommentGenerator()
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,7 +60,6 @@ class PPMyLiveViewController: UIViewController {
             return
         }
        
-        
         if (touch.view !== textInputBar && textInputBar.textField.isFirstResponder()  ) {
             view.endEditing(true)
         }
@@ -80,11 +82,9 @@ class PPMyLiveViewController: UIViewController {
         session?.destroy()
     }
    
-    func closeLiveAction() {
+    func tapClose() {
         
-        tellServerToClose()
         
-        session?.destroy()
         
         let confirmEndLiveView = PPConfirmEndLiveView()
         
@@ -95,6 +95,11 @@ class PPMyLiveViewController: UIViewController {
         
         confirmEndLiveView.dismissLiveClosure = {
             [unowned confirmEndLiveView] in
+            
+            self.stupidTimer?.invalidate()
+            self.tellServerToClose()
+            self.session?.destroy()
+
             confirmEndLiveView.dismiss()
             let stripperEndLiveView = PPLiveFinishedStripperView()
             
@@ -176,10 +181,26 @@ class PPMyLiveViewController: UIViewController {
                         }
                         self.liveModelIDString = data.objectForKey("id") as? String
                         
-                        let json = JSON.objectForKey("data") as! [NSObject:AnyObject]
-                        self.jsonToTest = json
                         
-                        print("jsonjson \(json)")
+                        RCIM.sharedRCIM().receiveMessageDelegate = self
+                        
+                        
+                        if let streamID = self.liveModelIDString  {
+                            RCIMClient.sharedRCIMClient().joinChatRoom(streamID, messageCount: 10, success: {
+                                
+                                dispatch_async(dispatch_get_main_queue(),{
+                                    print("成功加入聊天室 ID \(streamID)")
+                                })
+                                
+                            }) { (errorCode) in
+                                print("errorCode \(errorCode)")
+                            }
+                        }
+                       
+                        
+                        
+                        let json = JSON.objectForKey("data") as! [NSObject:AnyObject]
+                        
                         let stream = PLStream(JSON: json)
                         let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
                         let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
@@ -195,28 +216,6 @@ class PPMyLiveViewController: UIViewController {
                         print(error)
                     }
                 })
-//
-//                Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
-//
-//                    switch response.result {
-//                        case .Success(let JSON):
-//                            let json = JSON as! [NSObject:AnyObject]
-//                            let stream = PLStream(JSON: json)
-//                            let videoConfiguration = PLVideoStreamingConfiguration.defaultConfiguration()
-//                            let audioConfiguration = PLAudioStreamingConfiguration.defaultConfiguration()
-//                            self.session = PLCameraStreamingSession(videoConfiguration: videoConfiguration, audioConfiguration: audioConfiguration, stream: stream, videoOrientation: .Portrait)
-//                            self.session?.captureDevicePosition = PLCaptureDevicePosition.Front
-//                            self.session?.delegate = self
-//                            self.session?.previewView = self.previewView
-//                            self.session?.startWithCompleted({ (started) in
-//                            })
-//                            
-//                        case .Failure(let error):
-//                            print(error)
-//                    }
-//                    
-//                    
-//                })
              }
             else {
                 print("没有授权see使用你的相机和麦克风")
@@ -247,6 +246,7 @@ extension PPMyLiveViewController {
     func setupTextInputBar() {
         textInputBar = PPTextInputBar()
         textInputBar.hidden = true
+        textInputBar.delegate = self
         view.addSubview(textInputBar)
         
         textInputBar.snp_makeConstraints { (make) -> Void in
@@ -394,12 +394,13 @@ extension PPMyLiveViewController : UITableViewDataSource,UITableViewDelegate {
         return 1
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell))
-        return (cell)!
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell)) as! PPNewsCommentTableViewCell
+        cell.injectSource(commentSourceArray[indexPath.row])
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfNews
+        return commentSourceArray.count
     }
 }
 
@@ -411,24 +412,10 @@ extension PPMyLiveViewController:PPMyLiveControlCollectionViewDelegate {
         case 0 :
             self.textInputBar.textField.becomeFirstResponder()
             
-            
-            let label = UILabel(frame: previewView.frame)
-            view.addSubview(label)
-            
-            label.text = "\(jsonToTest)"
-            label.textColor = UIColor.blackColor()
-            label.backgroundColor = UIColor.whiteColor()
-            
-            
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                label.removeFromSuperview()
-            }
-            
         case 1 :
             switchCamera()
         case 2 :
-            self.closeLiveAction()
+            tapClose()
         default:
             debugPrint("tap error")
         }
@@ -496,3 +483,79 @@ extension PPMyLiveViewController:PLCameraStreamingSessionDelegate {
     }
     
 }
+
+
+extension PPMyLiveViewController:RCIMReceiveMessageDelegate ,PPTextInputBarDelegate{
+    
+    func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
+     
+        if message.content .isKindOfClass(RCTextMessage.classForCoder()) {
+            let textMsg = message.content as! RCTextMessage
+            
+            let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
+            let sendername = textArray.first
+            var content = ""
+            if textArray.count > 1 {
+                content = textArray[1]
+            }
+            
+            let commentModel = PPLiveCommentModel()
+            commentModel.content = content
+            commentModel.senderId = message.senderUserId
+            commentModel.senderName = sendername
+            commentSourceQueue.enqueue(commentModel)
+        }
+
+    }
+    
+  
+    
+    func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?) {
+        
+        
+        let commentModel = PPLiveCommentModel()
+        commentModel.content = text
+        commentModel.senderId = "\(PPUserModel.shareInstance.ID)"
+        commentModel.senderName = PPUserModel.shareInstance.name
+        commentSourceQueue.enqueue(commentModel)
+        
+        
+        if let streamID = liveModelIDString  {
+            let msgContent = RCTextMessage()
+            let content = "\(PPUserModel.shareInstance.name)seperateOOXX#666\(text ?? "")"
+            msgContent.content = content
+            
+            RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: streamID, content: msgContent, pushContent: text, pushData: "离线时的 非显示 data", success: { (times) in
+                print("sendMessage block times -> \(times)")
+            }) { (errorCode, times) in
+                print("sendMessage errorCode \(errorCode) times  \(times)")
+            }
+        }
+    }
+    
+    func setupCommentGenerator() {
+        stupidTimer = NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: #selector(PPMyLiveViewController.fireComment), userInfo: nil, repeats: true)
+    }
+    
+    func fireComment() {
+        
+        if commentSourceQueue.isEmpty {
+            return
+        }
+        guard let model = commentSourceQueue.dequeue() else{
+            return
+        }
+        self.commentSourceArray.append(model)
+        dispatch_async(dispatch_get_main_queue()) {
+            let lastIndexPath = NSIndexPath(forRow: self.commentSourceArray.count - 1, inSection: 0)
+            self.newsTableView.beginUpdates()
+            self.newsTableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: .None)
+            self.newsTableView.endUpdates()
+            self.newsTableView.reloadData()
+            self.newsTableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: .None, animated: true)
+        }
+    }
+    
+}
+
+

@@ -76,7 +76,7 @@ class PPUserDetailView: UIView {
     private func setupTargetAction(){
         panelView?.userDetailPanelView.followButton.addTarget(self, action: #selector(PPUserDetailView.tapOnFollowButton(_:)), forControlEvents: .TouchUpInside)
         panelView?.userDetailPanelView.replyButton.addTarget(self, action: #selector(PPUserDetailView.tapOnReplyButton(_:)), forControlEvents: .TouchUpInside)
-        panelView?.userDetailPanelView.privateMessageButton.addTarget(self, action: #selector(PPUserDetailView.tapOnPrivateMessageButton(_:)), forControlEvents: .TouchUpInside)
+//        panelView?.userDetailPanelView.privateMessageButton.addTarget(self, action: #selector(PPUserDetailView.tapOnPrivateMessageButton(_:)), forControlEvents: .TouchUpInside)
         panelView?.userDetailPanelView.homepageButton.addTarget(self, action: #selector(PPUserDetailView.tapOnHomepageButton(_:)), forControlEvents: .TouchUpInside)
     }
     

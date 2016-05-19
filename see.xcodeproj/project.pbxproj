@@ -159,6 +159,10 @@
 		F4BDFC261CE5C7B100D2A5A0 /* PullToBounceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1E1CE5C7B100D2A5A0 /* PullToBounceWrapper.swift */; };
 		F4BDFC271CE5C7B100D2A5A0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1F1CE5C7B100D2A5A0 /* WaveView.swift */; };
 		F4BDFC281CE5C7B100D2A5A0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC201CE5C7B100D2A5A0 /* README.md */; };
+		F4C498121CEC4116008A2325 /* PPLiveCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */; };
+		F4C498371CEDA622008A2325 /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C498341CEDA622008A2325 /* BarItem.m */; };
+		F4C498381CEDA622008A2325 /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C498361CEDA622008A2325 /* CBStoreHouseRefreshControl.m */; };
+		F4C4983A1CEDA79A008A2325 /* storehouserefresh.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C498391CEDA79A008A2325 /* storehouserefresh.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +338,12 @@
 		F4BDFC1E1CE5C7B100D2A5A0 /* PullToBounceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceWrapper.swift; sourceTree = "<group>"; };
 		F4BDFC1F1CE5C7B100D2A5A0 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		F4BDFC201CE5C7B100D2A5A0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveCommentModel.swift; sourceTree = "<group>"; };
+		F4C498331CEDA622008A2325 /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		F4C498341CEDA622008A2325 /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		F4C498351CEDA622008A2325 /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
+		F4C498361CEDA622008A2325 /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
+		F4C498391CEDA79A008A2325 /* storehouserefresh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouserefresh.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +621,7 @@
 				F4BDFB441CE5AE9E00D2A5A0 /* PPShareInfo.swift */,
 				F4BDFB211CE5AE9E00D2A5A0 /* PPGiftModel.swift */,
 				F4BDFB4C1CE5AE9E00D2A5A0 /* PPUserModel_toremove.swift */,
+				F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -656,6 +667,7 @@
 		F4BDFC0C1CE5B46700D2A5A0 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F4C498321CEDA622008A2325 /* CBStorePullToRefresh */,
 				F4BDFC151CE5C7B100D2A5A0 /* PullToBounce */,
 				F4BDFB091CE5AE9E00D2A5A0 /* LTNavigationBar */,
 				F4BDFB0C1CE5AE9E00D2A5A0 /* MonkeyKing */,
@@ -789,6 +801,19 @@
 			path = helper;
 			sourceTree = "<group>";
 		};
+		F4C498321CEDA622008A2325 /* CBStorePullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F4C498391CEDA79A008A2325 /* storehouserefresh.plist */,
+				F4C498331CEDA622008A2325 /* BarItem.h */,
+				F4C498341CEDA622008A2325 /* BarItem.m */,
+				F4C498351CEDA622008A2325 /* CBStoreHouseRefreshControl.h */,
+				F4C498361CEDA622008A2325 /* CBStoreHouseRefreshControl.m */,
+			);
+			name = CBStorePullToRefresh;
+			path = Class;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -890,6 +915,7 @@
 				F4BDFBA61CE5AE9E00D2A5A0 /* PPGiftViewToolBar.xib in Resources */,
 				F4BDFBFD1CE5AE9E00D2A5A0 /* UserHeaderView.xib in Resources */,
 				F4BDFBEF1CE5AE9E00D2A5A0 /* PPMeTableViewController.xib in Resources */,
+				F4C4983A1CEDA79A008A2325 /* storehouserefresh.plist in Resources */,
 				F4BDFBF91CE5AE9E00D2A5A0 /* RollContributionListView.xib in Resources */,
 				F4BDFC061CE5B3AE00D2A5A0 /* Info.plist in Resources */,
 				F4BDFBFB1CE5AE9E00D2A5A0 /* SettingTableViewCell.xib in Resources */,
@@ -994,6 +1020,7 @@
 				F4BDFBD01CE5AE9E00D2A5A0 /* PPVideoCaptureViewController.swift in Sources */,
 				F4BDFBA81CE5AE9E00D2A5A0 /* PPHostReceivedCoinView.swift in Sources */,
 				F4BDFBC21CE5AE9E00D2A5A0 /* PPRoundImageView.swift in Sources */,
+				F4C498381CEDA622008A2325 /* CBStoreHouseRefreshControl.m in Sources */,
 				F4BDFBC31CE5AE9E00D2A5A0 /* PPRoundView.swift in Sources */,
 				F468A63A1CEB326D000F1610 /* PPUserDetailView.swift in Sources */,
 				F4BDFB951CE5AE9E00D2A5A0 /* SimpleNetworking.swift in Sources */,
@@ -1054,6 +1081,7 @@
 				F4BDFBE51CE5AE9E00D2A5A0 /* SpringButton.swift in Sources */,
 				F468A6371CEB326D000F1610 /* PPNotificationSwitchTableViewCell_banUser.swift in Sources */,
 				F4BDFBBB1CE5AE9E00D2A5A0 /* PPNewsCommentTableViewCell.swift in Sources */,
+				F4C498121CEC4116008A2325 /* PPLiveCommentModel.swift in Sources */,
 				F4BDFBE71CE5AE9E00D2A5A0 /* SpringLabel.swift in Sources */,
 				F468A62A1CEB326D000F1610 /* PPSettingBlackListViewController.swift in Sources */,
 				F4BDFBB01CE5AE9E00D2A5A0 /* PPLiveShareView.swift in Sources */,
@@ -1076,6 +1104,7 @@
 				F468A60E1CEB3222000F1610 /* PPFriendSegmentedControlView.swift in Sources */,
 				F468A6331CEB326D000F1610 /* PPDetailTableViewCell.swift in Sources */,
 				F4BDFBA51CE5AE9E00D2A5A0 /* PPGiftViewToolBar.swift in Sources */,
+				F4C498371CEDA622008A2325 /* BarItem.m in Sources */,
 				F4BDFBE31CE5AE9E00D2A5A0 /* Spring.swift in Sources */,
 				F4BDFBDE1CE5AE9E00D2A5A0 /* KeyboardLayoutConstraint.swift in Sources */,
 				F4BDFBDB1CE5AE9E00D2A5A0 /* DesignableView.swift in Sources */,

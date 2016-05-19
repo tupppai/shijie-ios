@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */; };
 		CD532F59BC9530D0F967BA2F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9998D5B07AB4D28F71735B0 /* Pods.framework */; };
 		F468A6061CEB31D9000F1610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F468A6051CEB31D9000F1610 /* Assets.xcassets */; };
 		F468A60C1CEB3222000F1610 /* PPFriendActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6081CEB3222000F1610 /* PPFriendActionToolbar.swift */; };
@@ -172,6 +173,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFakeNavigationBar.swift; sourceTree = "<group>"; };
 		96099B49EA247273875FD7B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9D077C884BEBD896A9EF484 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9998D5B07AB4D28F71735B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +381,7 @@
 				F468A6091CEB3222000F1610 /* PPFriendBroadcastCollectionViewCell.swift */,
 				F468A60A1CEB3222000F1610 /* PPFriendSegmentedControlView.swift */,
 				F468A60B1CEB3222000F1610 /* PPFriendViewController.swift */,
+				909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -1031,6 +1034,7 @@
 				F4BDFBCD1CE5AE9E00D2A5A0 /* PPUserModel_toremove.swift in Sources */,
 				F4BDFBA41CE5AE9E00D2A5A0 /* PPGiftView.swift in Sources */,
 				F4BDFBFE1CE5AE9E00D2A5A0 /* UserHeaderView2.swift in Sources */,
+				909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */,
 				F4BDFBDA1CE5AE9E00D2A5A0 /* DesignableTextView.swift in Sources */,
 				F468A62D1CEB326D000F1610 /* PPSettingRemoteNotificationViewController.swift in Sources */,
 				F4BDFBD61CE5AE9E00D2A5A0 /* DesignableImageView.swift in Sources */,
@@ -1205,6 +1209,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = see/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1213,6 +1218,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1222,6 +1228,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = see/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1229,6 +1236,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.see.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

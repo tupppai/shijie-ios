@@ -25,7 +25,7 @@ class PPMyLiveViewController: UIViewController {
     var textInputBar:PPTextInputBar!
     var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
-    let detailView = PPUserDetailView()
+    let audienceDetailView = PPUserDetailView()
     var numberOfNews = 5
     
     
@@ -383,7 +383,23 @@ extension PPMyLiveViewController : UICollectionViewDataSource,UICollectionViewDe
         return 100
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        detailView.showInView(view)
+        
+        audienceDetailView.buttonActionClosure = {
+            [unowned self]
+            (buttonType) in
+            switch buttonType {
+            case .Follow:
+                HUD.flash(.Label("Follow"))
+            case .PrivateMessage:
+                HUD.flash(.Label("PrivateMessage"))
+            case .Reply:
+                HUD.flash(.Label("Reply"))
+            case .HomePage:
+                self.presentViewController(PPFriendViewController(), animated: true, completion: nil)
+            }
+        }
+        
+        audienceDetailView.showInView(view)
     }
 }
 

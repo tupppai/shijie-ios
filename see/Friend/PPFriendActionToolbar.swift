@@ -8,7 +8,21 @@
 
 import UIKit
 
+enum PPFriendActionToolbarButtonType {
+    case Follow
+    case PrivateMessage
+    case BanUser
+}
+
+protocol PPFriendActionToolbarDelegate : class {
+    
+    func toolbar(toolbar: PPFriendActionToolbar, didTapButton buttonType: PPFriendActionToolbarButtonType)
+    
+}
+
 class PPFriendActionToolbar: UIView {
+    
+    weak var delegate:PPFriendActionToolbarDelegate?
     
     private var followButton: UIButton!
     
@@ -57,9 +71,29 @@ class PPFriendActionToolbar: UIView {
             make.top.bottom.right.equalTo(self)
             make.width.equalTo(privateMessageButton)
         }
+        
+        // add target actions
+        
+        followButton.addTarget(self, action: #selector(self.tapFollowButton), forControlEvents: .TouchUpInside)
+        privateMessageButton.addTarget(self, action: #selector(self.tapPrivateMessageButton), forControlEvents: .TouchUpInside)
+        banUserButton.addTarget(self, action: #selector(self.tapBanUserButton), forControlEvents: .TouchUpInside)
+        
     }
     
-    // Private helper
+    // MARK: Target-actions
+    func tapFollowButton(){
+        delegate?.toolbar(self, didTapButton: .Follow)
+    }
+    
+    func tapPrivateMessageButton(){
+        delegate?.toolbar(self, didTapButton: .PrivateMessage)
+    }
+    
+    func tapBanUserButton(){
+        delegate?.toolbar(self, didTapButton: .BanUser)
+    }
+    
+    // MARK:  Private helper
     private func setupToolbarButton(title:String, titleColor: UIColor,iconImage: UIImage) -> UIButton{
         let button = UIButton()
         button.backgroundColor = UIColor.whiteColor()

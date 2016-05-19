@@ -115,17 +115,11 @@ class PPMeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-
-        if indexPath.row == 0 {
-            let liveFinishedStripperView = PPLiveFinishedStripperView()
-            liveFinishedStripperView.show()
-        }else         if indexPath.row == 1{
-            let liveFinishedAudienceView = PPLiveFinishedAudienceView()
-            liveFinishedAudienceView.show()
-        } else {
-            let vc = PPLoginViewController()
-            self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+        
+        if indexPath.section == 1 && indexPath.row == 0{
+            self.navigationController?.pushViewController(PPSettingViewController(), animated: true)
+        }else{
+            self.navigationController?.pushViewController(PPFriendViewController(), animated: true)
         }
     }
     

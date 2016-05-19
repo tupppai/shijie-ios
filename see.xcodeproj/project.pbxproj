@@ -142,7 +142,6 @@
 		F4BDFBF01CE5AE9E00D2A5A0 /* CountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */; };
 		F4BDFBF11CE5AE9E00D2A5A0 /* CountButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */; };
 		F4BDFBF31CE5AE9E00D2A5A0 /* PPRollContributionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */; };
-		F4BDFBF51CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */; };
 		F4BDFBF71CE5AE9E00D2A5A0 /* PPUserPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */; };
 		F4BDFBF81CE5AE9E00D2A5A0 /* RollContributionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */; };
 		F4BDFBF91CE5AE9E00D2A5A0 /* RollContributionListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */; };
@@ -321,7 +320,6 @@
 		F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountButton.swift; sourceTree = "<group>"; };
 		F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountButton.xib; sourceTree = "<group>"; };
 		F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRollContributionListView.swift; sourceTree = "<group>"; };
-		F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
 		F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserPanelView.swift; sourceTree = "<group>"; };
 		F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollContributionListView.swift; sourceTree = "<group>"; };
 		F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollContributionListView.xib; sourceTree = "<group>"; };
@@ -617,7 +615,6 @@
 				F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */,
 				F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */,
 				F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */,
-				F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */,
 				F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */,
 				F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */,
 				F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */,
@@ -917,7 +914,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BDFBF51CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib in Resources */,
 				F4BDFBBD1CE5AE9E00D2A5A0 /* PPPodiumUserTableViewCell.xib in Resources */,
 				F4BDFBFF1CE5AE9E00D2A5A0 /* UserHeaderView2.xib in Resources */,
 				F4BDFB911CE5AE9E00D2A5A0 /* Info.plist in Resources */,

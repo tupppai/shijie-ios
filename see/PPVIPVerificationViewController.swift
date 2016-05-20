@@ -43,6 +43,7 @@ class PPVIPVerificationViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+         self.navigationController?.navigationBar.tintColor = UIColor(hex: 0x007AFF)
         self.navigationController?.navigationBar.lt_reset()
     }
     
@@ -71,6 +72,8 @@ class PPVIPVerificationViewController: UIViewController {
         verifyButton.setTitle("立即认证", forState: .Normal)
         verifyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         verifyButton.titleLabel?.font = UIFont.systemFontOfSize(16)
+        verifyButton.addTarget(self, action: #selector(self.tapVerifyButton), forControlEvents: .TouchUpInside)
+        
         self.view.addSubview(verifyButton)
         
         knowMoreButton = UIButton()
@@ -127,14 +130,10 @@ class PPVIPVerificationViewController: UIViewController {
     }
     
     
-    
     // MARK: Target-actions
-    func tapNavBackButton(){
-        self.navigationController?.popViewControllerAnimated(true)
-    }
     
     func tapVerifyButton(){
-        HUD.flash(.Label("VerifyButton"))
+        self.navigationController?.pushViewController(PPVIPSignupViewController(), animated: true)
     }
     
     func tapKnowMoreButton(){

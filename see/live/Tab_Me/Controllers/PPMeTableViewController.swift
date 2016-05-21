@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 
 private struct PPMeTableViewConstants
 {
@@ -124,8 +124,13 @@ class PPMeTableViewController: UITableViewController {
             vipVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vipVC, animated: true)
         }
+        else if (indexPath.section == 0 && indexPath.row == 1){
+            let myLevelVC = PPMyLevelViewController()
+            myLevelVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(myLevelVC, animated: true)
+        }
         else{
-            self.navigationController?.pushViewController(PPFriendViewController(), animated: true)
+            HUD.flash(.Label("To be implemented."))
         }
     }
     

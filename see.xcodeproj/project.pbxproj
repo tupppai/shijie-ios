@@ -13,6 +13,9 @@
 		9010F8F91CEEAD1A00988FE0 /* PPVIPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F8F81CEEAD1A00988FE0 /* PPVIPSignupViewController.swift */; };
 		9010F8FF1CEEB38400988FE0 /* PPVIPInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F8FE1CEEB38400988FE0 /* PPVIPInfoInputView.swift */; };
 		9010F9011CEEB5CF00988FE0 /* PPVIPBindWechatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F9001CEEB5CF00988FE0 /* PPVIPBindWechatView.swift */; };
+		902838601CEFF04F0068C722 /* PPMyLevelBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */; };
+		906913F41CEF164000300E02 /* PPMyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906913F31CEF164000300E02 /* PPMyLevelViewController.swift */; };
+		906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */; };
 		9069CF231CEEFD19008A069E /* PPVIPCommitSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */; };
 		9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */; };
 		909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */; };
@@ -187,6 +190,9 @@
 		9010F8F81CEEAD1A00988FE0 /* PPVIPSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPSignupViewController.swift; sourceTree = "<group>"; };
 		9010F8FE1CEEB38400988FE0 /* PPVIPInfoInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPInfoInputView.swift; sourceTree = "<group>"; };
 		9010F9001CEEB5CF00988FE0 /* PPVIPBindWechatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPBindWechatView.swift; sourceTree = "<group>"; };
+		9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelBadgeView.swift; sourceTree = "<group>"; };
+		906913F31CEF164000300E02 /* PPMyLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelViewController.swift; sourceTree = "<group>"; };
+		906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelDescView.swift; sourceTree = "<group>"; };
 		9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessView.swift; sourceTree = "<group>"; };
 		9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessPanelView.swift; sourceTree = "<group>"; };
 		909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFakeNavigationBar.swift; sourceTree = "<group>"; };
@@ -400,6 +406,9 @@
 		9010F8EE1CEDB85D00988FE0 /* MyLevel */ = {
 			isa = PBXGroup;
 			children = (
+				906913F31CEF164000300E02 /* PPMyLevelViewController.swift */,
+				9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */,
+				906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */,
 			);
 			name = MyLevel;
 			sourceTree = "<group>";
@@ -1125,6 +1134,7 @@
 				F4BDFB9E1CE5AE9E00D2A5A0 /* PPExtension.swift in Sources */,
 				F4BDFBFA1CE5AE9E00D2A5A0 /* SettingTableViewCell.swift in Sources */,
 				F4BDFC251CE5C7B100D2A5A0 /* NSTimerEx.swift in Sources */,
+				902838601CEFF04F0068C722 /* PPMyLevelBadgeView.swift in Sources */,
 				F4BDFBF81CE5AE9E00D2A5A0 /* RollContributionListView.swift in Sources */,
 				F4BDFBAA1CE5AE9E00D2A5A0 /* PPLaunchLiveViewController.swift in Sources */,
 				F4BDFBDF1CE5AE9E00D2A5A0 /* LoadingView.swift in Sources */,
@@ -1132,6 +1142,7 @@
 				F4BDFB9C1CE5AE9E00D2A5A0 /* PPConfirmEndLivePanelView.swift in Sources */,
 				F468A60E1CEB3222000F1610 /* PPFriendSegmentedControlView.swift in Sources */,
 				F468A6331CEB326D000F1610 /* PPDetailTableViewCell.swift in Sources */,
+				906913F41CEF164000300E02 /* PPMyLevelViewController.swift in Sources */,
 				F4BDFBA51CE5AE9E00D2A5A0 /* PPGiftViewToolBar.swift in Sources */,
 				F4BDFBE31CE5AE9E00D2A5A0 /* Spring.swift in Sources */,
 				F4BDFBDE1CE5AE9E00D2A5A0 /* KeyboardLayoutConstraint.swift in Sources */,
@@ -1139,6 +1150,7 @@
 				F4BDFBAE1CE5AE9E00D2A5A0 /* PPLiveListViewController.swift in Sources */,
 				F4BDFBB41CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift in Sources */,
 				F4BDFC221CE5C7B100D2A5A0 /* BallView.swift in Sources */,
+				906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */,
 				F4BDFBA91CE5AE9E00D2A5A0 /* PPHostView.swift in Sources */,
 				F4BDFC001CE5AE9E00D2A5A0 /* PPGiftShowsAnimateView.swift in Sources */,
 				F4BDFBBA1CE5AE9E00D2A5A0 /* PPNetworkManager.swift in Sources */,

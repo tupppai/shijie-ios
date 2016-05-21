@@ -129,6 +129,11 @@ class PPMeTableViewController: UITableViewController {
             myLevelVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(myLevelVC, animated: true)
         }
+        else if (indexPath.section == 0 && indexPath.row == 0){
+            let profitVC = PPProfitViewController()
+            profitVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(profitVC, animated: true)
+        }
         else{
             HUD.flash(.Label("To be implemented."))
         }

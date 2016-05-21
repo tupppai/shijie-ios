@@ -18,6 +18,8 @@
 		906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */; };
 		9069CF231CEEFD19008A069E /* PPVIPCommitSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */; };
 		9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */; };
+		907700421CF03E4900101057 /* PPProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907700411CF03E4900101057 /* PPProfitViewController.swift */; };
+		907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907700431CF056AB00101057 /* PPProfitStatisticsView.swift */; };
 		909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */; };
 		CD532F59BC9530D0F967BA2F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9998D5B07AB4D28F71735B0 /* Pods.framework */; };
 		F468A6061CEB31D9000F1610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F468A6051CEB31D9000F1610 /* Assets.xcassets */; };
@@ -195,6 +197,8 @@
 		906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelDescView.swift; sourceTree = "<group>"; };
 		9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessView.swift; sourceTree = "<group>"; };
 		9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessPanelView.swift; sourceTree = "<group>"; };
+		907700411CF03E4900101057 /* PPProfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPProfitViewController.swift; sourceTree = "<group>"; };
+		907700431CF056AB00101057 /* PPProfitStatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPProfitStatisticsView.swift; sourceTree = "<group>"; };
 		909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFakeNavigationBar.swift; sourceTree = "<group>"; };
 		96099B49EA247273875FD7B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9D077C884BEBD896A9EF484 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 		9010F8ED1CEDB81600988FE0 /* Profit */ = {
 			isa = PBXGroup;
 			children = (
+				907700411CF03E4900101057 /* PPProfitViewController.swift */,
+				907700431CF056AB00101057 /* PPProfitStatisticsView.swift */,
 			);
 			name = Profit;
 			sourceTree = "<group>";
@@ -1091,6 +1097,7 @@
 				F4BDFBB61CE5AE9E00D2A5A0 /* PPLoginViewController.swift in Sources */,
 				F4BDFB9A1CE5AE9E00D2A5A0 /* PPCoinsRankView.swift in Sources */,
 				F4BDFB991CE5AE9E00D2A5A0 /* PPCoinsContributionViewController.swift in Sources */,
+				907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */,
 				F4BDFBCD1CE5AE9E00D2A5A0 /* PPUserModel_toremove.swift in Sources */,
 				F4BDFBA41CE5AE9E00D2A5A0 /* PPGiftView.swift in Sources */,
 				F4BDFBFE1CE5AE9E00D2A5A0 /* UserHeaderView2.swift in Sources */,
@@ -1111,6 +1118,7 @@
 				F4BDFBEE1CE5AE9E00D2A5A0 /* PPMeTableViewController.swift in Sources */,
 				F468A62F1CEB326D000F1610 /* PPSettingViewController.swift in Sources */,
 				F4BDFBE21CE5AE9E00D2A5A0 /* SoundPlayer.swift in Sources */,
+				907700421CF03E4900101057 /* PPProfitViewController.swift in Sources */,
 				F4BDFBC91CE5AE9E00D2A5A0 /* PPStaticViewFactory.swift in Sources */,
 				F4BDFBDC1CE5AE9E00D2A5A0 /* ImageLoader.swift in Sources */,
 				F4BDFBB91CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift in Sources */,
@@ -1371,7 +1379,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1472,7 +1480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.see.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

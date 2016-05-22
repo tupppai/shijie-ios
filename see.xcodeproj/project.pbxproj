@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9010F8F21CEDBF1300988FE0 /* VIP_Privilege@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9010F8F01CEDBF1300988FE0 /* VIP_Privilege@2x.png */; };
+		9010F8F31CEDBF1300988FE0 /* VIP_Privilege@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9010F8F11CEDBF1300988FE0 /* VIP_Privilege@3x.png */; };
+		9010F8F51CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F8F41CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift */; };
+		9010F8F91CEEAD1A00988FE0 /* PPVIPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F8F81CEEAD1A00988FE0 /* PPVIPSignupViewController.swift */; };
+		9010F8FF1CEEB38400988FE0 /* PPVIPInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F8FE1CEEB38400988FE0 /* PPVIPInfoInputView.swift */; };
+		9010F9011CEEB5CF00988FE0 /* PPVIPBindWechatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010F9001CEEB5CF00988FE0 /* PPVIPBindWechatView.swift */; };
+		902838601CEFF04F0068C722 /* PPMyLevelBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */; };
+		906913F41CEF164000300E02 /* PPMyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906913F31CEF164000300E02 /* PPMyLevelViewController.swift */; };
+		906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */; };
+		9069CF231CEEFD19008A069E /* PPVIPCommitSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */; };
+		9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */; };
+		907700421CF03E4900101057 /* PPProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907700411CF03E4900101057 /* PPProfitViewController.swift */; };
+		907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907700431CF056AB00101057 /* PPProfitStatisticsView.swift */; };
 		909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */; };
 		CD532F59BC9530D0F967BA2F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9998D5B07AB4D28F71735B0 /* Pods.framework */; };
 		F468A6061CEB31D9000F1610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F468A6051CEB31D9000F1610 /* Assets.xcassets */; };
@@ -139,7 +152,6 @@
 		F4BDFBF01CE5AE9E00D2A5A0 /* CountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */; };
 		F4BDFBF11CE5AE9E00D2A5A0 /* CountButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */; };
 		F4BDFBF31CE5AE9E00D2A5A0 /* PPRollContributionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */; };
-		F4BDFBF51CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */; };
 		F4BDFBF71CE5AE9E00D2A5A0 /* PPUserPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */; };
 		F4BDFBF81CE5AE9E00D2A5A0 /* RollContributionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */; };
 		F4BDFBF91CE5AE9E00D2A5A0 /* RollContributionListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */; };
@@ -173,6 +185,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9010F8F01CEDBF1300988FE0 /* VIP_Privilege@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIP_Privilege@2x.png"; sourceTree = "<group>"; };
+		9010F8F11CEDBF1300988FE0 /* VIP_Privilege@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VIP_Privilege@3x.png"; sourceTree = "<group>"; };
+		9010F8F41CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPVerificationViewController.swift; sourceTree = "<group>"; };
+		9010F8F61CEDD27800988FE0 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		9010F8F81CEEAD1A00988FE0 /* PPVIPSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPSignupViewController.swift; sourceTree = "<group>"; };
+		9010F8FE1CEEB38400988FE0 /* PPVIPInfoInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPInfoInputView.swift; sourceTree = "<group>"; };
+		9010F9001CEEB5CF00988FE0 /* PPVIPBindWechatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPBindWechatView.swift; sourceTree = "<group>"; };
+		9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelBadgeView.swift; sourceTree = "<group>"; };
+		906913F31CEF164000300E02 /* PPMyLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelViewController.swift; sourceTree = "<group>"; };
+		906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPMyLevelDescView.swift; sourceTree = "<group>"; };
+		9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessView.swift; sourceTree = "<group>"; };
+		9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPVIPCommitSuccessPanelView.swift; sourceTree = "<group>"; };
+		907700411CF03E4900101057 /* PPProfitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPProfitViewController.swift; sourceTree = "<group>"; };
+		907700431CF056AB00101057 /* PPProfitStatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPProfitStatisticsView.swift; sourceTree = "<group>"; };
 		909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFakeNavigationBar.swift; sourceTree = "<group>"; };
 		96099B49EA247273875FD7B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9D077C884BEBD896A9EF484 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,7 +340,6 @@
 		F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountButton.swift; sourceTree = "<group>"; };
 		F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountButton.xib; sourceTree = "<group>"; };
 		F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPRollContributionListView.swift; sourceTree = "<group>"; };
-		F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
 		F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserPanelView.swift; sourceTree = "<group>"; };
 		F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollContributionListView.swift; sourceTree = "<group>"; };
 		F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollContributionListView.xib; sourceTree = "<group>"; };
@@ -369,9 +394,42 @@
 		543C14349914A819190D6EFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9010F8F61CEDD27800988FE0 /* Reveal.framework */,
 				E9998D5B07AB4D28F71735B0 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9010F8ED1CEDB81600988FE0 /* Profit */ = {
+			isa = PBXGroup;
+			children = (
+				907700411CF03E4900101057 /* PPProfitViewController.swift */,
+				907700431CF056AB00101057 /* PPProfitStatisticsView.swift */,
+			);
+			name = Profit;
+			sourceTree = "<group>";
+		};
+		9010F8EE1CEDB85D00988FE0 /* MyLevel */ = {
+			isa = PBXGroup;
+			children = (
+				906913F31CEF164000300E02 /* PPMyLevelViewController.swift */,
+				9028385F1CEFF04F0068C722 /* PPMyLevelBadgeView.swift */,
+				906913F71CEF3BD000300E02 /* PPMyLevelDescView.swift */,
+			);
+			name = MyLevel;
+			sourceTree = "<group>";
+		};
+		9010F8EF1CEDB87E00988FE0 /* VIP Verification */ = {
+			isa = PBXGroup;
+			children = (
+				9010F8F41CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift */,
+				9010F8F81CEEAD1A00988FE0 /* PPVIPSignupViewController.swift */,
+				9010F8FE1CEEB38400988FE0 /* PPVIPInfoInputView.swift */,
+				9010F9001CEEB5CF00988FE0 /* PPVIPBindWechatView.swift */,
+				9069CF221CEEFD19008A069E /* PPVIPCommitSuccessView.swift */,
+				9069CF241CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift */,
+			);
+			name = "VIP Verification";
 			sourceTree = "<group>";
 		};
 		F468A6071CEB3222000F1610 /* Friend */ = {
@@ -451,6 +509,9 @@
 		F4BDFADF1CE5AE4800D2A5A0 /* see */ = {
 			isa = PBXGroup;
 			children = (
+				9010F8EF1CEDB87E00988FE0 /* VIP Verification */,
+				9010F8EE1CEDB85D00988FE0 /* MyLevel */,
+				9010F8ED1CEDB81600988FE0 /* Profit */,
 				F468A6151CEB326D000F1610 /* setting */,
 				F468A6101CEB3233000F1610 /* Login */,
 				F468A6071CEB3222000F1610 /* Friend */,
@@ -584,7 +645,6 @@
 				F4BDFB761CE5AE9E00D2A5A0 /* CountButton.swift */,
 				F4BDFB771CE5AE9E00D2A5A0 /* CountButton.xib */,
 				F4BDFB791CE5AE9E00D2A5A0 /* PPRollContributionListView.swift */,
-				F4BDFB7B1CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib */,
 				F4BDFB7D1CE5AE9E00D2A5A0 /* PPUserPanelView.swift */,
 				F4BDFB7E1CE5AE9E00D2A5A0 /* RollContributionListView.swift */,
 				F4BDFB7F1CE5AE9E00D2A5A0 /* RollContributionListView.xib */,
@@ -671,6 +731,8 @@
 			isa = PBXGroup;
 			children = (
 				F4BDFB041CE5AE9E00D2A5A0 /* demo.png */,
+				9010F8F01CEDBF1300988FE0 /* VIP_Privilege@2x.png */,
+				9010F8F11CEDBF1300988FE0 /* VIP_Privilege@3x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -882,13 +944,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BDFBF51CE5AE9E00D2A5A0 /* PPUserDetailPanelView.xib in Resources */,
 				F4BDFBBD1CE5AE9E00D2A5A0 /* PPPodiumUserTableViewCell.xib in Resources */,
 				F4BDFBFF1CE5AE9E00D2A5A0 /* UserHeaderView2.xib in Resources */,
 				F4BDFB911CE5AE9E00D2A5A0 /* Info.plist in Resources */,
 				F4BDFBDD1CE5AE9E00D2A5A0 /* Info.plist in Resources */,
 				F4BDFBA01CE5AE9E00D2A5A0 /* PPGiftCell.xib in Resources */,
 				F468A6391CEB326D000F1610 /* PPUserDetailPanelView.xib in Resources */,
+				9010F8F31CEDBF1300988FE0 /* VIP_Privilege@3x.png in Resources */,
 				F4BDFC211CE5C7B100D2A5A0 /* LICENSE in Resources */,
 				F4BDFBA61CE5AE9E00D2A5A0 /* PPGiftViewToolBar.xib in Resources */,
 				F4BDFBFD1CE5AE9E00D2A5A0 /* UserHeaderView.xib in Resources */,
@@ -900,6 +962,7 @@
 				F4BDFBBF1CE5AE9E00D2A5A0 /* PPPodiumUserView.xib in Resources */,
 				F4BDFBF11CE5AE9E00D2A5A0 /* CountButton.xib in Resources */,
 				F468A6061CEB31D9000F1610 /* Assets.xcassets in Resources */,
+				9010F8F21CEDBF1300988FE0 /* VIP_Privilege@2x.png in Resources */,
 				F4BDFBE01CE5AE9E00D2A5A0 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,6 +1040,7 @@
 				F4BDFBEB1CE5AE9E00D2A5A0 /* TransitionManager.swift in Sources */,
 				F4BDFBA31CE5AE9E00D2A5A0 /* PPGiftShowView.swift in Sources */,
 				F4BDFBB81CE5AE9E00D2A5A0 /* PPMyLiveControlCollectionView.swift in Sources */,
+				9010F8F51CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift in Sources */,
 				F4BDFB901CE5AE9E00D2A5A0 /* AnyActivity.swift in Sources */,
 				F468A6141CEB3233000F1610 /* PPLoginViewController2.swift in Sources */,
 				F4BDFB961CE5AE9E00D2A5A0 /* PPAlgorithm.swift in Sources */,
@@ -985,6 +1049,7 @@
 				F468A60F1CEB3222000F1610 /* PPFriendViewController.swift in Sources */,
 				F4BDFBA21CE5AE9E00D2A5A0 /* PPGiftModel.swift in Sources */,
 				F468A62E1CEB326D000F1610 /* PPSettingSecurityViewController.swift in Sources */,
+				9010F8F91CEEAD1A00988FE0 /* PPVIPSignupViewController.swift in Sources */,
 				F4BDFBE81CE5AE9E00D2A5A0 /* SpringTextField.swift in Sources */,
 				F468A60C1CEB3222000F1610 /* PPFriendActionToolbar.swift in Sources */,
 				F4BDFBEA1CE5AE9E00D2A5A0 /* SpringView.swift in Sources */,
@@ -1014,6 +1079,7 @@
 				F4BDFBF71CE5AE9E00D2A5A0 /* PPUserPanelView.swift in Sources */,
 				F468A6131CEB3233000F1610 /* PPBindCellphoneViewController.swift in Sources */,
 				F4BDFBCC1CE5AE9E00D2A5A0 /* PPUserModel.swift in Sources */,
+				9069CF231CEEFD19008A069E /* PPVIPCommitSuccessView.swift in Sources */,
 				F4BDFBAB1CE5AE9E00D2A5A0 /* PPLiveFinishedAudienceView.swift in Sources */,
 				F4BDFBF01CE5AE9E00D2A5A0 /* CountButton.swift in Sources */,
 				F4BDFBFC1CE5AE9E00D2A5A0 /* UserHeaderView.swift in Sources */,
@@ -1031,12 +1097,14 @@
 				F4BDFBB61CE5AE9E00D2A5A0 /* PPLoginViewController.swift in Sources */,
 				F4BDFB9A1CE5AE9E00D2A5A0 /* PPCoinsRankView.swift in Sources */,
 				F4BDFB991CE5AE9E00D2A5A0 /* PPCoinsContributionViewController.swift in Sources */,
+				907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */,
 				F4BDFBCD1CE5AE9E00D2A5A0 /* PPUserModel_toremove.swift in Sources */,
 				F4BDFBA41CE5AE9E00D2A5A0 /* PPGiftView.swift in Sources */,
 				F4BDFBFE1CE5AE9E00D2A5A0 /* UserHeaderView2.swift in Sources */,
 				909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */,
 				F4BDFBDA1CE5AE9E00D2A5A0 /* DesignableTextView.swift in Sources */,
 				F468A62D1CEB326D000F1610 /* PPSettingRemoteNotificationViewController.swift in Sources */,
+				9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */,
 				F4BDFBD61CE5AE9E00D2A5A0 /* DesignableImageView.swift in Sources */,
 				F4BDFBD91CE5AE9E00D2A5A0 /* DesignableTextField.swift in Sources */,
 				F4BDFB8A1CE5AE9E00D2A5A0 /* Config.swift in Sources */,
@@ -1050,6 +1118,7 @@
 				F4BDFBEE1CE5AE9E00D2A5A0 /* PPMeTableViewController.swift in Sources */,
 				F468A62F1CEB326D000F1610 /* PPSettingViewController.swift in Sources */,
 				F4BDFBE21CE5AE9E00D2A5A0 /* SoundPlayer.swift in Sources */,
+				907700421CF03E4900101057 /* PPProfitViewController.swift in Sources */,
 				F4BDFBC91CE5AE9E00D2A5A0 /* PPStaticViewFactory.swift in Sources */,
 				F4BDFBDC1CE5AE9E00D2A5A0 /* ImageLoader.swift in Sources */,
 				F4BDFBB91CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift in Sources */,
@@ -1067,11 +1136,13 @@
 				F4BDFBD81CE5AE9E00D2A5A0 /* DesignableTabBarController.swift in Sources */,
 				F468A6351CEB326D000F1610 /* PPMeUserHeaderView.swift in Sources */,
 				F4BDFBED1CE5AE9E00D2A5A0 /* UnwindSegue.swift in Sources */,
+				9010F9011CEEB5CF00988FE0 /* PPVIPBindWechatView.swift in Sources */,
 				F4BDFBC41CE5AE9E00D2A5A0 /* PPShareButton.swift in Sources */,
 				F4BDFBC81CE5AE9E00D2A5A0 /* PPShareView.swift in Sources */,
 				F4BDFB9E1CE5AE9E00D2A5A0 /* PPExtension.swift in Sources */,
 				F4BDFBFA1CE5AE9E00D2A5A0 /* SettingTableViewCell.swift in Sources */,
 				F4BDFC251CE5C7B100D2A5A0 /* NSTimerEx.swift in Sources */,
+				902838601CEFF04F0068C722 /* PPMyLevelBadgeView.swift in Sources */,
 				F4BDFBF81CE5AE9E00D2A5A0 /* RollContributionListView.swift in Sources */,
 				F4BDFBAA1CE5AE9E00D2A5A0 /* PPLaunchLiveViewController.swift in Sources */,
 				F4BDFBDF1CE5AE9E00D2A5A0 /* LoadingView.swift in Sources */,
@@ -1079,6 +1150,7 @@
 				F4BDFB9C1CE5AE9E00D2A5A0 /* PPConfirmEndLivePanelView.swift in Sources */,
 				F468A60E1CEB3222000F1610 /* PPFriendSegmentedControlView.swift in Sources */,
 				F468A6331CEB326D000F1610 /* PPDetailTableViewCell.swift in Sources */,
+				906913F41CEF164000300E02 /* PPMyLevelViewController.swift in Sources */,
 				F4BDFBA51CE5AE9E00D2A5A0 /* PPGiftViewToolBar.swift in Sources */,
 				F4BDFBE31CE5AE9E00D2A5A0 /* Spring.swift in Sources */,
 				F4BDFBDE1CE5AE9E00D2A5A0 /* KeyboardLayoutConstraint.swift in Sources */,
@@ -1086,9 +1158,11 @@
 				F4BDFBAE1CE5AE9E00D2A5A0 /* PPLiveListViewController.swift in Sources */,
 				F4BDFBB41CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift in Sources */,
 				F4BDFC221CE5C7B100D2A5A0 /* BallView.swift in Sources */,
+				906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */,
 				F4BDFBA91CE5AE9E00D2A5A0 /* PPHostView.swift in Sources */,
 				F4BDFC001CE5AE9E00D2A5A0 /* PPGiftShowsAnimateView.swift in Sources */,
 				F4BDFBBA1CE5AE9E00D2A5A0 /* PPNetworkManager.swift in Sources */,
+				9010F8FF1CEEB38400988FE0 /* PPVIPInfoInputView.swift in Sources */,
 				F4BDFB8F1CE5AE9E00D2A5A0 /* UINavigationBar+Awesome.m in Sources */,
 				F468A62B1CEB326D000F1610 /* PPSettingComplainViewController.swift in Sources */,
 				F4BDFB941CE5AE9E00D2A5A0 /* PPTabBarController.swift in Sources */,
@@ -1210,10 +1284,97 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = see/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"PLPlayerKit\"",
+					"-l\"PLStreamingKit\"",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"iconv\"",
+					"-l\"opencore-amrnb\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"HappyDNS\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PKHUD\"",
+					"-framework",
+					"\"PLCameraStreamingKit\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Realm\"",
+					"-framework",
+					"\"RealmSwift\"",
+					"-framework",
+					"\"RongIMKit\"",
+					"-framework",
+					"\"RongIMLib\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"pili_librtmp\"",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.see.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";
@@ -1229,10 +1390,93 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = see/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"PLPlayerKit\"",
+					"-l\"PLStreamingKit\"",
+					"-l\"bz2\"",
+					"-l\"c++\"",
+					"-l\"c++abi\"",
+					"-l\"iconv\"",
+					"-l\"opencore-amrnb\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreAudio\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"HappyDNS\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"PKHUD\"",
+					"-framework",
+					"\"PLCameraStreamingKit\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Realm\"",
+					"-framework",
+					"\"RealmSwift\"",
+					"-framework",
+					"\"RongIMKit\"",
+					"-framework",
+					"\"RongIMLib\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"pili_librtmp\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.see.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "see/Bridging-Header.h";

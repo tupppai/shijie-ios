@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 
 private struct PPMeTableViewConstants
 {
@@ -118,8 +118,24 @@ class PPMeTableViewController: UITableViewController {
         
         if indexPath.section == 1 && indexPath.row == 0{
             self.navigationController?.pushViewController(PPSettingViewController(), animated: true)
-        }else{
-            self.navigationController?.pushViewController(PPFriendViewController(), animated: true)
+        }
+        else if (indexPath.section == 1 && indexPath.row == 1){
+            let vipVC = PPVIPVerificationViewController()
+            vipVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vipVC, animated: true)
+        }
+        else if (indexPath.section == 0 && indexPath.row == 1){
+            let myLevelVC = PPMyLevelViewController()
+            myLevelVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(myLevelVC, animated: true)
+        }
+        else if (indexPath.section == 0 && indexPath.row == 0){
+            let profitVC = PPProfitViewController()
+            profitVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(profitVC, animated: true)
+        }
+        else{
+            HUD.flash(.Label("To be implemented."))
         }
     }
     

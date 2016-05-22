@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
+import PLCameraStreamingKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
+        PLStreamingEnv.initEnv()
+
         
         setupRCIM()
         setupRemoteNotification()
@@ -29,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupMonkeyKing()
         setupLoginOrConnectRCIM()
         
-   
+        
         return true
     }
     

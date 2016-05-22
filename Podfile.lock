@@ -1,17 +1,22 @@
 PODS:
   - Alamofire (3.4.0)
   - HappyDNS (0.2.4)
+  - pili-librtmp (1.0.1)
   - PKHUD (3.1.0)
-  - PLCameraStreamingKit (1.6.2):
+  - PLCameraStreamingKit (1.6.3):
     - HappyDNS
-  - PLPlayerKit (2.1.2):
-    - PLPlayerKit/precompiled (= 2.1.2)
-  - PLPlayerKit/precompiled (2.1.2)
-  - PLStreamingKit (1.1.5):
+  - PLPlayerKit (2.1.3):
+    - pili-librtmp
+    - PLPlayerKit/precompiled (= 2.1.3)
+  - PLPlayerKit/precompiled (2.1.3):
+    - pili-librtmp
+  - PLStreamingKit (1.1.6):
     - HappyDNS
-    - PLStreamingKit/precompiled (= 1.1.5)
-  - PLStreamingKit/precompiled (1.1.5):
+    - pili-librtmp
+    - PLStreamingKit/precompiled (= 1.1.6)
+  - PLStreamingKit/precompiled (1.1.6):
     - HappyDNS
+    - pili-librtmp
   - Realm (0.98.8):
     - Realm/Headers (= 0.98.8)
   - Realm/Headers (0.98.8)
@@ -25,9 +30,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4.0)
+  - pili-librtmp
   - PKHUD
   - PLCameraStreamingKit (from `https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec`)
-  - PLPlayerKit (~> 2.1.2)
+  - PLPlayerKit (~> 2.1.3)
   - PLStreamingKit
   - RealmSwift (~> 0.98.8)
   - RongCloudIMKit (~> 2.4.11)
@@ -40,16 +46,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PLCameraStreamingKit:
-    :commit: 98eed54a2af67042a76b4062859094f80d1c9a35
+    :commit: d6bf03de4d0083db6d92c953f771e97d1146c44d
     :git: https://github.com/pili-engineering/PLCameraStreamingKit.git
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   HappyDNS: 86ab4be498cc5cc884002b248979cd130cfbe10e
+  pili-librtmp: 8f2b969a1890e881715a90ab98d4d52baf53c514
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
-  PLCameraStreamingKit: 19abccfcfb748103c1806fe73a6dc8f5e8408679
-  PLPlayerKit: e0f92eb447e9224eae5f3ab894378f68d691a74b
-  PLStreamingKit: 3792348c354af2271629eeb154e0e83774f34c07
+  PLCameraStreamingKit: 26048a908239d3244d92d0f17e38704c959ac13b
+  PLPlayerKit: 40c6b08f093ee53ea41bca9ae77baf04e7334d98
+  PLStreamingKit: f3b4314f289722065254af918b1fe90d7ee061b5
   Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd
   RealmSwift: 064262d38113f23ff3508fb20a0a922e696bec01
   RongCloudIMKit: 40fefc63541927aad728e06c731d12d34de1c5fa

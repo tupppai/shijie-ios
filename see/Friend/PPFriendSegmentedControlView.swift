@@ -77,7 +77,7 @@ class PPFriendSegmentedControlView: UIView {
         bottomLineIndicator = UIView()
         bottomLineIndicator.backgroundColor = UIColor(hex: 0xFF5722)
         self.addSubview(bottomLineIndicator)
-    
+        
     }
     
     // MARK: target-Actions
@@ -96,7 +96,7 @@ class PPFriendSegmentedControlView: UIView {
             delegate?.segmentedControl(self, didSelectIndex: 1)
             k_selectedIndex = 1
             self.setNeedsLayout()
-            UIView.animateWithDuration(0.3, animations: { 
+            UIView.animateWithDuration(0.3, animations: {
                 self.broadcastButton.selected = false
                 self.momentsButton.selected   = true
                 self.layoutIfNeeded()
@@ -111,7 +111,14 @@ class PPFriendSegmentedControlView: UIView {
         let buttonH = self.frame.size.height
         broadcastButton.frame = CGRect(x: 0, y: 0, width: buttonW, height: buttonH)
         momentsButton.frame   = CGRect(x: buttonW, y: 0, width: buttonW, height: buttonH)
-        bottomLineIndicator.frame = CGRect(x: CGFloat(k_selectedIndex) * buttonW, y: buttonH - 3, width: buttonW, height: 3)
+        
+        
+        let lineH = CGFloat(3.0)
+        let lineY = buttonH - lineH
+        let lineW = buttonW * 0.6
+        let lineX = (CGFloat(k_selectedIndex) * buttonW) + (buttonW - lineW) * 0.5
+        
+        bottomLineIndicator.frame = CGRect(x: lineX, y: lineY, width: lineW, height: lineH)
     }
     
 }

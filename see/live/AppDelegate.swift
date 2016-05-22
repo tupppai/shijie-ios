@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
+import PLCameraStreamingKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
+        PLStreamingEnv.initEnv()
+
         
         setupRCIM()
         setupRemoteNotification()
@@ -29,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupMonkeyKing()
         setupLoginOrConnectRCIM()
         
-   
+        
         return true
     }
     
@@ -63,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 2,
+            schemaVersion: 3,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above

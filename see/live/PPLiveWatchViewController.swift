@@ -37,11 +37,12 @@ class PPLiveWatchViewController: UIViewController {
     var heartFloatingView:PPHeartFloatingView!
     var textInputBarBottomContraint:Constraint!
     let audienceDetailView = PPUserDetailView()
-    var numberOfNews = 5
     
-    
-    var stupidTimer:NSTimer?
+    var commentSourceArray = [PPLiveCommentModel]()
+    var commentSourceQueue:Queue<PPLiveCommentModel> = Queue<PPLiveCommentModel>()
 
+    var stupidTimer:NSTimer?
+    
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -67,16 +68,15 @@ class PPLiveWatchViewController: UIViewController {
         
         RCIM.sharedRCIM().receiveMessageDelegate = self
         
-        guard let roomID = liveModel?.ID else {
+        guard let streamID = liveModel?.streamID else {
             return
         }
         
-        RCIMClient.sharedRCIMClient().joinChatRoom("\(roomID)", messageCount: 10, success: {
+        RCIMClient.sharedRCIMClient().joinChatRoom(streamID, messageCount: 10, success: {
             
             dispatch_async(dispatch_get_main_queue(),{
-                print("成功加入聊天室 ID \(roomID)")
+                print("成功加入聊天室 ID \(streamID)")
             })
-            
             }) { (errorCode) in
                 print("errorCode \(errorCode)")
         }
@@ -111,25 +111,7 @@ class PPLiveWatchViewController: UIViewController {
         player?.resume()
     }
     
-    func setupCommentGenerator() {
-        stupidTimer = NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "fireComment", userInfo: nil, repeats: true)
-    }
-    
- 
-    func fireComment() {
-        numberOfNews++
-        let lastIndexPath = NSIndexPath(forRow: numberOfNews - 1, inSection: 0)
-        newsTableView.beginUpdates()
-        newsTableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: .Bottom)
-        newsTableView.endUpdates()
-        
-//        newsTableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: true)
-        newsTableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: .Bottom, animated: true)
-//        [self.tableView beginUpdates];
-//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        [self.tableView endUpdates];
-//        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    }
+
     
     func toggleShareView() {
         if shareView.isShowing == true {
@@ -158,54 +140,6 @@ class PPLiveWatchViewController: UIViewController {
         
         self.playerWithRTMPUrl(self.liveModel?.playURL)
 
-        
-//        Manager.sharedInstance.request(.GET, "http://api.chupinlm.com/stream/create/test").responseJSON(completionHandler: { (response) in
-//            
-//            
-//            switch response.result {
-//            case .Success(let JSON):
-//                let data = JSON as! NSDictionary
-//
-//                guard let hosts = data.objectForKey("hosts") as? NSDictionary else{
-//                    return
-//                }
-//
-//                guard let play = hosts.objectForKey("play") as? NSDictionary else{
-//                    return
-//                }
-//
-//                guard let rtmpString = play.objectForKey("rtmp") as? String else {
-//                    return
-//                }
-//
-//                guard let publishKey = data.objectForKey("publishKey") as? String else {
-//                    return
-//                }
-//
-//                guard let hub = data.objectForKey("hub") as? String else {
-//                    return
-//                }
-//                guard let title = data.objectForKey("title") as? String else {
-//                    return
-//                }
-//                let urlString = "rtmp://" + rtmpString+"/"+hub+"/"+title + "?key=" + publishKey
-//                
-//                
-//                self.playerWithRTMPUrl(urlString)
-//                
-//            case .Failure(let error):
-//                print(error)
-//                
-//            }
-//            
-//            
-//            
-//            
-//        })
-
-        
-        
-        
     }
     
     func playerWithRTMPUrl(urlString:String!) {
@@ -325,12 +259,13 @@ extension PPLiveWatchViewController : UITableViewDataSource,UITableViewDelegate 
         return 1
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell))
-        return (cell)!
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(PPNewsCommentTableViewCell)) as! PPNewsCommentTableViewCell
+        cell.injectSource(commentSourceArray[indexPath.row])
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfNews
+        return commentSourceArray.count
     }
     
 }
@@ -474,7 +409,7 @@ extension PPLiveWatchViewController {
 
 // MARK:Custom Delegate
 
-extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPlayerDelegate,PPTextInputBarDelegate{
+extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPlayerDelegate{
     
     func replay() {
         print("stop player and replay")
@@ -614,36 +549,84 @@ extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPl
         }
     }
     
-    func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?) {
-        guard let roomID = liveModel?.ID else {
-            return
-        }
-        let msgContent = RCTextMessage()
-        msgContent.content = "哈哈哈哈哈搞笑吗"
-        
-//        RCIM.sharedRCIM().sendMessage(RCConversationType.ConversationType_CHATROOM, targetId: roomID, content: msgContent, pushContent: "离线时的推送信息", pushData: "离线时的 非显示 data", success: { (done) in
-//                print("sendMessage block done -> \(done)")
-//            }) { (errorCode, done) in
-//                print("sendMessage errorCode \(errorCode) done  \(done)")
-//        }
-        
-        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: "\(roomID)", content: msgContent, pushContent: "离线时的推送信息", pushData: "离线时的 非显示 data", success: { (times) in
-            print("sendMessage block times -> \(times)")
-        }) { (errorCode, times) in
-            print("sendMessage errorCode \(errorCode) times  \(times)")
-        }
-        
-    }
+
     
 }
 
 
-// MARK:RCIMReceiveMessageDelegate
-extension PPLiveWatchViewController:RCIMReceiveMessageDelegate {
+// MARK:ReceiveMessage
+extension PPLiveWatchViewController:RCIMReceiveMessageDelegate,PPTextInputBarDelegate {
     
     func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
-        print("RCIMClientReceiveMessageDelegate onReceived \(message) left \(left)  ")
 
+
+        if message.content .isKindOfClass(RCTextMessage.classForCoder()) {
+            let textMsg = message.content as! RCTextMessage
+            
+            let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
+            let sendername = textArray.first
+            var content = ""
+            if textArray.count > 1 {
+                content = textArray[1]
+            }
+            
+            let commentModel = PPLiveCommentModel()
+            commentModel.content = content
+            commentModel.senderId = message.senderUserId
+            commentModel.senderName = sendername
+            commentSourceQueue.enqueue(commentModel)
+        }
+        
+        
+    }
+    
+    func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?) {
+        
+        
+        let commentModel = PPLiveCommentModel()
+        commentModel.content = text
+        commentModel.senderId = "\(PPUserModel.shareInstance.ID)"
+        commentModel.senderName = PPUserModel.shareInstance.name
+        commentSourceQueue.enqueue(commentModel)
+        
+        guard let streamID = liveModel?.streamID else {
+            return
+        }
+        
+        let msgContent = RCTextMessage()
+        let content = "\(PPUserModel.shareInstance.name)seperateOOXX#666\(text ?? "")"
+        msgContent.content = content
+        
+        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: streamID, content: msgContent, pushContent: text, pushData: "", success: { (times) in
+            print("sendMessage block times -> \(times)")
+        }) { (errorCode, times) in
+            print("sendMessage errorCode \(errorCode) times  \(times)")
+        }
+    }
+    
+    func setupCommentGenerator() {
+        stupidTimer = NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: #selector(PPLiveWatchViewController.fireComment), userInfo: nil, repeats: true)
+    }
+    
+    func fireComment() {
+        
+        if commentSourceQueue.isEmpty {
+            return
+        }
+        guard let model = commentSourceQueue.dequeue() else{
+            return
+        }
+        
+        self.commentSourceArray.append(model)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            let lastIndexPath = NSIndexPath(forRow: self.commentSourceArray.count - 1, inSection: 0)
+            self.newsTableView.beginUpdates()
+            self.newsTableView.insertRowsAtIndexPaths([lastIndexPath], withRowAnimation: .None)
+            self.newsTableView.endUpdates()
+            self.newsTableView.reloadData()
+            self.newsTableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: .None, animated: true)
+        }
     }
     
 }

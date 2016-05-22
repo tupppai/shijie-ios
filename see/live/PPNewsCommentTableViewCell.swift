@@ -10,6 +10,7 @@ import UIKit
 
 class PPNewsCommentTableViewCell: UITableViewCell {
     
+    var liveCommentModel:PPLiveCommentModel?
     var usernameLabel:UILabel?
 //    var contentLabel:UILabel?
     let array = ["PeiweiReporter💗 : 杜克大学今天也顺利赢球，他们击败了耶鲁大学。NBA选秀热门布兰登-英格拉姆贡献25分。但球队最高分是格雷森-阿伦的29分。","PeiweiReporter💗 : lets you use the attributed","PeiweiReporter💗 : 整个总决赛5战，哈达迪场均攻下21.6分19.2个篮板"]
@@ -20,6 +21,18 @@ class PPNewsCommentTableViewCell: UITableViewCell {
         setupViews()
     }
     
+    func injectSource(liveCommentModel:PPLiveCommentModel?) {
+        self.liveCommentModel = liveCommentModel
+        guard let liveCommentModel = liveCommentModel else{
+            return
+        }
+//        liveCommentModel.comment = "hello"
+        if let senderName = liveCommentModel.senderName as String! {
+                    usernameLabel?.text = "\(senderName):\(liveCommentModel.content)"
+                    usernameLabel?.setTextColor(UIColor(hex: 0x564c7f), string: "\(senderName):")
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,13 +41,9 @@ class PPNewsCommentTableViewCell: UITableViewCell {
         usernameLabel = UILabel()
         usernameLabel?.textAlignment = .Left
         usernameLabel?.textColor = UIColor.whiteColor()
+    
         
-        let ram = randInRange(0...2)
-        let textString =  array[ram]
         
-        usernameLabel?.text = textString
-        
-        usernameLabel?.setTextColor(UIColor(hex: 0x564c7f), string: "PeiweiReporter💗")
         usernameLabel?.numberOfLines = 0
         
         contentView.addSubview(usernameLabel!)

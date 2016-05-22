@@ -13,31 +13,44 @@ class PPLiveListViewController: UIViewController {
     lazy var tableView:UITableView = self.initializeTableView()
      var navigationBar:UIView!
     var liveModelSourceArray = [PPLiveModel]()
-    
-    var tableViewWrapper:PullToBounceWrapper?
+    var refreshControl:CBStoreHouseRefreshControl!
     override func viewDidLoad() {
-        self.edgesForExtendedLayout = .None
+        self.edgesForExtendedLayout = .All
         self.initNavigationBar()
         
-
+        setupRefreshControl()
         
+        tableView.backgroundColor = UIColor.whiteColor()
+        view.addSubview(tableView)
+        view.sendSubviewToBack(tableView)
+        tableView.snp_makeConstraints { (make) -> Void in
+            make.bottom.leading.trailing.equalTo(view)
+            make.top.equalTo(navigationBar.snp_bottom).offset(-24)
+        }
+        tableView.alwaysBounceVertical = true
 
-        
-        setupPullToBounceView()
         operateLiveModelSourceFromRemote()
-//        view.addSubview(tableView)
-        
-//        tableView.snp_makeConstraints { (make) -> Void in
-//            make.bottom.leading.trailing.equalTo(view)
-//            make.top.equalTo(navigationBar.snp_bottom)
-//        }
+
     }
     
+    
+    func setupRefreshControl() {
+//        refreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: #selector(PPLiveListViewController.operateLiveModelSourceFromRemote), plist: "storehouserefresh")
+        
+        refreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: #selector(PPLiveListViewController.operateLiveModelSourceFromRemote), plist: "storehouserefresh", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 100, reverseLoadingAnimation: true, internalAnimationFactor: 1.0)
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        refreshControl.scrollViewDidScroll()
+    }
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        refreshControl.scrollViewDidEndDragging()
+    }
     
     func operateLiveModelSourceFromRemote() {
         PPNetworkManager.postRequest("stream/list", parameters: nil).responseJSON
             { response in
-                
+                self.refreshControl.finishingLoading()
                 switch response.result {
                 case .Success(let JSON):
                     let response = JSON as! NSDictionary
@@ -47,7 +60,7 @@ class PPLiveListViewController: UIViewController {
                         }
                     }
                     
-                    self.tableViewWrapper?.stopLoadingAnimation()
+//                    self.tableViewWrapper?.stopLoadingAnimation()
                     
                     self.liveModelSourceArray.removeAll()
                     
@@ -61,7 +74,7 @@ class PPLiveListViewController: UIViewController {
                             model.coins = data.objectForKey("coin") as? Int ?? 0
                             model.watchedCount = data.objectForKey("watchCnt") as? Int ?? 0
                             model.audienceCount = data.objectForKey("audienceCount") as? Int ?? 0
-                            
+                            model.streamID = data.objectForKey("streamId") as? String ?? ""
                             if let subData1 = data.objectForKey("user") as? NSDictionary {
                                 model.userModel = PPUserModel()
                                 model.userModel?.ID = subData1.objectForKey("id") as? Int ?? 0
@@ -78,7 +91,6 @@ class PPLiveListViewController: UIViewController {
                         }
                         
                         self.tableView.reloadData()
-                        print("self.liveModelSourceArray \(self.liveModelSourceArray)")
                         
                     }
                     
@@ -89,31 +101,30 @@ class PPLiveListViewController: UIViewController {
         }
 
     }
-    func setupPullToBounceView() {
-        
-        let bodyView = UIView()
-        bodyView.frame = self.view.frame
-//        bodyView.frame.y += 20 + 44
-        self.view.addSubview(bodyView)
-        
-        bodyView.snp_makeConstraints { (make) -> Void in
-            make.bottom.leading.trailing.equalTo(view)
-            make.top.equalTo(navigationBar.snp_bottom)
-        }
-        
-        
-        
-        tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
-        bodyView.addSubview(tableViewWrapper!)
-        
-        tableViewWrapper?.didPullToRefresh = {
-            self.operateLiveModelSourceFromRemote()
-        }
-        
-        
-    }
-    func setupNavTitleView() {
-    }
+//    func setupPullToBounceView() {
+//        
+//        let bodyView = UIView()
+//        bodyView.frame = self.view.frame
+////        bodyView.frame.y += 20 + 44
+//        self.view.addSubview(bodyView)
+//        
+//        bodyView.snp_makeConstraints { (make) -> Void in
+//            make.bottom.leading.trailing.equalTo(view)
+//            make.top.equalTo(navigationBar.snp_bottom)
+//        }
+//        
+//        
+//        
+//        tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
+//        bodyView.addSubview(tableViewWrapper!)
+//        
+//        tableViewWrapper?.didPullToRefresh = {
+//            self.operateLiveModelSourceFromRemote()
+//        }
+//        
+//        
+//    }
+   
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
     }
@@ -128,6 +139,7 @@ class PPLiveListViewController: UIViewController {
             make.leading.trailing.equalTo(view)
             make.height.equalTo(navBarHeight)
         }
+        navigationBar.backgroundColor = UIColor.whiteColor()
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
         label.text = "直播"
@@ -138,14 +150,6 @@ class PPLiveListViewController: UIViewController {
             make.center.equalTo(navigationBar)
         }
         
-//        CALayer *bottomBorder = [CALayer layer];
-//        
-//        bottomBorder.frame = CGRectMake(0.0f, 43.0f, toScrollView.frame.size.width, 1.0f);
-//        
-//        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
-//            alpha:1.0f].CGColor;
-//        
-//        [toScrollView.layer addSublayer:bottomBorder];
         
         let bottomBorder = CALayer()
         bottomBorder.frame = CGRectMake(0, navBarHeight-1, ScreenSize.SCREEN_WIDTH, 0.5)

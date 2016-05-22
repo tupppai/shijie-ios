@@ -22,3 +22,5 @@
 
 #import <RongIMKit/RongIMKit.h>
 #import <PLStreamingKit/PLStreamingKit.h>
+
+#import "CBStoreHouseRefreshControl.h"

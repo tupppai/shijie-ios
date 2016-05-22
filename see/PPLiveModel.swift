@@ -11,6 +11,7 @@ import RealmSwift
 
 class PPLiveModel: Object {
     dynamic var ID = 0
+    dynamic var streamID = ""
     dynamic var title:String = ""
     dynamic var playURL:String = ""
     dynamic var showImageUrl:String = ""

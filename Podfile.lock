@@ -33,7 +33,7 @@ DEPENDENCIES:
   - pili-librtmp
   - PKHUD
   - PLCameraStreamingKit (from `https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec`)
-  - PLPlayerKit (~> 2.1.2)
+  - PLPlayerKit (~> 2.1.3)
   - PLStreamingKit
   - RealmSwift (~> 0.98.8)
   - RongCloudIMKit (~> 2.4.11)

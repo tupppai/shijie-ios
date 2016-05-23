@@ -47,6 +47,7 @@
 		F468A6381CEB326D000F1610 /* PPUserDetailPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */; };
 		F468A6391CEB326D000F1610 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */; };
 		F468A63A1CEB326D000F1610 /* PPUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6281CEB326D000F1610 /* PPUserDetailView.swift */; };
+		F4B45F6F1CF1F5AA00BB95BC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */; };
 		F4BDFAF61CE5AE4800D2A5A0 /* seeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFAF51CE5AE4800D2A5A0 /* seeTests.swift */; };
 		F4BDFB881CE5AE9E00D2A5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB011CE5AE9E00D2A5A0 /* AppDelegate.swift */; };
 		F4BDFB8A1CE5AE9E00D2A5A0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB031CE5AE9E00D2A5A0 /* Config.swift */; };
@@ -232,6 +233,7 @@
 		F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailPanelView.swift; sourceTree = "<group>"; };
 		F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
 		F468A6281CEB326D000F1610 /* PPUserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailView.swift; sourceTree = "<group>"; };
+		F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		F4BDFADD1CE5AE4800D2A5A0 /* see.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = see.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDFAF11CE5AE4800D2A5A0 /* seeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDFAF51CE5AE4800D2A5A0 /* seeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seeTests.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD532F59BC9530D0F967BA2F /* Pods.framework in Frameworks */,
+				F4B45F6F1CF1F5AA00BB95BC /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +502,7 @@
 		F4BDFAD41CE5AE4800D2A5A0 = {
 			isa = PBXGroup;
 			children = (
+				F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */,
 				F4BDFADF1CE5AE4800D2A5A0 /* see */,
 				F4BDFAF41CE5AE4800D2A5A0 /* seeTests */,
 				F4BDFADE1CE5AE4800D2A5A0 /* Products */,

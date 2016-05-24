@@ -47,6 +47,10 @@
 		F468A6381CEB326D000F1610 /* PPUserDetailPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */; };
 		F468A6391CEB326D000F1610 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */; };
 		F468A63A1CEB326D000F1610 /* PPUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6281CEB326D000F1610 /* PPUserDetailView.swift */; };
+		F49C66FC1CF3F7A200416C4E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F49C66F11CF3F7A200416C4E /* .gitkeep */; };
+		F49C66FD1CF3F7A200416C4E /* PLCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66F51CF3F7A200416C4E /* PLCameraSource.m */; };
+		F49C66FE1CF3F7A200416C4E /* PLCameraStreamingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */; };
+		F49C66FF1CF3F7A200416C4E /* PLMicrophoneSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */; };
 		F4B45F6F1CF1F5AA00BB95BC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */; };
 		F4BDFAF61CE5AE4800D2A5A0 /* seeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFAF51CE5AE4800D2A5A0 /* seeTests.swift */; };
 		F4BDFB881CE5AE9E00D2A5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB011CE5AE9E00D2A5A0 /* AppDelegate.swift */; };
@@ -233,6 +237,17 @@
 		F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailPanelView.swift; sourceTree = "<group>"; };
 		F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
 		F468A6281CEB326D000F1610 /* PPUserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailView.swift; sourceTree = "<group>"; };
+		F49C66F11CF3F7A200416C4E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		F49C66F21CF3F7A200416C4E /* PLAACTypeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAACTypeDefines.h; sourceTree = "<group>"; };
+		F49C66F31CF3F7A200416C4E /* PLCameraMacroDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraMacroDefines.h; sourceTree = "<group>"; };
+		F49C66F41CF3F7A200416C4E /* PLCameraSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraSource.h; sourceTree = "<group>"; };
+		F49C66F51CF3F7A200416C4E /* PLCameraSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCameraSource.m; sourceTree = "<group>"; };
+		F49C66F61CF3F7A200416C4E /* PLCameraStreamingKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraStreamingKit.h; sourceTree = "<group>"; };
+		F49C66F71CF3F7A200416C4E /* PLCameraStreamingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraStreamingSession.h; sourceTree = "<group>"; };
+		F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCameraStreamingSession.m; sourceTree = "<group>"; };
+		F49C66F91CF3F7A200416C4E /* PLMicrophoneSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMicrophoneSource.h; sourceTree = "<group>"; };
+		F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMicrophoneSource.m; sourceTree = "<group>"; };
+		F49C66FB1CF3F7A200416C4E /* PLSourceAccessProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSourceAccessProtocol.h; sourceTree = "<group>"; };
 		F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		F4BDFADD1CE5AE4800D2A5A0 /* see.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = see.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDFAF11CE5AE4800D2A5A0 /* seeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -499,6 +514,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F49C66F01CF3F7A200416C4E /* PLCameraStreamingKit1.63 */ = {
+			isa = PBXGroup;
+			children = (
+				F49C66F11CF3F7A200416C4E /* .gitkeep */,
+				F49C66F21CF3F7A200416C4E /* PLAACTypeDefines.h */,
+				F49C66F31CF3F7A200416C4E /* PLCameraMacroDefines.h */,
+				F49C66F41CF3F7A200416C4E /* PLCameraSource.h */,
+				F49C66F51CF3F7A200416C4E /* PLCameraSource.m */,
+				F49C66F61CF3F7A200416C4E /* PLCameraStreamingKit.h */,
+				F49C66F71CF3F7A200416C4E /* PLCameraStreamingSession.h */,
+				F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */,
+				F49C66F91CF3F7A200416C4E /* PLMicrophoneSource.h */,
+				F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */,
+				F49C66FB1CF3F7A200416C4E /* PLSourceAccessProtocol.h */,
+			);
+			path = PLCameraStreamingKit1.63;
+			sourceTree = "<group>";
+		};
 		F4BDFAD41CE5AE4800D2A5A0 = {
 			isa = PBXGroup;
 			children = (
@@ -734,6 +767,7 @@
 		F4BDFC0C1CE5B46700D2A5A0 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F49C66F01CF3F7A200416C4E /* PLCameraStreamingKit1.63 */,
 				F4C498321CEDA622008A2325 /* CBStorePullToRefresh */,
 				F4BDFC151CE5C7B100D2A5A0 /* PullToBounce */,
 				F4BDFB091CE5AE9E00D2A5A0 /* LTNavigationBar */,
@@ -986,6 +1020,7 @@
 				F4BDFBEF1CE5AE9E00D2A5A0 /* PPMeTableViewController.xib in Resources */,
 				F4C4983A1CEDA79A008A2325 /* storehouserefresh.plist in Resources */,
 				F4BDFBF91CE5AE9E00D2A5A0 /* RollContributionListView.xib in Resources */,
+				F49C66FC1CF3F7A200416C4E /* .gitkeep in Resources */,
 				F4BDFC061CE5B3AE00D2A5A0 /* Info.plist in Resources */,
 				F4BDFBFB1CE5AE9E00D2A5A0 /* SettingTableViewCell.xib in Resources */,
 				F4BDFB8B1CE5AE9E00D2A5A0 /* demo.png in Resources */,
@@ -1091,6 +1126,7 @@
 				F4BDFBC11CE5AE9E00D2A5A0 /* PPRoundButton.swift in Sources */,
 				F4BDFBD01CE5AE9E00D2A5A0 /* PPVideoCaptureViewController.swift in Sources */,
 				F4BDFBA81CE5AE9E00D2A5A0 /* PPHostReceivedCoinView.swift in Sources */,
+				F49C66FE1CF3F7A200416C4E /* PLCameraStreamingSession.m in Sources */,
 				F4BDFBC21CE5AE9E00D2A5A0 /* PPRoundImageView.swift in Sources */,
 				F4C498381CEDA622008A2325 /* CBStoreHouseRefreshControl.m in Sources */,
 				F4BDFBC31CE5AE9E00D2A5A0 /* PPRoundView.swift in Sources */,
@@ -1133,6 +1169,7 @@
 				F4BDFBA41CE5AE9E00D2A5A0 /* PPGiftView.swift in Sources */,
 				F4BDFBFE1CE5AE9E00D2A5A0 /* UserHeaderView2.swift in Sources */,
 				909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */,
+				F49C66FF1CF3F7A200416C4E /* PLMicrophoneSource.m in Sources */,
 				F4BDFBDA1CE5AE9E00D2A5A0 /* DesignableTextView.swift in Sources */,
 				F468A62D1CEB326D000F1610 /* PPSettingRemoteNotificationViewController.swift in Sources */,
 				9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */,
@@ -1154,6 +1191,7 @@
 				F4BDFBDC1CE5AE9E00D2A5A0 /* ImageLoader.swift in Sources */,
 				F4BDFBB91CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift in Sources */,
 				F4BDFBD11CE5AE9E00D2A5A0 /* AsyncButton.swift in Sources */,
+				F49C66FD1CF3F7A200416C4E /* PLCameraSource.m in Sources */,
 				F4BDFBB11CE5AE9E00D2A5A0 /* PPLivesTableViewCell.swift in Sources */,
 				F4BDFBE51CE5AE9E00D2A5A0 /* SpringButton.swift in Sources */,
 				F468A6371CEB326D000F1610 /* PPNotificationSwitchTableViewCell_banUser.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
-import PLCameraStreamingKit
+//import PLCameraStreamingKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

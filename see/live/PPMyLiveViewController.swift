@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Alamofire
 import PKHUD
-import PLCameraStreamingKit
+//import PLCameraStreamingKit
 
 class PPMyLiveViewController: UIViewController {
     
@@ -96,9 +96,9 @@ class PPMyLiveViewController: UIViewController {
             [unowned confirmEndLiveView] in
             
             self.stupidTimer?.invalidate()
-            self.tellServerToClose()
             self.session?.destroy()
-
+            PPCloseMyAbandonedLiveRoom()
+            
             confirmEndLiveView.dismiss()
             let stripperEndLiveView = PPLiveFinishedStripperView()
             
@@ -120,27 +120,7 @@ class PPMyLiveViewController: UIViewController {
     }
     
     
-    func tellServerToClose() {
-        
-        guard  let streamIDString = streamIDString else{
-            return
-        }
-        PPNetworkManager.postRequest("stream/finish", parameters: ["streamId":streamIDString]).responseJSON { (response) in
-            switch response.result {
-            case .Success(let json):
-                let JSON = json as? NSDictionary
-                if let errorCode = JSON?.objectForKey("errCode") as? Int  {
-                    if errorCode != 0 {
-                        print("服务器还没接到关闭通知error")
-                    } else {
-                        print("服务器成功接到关闭通知ok")
-                    }
-                }
-            case .Failure:
-                break
-            }
-        }
-    }
+ 
     
     func applicationWillEnterForeground() {
         session?.startWithCompleted { (started) in

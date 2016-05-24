@@ -1,5 +1,5 @@
 //
-//  PPLoginViewController2.swift
+//  PPLoginViewController.swift
 //  live
 //
 //  Created by TUPAI-Huangwei on 16/5/14.
@@ -8,8 +8,9 @@
 
 import UIKit
 import PKHUD
+import RealmSwift
 
-class PPLoginViewController2: UIViewController {
+class PPLoginViewController: UIViewController {
     
     // MARK: Variables
     
@@ -110,11 +111,11 @@ class PPLoginViewController2: UIViewController {
     // MARK: target-Actions
     func tapButton(button: UIButton){
         if button === weiboButton {
-            HUD.flash(.Label("weibo"))
+            getAuthInfoFromPlatform(PPOpenPlatformType.Weibo)
         }else if button === weixinButton{
-            HUD.flash(.Label("weixin"))
+            getAuthInfoFromPlatform(PPOpenPlatformType.Wechat)
         }else if button === qqButton{
-            HUD.flash(.Label("QQ"))
+            getAuthInfoFromPlatform(PPOpenPlatformType.QQ)
         }else if button === cellphoneButton{
         self.navigationController?.pushViewController(PPBindCellphoneViewController(), animated: true)
         }else{
@@ -122,5 +123,63 @@ class PPLoginViewController2: UIViewController {
         }
     }
     
+    
+    func getAuthInfoFromPlatform(platform:PPOpenPlatformType) {
+        
+        var platformType:PPOpenPlatformType = .Unknown
+        
+        platformType = platform
+        
+        PPShareManager.sharedInstance.superAuth(platformType, completionHandler: { (finished) in
+            if finished {
+                
+                let param = PPShareInfo.sharedInstance.rawData as? [String:AnyObject]
+                PPNetworkManager.postRequest("user/wechat-login", parameters: param).responseJSON(completionHandler: { (response) in
+                    
+                    switch response.result {
+                    case .Success(let JSON):
+                        let response = JSON as! NSDictionary
+                        if let errCode = response.objectForKey("errCode") as? Int {
+                            if errCode != PPNetworkResponseCode.Success.rawValue {
+                                return
+                            }
+                        }
+                        
+                        let data = response.objectForKey("data") as? NSDictionary
+                        let avatar = data?.objectForKey("avatar") as? String
+                        let userID = data?.objectForKey("id") as? Int
+                        let username = data?.objectForKey("nickname") as? String
+                        
+                        let realm = try! Realm()
+                        try! realm.write {
+                            PPUserModel.shareInstance.name = username ?? ""
+                            PPUserModel.shareInstance.avatarUrl = avatar ?? ""
+                            PPUserModel.shareInstance.ID = userID ?? 0
+                            PPUserModel.shareInstance.login = true
+                        }
+                        
+                        self.operationsAfterLoginSuccessFully()
+                        HUD.flash(.LabeledSuccess(title: "微信登录成功", subtitle: ""), delay: 1.0)
+                        self.dismiss()
+                        
+                    case .Failure:
+                        HUD.flash(.Label("请求失败"), delay: 1.5)
+                        break
+                    }
+                    
+                    
+                })
+            }
+        })
+    }
+    
+    
+    func operationsAfterLoginSuccessFully() {
+        PPConnectRCIM(10)
+    }
+
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }

@@ -24,3 +24,4 @@
 #import <PLStreamingKit/PLStreamingKit.h>
 
 #import "CBStoreHouseRefreshControl.h"
+#import "PLCameraStreamingKit.h"

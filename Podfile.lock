@@ -3,8 +3,6 @@ PODS:
   - HappyDNS (0.2.4)
   - pili-librtmp (1.0.1)
   - PKHUD (3.1.0)
-  - PLCameraStreamingKit (1.6.3):
-    - HappyDNS
   - PLPlayerKit (2.1.3):
     - pili-librtmp
     - PLPlayerKit/precompiled (= 2.1.3)
@@ -30,9 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4.0)
-  - pili-librtmp
   - PKHUD
-  - PLCameraStreamingKit (from `https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec`)
   - PLPlayerKit (~> 2.1.3)
   - PLStreamingKit
   - RealmSwift (~> 0.98.8)
@@ -40,21 +36,11 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.6)
   - SnapKit (~> 0.19.1)
 
-EXTERNAL SOURCES:
-  PLCameraStreamingKit:
-    :podspec: https://raw.githubusercontent.com/pili-engineering/PLCameraStreamingKit/master/PLCameraStreamingKitForSwift.podspec
-
-CHECKOUT OPTIONS:
-  PLCameraStreamingKit:
-    :commit: d6bf03de4d0083db6d92c953f771e97d1146c44d
-    :git: https://github.com/pili-engineering/PLCameraStreamingKit.git
-
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   HappyDNS: 86ab4be498cc5cc884002b248979cd130cfbe10e
   pili-librtmp: 8f2b969a1890e881715a90ab98d4d52baf53c514
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
-  PLCameraStreamingKit: 26048a908239d3244d92d0f17e38704c959ac13b
   PLPlayerKit: 40c6b08f093ee53ea41bca9ae77baf04e7334d98
   PLStreamingKit: f3b4314f289722065254af918b1fe90d7ee061b5
   Realm: 0e293bb62999730599efc3048896bbd4f2e43bcd

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Alamofire
 import PKHUD
-import PLCameraStreamingKit
+//import PLCameraStreamingKit
 
 class PPMyLiveViewController: UIViewController {
     
@@ -29,7 +29,7 @@ class PPMyLiveViewController: UIViewController {
     var commentSourceQueue:Queue<PPLiveCommentModel> = Queue<PPLiveCommentModel>()
     let audienceDetailView = PPUserDetailView()
     
-    var liveModelIDString:String?
+    var streamIDString:String?
     var previewView:UIView!
     var session:PLCameraStreamingSession?
     var stupidTimer:NSTimer?
@@ -85,7 +85,6 @@ class PPMyLiveViewController: UIViewController {
     func tapClose() {
         
         
-        
         let confirmEndLiveView = PPConfirmEndLiveView()
         
         confirmEndLiveView.cancelDismissLiveClosure = {
@@ -97,9 +96,9 @@ class PPMyLiveViewController: UIViewController {
             [unowned confirmEndLiveView] in
             
             self.stupidTimer?.invalidate()
-            self.tellServerToClose()
             self.session?.destroy()
-
+            PPCloseMyAbandonedLiveRoom()
+            
             confirmEndLiveView.dismiss()
             let stripperEndLiveView = PPLiveFinishedStripperView()
             
@@ -121,27 +120,8 @@ class PPMyLiveViewController: UIViewController {
     }
     
     
-    func tellServerToClose() {
-        
-        guard  let liveModelIDString = liveModelIDString else{
-            return
-        }
-        PPNetworkManager.postRequest("stream/finish", parameters: ["streamId":liveModelIDString]).responseJSON { (response) in
-            switch response.result {
-            case .Success(let json):
-                let JSON = json as? NSDictionary
-                if let errorCode = JSON?.objectForKey("errCode") as? Int  {
-                    if errorCode != 0 {
-                        print("服务器还没接到关闭通知error")
-                    } else {
-                        print("服务器成功接到关闭通知ok")
-                    }
-                }
-            case .Failure:
-                break
-            }
-        }
-    }
+ 
+    
     func applicationWillEnterForeground() {
         session?.startWithCompleted { (started) in
             
@@ -179,13 +159,15 @@ class PPMyLiveViewController: UIViewController {
                         guard let data = JSON.objectForKey("data") else{
                             return
                         }
-                        self.liveModelIDString = data.objectForKey("id") as? String
-                        
+                        self.streamIDString = data.objectForKey("id") as? String
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setObject(self.streamIDString, forKey: "StreamIDStringKey")
+
                         
                         RCIM.sharedRCIM().receiveMessageDelegate = self
                         
                         
-                        if let streamID = self.liveModelIDString  {
+                        if let streamID = self.streamIDString  {
                             RCIMClient.sharedRCIMClient().joinChatRoom(streamID, messageCount: 10, success: {
                                 
                                 dispatch_async(dispatch_get_main_queue(),{
@@ -524,6 +506,10 @@ extension PPMyLiveViewController:RCIMReceiveMessageDelegate ,PPTextInputBarDeleg
 
     }
     
+    func onRCIMCustomAlertSound(message: RCMessage!) -> Bool {
+        return false
+    }
+    
   
     
     func textInputBar(textInputBar: PPTextInputBar, didTapSendButtonWithText text: String?) {
@@ -536,7 +522,7 @@ extension PPMyLiveViewController:RCIMReceiveMessageDelegate ,PPTextInputBarDeleg
         commentSourceQueue.enqueue(commentModel)
         
         
-        if let streamID = liveModelIDString  {
+        if let streamID = streamIDString  {
             let msgContent = RCTextMessage()
             let content = "\(PPUserModel.shareInstance.name)seperateOOXX#666\(text ?? "")"
             msgContent.content = content

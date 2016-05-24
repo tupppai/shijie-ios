@@ -28,7 +28,7 @@
 		F468A60E1CEB3222000F1610 /* PPFriendSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A60A1CEB3222000F1610 /* PPFriendSegmentedControlView.swift */; };
 		F468A60F1CEB3222000F1610 /* PPFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A60B1CEB3222000F1610 /* PPFriendViewController.swift */; };
 		F468A6131CEB3233000F1610 /* PPBindCellphoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6111CEB3233000F1610 /* PPBindCellphoneViewController.swift */; };
-		F468A6141CEB3233000F1610 /* PPLoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6121CEB3233000F1610 /* PPLoginViewController2.swift */; };
+		F468A6141CEB3233000F1610 /* PPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6121CEB3233000F1610 /* PPLoginViewController.swift */; };
 		F468A6291CEB326D000F1610 /* PPSettingAboutAPPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6161CEB326D000F1610 /* PPSettingAboutAPPViewController.swift */; };
 		F468A62A1CEB326D000F1610 /* PPSettingBlackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6171CEB326D000F1610 /* PPSettingBlackListViewController.swift */; };
 		F468A62B1CEB326D000F1610 /* PPSettingComplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6181CEB326D000F1610 /* PPSettingComplainViewController.swift */; };
@@ -47,6 +47,10 @@
 		F468A6381CEB326D000F1610 /* PPUserDetailPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */; };
 		F468A6391CEB326D000F1610 /* PPUserDetailPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */; };
 		F468A63A1CEB326D000F1610 /* PPUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6281CEB326D000F1610 /* PPUserDetailView.swift */; };
+		F49C66FC1CF3F7A200416C4E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F49C66F11CF3F7A200416C4E /* .gitkeep */; };
+		F49C66FD1CF3F7A200416C4E /* PLCameraSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66F51CF3F7A200416C4E /* PLCameraSource.m */; };
+		F49C66FE1CF3F7A200416C4E /* PLCameraStreamingSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */; };
+		F49C66FF1CF3F7A200416C4E /* PLMicrophoneSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */; };
 		F4B45F6F1CF1F5AA00BB95BC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */; };
 		F4BDFAF61CE5AE4800D2A5A0 /* seeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFAF51CE5AE4800D2A5A0 /* seeTests.swift */; };
 		F4BDFB881CE5AE9E00D2A5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB011CE5AE9E00D2A5A0 /* AppDelegate.swift */; };
@@ -92,7 +96,6 @@
 		F4BDFBB31CE5AE9E00D2A5A0 /* PPLiveTableViewCell_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB321CE5AE9E00D2A5A0 /* PPLiveTableViewCell_old.swift */; };
 		F4BDFBB41CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB331CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift */; };
 		F4BDFBB51CE5AE9E00D2A5A0 /* PPLiveWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB341CE5AE9E00D2A5A0 /* PPLiveWatchViewController.swift */; };
-		F4BDFBB61CE5AE9E00D2A5A0 /* PPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB351CE5AE9E00D2A5A0 /* PPLoginViewController.swift */; };
 		F4BDFBB71CE5AE9E00D2A5A0 /* PPLovingHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB361CE5AE9E00D2A5A0 /* PPLovingHeartView.swift */; };
 		F4BDFBB81CE5AE9E00D2A5A0 /* PPMyLiveControlCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB371CE5AE9E00D2A5A0 /* PPMyLiveControlCollectionView.swift */; };
 		F4BDFBB91CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB381CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift */; };
@@ -165,14 +168,6 @@
 		F4BDFC001CE5AE9E00D2A5A0 /* PPGiftShowsAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFB871CE5AE9E00D2A5A0 /* PPGiftShowsAnimateView.swift */; };
 		F4BDFC061CE5B3AE00D2A5A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFC051CE5B3AE00D2A5A0 /* Info.plist */; };
 		F4BDFC131CE5B92200D2A5A0 /* PPLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC121CE5B92200D2A5A0 /* PPLiveModel.swift */; };
-		F4BDFC211CE5C7B100D2A5A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F4BDFC161CE5C7B100D2A5A0 /* LICENSE */; };
-		F4BDFC221CE5C7B100D2A5A0 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC191CE5C7B100D2A5A0 /* BallView.swift */; };
-		F4BDFC231CE5C7B100D2A5A0 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1A1CE5C7B100D2A5A0 /* BounceView.swift */; };
-		F4BDFC241CE5C7B100D2A5A0 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1C1CE5C7B100D2A5A0 /* CGRectEx.swift */; };
-		F4BDFC251CE5C7B100D2A5A0 /* NSTimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1D1CE5C7B100D2A5A0 /* NSTimerEx.swift */; };
-		F4BDFC261CE5C7B100D2A5A0 /* PullToBounceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1E1CE5C7B100D2A5A0 /* PullToBounceWrapper.swift */; };
-		F4BDFC271CE5C7B100D2A5A0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC1F1CE5C7B100D2A5A0 /* WaveView.swift */; };
-		F4BDFC281CE5C7B100D2A5A0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F4BDFC201CE5C7B100D2A5A0 /* README.md */; };
 		F4C498121CEC4116008A2325 /* PPLiveCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */; };
 		F4C498371CEDA622008A2325 /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C498341CEDA622008A2325 /* BarItem.m */; };
 		F4C498381CEDA622008A2325 /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C498361CEDA622008A2325 /* CBStoreHouseRefreshControl.m */; };
@@ -214,7 +209,7 @@
 		F468A60A1CEB3222000F1610 /* PPFriendSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFriendSegmentedControlView.swift; sourceTree = "<group>"; };
 		F468A60B1CEB3222000F1610 /* PPFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFriendViewController.swift; sourceTree = "<group>"; };
 		F468A6111CEB3233000F1610 /* PPBindCellphoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBindCellphoneViewController.swift; sourceTree = "<group>"; };
-		F468A6121CEB3233000F1610 /* PPLoginViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLoginViewController2.swift; sourceTree = "<group>"; };
+		F468A6121CEB3233000F1610 /* PPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLoginViewController.swift; sourceTree = "<group>"; };
 		F468A6161CEB326D000F1610 /* PPSettingAboutAPPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSettingAboutAPPViewController.swift; sourceTree = "<group>"; };
 		F468A6171CEB326D000F1610 /* PPSettingBlackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSettingBlackListViewController.swift; sourceTree = "<group>"; };
 		F468A6181CEB326D000F1610 /* PPSettingComplainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSettingComplainViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +228,17 @@
 		F468A6261CEB326D000F1610 /* PPUserDetailPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailPanelView.swift; sourceTree = "<group>"; };
 		F468A6271CEB326D000F1610 /* PPUserDetailPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUserDetailPanelView.xib; sourceTree = "<group>"; };
 		F468A6281CEB326D000F1610 /* PPUserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPUserDetailView.swift; sourceTree = "<group>"; };
+		F49C66F11CF3F7A200416C4E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		F49C66F21CF3F7A200416C4E /* PLAACTypeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAACTypeDefines.h; sourceTree = "<group>"; };
+		F49C66F31CF3F7A200416C4E /* PLCameraMacroDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraMacroDefines.h; sourceTree = "<group>"; };
+		F49C66F41CF3F7A200416C4E /* PLCameraSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraSource.h; sourceTree = "<group>"; };
+		F49C66F51CF3F7A200416C4E /* PLCameraSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCameraSource.m; sourceTree = "<group>"; };
+		F49C66F61CF3F7A200416C4E /* PLCameraStreamingKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraStreamingKit.h; sourceTree = "<group>"; };
+		F49C66F71CF3F7A200416C4E /* PLCameraStreamingSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCameraStreamingSession.h; sourceTree = "<group>"; };
+		F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLCameraStreamingSession.m; sourceTree = "<group>"; };
+		F49C66F91CF3F7A200416C4E /* PLMicrophoneSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMicrophoneSource.h; sourceTree = "<group>"; };
+		F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMicrophoneSource.m; sourceTree = "<group>"; };
+		F49C66FB1CF3F7A200416C4E /* PLSourceAccessProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSourceAccessProtocol.h; sourceTree = "<group>"; };
 		F4B45F6E1CF1F5AA00BB95BC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		F4BDFADD1CE5AE4800D2A5A0 /* see.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = see.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BDFAF11CE5AE4800D2A5A0 /* seeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +290,6 @@
 		F4BDFB321CE5AE9E00D2A5A0 /* PPLiveTableViewCell_old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPLiveTableViewCell_old.swift; path = live/PPLiveTableViewCell_old.swift; sourceTree = "<group>"; };
 		F4BDFB331CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPLiveWatchControlCollectionView.swift; path = live/PPLiveWatchControlCollectionView.swift; sourceTree = "<group>"; };
 		F4BDFB341CE5AE9E00D2A5A0 /* PPLiveWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPLiveWatchViewController.swift; path = live/PPLiveWatchViewController.swift; sourceTree = "<group>"; };
-		F4BDFB351CE5AE9E00D2A5A0 /* PPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPLoginViewController.swift; path = live/PPLoginViewController.swift; sourceTree = "<group>"; };
 		F4BDFB361CE5AE9E00D2A5A0 /* PPLovingHeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPLovingHeartView.swift; path = live/PPLovingHeartView.swift; sourceTree = "<group>"; };
 		F4BDFB371CE5AE9E00D2A5A0 /* PPMyLiveControlCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPMyLiveControlCollectionView.swift; path = live/PPMyLiveControlCollectionView.swift; sourceTree = "<group>"; };
 		F4BDFB381CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPMyLiveViewController.swift; path = live/PPMyLiveViewController.swift; sourceTree = "<group>"; };
@@ -359,14 +364,6 @@
 		F4BDFC021CE5B2C600D2A5A0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F4BDFC051CE5B3AE00D2A5A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4BDFC121CE5B92200D2A5A0 /* PPLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveModel.swift; sourceTree = "<group>"; };
-		F4BDFC161CE5C7B100D2A5A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F4BDFC191CE5C7B100D2A5A0 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
-		F4BDFC1A1CE5C7B100D2A5A0 /* BounceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
-		F4BDFC1C1CE5C7B100D2A5A0 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
-		F4BDFC1D1CE5C7B100D2A5A0 /* NSTimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerEx.swift; sourceTree = "<group>"; };
-		F4BDFC1E1CE5C7B100D2A5A0 /* PullToBounceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceWrapper.swift; sourceTree = "<group>"; };
-		F4BDFC1F1CE5C7B100D2A5A0 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
-		F4BDFC201CE5C7B100D2A5A0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLiveCommentModel.swift; sourceTree = "<group>"; };
 		F4C498331CEDA622008A2325 /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
 		F4C498341CEDA622008A2325 /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
@@ -461,7 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				F468A6111CEB3233000F1610 /* PPBindCellphoneViewController.swift */,
-				F468A6121CEB3233000F1610 /* PPLoginViewController2.swift */,
+				F468A6121CEB3233000F1610 /* PPLoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -497,6 +494,24 @@
 				F468A6281CEB326D000F1610 /* PPUserDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F49C66F01CF3F7A200416C4E /* PLCameraStreamingKit1.63 */ = {
+			isa = PBXGroup;
+			children = (
+				F49C66F11CF3F7A200416C4E /* .gitkeep */,
+				F49C66F21CF3F7A200416C4E /* PLAACTypeDefines.h */,
+				F49C66F31CF3F7A200416C4E /* PLCameraMacroDefines.h */,
+				F49C66F41CF3F7A200416C4E /* PLCameraSource.h */,
+				F49C66F51CF3F7A200416C4E /* PLCameraSource.m */,
+				F49C66F61CF3F7A200416C4E /* PLCameraStreamingKit.h */,
+				F49C66F71CF3F7A200416C4E /* PLCameraStreamingSession.h */,
+				F49C66F81CF3F7A200416C4E /* PLCameraStreamingSession.m */,
+				F49C66F91CF3F7A200416C4E /* PLMicrophoneSource.h */,
+				F49C66FA1CF3F7A200416C4E /* PLMicrophoneSource.m */,
+				F49C66FB1CF3F7A200416C4E /* PLSourceAccessProtocol.h */,
+			);
+			path = PLCameraStreamingKit1.63;
 			sourceTree = "<group>";
 		};
 		F4BDFAD41CE5AE4800D2A5A0 = {
@@ -734,8 +749,8 @@
 		F4BDFC0C1CE5B46700D2A5A0 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F49C66F01CF3F7A200416C4E /* PLCameraStreamingKit1.63 */,
 				F4C498321CEDA622008A2325 /* CBStorePullToRefresh */,
-				F4BDFC151CE5C7B100D2A5A0 /* PullToBounce */,
 				F4BDFB091CE5AE9E00D2A5A0 /* LTNavigationBar */,
 				F4BDFB0C1CE5AE9E00D2A5A0 /* MonkeyKing */,
 				F4BDFB031CE5AE9E00D2A5A0 /* Config.swift */,
@@ -824,50 +839,10 @@
 				F4BDFB291CE5AE9E00D2A5A0 /* PPLaunchLiveViewController.swift */,
 				F4BDFB2D1CE5AE9E00D2A5A0 /* PPLiveListViewController.swift */,
 				F4BDFB341CE5AE9E00D2A5A0 /* PPLiveWatchViewController.swift */,
-				F4BDFB351CE5AE9E00D2A5A0 /* PPLoginViewController.swift */,
 				F4BDFB381CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift */,
 				F4BDFB4F1CE5AE9E00D2A5A0 /* PPVideoCaptureViewController.swift */,
 			);
 			name = viewcontroller;
-			sourceTree = "<group>";
-		};
-		F4BDFC151CE5C7B100D2A5A0 /* PullToBounce */ = {
-			isa = PBXGroup;
-			children = (
-				F4BDFC161CE5C7B100D2A5A0 /* LICENSE */,
-				F4BDFC171CE5C7B100D2A5A0 /* PullToBounce */,
-				F4BDFC201CE5C7B100D2A5A0 /* README.md */,
-			);
-			path = PullToBounce;
-			sourceTree = "<group>";
-		};
-		F4BDFC171CE5C7B100D2A5A0 /* PullToBounce */ = {
-			isa = PBXGroup;
-			children = (
-				F4BDFC181CE5C7B100D2A5A0 /* Source */,
-			);
-			path = PullToBounce;
-			sourceTree = "<group>";
-		};
-		F4BDFC181CE5C7B100D2A5A0 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				F4BDFC191CE5C7B100D2A5A0 /* BallView.swift */,
-				F4BDFC1A1CE5C7B100D2A5A0 /* BounceView.swift */,
-				F4BDFC1B1CE5C7B100D2A5A0 /* helper */,
-				F4BDFC1E1CE5C7B100D2A5A0 /* PullToBounceWrapper.swift */,
-				F4BDFC1F1CE5C7B100D2A5A0 /* WaveView.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		F4BDFC1B1CE5C7B100D2A5A0 /* helper */ = {
-			isa = PBXGroup;
-			children = (
-				F4BDFC1C1CE5C7B100D2A5A0 /* CGRectEx.swift */,
-				F4BDFC1D1CE5C7B100D2A5A0 /* NSTimerEx.swift */,
-			);
-			path = helper;
 			sourceTree = "<group>";
 		};
 		F4C498321CEDA622008A2325 /* CBStorePullToRefresh */ = {
@@ -980,12 +955,12 @@
 				F4BDFBA01CE5AE9E00D2A5A0 /* PPGiftCell.xib in Resources */,
 				F468A6391CEB326D000F1610 /* PPUserDetailPanelView.xib in Resources */,
 				9010F8F31CEDBF1300988FE0 /* VIP_Privilege@3x.png in Resources */,
-				F4BDFC211CE5C7B100D2A5A0 /* LICENSE in Resources */,
 				F4BDFBA61CE5AE9E00D2A5A0 /* PPGiftViewToolBar.xib in Resources */,
 				F4BDFBFD1CE5AE9E00D2A5A0 /* UserHeaderView.xib in Resources */,
 				F4BDFBEF1CE5AE9E00D2A5A0 /* PPMeTableViewController.xib in Resources */,
 				F4C4983A1CEDA79A008A2325 /* storehouserefresh.plist in Resources */,
 				F4BDFBF91CE5AE9E00D2A5A0 /* RollContributionListView.xib in Resources */,
+				F49C66FC1CF3F7A200416C4E /* .gitkeep in Resources */,
 				F4BDFC061CE5B3AE00D2A5A0 /* Info.plist in Resources */,
 				F4BDFBFB1CE5AE9E00D2A5A0 /* SettingTableViewCell.xib in Resources */,
 				F4BDFB8B1CE5AE9E00D2A5A0 /* demo.png in Resources */,
@@ -1072,9 +1047,8 @@
 				F4BDFBB81CE5AE9E00D2A5A0 /* PPMyLiveControlCollectionView.swift in Sources */,
 				9010F8F51CEDBF9E00988FE0 /* PPVIPVerificationViewController.swift in Sources */,
 				F4BDFB901CE5AE9E00D2A5A0 /* AnyActivity.swift in Sources */,
-				F468A6141CEB3233000F1610 /* PPLoginViewController2.swift in Sources */,
+				F468A6141CEB3233000F1610 /* PPLoginViewController.swift in Sources */,
 				F4BDFB961CE5AE9E00D2A5A0 /* PPAlgorithm.swift in Sources */,
-				F4BDFC271CE5C7B100D2A5A0 /* WaveView.swift in Sources */,
 				F4BDFB981CE5AE9E00D2A5A0 /* PPAvatarCollectionCell.swift in Sources */,
 				F468A60F1CEB3222000F1610 /* PPFriendViewController.swift in Sources */,
 				F4BDFBA21CE5AE9E00D2A5A0 /* PPGiftModel.swift in Sources */,
@@ -1091,6 +1065,7 @@
 				F4BDFBC11CE5AE9E00D2A5A0 /* PPRoundButton.swift in Sources */,
 				F4BDFBD01CE5AE9E00D2A5A0 /* PPVideoCaptureViewController.swift in Sources */,
 				F4BDFBA81CE5AE9E00D2A5A0 /* PPHostReceivedCoinView.swift in Sources */,
+				F49C66FE1CF3F7A200416C4E /* PLCameraStreamingSession.m in Sources */,
 				F4BDFBC21CE5AE9E00D2A5A0 /* PPRoundImageView.swift in Sources */,
 				F4C498381CEDA622008A2325 /* CBStoreHouseRefreshControl.m in Sources */,
 				F4BDFBC31CE5AE9E00D2A5A0 /* PPRoundView.swift in Sources */,
@@ -1119,13 +1094,10 @@
 				F468A62C1CEB326D000F1610 /* PPSettingEditUserInfoViewController.swift in Sources */,
 				F4BDFBE11CE5AE9E00D2A5A0 /* Misc.swift in Sources */,
 				F4BDFBCA1CE5AE9E00D2A5A0 /* PPTextInputBar.swift in Sources */,
-				F4BDFC261CE5C7B100D2A5A0 /* PullToBounceWrapper.swift in Sources */,
 				F468A6361CEB326D000F1610 /* PPNotificationSwitchTableViewCell.swift in Sources */,
 				F4BDFBB21CE5AE9E00D2A5A0 /* PPLiveStatisticsView.swift in Sources */,
 				F4BDFB931CE5AE9E00D2A5A0 /* Networking.swift in Sources */,
 				F4BDFB921CE5AE9E00D2A5A0 /* MonkeyKing.swift in Sources */,
-				F4BDFC241CE5C7B100D2A5A0 /* CGRectEx.swift in Sources */,
-				F4BDFBB61CE5AE9E00D2A5A0 /* PPLoginViewController.swift in Sources */,
 				F4BDFB9A1CE5AE9E00D2A5A0 /* PPCoinsRankView.swift in Sources */,
 				F4BDFB991CE5AE9E00D2A5A0 /* PPCoinsContributionViewController.swift in Sources */,
 				907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */,
@@ -1133,6 +1105,7 @@
 				F4BDFBA41CE5AE9E00D2A5A0 /* PPGiftView.swift in Sources */,
 				F4BDFBFE1CE5AE9E00D2A5A0 /* UserHeaderView2.swift in Sources */,
 				909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */,
+				F49C66FF1CF3F7A200416C4E /* PLMicrophoneSource.m in Sources */,
 				F4BDFBDA1CE5AE9E00D2A5A0 /* DesignableTextView.swift in Sources */,
 				F468A62D1CEB326D000F1610 /* PPSettingRemoteNotificationViewController.swift in Sources */,
 				9069CF251CEEFD26008A069E /* PPVIPCommitSuccessPanelView.swift in Sources */,
@@ -1144,8 +1117,6 @@
 				F4BDFBE91CE5AE9E00D2A5A0 /* SpringTextView.swift in Sources */,
 				F4BDFBD31CE5AE9E00D2A5A0 /* AutoTextView.swift in Sources */,
 				F4BDFBE41CE5AE9E00D2A5A0 /* SpringAnimation.swift in Sources */,
-				F4BDFC231CE5C7B100D2A5A0 /* BounceView.swift in Sources */,
-				F4BDFC281CE5C7B100D2A5A0 /* README.md in Sources */,
 				F4BDFBEE1CE5AE9E00D2A5A0 /* PPMeTableViewController.swift in Sources */,
 				F468A62F1CEB326D000F1610 /* PPSettingViewController.swift in Sources */,
 				F4BDFBE21CE5AE9E00D2A5A0 /* SoundPlayer.swift in Sources */,
@@ -1154,6 +1125,7 @@
 				F4BDFBDC1CE5AE9E00D2A5A0 /* ImageLoader.swift in Sources */,
 				F4BDFBB91CE5AE9E00D2A5A0 /* PPMyLiveViewController.swift in Sources */,
 				F4BDFBD11CE5AE9E00D2A5A0 /* AsyncButton.swift in Sources */,
+				F49C66FD1CF3F7A200416C4E /* PLCameraSource.m in Sources */,
 				F4BDFBB11CE5AE9E00D2A5A0 /* PPLivesTableViewCell.swift in Sources */,
 				F4BDFBE51CE5AE9E00D2A5A0 /* SpringButton.swift in Sources */,
 				F468A6371CEB326D000F1610 /* PPNotificationSwitchTableViewCell_banUser.swift in Sources */,
@@ -1173,7 +1145,6 @@
 				F4BDFBC81CE5AE9E00D2A5A0 /* PPShareView.swift in Sources */,
 				F4BDFB9E1CE5AE9E00D2A5A0 /* PPExtension.swift in Sources */,
 				F4BDFBFA1CE5AE9E00D2A5A0 /* SettingTableViewCell.swift in Sources */,
-				F4BDFC251CE5C7B100D2A5A0 /* NSTimerEx.swift in Sources */,
 				902838601CEFF04F0068C722 /* PPMyLevelBadgeView.swift in Sources */,
 				F4BDFBF81CE5AE9E00D2A5A0 /* RollContributionListView.swift in Sources */,
 				F4BDFBAA1CE5AE9E00D2A5A0 /* PPLaunchLiveViewController.swift in Sources */,
@@ -1190,7 +1161,6 @@
 				F4BDFBDB1CE5AE9E00D2A5A0 /* DesignableView.swift in Sources */,
 				F4BDFBAE1CE5AE9E00D2A5A0 /* PPLiveListViewController.swift in Sources */,
 				F4BDFBB41CE5AE9E00D2A5A0 /* PPLiveWatchControlCollectionView.swift in Sources */,
-				F4BDFC221CE5C7B100D2A5A0 /* BallView.swift in Sources */,
 				906913F81CEF3BD000300E02 /* PPMyLevelDescView.swift in Sources */,
 				F4BDFBA91CE5AE9E00D2A5A0 /* PPHostView.swift in Sources */,
 				F4BDFC001CE5AE9E00D2A5A0 /* PPGiftShowsAnimateView.swift in Sources */,
@@ -1380,8 +1350,6 @@
 					"-framework",
 					"\"PKHUD\"",
 					"-framework",
-					"\"PLCameraStreamingKit\"",
-					"-framework",
 					"\"QuartzCore\"",
 					"-framework",
 					"\"Realm\"",
@@ -1485,8 +1453,6 @@
 					"\"OpenGLES\"",
 					"-framework",
 					"\"PKHUD\"",
-					"-framework",
-					"\"PLCameraStreamingKit\"",
 					"-framework",
 					"\"QuartzCore\"",
 					"-framework",

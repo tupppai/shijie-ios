@@ -27,6 +27,7 @@ class PPLaunchLiveViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         setupConstraints()
+        PPCloseMyAbandonedLiveRoom()
     }
     
     override func viewWillAppear(animated: Bool) {

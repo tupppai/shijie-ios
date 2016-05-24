@@ -30,13 +30,10 @@ class PPLiveListViewController: UIViewController {
         tableView.alwaysBounceVertical = true
 
         operateLiveModelSourceFromRemote()
-
     }
     
     
     func setupRefreshControl() {
-//        refreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: #selector(PPLiveListViewController.operateLiveModelSourceFromRemote), plist: "storehouserefresh")
-        
         refreshControl = CBStoreHouseRefreshControl.attachToScrollView(tableView, target: self, refreshAction: #selector(PPLiveListViewController.operateLiveModelSourceFromRemote), plist: "storehouserefresh", color: UIColor.blackColor(), lineWidth: 1, dropHeight: 80, scale: 1, horizontalRandomness: 100, reverseLoadingAnimation: true, internalAnimationFactor: 1.0)
     }
     
@@ -59,8 +56,6 @@ class PPLiveListViewController: UIViewController {
                             return
                         }
                     }
-                    
-//                    self.tableViewWrapper?.stopLoadingAnimation()
                     
                     self.liveModelSourceArray.removeAll()
                     
@@ -101,29 +96,6 @@ class PPLiveListViewController: UIViewController {
         }
 
     }
-//    func setupPullToBounceView() {
-//        
-//        let bodyView = UIView()
-//        bodyView.frame = self.view.frame
-////        bodyView.frame.y += 20 + 44
-//        self.view.addSubview(bodyView)
-//        
-//        bodyView.snp_makeConstraints { (make) -> Void in
-//            make.bottom.leading.trailing.equalTo(view)
-//            make.top.equalTo(navigationBar.snp_bottom)
-//        }
-//        
-//        
-//        
-//        tableViewWrapper = PullToBounceWrapper(scrollView: tableView)
-//        bodyView.addSubview(tableViewWrapper!)
-//        
-//        tableViewWrapper?.didPullToRefresh = {
-//            self.operateLiveModelSourceFromRemote()
-//        }
-//        
-//        
-//    }
    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true

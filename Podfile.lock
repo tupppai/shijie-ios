@@ -28,7 +28,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4.0)
-  - pili-librtmp
   - PKHUD
   - PLPlayerKit (~> 2.1.3)
   - PLStreamingKit

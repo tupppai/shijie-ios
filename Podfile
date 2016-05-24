@@ -12,6 +12,5 @@ pod 'PLPlayerKit', '~> 2.1.3'
 pod 'PKHUD'
 pod 'RongCloudIMKit', '~> 2.4.11'
 pod 'PLStreamingKit'
-pod 'pili-librtmp'
 pod 'SDWebImage', '~>3.7.6'
 #end

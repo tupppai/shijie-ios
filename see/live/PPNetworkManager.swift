@@ -155,3 +155,30 @@ public func PPConnectRCIM(retryTimes:Int) {
     }
 }
 
+
+public func PPCloseMyAbandonedLiveRoom() {
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+    guard let streamIDString = defaults.objectForKey("StreamIDStringKey") else{
+        return
+    }
+   
+    PPNetworkManager.postRequest("stream/finish", parameters: ["streamId":streamIDString]).responseJSON { (response) in
+        switch response.result {
+        case .Success(let json):
+            let JSON = json as? NSDictionary
+            if let errorCode = JSON?.objectForKey("errCode") as? Int  {
+                if errorCode != 0 {
+                    print("服务器还没接到关闭通知error")
+                } else {
+                    print("服务器成功接到关闭通知ok")
+                    defaults.setObject(nil, forKey: "StreamIDStringKey")
+                }
+            }
+        case .Failure:
+            break
+        }
+    }
+}
+
+

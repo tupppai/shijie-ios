@@ -72,7 +72,7 @@ class PPLiveWatchViewController: UIViewController {
             return
         }
         
-        RCIMClient.sharedRCIMClient().joinChatRoom(streamID, messageCount: 10, success: {
+        RCIMClient.sharedRCIMClient().joinChatRoom("z1.shijie-ios.5739515fd409d266e0019d0b", messageCount: 10, success: {
             
             dispatch_async(dispatch_get_main_queue(),{
                 print("成功加入聊天室 ID \(streamID)")
@@ -558,23 +558,25 @@ extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPl
 extension PPLiveWatchViewController:RCIMReceiveMessageDelegate,PPTextInputBarDelegate {
     
     func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
-
-
-        if message.content .isKindOfClass(RCTextMessage.classForCoder()) {
-            let textMsg = message.content as! RCTextMessage
-            
-            let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
-            let sendername = textArray.first
-            var content = ""
-            if textArray.count > 1 {
-                content = textArray[1]
+        
+        
+        if let content = message.content {
+            if content.isKindOfClass(RCTextMessage.classForCoder()) {
+                let textMsg = message.content as! RCTextMessage
+                
+                let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
+                let sendername = textArray.first
+                var content = ""
+                if textArray.count > 1 {
+                    content = textArray[1]
+                }
+                
+                let commentModel = PPLiveCommentModel()
+                commentModel.content = content
+                commentModel.senderId = message.senderUserId
+                commentModel.senderName = sendername
+                commentSourceQueue.enqueue(commentModel)
             }
-            
-            let commentModel = PPLiveCommentModel()
-            commentModel.content = content
-            commentModel.senderId = message.senderUserId
-            commentModel.senderName = sendername
-            commentSourceQueue.enqueue(commentModel)
         }
         
         
@@ -597,7 +599,7 @@ extension PPLiveWatchViewController:RCIMReceiveMessageDelegate,PPTextInputBarDel
         let content = "\(PPUserModel.shareInstance.name)seperateOOXX#666\(text ?? "")"
         msgContent.content = content
         
-        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: streamID, content: msgContent, pushContent: text, pushData: "", success: { (times) in
+        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: "z1.shijie-ios.5739515fd409d266e0019d0b", content: msgContent, pushContent: text, pushData: "", success: { (times) in
             print("sendMessage block times -> \(times)")
         }) { (errorCode, times) in
             print("sendMessage errorCode \(errorCode) times  \(times)")

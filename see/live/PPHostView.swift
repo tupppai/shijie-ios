@@ -25,6 +25,7 @@ class PPHostView: UIView {
         avatarButton = PPRoundButton(type: .Custom)
 //        avatarButton.setBackgroundImage(UIImage(named: "demoavatar.jpg"), forState: .Normal)
         avatarButton.setImage(UIImage(named: "demoavatar.jpg"), forState: .Normal)
+        avatarButton.sd_setImageWithURL(NSURL(string: PPUserModel.shareInstance.avatarUrl), forState: .Normal)
         avatarButton.backgroundColor = UIColor.greenColor()
         
         assistLabel = UILabel()

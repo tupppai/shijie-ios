@@ -72,7 +72,7 @@ class PPLiveWatchViewController: UIViewController {
             return
         }
         
-        RCIMClient.sharedRCIMClient().joinChatRoom("z1.shijie-ios.5739515fd409d266e0019d0b", messageCount: 10, success: {
+        RCIMClient.sharedRCIMClient().joinChatRoom(streamID, messageCount: 10, success: {
             
             dispatch_async(dispatch_get_main_queue(),{
                 print("成功加入聊天室 ID \(streamID)")
@@ -599,7 +599,7 @@ extension PPLiveWatchViewController:RCIMReceiveMessageDelegate,PPTextInputBarDel
         let content = "\(PPUserModel.shareInstance.name)seperateOOXX#666\(text ?? "")"
         msgContent.content = content
         
-        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: "z1.shijie-ios.5739515fd409d266e0019d0b", content: msgContent, pushContent: text, pushData: "", success: { (times) in
+        RCIMClient.sharedRCIMClient().sendMessage(.ConversationType_CHATROOM, targetId: streamID, content: msgContent, pushContent: text, pushData: "", success: { (times) in
             print("sendMessage block times -> \(times)")
         }) { (errorCode, times) in
             print("sendMessage errorCode \(errorCode) times  \(times)")

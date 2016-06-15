@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupLoginOrConnectRCIM() {
         if PPUserModel.shareInstance.login == false {
-            self.tabBarController.presentViewController(PPLoginViewController(), animated: false, completion: nil)
+//            self.tabBarController.presentViewController(PPLoginViewController(), animated: false, completion: nil)
         } else {
             PPConnectRCIM(10)
         }

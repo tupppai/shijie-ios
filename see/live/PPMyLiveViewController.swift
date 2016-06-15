@@ -33,7 +33,10 @@ class PPMyLiveViewController: UIViewController {
     var previewView:UIView!
     var session:PLCameraStreamingSession?
     var stupidTimer:NSTimer?
-
+    var memberRefreshTimer:NSTimer?
+    
+    var memberSource = [PPFriendModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +49,41 @@ class PPMyLiveViewController: UIViewController {
         setupNotifications()
         setupRTMPPushSession()
         setupCommentGenerator()
+        
     }
     
+    func setupRoomMemberGenerator() {
+        memberRefreshTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(PPMyLiveViewController.getMembers), userInfo: nil, repeats: true)
+    }
+    
+    func getMembers() {
+        if let streamIDString = self.streamIDString {
+            PPNetworkManager.postRequest("im/get-users", parameters: ["id":streamIDString]).responseJSON { (response) in
+                switch response.result {
+                case .Success(let JSON):
+                    guard let data = JSON.objectForKey("data") as? NSArray else {
+                        return
+                    }
+                    
+                    self.memberSource .removeAll()
+                    for dic in data {
+                        let friend = PPFriendModel()
+                        friend.avatarUrl = dic.objectForKey("avatar") as? String ?? ""
+                        friend.genderType = dic.objectForKey("gender") as? Int ?? 1
+                        friend.ID = dic.objectForKey("id") as? Int ?? 0
+                        friend.name = dic.objectForKey("nickname") as? String ?? ""
+                        self.memberSource.append(friend)
+                    }
+                    
+                    self.avatarCollectionView.reloadData()
+                    break
+                case .Failure:
+                    break
+                }
+            }
 
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,6 +130,7 @@ class PPMyLiveViewController: UIViewController {
         confirmEndLiveView.dismissLiveClosure = {
             [unowned confirmEndLiveView] in
             
+            self.memberRefreshTimer?.invalidate()
             self.stupidTimer?.invalidate()
             self.session?.destroy()
             PPCloseMyAbandonedLiveRoom()
@@ -163,7 +199,7 @@ class PPMyLiveViewController: UIViewController {
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(self.streamIDString, forKey: "StreamIDStringKey")
 
-                        
+                        self.getMembers()
                         RCIM.sharedRCIM().receiveMessageDelegate = self
                         
                         
@@ -359,10 +395,11 @@ extension PPMyLiveViewController : UICollectionViewDataSource,UICollectionViewDe
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:PPAvatarCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(PPAvatarCollectionCell), forIndexPath: indexPath) as! PPAvatarCollectionCell
+        cell.injectSource(memberSource[indexPath.row])
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return memberSource.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
@@ -487,21 +524,24 @@ extension PPMyLiveViewController:RCIMReceiveMessageDelegate ,PPTextInputBarDeleg
     
     func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
      
-        if message.content .isKindOfClass(RCTextMessage.classForCoder()) {
-            let textMsg = message.content as! RCTextMessage
-            
-            let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
-            let sendername = textArray.first
-            var content = ""
-            if textArray.count > 1 {
-                content = textArray[1]
+        print("message \(message)");
+        if let content = message.content {
+            if content.isKindOfClass(RCTextMessage.classForCoder()) {
+                let textMsg = message.content as! RCTextMessage
+                
+                let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
+                let sendername = textArray.first
+                var content = ""
+                if textArray.count > 1 {
+                    content = textArray[1]
+                }
+                
+                let commentModel = PPLiveCommentModel()
+                commentModel.content = content
+                commentModel.senderId = message.senderUserId
+                commentModel.senderName = sendername
+                commentSourceQueue.enqueue(commentModel)
             }
-            
-            let commentModel = PPLiveCommentModel()
-            commentModel.content = content
-            commentModel.senderId = message.senderUserId
-            commentModel.senderName = sendername
-            commentSourceQueue.enqueue(commentModel)
         }
 
     }

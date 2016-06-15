@@ -22,6 +22,7 @@
 		907700441CF056AB00101057 /* PPProfitStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907700431CF056AB00101057 /* PPProfitStatisticsView.swift */; };
 		909E79AC1CED94E500C633D0 /* PPFakeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909E79AB1CED94E500C633D0 /* PPFakeNavigationBar.swift */; };
 		CD532F59BC9530D0F967BA2F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9998D5B07AB4D28F71735B0 /* Pods.framework */; };
+		F4175F351CF57D5200ED66A3 /* PPFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4175F341CF57D5200ED66A3 /* PPFriendModel.swift */; };
 		F468A6061CEB31D9000F1610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F468A6051CEB31D9000F1610 /* Assets.xcassets */; };
 		F468A60C1CEB3222000F1610 /* PPFriendActionToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6081CEB3222000F1610 /* PPFriendActionToolbar.swift */; };
 		F468A60D1CEB3222000F1610 /* PPFriendBroadcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F468A6091CEB3222000F1610 /* PPFriendBroadcastCollectionViewCell.swift */; };
@@ -203,6 +204,7 @@
 		96099B49EA247273875FD7B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D9D077C884BEBD896A9EF484 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9998D5B07AB4D28F71735B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4175F341CF57D5200ED66A3 /* PPFriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFriendModel.swift; sourceTree = "<group>"; };
 		F468A6051CEB31D9000F1610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F468A6081CEB3222000F1610 /* PPFriendActionToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFriendActionToolbar.swift; sourceTree = "<group>"; };
 		F468A6091CEB3222000F1610 /* PPFriendBroadcastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPFriendBroadcastCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				F4BDFB211CE5AE9E00D2A5A0 /* PPGiftModel.swift */,
 				F4BDFB4C1CE5AE9E00D2A5A0 /* PPUserModel_toremove.swift */,
 				F4C498111CEC4116008A2325 /* PPLiveCommentModel.swift */,
+				F4175F341CF57D5200ED66A3 /* PPFriendModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1071,6 +1074,7 @@
 				F4BDFBC31CE5AE9E00D2A5A0 /* PPRoundView.swift in Sources */,
 				F468A63A1CEB326D000F1610 /* PPUserDetailView.swift in Sources */,
 				F4BDFB951CE5AE9E00D2A5A0 /* SimpleNetworking.swift in Sources */,
+				F4175F351CF57D5200ED66A3 /* PPFriendModel.swift in Sources */,
 				F4BDFB9D1CE5AE9E00D2A5A0 /* PPConfirmEndLiveView.swift in Sources */,
 				F4BDFBA71CE5AE9E00D2A5A0 /* PPHeartFloatingView.swift in Sources */,
 				F4BDFBD51CE5AE9E00D2A5A0 /* DesignableButton.swift in Sources */,

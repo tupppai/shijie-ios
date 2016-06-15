@@ -10,7 +10,7 @@ import UIKit
 
 class PPAvatarCollectionCell: UICollectionViewCell {
     var imageView:PPRoundImageView!
-    
+    var friendModel:PPFriendModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +35,11 @@ class PPAvatarCollectionCell: UICollectionViewCell {
 //        imageView.layer.borderWidth = 2
         imageView.image = UIImage(named: "demoavatar.jpg")
         
+    }
+    
+    func injectSource(friendModel:PPFriendModel?) {
+        self.friendModel = friendModel
+        imageView.sd_setImageWithURL(NSURL(string: friendModel?.avatarUrl ?? ""))
     }
     
 

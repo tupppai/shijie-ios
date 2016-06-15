@@ -558,23 +558,25 @@ extension PPLiveWatchViewController: PPGiftViewDelegate,PPShareViewDelegate,PLPl
 extension PPLiveWatchViewController:RCIMReceiveMessageDelegate,PPTextInputBarDelegate {
     
     func onRCIMReceiveMessage(message: RCMessage!, left: Int32) {
-
-
-        if message.content .isKindOfClass(RCTextMessage.classForCoder()) {
-            let textMsg = message.content as! RCTextMessage
-            
-            let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
-            let sendername = textArray.first
-            var content = ""
-            if textArray.count > 1 {
-                content = textArray[1]
+        
+        
+        if let content = message.content {
+            if content.isKindOfClass(RCTextMessage.classForCoder()) {
+                let textMsg = message.content as! RCTextMessage
+                
+                let textArray = textMsg.content.componentsSeparatedByString("seperateOOXX#666")
+                let sendername = textArray.first
+                var content = ""
+                if textArray.count > 1 {
+                    content = textArray[1]
+                }
+                
+                let commentModel = PPLiveCommentModel()
+                commentModel.content = content
+                commentModel.senderId = message.senderUserId
+                commentModel.senderName = sendername
+                commentSourceQueue.enqueue(commentModel)
             }
-            
-            let commentModel = PPLiveCommentModel()
-            commentModel.content = content
-            commentModel.senderId = message.senderUserId
-            commentModel.senderName = sendername
-            commentSourceQueue.enqueue(commentModel)
         }
         
         
